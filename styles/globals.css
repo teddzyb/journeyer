@@ -18,7 +18,7 @@
         overflow-y: hidden;
     }
 
-    div {
+    div, footer, header, main, nav, section {
         border: 1px solid black;
     }
 }

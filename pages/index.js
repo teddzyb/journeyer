@@ -2,6 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 export default function Home() {
+
+  var buttons = [{ name: "Login" }, { name: "Create an Account" }]
+  var icons = [
+    { name: "Twitter", src: "/assets/icons/twitter.svg" },
+    { name: "Discord", src: "/assets/icons/discord.svg" },
+    { name: "Fandom", src: "/assets/icons/fandom.svg" },
+  ]
+
   return (
     <div>
       <Head>
@@ -15,15 +23,36 @@ export default function Home() {
             <span className="text-4xl">OF THE REALMS</span>
           </p>
         </div>
-        <div className="grid grid-rows-2 gap-2 justify-center mb-10">
-          <button className="btn-primary text-xl rounded-sm drop-shadow-md py-3 w-56">
-            Login
-          </button>
-          <button className="btn-primary text-xl rounded-sm drop-shadow-md py-3 w-56">
-            Create an Account
-          </button>
+        <div className="grid grid-rows-2 gap-2 justify-center mb-20">
+          {buttons.map((button, index) => {
+            return (
+              <button key={index} className="btn-primary text-lg rounded-sm drop-shadow-md py-3 w-56">
+                {button.name}
+              </button>
+            )
+          })}
         </div>
       </main>
+      <footer className="fixed bottom-0 w-full">
+        <div className="grid grid-cols-2">
+          <div className="grid grid-flow-col auto-cols-max">
+            {icons.map((icon, index) => {
+              return (
+                <div key={index} className="flex justify-center p-1">
+                  <Image
+                    src={icon.src}
+                    width={26}
+                    height={26}
+                    alt={icon.name}
+                  />
+                </div>
+              )
+            })}
+          </div>
+          <div className="grid grid-flow-col col-start-13 auto-cols-max">
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
