@@ -26,7 +26,7 @@ export default function Home() {
       </Head>
       <main className="h-screen flex flex-col justify-center">
         <div className="flex justify-center mb-20">
-          <p className="text-7xl font-bold text-center drop-shadow-md">JOURNEYER<br />
+          <p className="text-7xl font-bold text-center drop-shadow-md select-none">JOURNEYER<br />
             <span className="text-4xl">OF THE REALMS</span>
           </p>
         </div>
@@ -51,6 +51,7 @@ export default function Home() {
                     width={24}
                     height={24}
                     alt={icon.name}
+                    draggable="false"
                   />
                 </div>
               )
@@ -64,6 +65,7 @@ export default function Home() {
                     alt={icon.name}
                     icon={icon.src}
                     style={{ fontSize: 24, color: "rgb(20 184 166)" }}
+                    draggable="false"
                   />
                 </div>
               )
