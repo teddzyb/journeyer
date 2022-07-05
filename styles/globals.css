@@ -18,9 +18,9 @@
         overflow-y: hidden;
     }
 
-    div, footer, header, main, nav, section {
+    /* div, footer, header, main, nav, section {
         border: 1px solid black;
-    }
+    } */
 }
 
 @layer components {

@@ -1,13 +1,20 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
 
   var buttons = [{ name: "Login" }, { name: "Create an Account" }]
-  var icons = [
+  var iconsL = [
     { name: "Twitter", src: "/assets/icons/twitter.svg" },
     { name: "Discord", src: "/assets/icons/discord.svg" },
     { name: "Fandom", src: "/assets/icons/fandom.svg" },
+  ]
+  var iconsR = [
+    { name: "Notifications", src: faBell },
+    { name: "Volume", src: faVolumeHigh },
+    { name: "Bug Report", src: faBug },
   ]
 
   return (
@@ -36,13 +43,13 @@ export default function Home() {
       <footer className="fixed bottom-0 w-full">
         <div className="grid grid-cols-2">
           <div className="grid grid-flow-col auto-cols-max">
-            {icons.map((icon, index) => {
+            {iconsL.map((icon, index) => {
               return (
-                <div key={index} className="flex justify-center p-1">
+                <div key={index} className="flex justify-center pl-6 pr-3 pb-4">
                   <Image
                     src={icon.src}
-                    width={26}
-                    height={26}
+                    width={24}
+                    height={24}
                     alt={icon.name}
                   />
                 </div>
@@ -50,6 +57,17 @@ export default function Home() {
             })}
           </div>
           <div className="grid grid-flow-col col-start-13 auto-cols-max">
+            {iconsR.map((icon, index) => {
+              return (
+                <div key={index} className="flex justify-center pl-3 pr-6 pb-4">
+                  <FontAwesomeIcon
+                    alt={icon.name}
+                    icon={icon.src}
+                    style={{ fontSize: 24, color: "rgb(20 184 166)" }}
+                  />
+                </div>
+              )
+            })}
           </div>
         </div>
       </footer>
