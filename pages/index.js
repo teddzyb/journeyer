@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 
@@ -34,7 +33,7 @@ export default function Home() {
           <button
             className="btn-primary text-lg rounded-sm drop-shadow-md py-3 w-56"
             onClick={() => window.open(`/auth/login`, 'Login Auth', `location=no,width=600,height=600,left=${(screen.width - 600) / 2},top=${(screen.height - 600) / 4}`)}>
-            Login
+            Sign In
           </button>
           <button
             className="btn-primary text-lg rounded-sm drop-shadow-md py-3 w-56"
