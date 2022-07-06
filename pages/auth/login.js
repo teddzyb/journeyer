@@ -23,7 +23,8 @@ export default function Login() {
                   type="email"
                   id="email"
                   name="email"
-                  className="block shadow-sm rounded-sm mt-1 bg-black/[.15] border-none w-full focus:ring-white/[.15]" />
+                  className="block shadow-sm rounded-sm mt-1 
+                  bg-black/[.15] border-none focus:border-none w-full focus:ring-white/[.15] focus:invalid:ring-orange-700" />
               </div>
               <div>
                 <label htmlFor="password">Password</label>
@@ -31,7 +32,8 @@ export default function Login() {
                   type="password"
                   id="password"
                   name="password"
-                  className="block shadow-sm rounded-sm mt-1 bg-black/[.15] border-none w-full focus:ring-white/[.15]" />
+                  className="block shadow-sm rounded-sm mt-1 
+                  bg-black/[.15] border-none focus:border-none w-full focus:ring-white/[.15]" />
                 <button className="text-sm underline text-teal-300 mt-3">Forgot Password?</button>
               </div>
             </div>
