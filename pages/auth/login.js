@@ -16,14 +16,14 @@ export default function Login() {
                 <span className="text-xl">OF THE REALMS</span>
               </p>
             </div>
-            <div className="grid grid-rows-3 grid-cols-1 gap-6">
+            <div className="grid grid-rows-2 grid-cols-1">
               <div>
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  className="block shadow-sm rounded-sm bg-black/[.15] border-none w-full focus:ring-white/[.15]" />
+                  className="block shadow-sm rounded-sm mt-1 bg-black/[.15] border-none w-full focus:ring-white/[.15]" />
               </div>
               <div>
                 <label htmlFor="password">Password</label>
@@ -31,11 +31,12 @@ export default function Login() {
                   type="password"
                   id="password"
                   name="password"
-                  className="block shadow-sm rounded-sm bg-black/[.15] border-none w-full focus:ring-white/[.15]" />
+                  className="block shadow-sm rounded-sm mt-1 bg-black/[.15] border-none w-full focus:ring-white/[.15]" />
+                <button className="text-sm underline text-teal-300 mt-3">Forgot Password?</button>
               </div>
-              <div className="text-center mt-4">
-                <button className="btn-primary rounded-sm drop-shadow-md py-3 w-full">Sign In</button>
-              </div>
+            </div>
+            <div className="text-center mt-8">
+              <button type="submit" className="btn-primary rounded-sm drop-shadow-md py-3 w-full">Sign In</button>
             </div>
           </form>
         </div>
