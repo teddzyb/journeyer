@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,15 +9,23 @@ export default function Home() {
   // TODO: handle login
   // TODO: handle sign up
 
+  const [notifications, setNotifications] = useState(false);
+  const [volume, setVolume] = useState(false);
+  const [bugReport, setBugReport] = useState(false);
+
+  const toggleNotifications = () => setNotifications(!notifications)
+  const toggleVolume = () => setVolume(!volume)
+  const toggleBugReport = () => setBugReport(!bugReport)
+
   var iconsL = [
     { name: "Twitter", src: "/assets/icons/twitter.svg", link: "https://twitter.com/" },
     { name: "Discord", src: "/assets/icons/discord.svg", link: "https://discord.gg/" },
     { name: "Fandom", src: "/assets/icons/fandom.svg", link: "https://fandom.com/" },
   ]
   var iconsR = [
-    { name: "Notifications", src: faBell },
-    { name: "Volume", src: faVolumeHigh },
-    { name: "Bug Report", src: faBug },
+    { name: "Notifications", src: faBell, state: toggleNotifications },
+    { name: "Volume", src: faVolumeHigh, state: toggleVolume },
+    { name: "Bug Report", src: faBug, state: toggleBugReport },
   ]
 
   return (
@@ -73,6 +82,7 @@ export default function Home() {
                     icon={icon.src}
                     style={{ fontSize: 24, color: "rgb(20 184 166)" }}
                     draggable="false"
+                    onClick={icon.state}
                   />
                 </div>
               )
