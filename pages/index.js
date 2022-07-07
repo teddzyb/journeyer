@@ -6,9 +6,9 @@ import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-so
 export default function Home() {
 
   var iconsL = [
-    { name: "Twitter", src: "/assets/icons/twitter.svg" },
-    { name: "Discord", src: "/assets/icons/discord.svg" },
-    { name: "Fandom", src: "/assets/icons/fandom.svg" },
+    { name: "Twitter", src: "/assets/icons/twitter.svg", link: "https://twitter.com/" },
+    { name: "Discord", src: "/assets/icons/discord.svg", link: "https://discord.gg/" },
+    { name: "Fandom", src: "/assets/icons/fandom.svg", link: "https://fandom.com/" },
   ]
   var iconsR = [
     { name: "Notifications", src: faBell },
@@ -47,7 +47,7 @@ export default function Home() {
           <div className="grid grid-flow-col auto-cols-max">
             {iconsL.map((icon, index) => {
               return (
-                <div key={index} className="flex justify-center pl-6 pr-3 pb-4 
+                <div key={index} className="flex justify-center px-6 py-5 cursor-pointer
                   transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300">
                   <Image
                     src={icon.src}
@@ -55,7 +55,6 @@ export default function Home() {
                     height={24}
                     alt={icon.name}
                     draggable="false"
-                    className="cursor-pointer"
                   />
                 </div>
               )
@@ -64,7 +63,7 @@ export default function Home() {
           <div className="grid grid-flow-col col-start-13 auto-cols-max">
             {iconsR.map((icon, index) => {
               return (
-                <div key={index} className="flex justify-center pl-3 pr-6 pb-4
+                <div key={index} className="flex justify-center px-6 py-5
                   transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300">
                   <FontAwesomeIcon
                     alt={icon.name}

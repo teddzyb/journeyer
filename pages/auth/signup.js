@@ -10,7 +10,7 @@ export default function Signup() {
       </Head>
       <main className="h-screen flex flex-col justify-center">
         <div className="flex justify-center">
-          <form action="" method="post" className="flex flex-col rounded-2xl shadow-lg bg-black/[.15] w-96 py-12 px-10">
+          <form action="" method="post" className="flex flex-col rounded-2xl shadow-lg bg-black/[.15] w-[450px] py-12 px-10">
             <div className="flex flex-col justify-center mb-10">
               <p className="text-4xl font-bold text-center drop-shadow-md select-none">JOURNEYER<br />
                 <span className="text-xl">OF THE REALMS</span>
