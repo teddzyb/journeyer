@@ -1,6 +1,34 @@
 import Head from 'next/head'
+import { useUserContext } from "/context/user";
 
 export default function Login() {
+  const [user, setUser] = useUserContext();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    const data = {
+      email: event.target.email.value,
+    }
+
+    const JSONdata = JSON.stringify(data)
+    const endpoint = '../api/login'
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSONdata,
+    }
+
+    const response = await fetch(endpoint, options)
+    const result = await response.json()
+
+    setUser(result.email)
+
+    // TODO: save to cookie
+  }
+
   return (
     <div>
       <Head>
@@ -10,12 +38,13 @@ export default function Login() {
       </Head>
       <main className="h-screen flex flex-col justify-center">
         <div className="flex justify-center">
-          <form action="" method="post" className="flex flex-col rounded-2xl shadow-lg bg-black/[.15] w-96 py-12 px-10">
+          <form onSubmit={handleSubmit} className="flex flex-col rounded-2xl shadow-lg bg-black/[.15] w-96 py-12 px-10">
             <div className="flex flex-col justify-center mb-10">
               <p className="text-4xl font-bold text-center drop-shadow-md select-none">JOURNEYER<br />
                 <span className="text-xl">OF THE REALMS</span>
               </p>
             </div>
+            {user ? <span className="text-center mb-3">You are logged in as {user}</span> : <span className="text-center mb-3">Please log in</span>}
             <div className="grid grid-rows-2 grid-cols-1">
               <div>
                 <label htmlFor="email">Email</label>

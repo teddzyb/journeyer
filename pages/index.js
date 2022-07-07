@@ -5,6 +5,9 @@ import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-so
 
 export default function Home() {
 
+  // TODO: handle login
+  // TODO: handle sign up
+
   var iconsL = [
     { name: "Twitter", src: "/assets/icons/twitter.svg", link: "https://twitter.com/" },
     { name: "Discord", src: "/assets/icons/discord.svg", link: "https://discord.gg/" },
