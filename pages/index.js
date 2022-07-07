@@ -31,6 +31,8 @@ export default function Home() {
     { name: "Bug Report", src: faBug, state: toggleBugReport },
   ]
 
+  volume ? iconsR[1].src = faVolumeXmark : iconsR[1].src = faVolumeHigh
+
   return (
     <div>
       <Head>
