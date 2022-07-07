@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
+
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
+
+import Notification from '../components/notification'
 
 export default function Home() {
 
@@ -55,7 +58,13 @@ export default function Home() {
         </div>
       </main>
       <footer className="fixed bottom-0 w-full">
-        < div className="grid grid-cols-2" >
+        <div className="flex flex-row-reverse">
+          {notifications ?
+            <div className="grid gap-2 w-96 mx-4">
+              <Notification />
+            </div> : null}
+        </div>
+        <div className="grid grid-cols-2">
           <div className="grid grid-flow-col auto-cols-max">
             {iconsL.map((icon, index) => {
               return (
@@ -75,14 +84,15 @@ export default function Home() {
           <div className="grid grid-flow-col col-start-13 auto-cols-max">
             {iconsR.map((icon, index) => {
               return (
-                <div key={index} className="flex justify-center px-6 py-5
-                  transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300">
+                <div
+                  key={index}
+                  className="flex justify-center px-6 py-5 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                  onClick={icon.state}>
                   <FontAwesomeIcon
                     alt={icon.name}
                     icon={icon.src}
                     style={{ fontSize: 24, color: "rgb(20 184 166)" }}
                     draggable="false"
-                    onClick={icon.state}
                   />
                 </div>
               )
