@@ -6,19 +6,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 
 import Notification from '../components/notification'
+import BugReport from '../components/bugReport'
 
 export default function Home() {
 
   // TODO: handle login
   // TODO: handle sign up
 
-  const [notifications, setNotifications] = useState(false);
-  const [volume, setVolume] = useState(false);
-  const [bugReport, setBugReport] = useState(false);
+  const [notifications, setNotifications] = useState(false)
+  const toggleNotifications = () => {
+    setNotifications(!notifications)
+    setBugReport(false)
+  }
 
-  const toggleNotifications = () => setNotifications(!notifications)
+  const [volume, setVolume] = useState(false)
   const toggleVolume = () => setVolume(!volume)
-  const toggleBugReport = () => setBugReport(!bugReport)
+
+  const [bugReport, setBugReport] = useState(false)
+  const toggleBugReport = () => {
+    setBugReport(!bugReport)
+    setNotifications(false)
+  }
 
   var iconsL = [
     { name: "Twitter", src: "/assets/icons/twitter.svg", link: "https://twitter.com/" },
@@ -63,7 +71,17 @@ export default function Home() {
         <div className="flex flex-row-reverse">
           {notifications ?
             <div className="grid gap-2 w-96 mx-4">
+              <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
+                Notifications
+              </div>
               <Notification />
+            </div> : null}
+          {bugReport ?
+            <div className="grid gap-2 w-96 mx-4">
+              <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
+                Report a Bug
+              </div>
+              <BugReport />
             </div> : null}
         </div>
         <div className="grid grid-cols-2">
