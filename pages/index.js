@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 
 import Notification from '../components/notification'
-import BugReport from '../components/bugReport'
+import BugReport from '../components/bug-report'
 
 export default function Home() {
 
