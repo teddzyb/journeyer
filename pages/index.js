@@ -70,7 +70,7 @@ export default function Home() {
           <div className="grid grid-flow-col auto-cols-max">
             {iconsL.map((icon, index) => {
               return (
-                <div key={index} className="flex justify-center px-6 py-5 cursor-pointer
+                <div key={index} className="flex justify-center px-6 py-5 cursor-pointer select-none
                   transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300">
                   <Image
                     src={icon.src}
