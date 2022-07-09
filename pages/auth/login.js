@@ -4,7 +4,7 @@ import { useUserContext } from '/context/user'
 export default function Login() {
   const [user, setUser] = useUserContext()
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async event => {
     event.preventDefault()
 
     const data = {
