@@ -67,7 +67,7 @@ export default function Login() {
               </div>
             </div>
             <div className="text-center mt-8">
-              <button type="submit" className="btn-primary rounded-sm drop-shadow-md py-3 w-full">Sign In</button>
+              <button type="submit" className="btn-primary py-3 w-full">Sign In</button>
             </div>
           </form>
         </div>

@@ -56,12 +56,12 @@ export default function Home() {
         </div>
         <div className="grid grid-rows-2 gap-2 justify-center mb-20">
           <button
-            className="btn-primary text-lg rounded-sm drop-shadow-md py-3 w-56"
+            className="btn-primary text-lg py-3 w-56"
             onClick={() => window.open(`/auth/login`, 'Login Auth', `location=no,width=520,height=600,left=${(screen.width - 520) / 2},top=${(screen.height - 600) / 4}`)}>
             Sign In
           </button>
           <button
-            className="btn-primary text-lg rounded-sm drop-shadow-md py-3 w-56"
+            className="btn-primary text-lg py-3 w-56"
             onClick={() => window.open(`/auth/signup`, 'Signup Auth', `location=no,width=1200,height=700,left=${(screen.width - 1200) / 2},top=${(screen.height - 700) / 4}`)}>
             Create an Account
           </button>
