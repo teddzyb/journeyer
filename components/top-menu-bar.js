@@ -73,27 +73,29 @@ export default function TopMenuBar() {
           )
         })}
       </div>
-      {friends ?
-        <div className="grid gap-2 w-96 mx-4">
-          <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
-            Friends
-          </div>
-          <Friends />
-        </div> : null}
-      {notifications ?
-        <div className="grid gap-2 w-96 mx-4">
-          <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
-            Notifications
-          </div>
-          <Notification />
-        </div> : null}
-      {bugReport ?
-        <div className="grid gap-2 w-96 mx-4">
-          <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
-            Report a Bug
-          </div>
-          <BugReport />
-        </div> : null}
+      <div className="fixed top-20 right-3 mt-2">
+        {friends ?
+          <div className="grid gap-2 w-96">
+            <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
+              Friends
+            </div>
+            <Friends />
+          </div> : null}
+        {notifications ?
+          <div className="grid gap-2 w-96">
+            <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
+              Notifications
+            </div>
+            <Notification />
+          </div> : null}
+        {bugReport ?
+          <div className="grid gap-2 w-96">
+            <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
+              Report a Bug
+            </div>
+            <BugReport />
+          </div> : null}
+      </div>
     </div>
   );
 }
