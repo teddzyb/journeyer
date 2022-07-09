@@ -60,6 +60,10 @@ export default function TopMenuBar() {
           PLAYER-0001
           <ExpBar />
         </div>
+        <div className="flex flex-col justify-center gap-1 text-lg">
+          PLAYER-0001
+          <ExpBar />
+        </div>
       </div>
       <div className="grid grid-flow-col col-start-3 auto-cols-max">
         {iconsR.map((icon, index) => {
