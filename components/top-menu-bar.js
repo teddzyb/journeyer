@@ -56,7 +56,7 @@ export default function TopMenuBar() {
           alt="Avatar"
           draggable="false"
         />
-        <div className="flex flex-col justify-center gap-1">
+        <div className="flex flex-col justify-center gap-1 text-lg">
           PLAYER-0001
           <ExpBar />
         </div>

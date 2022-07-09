@@ -21,7 +21,6 @@ export default function Home() {
 
   const [volume, setVolume] = useState(false)
   const toggleVolume = () => setVolume(!volume)
-  volume ? iconsR[1].src = faVolumeXmark : iconsR[1].src = faVolumeHigh
 
   const [bugReport, setBugReport] = useState(false)
   const toggleBugReport = () => {
