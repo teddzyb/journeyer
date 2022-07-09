@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { useUserContext } from "/context/user";
+import { useUserContext } from '/context/user'
 
 export default function Login() {
-  const [user, setUser] = useUserContext();
+  const [user, setUser] = useUserContext()
 
   const handleSubmit = async (event) => {
     event.preventDefault()

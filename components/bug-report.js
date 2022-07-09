@@ -1,4 +1,4 @@
-export default function Notification({ children }) {
+export default function BugReport({ children }) {
   return (
     <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl p-4">
       {/* {children} */}
@@ -7,5 +7,5 @@ export default function Notification({ children }) {
       bug report<br />
       bug report<br />
     </div>
-  );
+  )
 }

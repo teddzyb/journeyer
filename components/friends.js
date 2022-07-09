@@ -7,5 +7,5 @@ export default function Friends({ children }) {
       friends<br />
       friends<br />
     </div>
-  );
+  )
 }

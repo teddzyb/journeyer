@@ -35,14 +35,14 @@ export default function TopMenuBar() {
     setBugReport(!bugReport)
   }
 
-  var iconsR = [
+  let iconsR = [
     { name: "Friends", src: faHandshakeAngle, state: toggleFriends },
     { name: "Notifications", src: faBell, state: toggleNotifications },
     { name: "Volume", src: faVolumeHigh, state: toggleVolume },
     { name: "Bug Report", src: faBug, state: toggleBugReport },
   ]
 
-  volume ? iconsR[2].src = faVolumeXmark : iconsR[2].src = faVolumeHigh
+  iconsR[2].src = volume ? faVolumeXmark : faVolumeHigh
 
   return (
     <div className="grid grid-cols-2 bg-black/[.15] h-20 p-2">
@@ -102,5 +102,5 @@ export default function TopMenuBar() {
           </div> : null}
       </div>
     </div>
-  );
+  )
 }

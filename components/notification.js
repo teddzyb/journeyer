@@ -7,5 +7,5 @@ export default function Notification({ children }) {
       test<br />
       test<br />
     </div>
-  );
+  )
 }

@@ -28,18 +28,18 @@ export default function Home() {
     setNotifications(false)
   }
 
-  var iconsL = [
+  let iconsL = [
     { name: "Twitter", src: "/assets/icons/twitter.svg", link: "https://twitter.com/" },
     { name: "Discord", src: "/assets/icons/discord.svg", link: "https://discord.gg/" },
     { name: "Fandom", src: "/assets/icons/fandom.svg", link: "https://fandom.com/" },
   ]
-  var iconsR = [
+  let iconsR = [
     { name: "Notifications", src: faBell, state: toggleNotifications },
     { name: "Volume", src: faVolumeHigh, state: toggleVolume },
     { name: "Bug Report", src: faBug, state: toggleBugReport },
   ]
 
-  volume ? iconsR[1].src = faVolumeXmark : iconsR[1].src = faVolumeHigh
+  iconsR[1].src = volume ? faVolumeXmark : faVolumeHigh
 
   return (
     <div>

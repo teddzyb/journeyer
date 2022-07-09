@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import TopMenuBar from '../components/top-menu-bar'
 
-export default function Home() {
+export default function Menu() {
   return (
     <div>
       <Head>
