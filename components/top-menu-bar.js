@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 
+import ExpBar from '../components/exp-bar'
 import Friends from '../components/friends'
 import Notification from '../components/notification'
 import BugReport from '../components/bug-report'
@@ -45,7 +46,7 @@ export default function TopMenuBar() {
 
   return (
     <div className="grid grid-cols-2 bg-black/[.15] h-20 p-2">
-      <div className="grid grid-flow-col auto-cols-max">
+      <div className="grid grid-flow-col auto-cols-max gap-3">
         <Image
           priority
           src="/assets/avatar.png"
@@ -55,6 +56,10 @@ export default function TopMenuBar() {
           alt="Avatar"
           draggable="false"
         />
+        <div className="flex flex-col justify-center gap-1">
+          PLAYER-0001
+          <ExpBar />
+        </div>
       </div>
       <div className="grid grid-flow-col col-start-3 auto-cols-max">
         {iconsR.map((icon, index) => {

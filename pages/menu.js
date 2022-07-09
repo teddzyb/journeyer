@@ -10,7 +10,7 @@ export default function Home() {
         <meta name="description" content="Journeyer of the Realms is a tabletop card-collecting strategy game developed by Paper Kiwi." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav>
+      <nav className="sticky top-0">
         <TopMenuBar />
       </nav>
       <main className="h-screen flex flex-col justify-center">
