@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
+import goldCoin from '../public/assets/currency/coin-gold.svg'
+import silverCoin from '../public/assets/currency/coin-silver.svg'
 
 import ExpBar from '../components/exp-bar'
 import Friends from '../components/friends'
@@ -60,9 +62,29 @@ export default function TopMenuBar() {
           PLAYER-0001
           <ExpBar />
         </div>
-        <div className="flex flex-col justify-center gap-1 text-lg">
-          PLAYER-0001
-          <ExpBar />
+        <div className="flex flex-col justify-center gap-2 ml-10">
+          <div className="flex items-center text-sm gap-2">
+            <Image
+              priority
+              src={goldCoin}
+              height={20}
+              width={20}
+              alt="Gold"
+              draggable="false"
+            />
+            124
+          </div>
+          <div className="flex items-center text-sm gap-2">
+            <Image
+              priority
+              src={silverCoin}
+              height={20}
+              width={20}
+              alt="Silver"
+              draggable="false"
+            />
+            13,200
+          </div>
         </div>
       </div>
       <div className="grid grid-flow-col col-start-3 auto-cols-max">
