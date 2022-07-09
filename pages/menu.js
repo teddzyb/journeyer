@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import TopMenuBar from '../components/top-menu-bar'
+
 export default function Home() {
   return (
     <div>
@@ -9,6 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav>
+        <TopMenuBar />
       </nav>
       <main className="h-screen flex flex-col justify-center">
       </main>

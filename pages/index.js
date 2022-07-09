@@ -21,6 +21,7 @@ export default function Home() {
 
   const [volume, setVolume] = useState(false)
   const toggleVolume = () => setVolume(!volume)
+  volume ? iconsR[1].src = faVolumeXmark : iconsR[1].src = faVolumeHigh
 
   const [bugReport, setBugReport] = useState(false)
   const toggleBugReport = () => {
@@ -72,7 +73,7 @@ export default function Home() {
           {notifications ?
             <div className="grid gap-2 w-96 mx-4">
               <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
-                Notifications
+                News
               </div>
               <Notification />
             </div> : null}
@@ -88,7 +89,7 @@ export default function Home() {
           <div className="grid grid-flow-col auto-cols-max">
             {iconsL.map((icon, index) => {
               return (
-                <div key={index} className="flex justify-center px-6 py-5 cursor-pointer select-none
+                <div key={index} className="flex flex-col justify-center px-6 py-5 cursor-pointer select-none
                   transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300">
                   <Image
                     src={icon.src}
@@ -101,12 +102,12 @@ export default function Home() {
               )
             })}
           </div>
-          <div className="grid grid-flow-col col-start-13 auto-cols-max">
+          <div className="grid grid-flow-col col-start-3 auto-cols-max">
             {iconsR.map((icon, index) => {
               return (
                 <div
                   key={index}
-                  className="flex justify-center px-6 py-5 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                  className="flex flex-col justify-center px-6 py-5 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
                   onClick={icon.state}>
                   <FontAwesomeIcon
                     alt={icon.name}
