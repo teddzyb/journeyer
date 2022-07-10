@@ -94,12 +94,11 @@ export default function TopMenuBar() {
           return (
             <div
               key={index}
-              className="flex flex-col justify-center px-5"
+              className="flex flex-col justify-center text-teal-500 px-5 hover:text-teal-400"
               onClick={icon.state}>
               <FontAwesomeIcon
                 alt={icon.name}
                 icon={icon.src}
-                className="text-teal-500 hover:text-teal-400"
                 style={{ fontSize: 24 }}
                 draggable="false"
               />
