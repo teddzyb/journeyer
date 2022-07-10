@@ -111,7 +111,8 @@ export default function Home() {
                   <FontAwesomeIcon
                     alt={icon.name}
                     icon={icon.src}
-                    style={{ fontSize: 24, color: "rgb(20 184 166)" }}
+                    className="text-teal-500"
+                    style={{ fontSize: 24 }}
                     draggable="false"
                   />
                 </div>

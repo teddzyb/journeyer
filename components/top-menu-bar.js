@@ -97,7 +97,8 @@ export default function TopMenuBar() {
               <FontAwesomeIcon
                 alt={icon.name}
                 icon={icon.src}
-                style={{ fontSize: 24, color: "rgb(20 184 166)" }}
+                className="text-teal-500 hover:text-teal-400"
+                style={{ fontSize: 24 }}
                 draggable="false"
               />
             </div>
