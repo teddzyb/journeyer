@@ -49,15 +49,17 @@ export default function TopMenuBar() {
   return (
     <div className="grid grid-cols-2 bg-black/[.15] h-20 p-2">
       <div className="grid grid-flow-col auto-cols-max gap-3">
-        <Image
-          priority
-          src="/assets/avatar.png"
-          className="rounded-sm"
-          height={62}
-          width={62}
-          alt="Avatar"
-          draggable="false"
-        />
+        <div className="flex justify-center items-center">
+          <Image
+            priority
+            src="/assets/avatar.png"
+            className="rounded-sm"
+            height={60}
+            width={60}
+            alt="Avatar"
+            draggable="false"
+          />
+        </div>
         <div className="flex flex-col justify-center gap-1 text-lg">
           PLAYER-0001
           <ExpBar />
