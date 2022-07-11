@@ -90,21 +90,19 @@ export default function TopMenuBar() {
         </div>
       </div>
       <div className="grid grid-flow-col col-start-3 auto-cols-max">
-        {iconsR.map((icon, index) => {
-          return (
-            <div
-              key={index}
-              className="flex flex-col justify-center text-teal-500 px-5 hover:text-teal-400"
-              onClick={icon.state}>
-              <FontAwesomeIcon
-                alt={icon.name}
-                icon={icon.src}
-                style={{ fontSize: 24 }}
-                draggable="false"
-              />
-            </div>
-          )
-        })}
+        {iconsR.map((icon, index) =>
+          <div
+            key={index}
+            className="flex flex-col justify-center text-teal-500 px-5 hover:text-teal-400"
+            onClick={icon.state}>
+            <FontAwesomeIcon
+              alt={icon.name}
+              icon={icon.src}
+              style={{ fontSize: 24 }}
+              draggable="false"
+            />
+          </div>
+        )}
       </div>
       <div className="fixed top-20 right-3 mt-2">
         {friends ?
