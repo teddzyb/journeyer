@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
@@ -31,7 +32,7 @@ export default function Menu() {
         <meta name="description" content="Journeyer of the Realms is a tabletop card-collecting strategy game developed by Paper Kiwi." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className="sticky top-0">
+      <nav className="sticky top-0 z-50">
         <TopMenuBar />
       </nav>
       <main className="h-screen flex flex-row justify-center pb-20">
