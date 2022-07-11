@@ -5,6 +5,7 @@ import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
 
 import TopMenuBar from '../components/top-menu-bar'
+import Card from '../components/card'
 
 export default function Menu() {
 
@@ -61,16 +62,11 @@ export default function Menu() {
             <div className="grid grid-flow-col justify-center gap-12 h-full overflow-y-auto mb-5">
               <div className="flex justify-center items-center text-black pl-32">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item =>
-                  <div
-                    key={item}
-                    className="bg-neutral-300 rounded-md card-shadow -ml-32 p-1 w-40 h-56 
-                      hover:bg-slate-400 hover:mr-20 last:hover:mr-0">
-                    {item}
-                  </div>
+                  <Card key={item} data={item} />
                 )}
               </div>
               <div className="flex flex-col justify-center items-center w-fit">
-                <div className="flex w-[70px]">
+                <div className="flex drop-shadow-md rounded-full w-[70px]">
                   <Image
                     priority
                     src={goldCoin}
@@ -80,7 +76,7 @@ export default function Menu() {
                     draggable="false"
                   />
                 </div>
-                <div className="flex w-[70px] -mt-5">
+                <div className="flex drop-shadow-md rounded-full w-[70px] -mt-5">
                   <Image
                     priority
                     src={silverCoin}
