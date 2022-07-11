@@ -28,18 +28,18 @@ export default function Home() {
     setNotifications(false)
   }
 
-  var iconsL = [
+  let iconsL = [
     { name: "Twitter", src: "/assets/icons/twitter.svg", link: "https://twitter.com/" },
     { name: "Discord", src: "/assets/icons/discord.svg", link: "https://discord.gg/" },
     { name: "Fandom", src: "/assets/icons/fandom.svg", link: "https://fandom.com/" },
   ]
-  var iconsR = [
+  let iconsR = [
     { name: "Notifications", src: faBell, state: toggleNotifications },
     { name: "Volume", src: faVolumeHigh, state: toggleVolume },
     { name: "Bug Report", src: faBug, state: toggleBugReport },
   ]
 
-  volume ? iconsR[1].src = faVolumeXmark : iconsR[1].src = faVolumeHigh
+  iconsR[1].src = volume ? faVolumeXmark : faVolumeHigh
 
   return (
     <div>
@@ -56,12 +56,12 @@ export default function Home() {
         </div>
         <div className="grid grid-rows-2 gap-2 justify-center mb-20">
           <button
-            className="btn-primary text-lg rounded-sm drop-shadow-md py-3 w-56"
+            className="btn-primary text-lg py-3 w-56"
             onClick={() => window.open(`/auth/login`, 'Login Auth', `location=no,width=520,height=600,left=${(screen.width - 520) / 2},top=${(screen.height - 600) / 4}`)}>
             Sign In
           </button>
           <button
-            className="btn-primary text-lg rounded-sm drop-shadow-md py-3 w-56"
+            className="btn-primary text-lg py-3 w-56"
             onClick={() => window.open(`/auth/signup`, 'Signup Auth', `location=no,width=1200,height=700,left=${(screen.width - 1200) / 2},top=${(screen.height - 700) / 4}`)}>
             Create an Account
           </button>
@@ -72,7 +72,7 @@ export default function Home() {
           {notifications ?
             <div className="grid gap-2 w-96 mx-4">
               <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
-                Notifications
+                News
               </div>
               <Notification />
             </div> : null}
@@ -86,37 +86,34 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2">
           <div className="grid grid-flow-col auto-cols-max">
-            {iconsL.map((icon, index) => {
-              return (
-                <div key={index} className="flex justify-center px-6 py-5 cursor-pointer select-none
+            {iconsL.map((icon, index) =>
+              <div key={index} className="flex flex-col justify-center px-6 py-5 cursor-pointer select-none
                   transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300">
-                  <Image
-                    src={icon.src}
-                    width={24}
-                    height={24}
-                    alt={icon.name}
-                    draggable="false"
-                  />
-                </div>
-              )
-            })}
+                <Image
+                  src={icon.src}
+                  width={24}
+                  height={24}
+                  alt={icon.name}
+                  draggable="false"
+                />
+              </div>
+            )}
           </div>
-          <div className="grid grid-flow-col col-start-13 auto-cols-max">
-            {iconsR.map((icon, index) => {
-              return (
-                <div
-                  key={index}
-                  className="flex justify-center px-6 py-5 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
-                  onClick={icon.state}>
-                  <FontAwesomeIcon
-                    alt={icon.name}
-                    icon={icon.src}
-                    style={{ fontSize: 24, color: "rgb(20 184 166)" }}
-                    draggable="false"
-                  />
-                </div>
-              )
-            })}
+          <div className="grid grid-flow-col col-start-3 auto-cols-max">
+            {iconsR.map((icon, index) =>
+              <div
+                key={index}
+                className="flex flex-col justify-center px-6 py-5 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                onClick={icon.state}>
+                <FontAwesomeIcon
+                  alt={icon.name}
+                  icon={icon.src}
+                  className="text-teal-500"
+                  style={{ fontSize: 24 }}
+                  draggable="false"
+                />
+              </div>
+            )}
           </div>
         </div>
       </footer>

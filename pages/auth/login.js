@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import { useUserContext } from "/context/user";
+import { useUserContext } from '/context/user'
 
 export default function Login() {
-  const [user, setUser] = useUserContext();
+  const [user, setUser] = useUserContext()
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async event => {
     event.preventDefault()
 
     const data = {
@@ -67,7 +67,7 @@ export default function Login() {
               </div>
             </div>
             <div className="text-center mt-8">
-              <button type="submit" className="btn-primary rounded-sm drop-shadow-md py-3 w-full">Sign In</button>
+              <button type="submit" className="btn-primary py-3 w-full">Sign In</button>
             </div>
           </form>
         </div>

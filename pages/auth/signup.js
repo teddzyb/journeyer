@@ -55,7 +55,7 @@ export default function Signup() {
               </div>
             </div>
             <div className="text-center mt-8">
-              <button type="submit" className="btn-primary rounded-sm drop-shadow-md py-3 w-full">Create Account</button>
+              <button type="submit" className="btn-primary py-3 w-full">Create Account</button>
             </div>
           </form>
         </div>
