@@ -11,12 +11,12 @@ import Card from '../components/card'
 export default function Menu() {
 
   let menuItems = [
-    { name: "Campaign", href: null },
-    { name: "Ranked", href: null },
-    { name: "Custom", href: null },
-    { name: "Practice", href: null },
-    { name: "Shop", href: null },
-    { name: "Sign Out", href: null },
+    { name: "Campaign", href: "" },
+    { name: "Ranked", href: "" },
+    { name: "Custom", href: "" },
+    { name: "Practice", href: "" },
+    { name: "Shop", href: "shop" },
+    { name: "Sign Out", href: "" },
   ]
 
   let customizations = [
@@ -39,12 +39,13 @@ export default function Menu() {
         <div className="w-2/5 m-10 overflow-y-auto">
           <div className="grid gap-10 m-12">
             {menuItems.map((item, index) =>
-              <div
-                key={index}
-                className="text-2xl drop-shadow-lg cursor-default select-none w-fit 
+              <Link key={index} href={item.href}>
+                <a
+                  className="text-2xl drop-shadow-lg cursor-default select-none w-fit 
                 hover:text-teal-200 hover:scale-105 transition ease-in-out duration-150">
-                {item.name.toUpperCase()}
-              </div>
+                  {item.name.toUpperCase()}
+                </a>
+              </Link>
             )}
           </div>
         </div>
