@@ -48,13 +48,15 @@ export default function Menu() {
           </div>
         </div>
         <div className="flex flex-col rounded-2xl bg-black/[.15] shadow-md w-3/5 m-10 overflow-y-auto">
-          <div className="bg-black/[.15] text-xl text-center p-4">CUSTOMIZE LOADOUT</div>
+          <div className="bg-black/[.15] text-xl text-center select-none p-4">CUSTOMIZE LOADOUT</div>
           <div className="flex flex-col grow">
             <div className="grid grid-flow-col h-full overflow-y-auto px-10">
               {customizations.map((item, index) =>
                 <div key={index} className="flex justify-center items-center">
-                  <div className="flex justify-center items-center bg-black/[.15] rounded-md w-36 h-40">
-                    {item.name}
+                  <div className="flex justify-center items-center bg-black/[.15] rounded-md w-36 h-40"></div>
+                  <div className="absolute bg-neutral-300 rounded-md text-black w-32 h-44
+                    hover:scale-105 transition ease-in-out duration-150">
+                    <div className="flex justify-center items-center select-none h-full">{item.name}</div>
                   </div>
                 </div>
               )}
@@ -62,7 +64,7 @@ export default function Menu() {
             <div className="grid grid-flow-col justify-center gap-12 h-full overflow-y-auto mb-5">
               <div className="flex justify-center items-center text-black pl-32">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item =>
-                  <Card key={item} data={item} />
+                  <Card key={item} data={null} />
                 )}
               </div>
               <div className="flex flex-col justify-center items-center w-fit">
@@ -86,7 +88,6 @@ export default function Menu() {
                     draggable="false"
                   />
                 </div>
-
               </div>
             </div>
           </div>
