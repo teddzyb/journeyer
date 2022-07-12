@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { useState } from 'react'
+import { Transition } from '@headlessui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 import goldCoin from '../public/assets/currency/coin-gold.svg'
@@ -104,29 +105,57 @@ export default function TopMenuBar() {
           </div>
         )}
       </div>
-      <div className="fixed top-20 right-3 mt-2">
-        {friends ?
-          <div className="grid gap-2 w-96">
-            <div className="rounded-lg bg-teal-900 border border-black/[.15] shadow-md w-fit px-4 py-3">
-              Friends
-            </div>
-            <Friends />
-          </div> : null}
-        {notifications ?
-          <div className="grid gap-2 w-96">
-            <div className="rounded-lg bg-teal-900 border border-black/[.15] shadow-md w-fit px-4 py-3">
-              Notifications
-            </div>
-            <Notification />
-          </div> : null}
-        {bugReport ?
-          <div className="grid gap-2 w-96">
-            <div className="rounded-lg bg-teal-900 border border-black/[.15] shadow-md w-fit px-4 py-3">
-              Report a Bug
-            </div>
-            <BugReport />
-          </div> : null}
-      </div>
+      <Transition
+        show={friends}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+        className="fixed top-20 right-3 mt-2"
+      >
+        <div className="grid gap-2 w-96">
+          <div className="rounded-lg bg-teal-900 border border-black/[.15] shadow-md w-fit px-4 py-3">
+            Friends
+          </div>
+          <Friends />
+        </div>
+      </Transition>
+      <Transition
+        show={notifications}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+        className="fixed top-20 right-3 mt-2"
+      >
+        <div className="grid gap-2 w-96">
+          <div className="rounded-lg bg-teal-900 border border-black/[.15] shadow-md w-fit px-4 py-3">
+            Notifications
+          </div>
+          <Notification />
+        </div>
+      </Transition>
+      <Transition
+        show={bugReport}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+        className="fixed top-20 right-3 mt-2"
+      >
+        <div className="grid gap-2 w-96">
+          <div className="rounded-lg bg-teal-900 border border-black/[.15] shadow-md w-fit px-4 py-3">
+            Report a Bug
+          </div>
+          <BugReport />
+        </div>
+      </Transition>
     </div>
   )
 }
