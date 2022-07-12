@@ -50,7 +50,7 @@ export default function Menu() {
           </div>
         </div>
         <div className="flex flex-col rounded-2xl bg-black/[.15] shadow-md w-3/5 m-10 overflow-y-auto">
-          <div className="bg-black/[.15] text-xl text-center select-none p-4">CUSTOMIZE LOADOUT</div>
+          <div className="bg-black/[.15] text-xl text-center select-none p-3 pt-4">CUSTOMIZE LOADOUT</div>
           <div className="flex flex-col grow">
             <div className="grid grid-flow-col h-full overflow-y-auto px-10">
               {customizations.map((item, index) =>
