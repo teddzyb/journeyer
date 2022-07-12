@@ -16,7 +16,7 @@ export default function Menu() {
     { name: "Custom", href: "" },
     { name: "Practice", href: "" },
     { name: "Shop", href: "shop" },
-    { name: "Sign Out", href: "" },
+    { name: "Sign Out", href: "/" },
   ]
 
   let customizations = [
