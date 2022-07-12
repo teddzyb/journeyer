@@ -71,14 +71,14 @@ export default function Home() {
         <div className="flex flex-row-reverse">
           {notifications ?
             <div className="grid gap-2 w-96 mx-4">
-              <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
+              <div className="rounded-lg bg-black/[.15] border border-black/[.15] shadow-md w-fit px-4 py-3">
                 News
               </div>
               <Notification />
             </div> : null}
           {bugReport ?
             <div className="grid gap-2 w-96 mx-4">
-              <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
+              <div className="rounded-lg bg-black/[.15] border border-black/[.15] shadow-md w-fit px-4 py-3">
                 Report a Bug
               </div>
               <BugReport />
