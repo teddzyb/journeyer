@@ -92,7 +92,7 @@ export default function TopMenuBar() {
       </div>
       <div className="grid grid-flow-col col-start-3 auto-cols-max">
         {iconsR.map((icon, index) =>
-          <div
+          <button
             key={index}
             className="flex flex-col justify-center text-teal-500 px-5 hover:text-teal-400"
             onClick={icon.state}>
@@ -102,7 +102,7 @@ export default function TopMenuBar() {
               style={{ fontSize: 24 }}
               draggable="false"
             />
-          </div>
+          </button>
         )}
       </div>
       <Transition

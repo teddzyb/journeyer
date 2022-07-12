@@ -87,7 +87,7 @@ export default function Home() {
         <div className="grid grid-cols-2">
           <div className="grid grid-flow-col auto-cols-max">
             {iconsL.map((icon, index) =>
-              <div key={index} className="flex flex-col justify-center px-6 py-5 cursor-pointer select-none
+              <button key={index} className="flex flex-col justify-center px-6 py-5 cursor-pointer select-none
                   transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300">
                 <Image
                   src={icon.src}
@@ -96,12 +96,12 @@ export default function Home() {
                   alt={icon.name}
                   draggable="false"
                 />
-              </div>
+              </button>
             )}
           </div>
           <div className="grid grid-flow-col col-start-3 auto-cols-max">
             {iconsR.map((icon, index) =>
-              <div
+              <button
                 key={index}
                 className="flex flex-col justify-center px-6 py-5 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
                 onClick={icon.state}>
@@ -112,7 +112,7 @@ export default function Home() {
                   style={{ fontSize: 24 }}
                   draggable="false"
                 />
-              </div>
+              </button>
             )}
           </div>
         </div>
