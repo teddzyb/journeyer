@@ -49,13 +49,13 @@ export default function Menu() {
             )}
           </div>
         </div>
-        <div className="flex flex-col rounded-2xl bg-black/[.15] shadow-md w-3/5 m-10 overflow-y-auto">
-          <div className="bg-black/[.15] text-xl text-center select-none p-3 pt-4">CUSTOMIZE LOADOUT</div>
+        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 overflow-y-auto">
+          <div className="bg-translucent text-xl text-center select-none p-3 pt-4">CUSTOMIZE LOADOUT</div>
           <div className="flex flex-col grow">
             <div className="grid grid-flow-col h-full overflow-y-auto px-10">
               {customizations.map((item, index) =>
                 <div key={index} className="flex justify-center items-center">
-                  <div className="flex justify-center items-center bg-black/[.15] rounded-md w-36 h-40"></div>
+                  <div className="flex justify-center items-center bg-translucent rounded-md w-36 h-40"></div>
                   <div className="absolute bg-neutral-300 rounded-md text-black w-32 h-44
                     hover:scale-105 transition ease-in-out duration-150">
                     <div className="flex justify-center items-center select-none h-full">{item.name}</div>

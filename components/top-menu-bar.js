@@ -48,7 +48,7 @@ export default function TopMenuBar() {
   iconsR[2].src = volume ? faVolumeXmark : faVolumeHigh
 
   return (
-    <div className="grid grid-cols-2 bg-black/[.15] h-20 p-2">
+    <div className="grid grid-cols-2 bg-translucent h-20 p-2">
       <div className="grid grid-flow-col auto-cols-max gap-3">
         <div className="flex justify-center items-center">
           <Image
@@ -116,7 +116,7 @@ export default function TopMenuBar() {
         className="fixed top-20 right-3 mt-2"
       >
         <div className="grid gap-2 w-96">
-          <div className="rounded-lg bg-teal-900 border border-black/[.15] shadow-md w-fit px-4 py-3">
+          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-3">
             Friends
           </div>
           <Friends />
@@ -133,7 +133,7 @@ export default function TopMenuBar() {
         className="fixed top-20 right-3 mt-2"
       >
         <div className="grid gap-2 w-96">
-          <div className="rounded-lg bg-teal-900 border border-black/[.15] shadow-md w-fit px-4 py-3">
+          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-3">
             Notifications
           </div>
           <Notification />
@@ -150,7 +150,7 @@ export default function TopMenuBar() {
         className="fixed top-20 right-3 mt-2"
       >
         <div className="grid gap-2 w-96">
-          <div className="rounded-lg bg-teal-900 border border-black/[.15] shadow-md w-fit px-4 py-3">
+          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-3">
             Report a Bug
           </div>
           <BugReport />

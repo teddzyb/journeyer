@@ -8,7 +8,13 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        translucent: {
+          DEFAULT: "rgba(0, 0, 0, 0.15)",
+        }
+      }
+    },
   },
   plugins: [
     plugin(function ({ addUtilities, addComponents, e, prefix, config }) {
@@ -16,5 +22,6 @@ module.exports = {
     }),
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
+    require('tailwind-scrollbar'),
   ]
 }
