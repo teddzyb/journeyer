@@ -2,6 +2,7 @@ import Image from 'next/future/image'
 
 export default function Card(props) {
   return (
+    // TODO: fix aspect ratio
     <div
       className="bg-yellow-50 rounded-md card-shadow -ml-32 p-1 w-40 h-56 
         hover:bg-amber-100 hover:mr-20 last:hover:mr-0">
@@ -17,7 +18,7 @@ export default function Card(props) {
             draggable="false"
           />
         </div>
-        {/* {props.data} */}
+        {props.data}
       </div>
     </div>
   )

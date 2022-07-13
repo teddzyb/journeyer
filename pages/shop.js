@@ -47,22 +47,17 @@ export default function Shop() {
             </Tab.List>
             <Tab.Panels as="div" className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
               <Tab.Panel as="div" className="grid grid-cols-2">
-                <div className="flex flex-col items-center border border-translucent py-6">
-                  <div className="bg-neutral-300 rounded-md drop-shadow-md w-48 h-64"></div>
-                  <div className="z-10 bg-neutral-500 rounded-sm shadow-sm -mt-6 h-10 w-[14.5rem]"></div>
-                </div>
-                <div className="flex flex-col items-center border border-translucent py-6">
-                  <div className="bg-neutral-300 rounded-md drop-shadow-md w-48 h-64"></div>
-                  <div className="z-10 bg-neutral-500 rounded-sm shadow-sm -mt-6 h-10 w-[14.5rem]"></div>
-                </div>
-                <div className="flex flex-col items-center border border-translucent py-6">
-                  <div className="bg-neutral-300 rounded-md drop-shadow-md w-48 h-64"></div>
-                  <div className="z-10 bg-neutral-500 rounded-sm shadow-sm -mt-6 h-10 w-[14.5rem]"></div>
-                </div>
-                <div className="flex flex-col items-center border border-translucent py-6">
-                  <div className="bg-neutral-300 rounded-md drop-shadow-md w-48 h-64"></div>
-                  <div className="z-10 bg-neutral-500 rounded-sm shadow-sm -mt-6 h-10 w-[14.5rem]"></div>
-                </div>
+                {[1, 2, 3, 4, 5, 6, 7, 8].map(item =>
+                  <div key={item} className="flex flex-col items-center border border-translucent py-6">
+                    <div className="bg-yellow-50 rounded-md drop-shadow-md p-1 w-48 h-64">
+                      <div className="flex justify-center items-center text-center background border-2 border-black/50 rounded-md w-full h-full"></div>
+                    </div>
+                    <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
+                    border border-translucent -mt-6 h-10 w-[14.5rem] pt-1">
+                      STARTER DECK #{item}
+                    </div>
+                  </div>
+                )}
               </Tab.Panel>
               <Tab.Panel>
                 Content 2
