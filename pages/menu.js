@@ -56,9 +56,11 @@ export default function Menu() {
               {customizations.map((item, index) =>
                 <div key={index} className="flex justify-center items-center">
                   <div className="flex justify-center items-center bg-translucent rounded-md w-36 h-40"></div>
-                  <div className="absolute bg-neutral-300 rounded-md text-black w-32 h-44
-                    hover:scale-105 transition ease-in-out duration-150">
-                    <div className="flex justify-center items-center select-none h-full">{item.name}</div>
+                  <div className="absolute bg-yellow-50 rounded-md text-black w-32 h-44
+                    hover:scale-105 transition ease-in-out duration-150 p-1">
+                    <div className="background border-2 border-black/50 rounded-md w-full h-full">
+                      <div className="flex justify-center items-center select-none h-full">{item.name}</div>
+                    </div>
                   </div>
                 </div>
               )}
