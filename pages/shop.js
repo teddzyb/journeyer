@@ -30,7 +30,7 @@ export default function Shop() {
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-2/5 m-10 overflow-y-clip">
           <div className="bg-translucent text-xl text-center select-none p-3 pt-4">SHOP</div>
           <Tab.Group>
-            <Tab.List as="div" className="flex justify-center items-center bg-black/10 border-t border-b border-translucent p-2">
+            <Tab.List as="div" className="flex justify-center items-center bg-translucent/10 border-t border-b border-translucent p-2">
               {tabs.map((item, index) =>
                 <Tab
                   as="button"
