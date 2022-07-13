@@ -1,6 +1,9 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 import { Tab } from '@headlessui/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import TopMenuBar from '../components/top-menu-bar'
 
@@ -28,7 +31,19 @@ export default function Shop() {
       </nav>
       <main className="h-screen flex flex-row justify-center pb-20">
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-2/5 m-10 overflow-y-clip">
-          <div className="bg-translucent text-xl text-center select-none p-3 pt-4">SHOP</div>
+          <div className="flex flex-row bg-translucent text-xl text-center select-none">
+            <Link href="/menu">
+              <a className="flex flex-col justify-center items-center w-fit">
+                <FontAwesomeIcon
+                  alt="Back"
+                  icon={faArrowLeft}
+                  className="absolute text-white text-2xl ml-9 px-6 mt-[1px]"
+                  draggable="false"
+                />
+              </a>
+            </Link>
+            <div className="grow pb-3 pt-4">SHOP</div>
+          </div>
           <Tab.Group>
             <Tab.List as="div" className="flex justify-center items-center bg-translucent/10 border-t border-b border-translucent p-2">
               {tabs.map((item, index) =>
@@ -72,7 +87,7 @@ export default function Shop() {
           <div className="bg-translucent text-xl text-center select-none p-3 pt-4">STARTER DECK #1</div>
 
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   )
 }

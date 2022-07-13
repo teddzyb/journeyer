@@ -41,7 +41,7 @@ export default function Menu() {
             {menuItems.map((item, index) =>
               <Link key={index} href={item.href}>
                 <a
-                  className="text-2xl drop-shadow-lg cursor-default select-none w-fit 
+                  className="text-2xl drop-shadow-lg select-none w-fit 
                 hover:text-teal-200 hover:scale-105 transition ease-in-out duration-150">
                   {item.name.toUpperCase()}
                 </a>
