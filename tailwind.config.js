@@ -17,9 +17,9 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function ({ addUtilities, addComponents, e, prefix, config }) {
-      // Add your custom styles here
-    }),
+    // plugin(function ({ addUtilities, addComponents, e, prefix, config }) {
+    //   // Add your custom styles here
+    // }),
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
     require('tailwind-scrollbar'),
