@@ -11,9 +11,9 @@ export default function Card(props) {
         classNames(
           "bg-yellow-50 rounded-md card-shadow p-1",
           props.className,
-          props.size === "sm" ? "w-[8rem] h-[12rem]" : "",
-          props.size === "md" ? "w-[10rem] h-[15rem]" : "",
-          props.size === "lg" ? "w-[12rem] h-[18rem]" : ""
+          props.size === "sm" && "w-[8rem] h-[12rem]",
+          props.size === "md" && "w-[10rem] h-[15rem]",
+          props.size === "lg" && "w-[12rem] h-[18rem]"
         )
       }>
       <div className="flex justify-center items-center text-center background 

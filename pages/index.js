@@ -72,20 +72,20 @@ export default function Home() {
       </main>
       <footer className="fixed bottom-0 w-full">
         <div className="flex flex-row-reverse">
-          {notifications ?
+          {notifications &&
             <div className="grid gap-2 w-96 mx-4">
               <div className="rounded-lg bg-translucent border border-translucent shadow-md w-fit px-4 py-3">
                 News
               </div>
               <Notification />
-            </div> : null}
-          {bugReport ?
+            </div>}
+          {bugReport &&
             <div className="grid gap-2 w-96 mx-4">
               <div className="rounded-lg bg-translucent border border-translucent shadow-md w-fit px-4 py-3">
                 Report a Bug
               </div>
               <BugReport />
-            </div> : null}
+            </div>}
         </div>
         <div className="grid grid-cols-2">
           <div className="grid grid-flow-col auto-cols-max">

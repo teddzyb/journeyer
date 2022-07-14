@@ -74,7 +74,7 @@ export default function Shop() {
                     key={item}
                     onClick={() => setSelectedItem(item)}
                     className="flex flex-col items-center border border-translucent py-6 hover:bg-translucent/10">
-                    <Card key={item} size="lg" className={item === selectedItem ? "ring-4 ring-teal-500" : null} />
+                    <Card key={item} size="lg" className={item === selectedItem && "ring-4 ring-teal-500"} />
                     <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
                     border border-translucent -mt-9 h-10 w-[14.5rem] pt-1">
                       STARTER DECK #{item}
