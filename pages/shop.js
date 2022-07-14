@@ -1,12 +1,15 @@
+// APIs
 import Head from 'next/head'
 import Link from 'next/link'
 
+// Components
 import { Tab } from '@headlessui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-
 import TopMenuBar from '../components/top-menu-bar'
 import Card from '../components/card'
+
+// Assets
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")

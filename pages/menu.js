@@ -1,12 +1,15 @@
+// APIs
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import goldCoin from '../public/assets/currency/coin-gold.svg'
-import silverCoin from '../public/assets/currency/coin-silver.svg'
-
+// Components
 import TopMenuBar from '../components/top-menu-bar'
 import Card from '../components/card'
+
+// Assets
+import goldCoin from '../public/assets/currency/coin-gold.svg'
+import silverCoin from '../public/assets/currency/coin-silver.svg'
 
 export default function Menu() {
 

@@ -1,12 +1,15 @@
+// APIs
 import Head from 'next/head'
 import Image from 'next/image'
-
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 
+// Components
 import Notification from '../components/notification'
 import BugReport from '../components/bug-report'
+
+// Assets
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
 

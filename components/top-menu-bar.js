@@ -1,16 +1,20 @@
+// APIs
 import Image from 'next/image'
-
 import { useState } from 'react'
-import { Transition } from '@headlessui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
-import goldCoin from '../public/assets/currency/coin-gold.svg'
-import silverCoin from '../public/assets/currency/coin-silver.svg'
 
+// Components
+import { Transition } from '@headlessui/react'
 import ExpBar from '../components/exp-bar'
 import Friends from '../components/friends'
 import Notification from '../components/notification'
 import BugReport from '../components/bug-report'
+
+// Assets
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faBug }
+  from '@fortawesome/free-solid-svg-icons'
+import goldCoin from '../public/assets/currency/coin-gold.svg'
+import silverCoin from '../public/assets/currency/coin-silver.svg'
 
 export default function TopMenuBar() {
 
