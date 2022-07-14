@@ -29,8 +29,7 @@ export default function Card(props) {
               alt="Card Art"
               draggable="false"
             />
-          </div>
-        }
+          </div>}
       </div>
     </div>
   )
