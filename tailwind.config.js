@@ -21,7 +21,6 @@ module.exports = {
     //   // Add your custom styles here
     // }),
     require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
     require('tailwind-scrollbar'),
   ]
 }

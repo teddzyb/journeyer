@@ -134,11 +134,6 @@
   dependencies:
     "tslib" "^2.4.0"
 
-"@tailwindcss/aspect-ratio@^0.4.0":
-  "integrity" "sha512-WJu0I4PpqNPuutpaA9zDUq2JXR+lorZ7PbLcKNLmb6GL9/HLfC7w3CRsMhJF4BbYd/lkY6CfXOvkYpuGnZfkpQ=="
-  "resolved" "https://registry.npmjs.org/@tailwindcss/aspect-ratio/-/aspect-ratio-0.4.0.tgz"
-  "version" "0.4.0"
-
 "@tailwindcss/forms@^0.5.2":
   "integrity" "sha512-pSrFeJB6Bg1Mrg9CdQW3+hqZXAKsBrSG9MAfFLKy1pVA4Mb4W7C0k7mEhlmS2Dfo/otxrQOET7NJiJ9RrS563w=="
   "resolved" "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.2.tgz"
@@ -1819,7 +1814,7 @@
   dependencies:
     "tailwindcss" ">1.9.6"
 
-"tailwindcss@^3.1.4", "tailwindcss@>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1", "tailwindcss@>=3.0.0 || >= 3.0.0-alpha.1", "tailwindcss@>1.9.6":
+"tailwindcss@^3.1.4", "tailwindcss@>=3.0.0 || >= 3.0.0-alpha.1", "tailwindcss@>1.9.6":
   "integrity" "sha512-NrxbFV4tYsga/hpWbRyUfIaBrNMXDxx5BsHgBS4v5tlyjf+sDsgBg5m9OxjrXIqAS/uR9kicxLKP+bEHI7BSeQ=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.1.4.tgz"
   "version" "3.1.4"
