@@ -16,7 +16,7 @@ export default function Card(props) {
           props.size === "lg" && "w-[12rem] h-[18rem]"
         )
       }>
-      <div className="flex justify-center items-center text-center background 
+      <div className="flex justify-center items-center text-center card-background 
         border-2 border-black/50 rounded-md text-black w-full h-full">
         {props.children ? props.children :
           <div className="p-5">
