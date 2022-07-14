@@ -18,7 +18,7 @@ function classNames(...classes) {
 
 export default function Shop() {
 
-  const [selectedItem, setSelectedItem] = useState(1)
+  const [selectedItem, setSelectedItem] = useState(0)
 
   let tabs = [
     { name: "Decks" },
@@ -69,7 +69,7 @@ export default function Shop() {
             </Tab.List>
             <Tab.Panels as="div" className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
               <Tab.Panel as="div" className="grid grid-cols-2">
-                {[1, 2, 3, 4, 5, 6, 7, 8].map(item =>
+                {Array.from(Array(8).keys()).map(item =>
                   <button
                     key={item}
                     onClick={() => setSelectedItem(item)}
@@ -93,7 +93,13 @@ export default function Shop() {
         </div>
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 overflow-y-auto">
           <div className="bg-translucent text-xl text-center select-none p-3 pt-4">STARTER DECK #{selectedItem}</div>
-
+          <div className="grid grid-cols-4 grow px-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+            {Array.from(Array(30).keys()).map(item =>
+              <button key={item} className="flex flex-col items-center py-5">
+                <Card key={item} size="md" className="hover:bg-amber-100" />
+              </button>
+            )}
+          </div>
         </div>
       </main >
     </div >
