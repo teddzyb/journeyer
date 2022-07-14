@@ -1,6 +1,7 @@
 // APIs
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState } from 'react'
 
 // Components
 import { Tab } from '@headlessui/react'
@@ -16,6 +17,8 @@ function classNames(...classes) {
 }
 
 export default function Shop() {
+
+  const [selectedItem, setSelectedItem] = useState(1)
 
   let tabs = [
     { name: "Decks" },
@@ -67,13 +70,16 @@ export default function Shop() {
             <Tab.Panels as="div" className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
               <Tab.Panel as="div" className="grid grid-cols-2">
                 {[1, 2, 3, 4, 5, 6, 7, 8].map(item =>
-                  <div key={item} className="flex flex-col items-center border border-translucent py-6">
-                    <Card key={item} size="lg" />
+                  <button
+                    key={item}
+                    onClick={() => setSelectedItem(item)}
+                    className="flex flex-col items-center border border-translucent py-6 hover:bg-translucent/10">
+                    <Card key={item} size="lg" className={item === selectedItem ? "ring-4 ring-teal-500" : null} />
                     <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
-                    border border-translucent -mt-10 h-10 w-[14.5rem] pt-1">
+                    border border-translucent -mt-9 h-10 w-[14.5rem] pt-1">
                       STARTER DECK #{item}
                     </div>
-                  </div>
+                  </button>
                 )}
               </Tab.Panel>
               <Tab.Panel>
@@ -86,7 +92,7 @@ export default function Shop() {
           </Tab.Group>
         </div>
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 overflow-y-auto">
-          <div className="bg-translucent text-xl text-center select-none p-3 pt-4">STARTER DECK #1</div>
+          <div className="bg-translucent text-xl text-center select-none p-3 pt-4">STARTER DECK #{selectedItem}</div>
 
         </div>
       </main >
