@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import TopMenuBar from '../components/top-menu-bar'
+import Card from '../components/card'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -64,11 +65,9 @@ export default function Shop() {
               <Tab.Panel as="div" className="grid grid-cols-2">
                 {[1, 2, 3, 4, 5, 6, 7, 8].map(item =>
                   <div key={item} className="flex flex-col items-center border border-translucent py-6">
-                    <div className="bg-yellow-50 rounded-md drop-shadow-md p-1 w-48 h-64">
-                      <div className="flex justify-center items-center text-center background border-2 border-black/50 rounded-md w-full h-full"></div>
-                    </div>
+                    <Card key={item} size="lg" />
                     <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
-                    border border-translucent -mt-6 h-10 w-[14.5rem] pt-1">
+                    border border-translucent -mt-10 h-10 w-[14.5rem] pt-1">
                       STARTER DECK #{item}
                     </div>
                   </div>

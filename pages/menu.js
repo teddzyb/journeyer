@@ -55,20 +55,17 @@ export default function Menu() {
             <div className="grid grid-flow-col h-full overflow-y-auto px-10">
               {customizations.map((item, index) =>
                 <div key={index} className="flex justify-center items-center">
-                  <div className="flex justify-center items-center bg-translucent rounded-md w-36 h-40"></div>
-                  <div className="absolute bg-yellow-50 rounded-md text-black w-32 h-44
-                    hover:scale-105 transition ease-in-out duration-150 p-1">
-                    <div className="background border-2 border-black/50 rounded-md w-full h-full">
-                      <div className="flex justify-center items-center select-none h-full">{item.name}</div>
-                    </div>
-                  </div>
+                  <div className="flex justify-center items-center bg-translucent rounded-md w-36 h-44"></div>
+                  <Card key={item} size="sm" className="absolute hover:scale-105 transition ease-in-out duration-150">
+                    {item.name}
+                  </Card>
                 </div>
               )}
             </div>
             <div className="grid grid-flow-col justify-center gap-12 h-full overflow-y-auto mb-5">
               <div className="flex justify-center items-center text-black pl-32">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(item =>
-                  <Card key={item} data={null} />
+                  <Card key={item} size="md" className="-ml-32 hover:bg-amber-100 hover:mr-20 last:hover:mr-0" />
                 )}
               </div>
               <div className="flex flex-col justify-center items-center w-fit">
@@ -96,7 +93,7 @@ export default function Menu() {
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   )
 }
