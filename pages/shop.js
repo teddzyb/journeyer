@@ -22,6 +22,7 @@ function classNames(...classes) {
 
 export default function Shop() {
 
+  const [selectedTab, setSelectedTab] = useState(0)
   const [selectedItem, setSelectedItem] = useState(0)
 
   let tabs = [
@@ -55,7 +56,7 @@ export default function Shop() {
             </Link>
             <div className="grow pb-3 pt-4">SHOP</div>
           </div>
-          <Tab.Group>
+          <Tab.Group onChange={index => { setSelectedTab(index) }}>
             <Tab.List as="div" className="flex justify-center items-center bg-translucent/10 border-t border-b border-translucent p-2">
               {tabs.map((item, index) =>
                 <Tab
@@ -97,70 +98,88 @@ export default function Shop() {
         </div>
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 overflow-y-auto">
           <div className="bg-translucent text-xl text-center select-none p-3 pt-4">STARTER DECK #{selectedItem}</div>
-          <div className="grid grid-cols-4 grow px-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-            {Array.from(Array(30).keys()).map(item =>
-              <button key={item} className="flex flex-col items-center py-5">
-                <Card key={item} size="md" className="hover:bg-amber-100" />
-              </button>
-            )}
-          </div>
-          <Disclosure defaultOpen as="div" className="bg-translucent">
-            {({ open }) => (
-              <>
-                <div className="flex justify-between w-full">
-                  <div className="flex flex-col items-start gap-1 text-lg mx-7 my-4 pb-1">
-                    Starter Deck #{selectedItem}
-                    <div className="flex gap-4 text-sm">
-                      <div className="flex gap-1">
-                        <Image
-                          priority
-                          src={silverCoin}
-                          height={20}
-                          width={20}
-                          alt="Silver"
-                          draggable="false"
-                        />
-                        <span className="line-through text-white/70">13,600</span> 12,550
+          {selectedTab === 0 &&
+            <>
+              <div className="grid grid-cols-4 grow px-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+                {Array.from(Array(30).keys()).map(item =>
+                  <button key={item} className="flex flex-col items-center py-5">
+                    <Card key={item} size="md" className="hover:bg-amber-100" />
+                  </button>
+                )}
+              </div>
+              <Disclosure defaultOpen as="div" className="bg-translucent">
+                {({ open }) => (
+                  <>
+                    <div className="flex justify-between w-full">
+                      <div className="flex flex-col items-start gap-1 text-lg mx-7 my-4 pb-1">
+                        Starter Deck #{selectedItem}
+                        <div className="flex gap-4 text-sm">
+                          <div className="flex gap-1">
+                            <Image
+                              priority
+                              src={silverCoin}
+                              height={20}
+                              width={20}
+                              alt="Silver"
+                              draggable="false"
+                            />
+                            <span className="line-through text-white/70">13,600</span> 12,550
+                          </div>
+                          <div className="flex gap-1">
+                            <Image
+                              priority
+                              src={cardLayer}
+                              height={20}
+                              width={20}
+                              alt="Cards"
+                              className="scale-90"
+                              draggable="false"
+                            />
+                            7/30
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex gap-1">
-                        <Image
-                          priority
-                          src={cardLayer}
-                          height={20}
-                          width={20}
-                          alt="Cards"
-                          className="scale-90"
-                          draggable="false"
-                        />
-                        7/30
+                      <div className="flex">
+                        <div className="flex items-center gap-5">
+                          <button className="btn-primary h-11 w-44 pt-1">Buy Deck</button>
+                        </div>
+                        <Disclosure.Button className="flex p-5 px-8">
+                          <FontAwesomeIcon
+                            alt="Toggle Details"
+                            icon={open ? faChevronDown : faChevronUp}
+                            className="text-2xl"
+                            draggable="false"
+                          />
+                        </Disclosure.Button>
                       </div>
-                    </div>
-                  </div>
-                  <div className="flex">
-                    <div className="flex items-center gap-5">
-                      <button className="btn-primary h-11 w-44 pt-1">Buy Deck</button>
-                    </div>
-                    <Disclosure.Button className="flex p-5 px-8">
-                      <FontAwesomeIcon
-                        alt="Toggle Details"
-                        icon={open ? faChevronDown : faChevronUp}
-                        className="text-2xl"
-                        draggable="false"
-                      />
-                    </Disclosure.Button>
-                  </div>
 
-                </div>
-                <Disclosure.Panel
-                  className="max-h-28 pr-7 mx-7 mb-5 -mt-1 scrollbar-thin
+                    </div>
+                    <Disclosure.Panel
+                      className="max-h-28 pr-7 mx-7 mb-5 -mt-1 scrollbar-thin
                     scrollbar-thumb-translucent scrollbar-track-transparent">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-                  euismod aliquet nisi nisl euismod.
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+                      euismod aliquet nisi nisl euismod.
+                    </Disclosure.Panel>
+                  </>
+                )}
+              </Disclosure>
+            </>
+          }
+          {selectedTab === 1 &&
+            <>
+              <div className="grid grid-cols-4 grow px-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+                Content 2
+              </div>
+            </>
+          }
+          {selectedTab === 2 &&
+            <>
+              <div className="grid grid-cols-4 grow px-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+                Content 3
+              </div>
+            </>
+          }
         </div>
       </main >
     </div >
