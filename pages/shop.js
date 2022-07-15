@@ -26,9 +26,9 @@ export default function Shop() {
   const [selectedItem, setSelectedItem] = useState(0)
 
   let tabs = [
-    { name: "Decks" },
-    { name: "Sleeves" },
-    { name: "Coins" },
+    { name: "Decks", disabled: false },
+    { name: "Sleeves", disabled: true },
+    { name: "Coins", disabled: true },
   ]
 
   return (
@@ -62,10 +62,11 @@ export default function Shop() {
                 <Tab
                   as="button"
                   key={index}
+                  disabled={item.disabled}
                   className={({ selected }) =>
                     classNames(
                       "outline-none align-middle rounded-lg select-none w-full mx-2 pb-1 pt-2",
-                      selected ? "bg-teal-600 shadow focus:outline-2 focus:outline-offset-0 focus:outline-teal-500" : "hover:bg-teal-500/10"
+                      selected ? "bg-teal-600 shadow focus:outline-2 focus:outline-offset-0 focus:outline-teal-500" : "hover:bg-teal-500/10",
                     )
                   }>
                   {item.name.toUpperCase()}
@@ -169,14 +170,14 @@ export default function Shop() {
           {selectedTab === 1 &&
             <>
               <div className="grid grid-cols-4 grow px-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-                Content 2
+                {/* TODO: sleeves selection */}
               </div>
             </>
           }
           {selectedTab === 2 &&
             <>
               <div className="grid grid-cols-4 grow px-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-                Content 3
+                {/* TODO: coins selection */}
               </div>
             </>
           }
