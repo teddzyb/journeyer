@@ -134,17 +134,22 @@ export default function Shop() {
                         />
                         7/30
                       </div>
-
                     </div>
                   </div>
-                  <Disclosure.Button className="flex p-5 px-8">
-                    <FontAwesomeIcon
-                      alt="Toggle Details"
-                      icon={open ? faChevronDown : faChevronUp}
-                      className="text-2xl"
-                      draggable="false"
-                    />
-                  </Disclosure.Button>
+                  <div className="flex">
+                    <div className="flex items-center gap-5">
+                      <button className="btn-primary h-11 w-44 pt-1">Buy Deck</button>
+                    </div>
+                    <Disclosure.Button className="flex p-5 px-8">
+                      <FontAwesomeIcon
+                        alt="Toggle Details"
+                        icon={open ? faChevronDown : faChevronUp}
+                        className="text-2xl"
+                        draggable="false"
+                      />
+                    </Disclosure.Button>
+                  </div>
+
                 </div>
                 <Disclosure.Panel
                   className="max-h-28 pr-7 mx-7 mb-5 -mt-1 scrollbar-thin
