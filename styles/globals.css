@@ -26,6 +26,14 @@
         @apply bg-teal-500 text-black rounded-sm drop-shadow-md;
     }
 
+    .btn-primary:hover {
+        @apply bg-teal-500/90;
+    }
+
+    .btn-primary:focus {
+        @apply outline outline-2 outline-teal-400;
+    }
+
     .card-shadow {
         box-shadow: -3px 2px 5px rgba(0, 0, 0, 0.15);
     }
