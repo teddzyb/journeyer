@@ -19,7 +19,7 @@ export default function Card(props) {
       <div className="flex justify-center items-center text-center card-background 
         border-2 border-black/50 rounded-md text-black w-full h-full">
         {props.children ? props.children :
-          <div className="p-5">
+          <div className="select-none p-5">
             <Image
               src="/assets/card/soulless.png"
               height={1080}

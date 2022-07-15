@@ -88,7 +88,7 @@ export default function Menu() {
                     src={silverCoin}
                     height={70}
                     width={70}
-                    alt="Gold"
+                    alt="Silver"
                     draggable="false"
                   />
                 </div>
