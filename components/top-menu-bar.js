@@ -100,7 +100,7 @@ export default function TopMenuBar() {
         {iconsR.map((icon, index) =>
           <button
             key={index}
-            className="flex flex-col justify-center text-teal-500 px-5 hover:text-teal-400"
+            className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
             onClick={icon.state}>
             <FontAwesomeIcon
               alt={icon.name}
