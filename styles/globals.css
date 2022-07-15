@@ -23,7 +23,7 @@
 
 @layer components {
     .btn-primary {
-        @apply bg-teal-500 text-black rounded-sm drop-shadow-md;
+        @apply bg-teal-500 text-black rounded-sm drop-shadow-md select-none;
     }
 
     .btn-primary:hover {
