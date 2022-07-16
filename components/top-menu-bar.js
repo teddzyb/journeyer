@@ -61,7 +61,7 @@ export default function TopMenuBar() {
             height={56}
             width={56}
             quality={100}
-            className="rounded-"
+            className="rounded-md"
             alt="Avatar"
             draggable="false"
           />
