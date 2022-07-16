@@ -42,7 +42,7 @@ export default function Shop() {
         <TopMenuBar />
       </nav>
       <main className="h-screen flex flex-row justify-center pb-20">
-        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-2/5 m-10 overflow-y-clip">
+        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-2/5 m-10 mr-5 overflow-y-clip">
           <div className="flex flex-row bg-translucent text-xl text-center select-none">
             <Link href="/menu">
               <a className="flex flex-col justify-center items-center w-fit">
@@ -80,9 +80,9 @@ export default function Shop() {
                     key={item}
                     onClick={() => setSelectedItem(item)}
                     className="flex flex-col items-center border border-translucent py-6 hover:bg-translucent/10">
-                    <Card key={item} size="lg" className={item === selectedItem && "ring-4 ring-teal-500"} />
+                    <Card key={item} size="md" className={item === selectedItem && "ring-4 ring-teal-500"} />
                     <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
-                    border border-translucent select-none -mt-9 h-10 w-[14.5rem] pt-1">
+                    border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
                       STARTER DECK #{item}
                     </div>
                   </button>
@@ -97,15 +97,18 @@ export default function Shop() {
             </Tab.Panels>
           </Tab.Group>
         </div>
-        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 overflow-y-auto">
+        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-y-auto">
           <div className="bg-translucent text-xl text-center select-none p-3 pt-4">STARTER DECK #{selectedItem}</div>
           {selectedTab === 0 &&
             <>
-              <div className="grid grid-cols-4 grow px-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+              <div className="grid grid-cols-4 grow gap-y-10 p-7 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+                {/* TODO: inspect card */}
                 {Array.from(Array(30).keys()).map(item =>
-                  <button key={item} className="flex flex-col items-center py-5">
-                    <Card key={item} size="md" className="hover:bg-amber-100" />
-                  </button>
+                  <div key={item} className="flex flex-col items-center">
+                    <button>
+                      <Card key={item} size="sm" className="hover:bg-amber-100" />
+                    </button>
+                  </div>
                 )}
               </div>
               <Disclosure defaultOpen as="div" className="bg-translucent">

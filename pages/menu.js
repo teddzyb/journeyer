@@ -39,7 +39,7 @@ export default function Menu() {
         <TopMenuBar />
       </nav>
       <main className="h-screen flex flex-row justify-center pb-20">
-        <div className="w-2/5 m-10 overflow-y-auto">
+        <div className="w-2/5 m-10 mr-5 overflow-y-auto">
           <div className="grid gap-10 m-12">
             {menuItems.map((item, index) =>
               <Link key={index} href={item.href}>
@@ -52,7 +52,7 @@ export default function Menu() {
             )}
           </div>
         </div>
-        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 overflow-y-auto">
+        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-y-auto">
           <div className="bg-translucent text-xl text-center select-none p-3 pt-4">CUSTOMIZE LOADOUT</div>
           <div className="flex flex-col grow">
             <div className="grid grid-flow-col h-full overflow-y-auto px-10">
