@@ -59,9 +59,38 @@ export default function Menu() {
               {customizations.map((item, index) =>
                 <div key={index} className="flex justify-center items-center">
                   <div className="flex justify-center items-center bg-translucent rounded-md w-36 h-44"></div>
-                  <Card key={item} size="sm" className="absolute hover:scale-105 transition ease-in-out duration-150">
-                    {item.name}
-                  </Card>
+                  {item.name === "Coins" ?
+                    (
+                      <button className="absolute hover:scale-105 transition ease-in-out duration-150">
+                        <div className="flex drop-shadow-md rounded-full w-[70px] -translate-x-3">
+                          <Image
+                            priority
+                            src={goldCoin}
+                            height={70}
+                            width={70}
+                            alt="Gold"
+                            draggable="false"
+                          />
+                        </div>
+                        <div className="flex drop-shadow-md rounded-full w-[70px] -mt-6 translate-x-3">
+                          <Image
+                            priority
+                            src={silverCoin}
+                            height={70}
+                            width={70}
+                            alt="Silver"
+                            draggable="false"
+                          />
+                        </div>
+                      </button>
+                    ) : (
+                      <button className="absolute hover:scale-105 transition ease-in-out duration-150">
+                        <Card size="sm">
+                          {item.name}
+                        </Card>
+                      </button>
+                    )}
+
                 </div>
               )}
             </div>
