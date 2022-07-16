@@ -40,7 +40,7 @@ export default function Menu() {
       </nav>
       <main className="h-screen flex flex-row justify-center pb-20">
         <div className="w-2/5 m-10 mr-5 overflow-y-auto">
-          <div className="grid gap-10 m-12">
+          <div className="grid gap-10 m-12 mt-14">
             {menuItems.map((item, index) =>
               <Link key={index} href={item.href}>
                 <a
