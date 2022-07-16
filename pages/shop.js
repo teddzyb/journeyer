@@ -185,7 +185,7 @@ export default function Shop() {
                               className={
                                 classNames(
                                   "text-2xl transform duration-300",
-                                  open ? "scale-[-1]" : "rotate-180",
+                                  open ? "scale-[-1]" : "scale-[1]",
                                 )}
                               draggable="false"
                             />
