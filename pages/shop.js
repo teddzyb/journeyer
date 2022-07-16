@@ -181,21 +181,33 @@ export default function Shop() {
                           <Disclosure.Button className="flex p-5 px-8">
                             <FontAwesomeIcon
                               alt="Toggle Details"
-                              icon={open ? faChevronDown : faChevronUp}
-                              className="text-2xl"
+                              icon={faChevronUp}
+                              className={
+                                classNames(
+                                  "text-2xl transform duration-300",
+                                  open ? "scale-[-1]" : "rotate-180",
+                                )}
                               draggable="false"
                             />
                           </Disclosure.Button>
                         </div>
-
                       </div>
-                      <Disclosure.Panel
-                        className="max-h-28 pr-7 mx-7 mb-5 -mt-1 scrollbar-thin
+                      <Transition
+                        enter="transition duration-300 ease-out"
+                        enterFrom="transform scale-95 opacity-0"
+                        enterTo="transform scale-100 opacity-100"
+                        leave="transition duration-200 ease-out"
+                        leaveFrom="transform scale-100 opacity-100"
+                        leaveTo="transform scale-95 opacity-0"
+                      >
+                        <Disclosure.Panel
+                          className="max-h-28 pr-7 mx-7 mb-5 -mt-1 scrollbar-thin
                         scrollbar-thumb-translucent scrollbar-track-transparent">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-                        euismod aliquet nisi nisl euismod.
-                      </Disclosure.Panel>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+                          euismod aliquet nisi nisl euismod.
+                        </Disclosure.Panel>
+                      </Transition>
                     </>
                   )}
                 </Disclosure>
