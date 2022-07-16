@@ -54,15 +54,14 @@ export default function TopMenuBar() {
   return (
     <div className="grid grid-cols-2 bg-translucent h-20 p-2">
       <div className="grid grid-flow-col auto-cols-max gap-3">
-        <div className="flex justify-center items-center">
-          {/* BUG: lags like hell when zoomed into this element */}
+        <div className="flex justify-center items-center h-16 w-16">
           <Image
             priority
             src="/assets/avatar.png"
+            height={64}
+            width={64}
+            quality={100}
             className="rounded-sm"
-            height={60}
-            width={60}
-            layout="intrinsic"
             alt="Avatar"
             draggable="false"
           />
