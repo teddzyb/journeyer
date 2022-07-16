@@ -53,15 +53,15 @@ export default function TopMenuBar() {
 
   return (
     <div className="grid grid-cols-2 bg-translucent h-20 p-2">
-      <div className="grid grid-flow-col auto-cols-max gap-3">
-        <div className="flex justify-center items-center h-16 w-16">
+      <div className="grid grid-flow-col auto-cols-max items-center gap-3">
+        <div className="flex justify-center items-center rounded-md outline outline-2 outline-translucent shadow-sm h-14 w-14 mx-1">
           <Image
             priority
-            src="/assets/avatar.png"
-            height={64}
-            width={64}
+            src="/assets/avatar.jpg"
+            height={56}
+            width={56}
             quality={100}
-            className="rounded-sm"
+            className="rounded-"
             alt="Avatar"
             draggable="false"
           />
