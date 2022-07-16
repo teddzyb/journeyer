@@ -12,8 +12,8 @@ module.exports = {
       colors: {
         translucent: {
           DEFAULT: "rgba(0, 0, 0, 0.15)",
-        }
-      }
+        },
+      },
     },
   },
   plugins: [
