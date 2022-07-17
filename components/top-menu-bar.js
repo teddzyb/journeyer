@@ -77,7 +77,7 @@ export default function TopMenuBar() {
               src={goldCoin}
               height={20}
               width={20}
-              alt="Gold"
+              alt="Gold "
               draggable="false"
             />
             124
@@ -88,7 +88,7 @@ export default function TopMenuBar() {
               src={silverCoin}
               height={20}
               width={20}
-              alt="Silver"
+              alt="Silver "
               draggable="false"
             />
             13,200
@@ -102,7 +102,6 @@ export default function TopMenuBar() {
             className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
             onClick={icon.state}>
             <FontAwesomeIcon
-              alt={icon.name}
               icon={icon.src}
               style={{ fontSize: 24 }}
               draggable="false"

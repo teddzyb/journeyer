@@ -49,7 +49,6 @@ export default function Shop() {
             <Link href="/menu">
               <a className="flex flex-col justify-center items-center w-fit">
                 <FontAwesomeIcon
-                  alt="Back"
                   icon={faArrowLeft}
                   className="absolute text-white text-2xl ml-9 px-6"
                   draggable="false"
@@ -156,7 +155,7 @@ export default function Shop() {
                                 src={silverCoin}
                                 height={20}
                                 width={20}
-                                alt="Silver"
+                                alt="Silver "
                                 draggable="false"
                               />
                               <span className="line-through text-white/70">13,600</span> 12,550
@@ -167,7 +166,7 @@ export default function Shop() {
                                 src={cardLayer}
                                 height={20}
                                 width={20}
-                                alt="Cards"
+                                alt="Cards "
                                 className="scale-90"
                                 draggable="false"
                               />
@@ -181,7 +180,6 @@ export default function Shop() {
                           </div>
                           <Disclosure.Button className="flex p-5 px-8">
                             <FontAwesomeIcon
-                              alt="Toggle Details"
                               icon={faChevronUp}
                               className={
                                 classNames(

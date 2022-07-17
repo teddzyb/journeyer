@@ -109,7 +109,6 @@ export default function Home() {
                 className="flex flex-col justify-center px-6 py-5 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
                 onClick={icon.state}>
                 <FontAwesomeIcon
-                  alt={icon.name}
                   icon={icon.src}
                   className="text-teal-500"
                   style={{ fontSize: 24 }}

@@ -61,7 +61,7 @@ export default function Menu() {
                   <div className="flex justify-center items-center bg-translucent rounded-md w-36 h-44"></div>
                   {item.name === "Coins" ?
                     (
-                      <button className="absolute hover:scale-105 transition ease-in-out duration-150">
+                      <button className="absolute select-none hover:scale-105 transition ease-in-out duration-150">
                         <div className="flex drop-shadow-md rounded-full w-[70px] -translate-x-3">
                           <Image
                             priority
@@ -100,7 +100,7 @@ export default function Menu() {
                   <Card key={item} size="md" className="-ml-32 hover:bg-amber-100 hover:mr-20 last:hover:mr-0" />
                 )}
               </div>
-              <div className="flex flex-col justify-center items-center w-fit">
+              <div className="flex flex-col justify-center items-center select-none w-fit">
                 <div className="flex drop-shadow-md rounded-full w-[70px]">
                   <Image
                     priority
