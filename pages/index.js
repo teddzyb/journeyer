@@ -78,14 +78,16 @@ export default function Home() {
                 News
               </div>
               <Notification />
-            </div>}
+            </div>
+          }
           {bugReport &&
             <div className="grid gap-2 w-96 mx-4">
               <div className="rounded-lg bg-translucent border border-translucent shadow-md w-fit px-4 py-3">
                 Report a Bug
               </div>
               <BugReport />
-            </div>}
+            </div>
+          }
         </div>
         <div className="grid grid-cols-2">
           <div className="grid grid-flow-col auto-cols-max">
