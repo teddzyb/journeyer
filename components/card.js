@@ -13,7 +13,9 @@ export default function Card(props) {
           props.className,
           props.size === "sm" && "w-[8rem] h-[12rem]",
           props.size === "md" && "w-[10rem] h-[15rem]",
-          props.size === "lg" && "w-[12rem] h-[18rem]"
+          props.size === "lg" && "w-[12rem] h-[18rem]",
+          props.size === "xl" && "w-[14rem] h-[21rem]",
+          props.size === "2xl" && "w-[16rem] h-[24rem]",
         )
       }>
       <div className="flex justify-center items-center text-center card-background 

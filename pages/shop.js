@@ -114,7 +114,7 @@ export default function Shop() {
                 className="flex justify-center h-full pt-16"
               >
                 <div className="">
-                  <Card size="lg">{selectedCard}</Card>
+                  <Card size="2xl">{selectedCard}</Card>
                 </div>
               </Transition>
               <Transition
