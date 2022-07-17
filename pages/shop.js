@@ -11,7 +11,8 @@ import Card from '../components/card'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faChevronUp }
+  from '@fortawesome/free-solid-svg-icons'
 import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
 import cardLayer from '../public/assets/icons/card-layer.svg'
@@ -127,7 +128,12 @@ export default function Shop() {
                 {Array.from(Array(30).keys()).map(item =>
                   <div key={item} className="flex flex-col items-center">
                     <button onClick={() => setSelectedCard(item)}>
-                      <Card key={item} size="sm" className="hover:bg-amber-100">{item}</Card>
+                      <Card
+                        key={item}
+                        size="sm"
+                        className="hover:bg-amber-100 hover:scale-105 active:scale-95 transition ease-in-out duration-150">
+                        {item}
+                      </Card>
                     </button>
                   </div>
                 )}
