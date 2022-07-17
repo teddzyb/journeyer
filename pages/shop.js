@@ -178,7 +178,7 @@ export default function Shop() {
                           <div className="flex items-center gap-5">
                             <button className="btn-primary h-11 w-44 pt-1">Buy Deck</button>
                           </div>
-                          <Disclosure.Button className="flex p-5 px-8">
+                          <Disclosure.Button className="flex p-5 px-8" aria-label="Toggle Description">
                             <FontAwesomeIcon
                               icon={faChevronUp}
                               className={

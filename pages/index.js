@@ -107,7 +107,8 @@ export default function Home() {
               <button
                 key={index}
                 className="flex flex-col justify-center px-6 py-5 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
-                onClick={icon.state}>
+                onClick={icon.state}
+                aria-label={icon.name}>
                 <FontAwesomeIcon
                   icon={icon.src}
                   className="text-teal-500"

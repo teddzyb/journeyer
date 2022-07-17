@@ -100,7 +100,8 @@ export default function TopMenuBar() {
           <button
             key={index}
             className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
-            onClick={icon.state}>
+            onClick={icon.state}
+            aria-label={icon.name}>
             <FontAwesomeIcon
               icon={icon.src}
               style={{ fontSize: 24 }}
