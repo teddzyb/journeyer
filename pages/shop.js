@@ -111,10 +111,11 @@ export default function Shop() {
                 enter="transition-all duration-500"
                 enterFrom="opacity-0"
                 enterTo="opacity-100"
-                className="flex justify-center h-full pt-16"
+                className="flex justify-center h-full"
               >
-                <div className="">
+                <div className="flex flex-col items-center gap-10 pt-12">
                   <Card size="2xl">{selectedCard}</Card>
+                  <button onClick={() => setSelectedCard(null)} className="btn-primary h-11 w-36 pt-1">Back</button>
                 </div>
               </Transition>
               <Transition
