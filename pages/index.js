@@ -1,12 +1,15 @@
+// APIs
 import Head from 'next/head'
 import Image from 'next/image'
-
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 
+// Components
 import Notification from '../components/notification'
 import BugReport from '../components/bug-report'
+
+// Assets
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
 
@@ -69,25 +72,25 @@ export default function Home() {
       </main>
       <footer className="fixed bottom-0 w-full">
         <div className="flex flex-row-reverse">
-          {notifications ?
+          {notifications &&
             <div className="grid gap-2 w-96 mx-4">
-              <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
+              <div className="rounded-lg bg-translucent border border-translucent shadow-md w-fit px-4 py-3">
                 News
               </div>
               <Notification />
-            </div> : null}
-          {bugReport ?
+            </div>}
+          {bugReport &&
             <div className="grid gap-2 w-96 mx-4">
-              <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
+              <div className="rounded-lg bg-translucent border border-translucent shadow-md w-fit px-4 py-3">
                 Report a Bug
               </div>
               <BugReport />
-            </div> : null}
+            </div>}
         </div>
         <div className="grid grid-cols-2">
           <div className="grid grid-flow-col auto-cols-max">
             {iconsL.map((icon, index) =>
-              <div key={index} className="flex flex-col justify-center px-6 py-5 cursor-pointer select-none
+              <button key={index} className="flex flex-col justify-center px-6 py-5 cursor-pointer select-none
                   transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300">
                 <Image
                   src={icon.src}
@@ -96,23 +99,23 @@ export default function Home() {
                   alt={icon.name}
                   draggable="false"
                 />
-              </div>
+              </button>
             )}
           </div>
           <div className="grid grid-flow-col col-start-3 auto-cols-max">
             {iconsR.map((icon, index) =>
-              <div
+              <button
                 key={index}
                 className="flex flex-col justify-center px-6 py-5 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
-                onClick={icon.state}>
+                onClick={icon.state}
+                aria-label={icon.name}>
                 <FontAwesomeIcon
-                  alt={icon.name}
                   icon={icon.src}
                   className="text-teal-500"
                   style={{ fontSize: 24 }}
                   draggable="false"
                 />
-              </div>
+              </button>
             )}
           </div>
         </div>

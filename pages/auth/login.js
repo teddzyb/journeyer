@@ -38,7 +38,7 @@ export default function Login() {
       </Head>
       <main className="h-screen flex flex-col justify-center">
         <div className="flex justify-center">
-          <form onSubmit={handleSubmit} className="flex flex-col rounded-2xl shadow-lg bg-black/[.15] w-96 py-12 px-10">
+          <form onSubmit={handleSubmit} className="flex flex-col rounded-2xl shadow-lg bg-translucent w-96 py-12 px-10">
             <div className="flex flex-col justify-center mb-10">
               <p className="text-4xl font-bold text-center drop-shadow-md select-none">JOURNEYER<br />
                 <span className="text-xl">OF THE REALMS</span>
@@ -53,7 +53,7 @@ export default function Login() {
                   id="email"
                   name="email"
                   className="block shadow-sm rounded-sm mt-1 
-                  bg-black/[.15] border-transparent focus:border-transparent w-full focus:ring-white/[.15] invalid:border-orange-700" />
+                  bg-translucent border-transparent focus:border-transparent w-full focus:ring-white/[.15] invalid:border-orange-700" />
               </div>
               <div>
                 <label htmlFor="password">Password</label>
@@ -62,7 +62,7 @@ export default function Login() {
                   id="password"
                   name="password"
                   className="block shadow-sm rounded-sm mt-1 
-                  bg-black/[.15] border-transparent focus:border-transparent w-full focus:ring-white/[.15]" />
+                  bg-translucent border-transparent focus:border-transparent w-full focus:ring-white/[.15]" />
                 <button className="text-sm underline text-teal-300 mt-3">Forgot Password?</button>
               </div>
             </div>

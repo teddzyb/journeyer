@@ -10,7 +10,7 @@ export default function Signup() {
       </Head>
       <main className="h-screen flex flex-col justify-center">
         <div className="flex justify-center">
-          <form action="" method="post" className="flex flex-col rounded-2xl shadow-lg bg-black/[.15] w-[450px] py-12 px-10">
+          <form action="" method="post" className="flex flex-col rounded-2xl shadow-lg bg-translucent w-[450px] py-12 px-10">
             <div className="flex flex-col justify-center mb-10">
               <p className="text-4xl font-bold text-center drop-shadow-md select-none">JOURNEYER<br />
                 <span className="text-xl">OF THE REALMS</span>
@@ -24,7 +24,7 @@ export default function Signup() {
                   id="username"
                   name="username"
                   className="block shadow-sm rounded-sm mt-1 
-                  bg-black/[.15] border-transparent focus:border-transparent w-full focus:ring-white/[.15] focus:invalid:ring-orange-700" />
+                  bg-translucent border-transparent focus:border-transparent w-full focus:ring-white/[.15] focus:invalid:ring-orange-700" />
               </div>
               <div>
                 <label htmlFor="email">Email</label>
@@ -33,7 +33,7 @@ export default function Signup() {
                   id="email"
                   name="email"
                   className="block shadow-sm rounded-sm mt-1 
-                  bg-black/[.15] border-transparent focus:border-transparent w-full focus:ring-white/[.15] invalid:border-orange-700" />
+                  bg-translucent border-transparent focus:border-transparent w-full focus:ring-white/[.15] invalid:border-orange-700" />
               </div>
               <div>
                 <label htmlFor="password">Password</label>
@@ -42,7 +42,7 @@ export default function Signup() {
                   id="password"
                   name="password"
                   className="block shadow-sm rounded-sm mt-1 
-                  bg-black/[.15] border-transparent focus:border-transparent w-full focus:ring-white/[.15]" />
+                  bg-translucent border-transparent focus:border-transparent w-full focus:ring-white/[.15]" />
               </div>
               <div>
                 <label htmlFor="confPassword">Confirm Password</label>
@@ -51,7 +51,7 @@ export default function Signup() {
                   id="confPassword"
                   name="confPassword"
                   className="block shadow-sm rounded-sm mt-1 
-                  bg-black/[.15] border-transparent focus:border-transparent w-full focus:ring-white/[.15]" />
+                  bg-translucent border-transparent focus:border-transparent w-full focus:ring-white/[.15]" />
               </div>
             </div>
             <div className="text-center mt-8">

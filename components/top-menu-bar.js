@@ -1,15 +1,20 @@
+// APIs
 import Image from 'next/image'
-
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
-import goldCoin from '../public/assets/currency/coin-gold.svg'
-import silverCoin from '../public/assets/currency/coin-silver.svg'
 
+// Components
+import { Transition } from '@headlessui/react'
 import ExpBar from '../components/exp-bar'
 import Friends from '../components/friends'
 import Notification from '../components/notification'
 import BugReport from '../components/bug-report'
+
+// Assets
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faBug }
+  from '@fortawesome/free-solid-svg-icons'
+import goldCoin from '../public/assets/currency/coin-gold.svg'
+import silverCoin from '../public/assets/currency/coin-silver.svg'
 
 export default function TopMenuBar() {
 
@@ -47,15 +52,16 @@ export default function TopMenuBar() {
   iconsR[2].src = volume ? faVolumeXmark : faVolumeHigh
 
   return (
-    <div className="grid grid-cols-2 bg-black/[.15] h-20 p-2">
-      <div className="grid grid-flow-col auto-cols-max gap-3">
-        <div className="flex justify-center items-center">
+    <div className="grid grid-cols-2 bg-translucent h-20 p-2">
+      <div className="grid grid-flow-col auto-cols-max items-center gap-3">
+        <div className="flex justify-center items-center rounded-md outline outline-2 outline-translucent shadow-sm h-14 w-14 mx-1">
           <Image
             priority
-            src="/assets/avatar.png"
-            className="rounded-sm"
-            height={60}
-            width={60}
+            src="/assets/avatar.jpg"
+            height={56}
+            width={56}
+            quality={100}
+            className="rounded-md"
             alt="Avatar"
             draggable="false"
           />
@@ -71,7 +77,7 @@ export default function TopMenuBar() {
               src={goldCoin}
               height={20}
               width={20}
-              alt="Gold"
+              alt="Gold "
               draggable="false"
             />
             124
@@ -82,7 +88,7 @@ export default function TopMenuBar() {
               src={silverCoin}
               height={20}
               width={20}
-              alt="Silver"
+              alt="Silver "
               draggable="false"
             />
             13,200
@@ -91,42 +97,70 @@ export default function TopMenuBar() {
       </div>
       <div className="grid grid-flow-col col-start-3 auto-cols-max">
         {iconsR.map((icon, index) =>
-          <div
+          <button
             key={index}
-            className="flex flex-col justify-center text-teal-500 px-5 hover:text-teal-400"
-            onClick={icon.state}>
+            className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
+            onClick={icon.state}
+            aria-label={icon.name}>
             <FontAwesomeIcon
-              alt={icon.name}
               icon={icon.src}
               style={{ fontSize: 24 }}
               draggable="false"
             />
-          </div>
+          </button>
         )}
       </div>
-      <div className="fixed top-20 right-3 mt-2">
-        {friends ?
-          <div className="grid gap-2 w-96">
-            <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
-              Friends
-            </div>
-            <Friends />
-          </div> : null}
-        {notifications ?
-          <div className="grid gap-2 w-96">
-            <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
-              Notifications
-            </div>
-            <Notification />
-          </div> : null}
-        {bugReport ?
-          <div className="grid gap-2 w-96">
-            <div className="rounded-lg bg-black/[.15] backdrop-blur-3xl w-fit px-4 py-3">
-              Report a Bug
-            </div>
-            <BugReport />
-          </div> : null}
-      </div>
+      <Transition
+        show={friends}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+        className="fixed top-20 right-3 mt-2"
+      >
+        <div className="grid gap-2 w-96">
+          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-3">
+            Friends
+          </div>
+          <Friends />
+        </div>
+      </Transition>
+      <Transition
+        show={notifications}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+        className="fixed top-20 right-3 mt-2"
+      >
+        <div className="grid gap-2 w-96">
+          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-3">
+            Notifications
+          </div>
+          <Notification />
+        </div>
+      </Transition>
+      <Transition
+        show={bugReport}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+        className="fixed top-20 right-3 mt-2"
+      >
+        <div className="grid gap-2 w-96">
+          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-3">
+            Report a Bug
+          </div>
+          <BugReport />
+        </div>
+      </Transition>
     </div>
   )
 }
