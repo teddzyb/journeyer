@@ -129,20 +129,15 @@ export default function Shop() {
                   <div key={item} className="flex flex-col items-center">
                     <button className="flex flex-col hover:scale-105 active:scale-95 transition ease-in-out duration-150" onClick={() => setSelectedCard(item)}>
                       {(item === 2 || item === 5) &&
-                        // TODO: change this to top right banner
                         <div className="z-10 flex self-end text-black cursor-auto w-fit -mb-6 pr-2">
                           <Image
                             src={bookmarkCheck}
                             height={24}
                             width={24}
-                            alt="Owned"
+                            alt=""
+                            title="Owned"
                             draggable="false"
                           />
-                          {/* <FontAwesomeIcon
-                            icon={faCircleCheck}
-                            className="text-emerald-600"
-                            draggable="false"
-                          /> */}
                         </div>
                       }
                       <Card
