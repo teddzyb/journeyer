@@ -97,7 +97,7 @@ export default function Menu() {
             <div className="grid grid-flow-col justify-center gap-12 h-full overflow-y-auto mb-5">
               <div className="flex justify-center items-center text-black pl-32">
                 {Array.from(Array(12).keys()).map(item =>
-                  <Card key={item} size="md" className="-ml-32 hover:bg-amber-100 hover:mr-20 last:hover:mr-0" />
+                  <Card key={item} size="md" hover className="-ml-32 hover:mr-20 last:hover:mr-0" />
                 )}
               </div>
               <div className="flex flex-col justify-center items-center select-none w-fit">

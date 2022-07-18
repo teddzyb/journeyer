@@ -1,21 +1,18 @@
 // APIs
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
 // Components
-import { Tab, Disclosure, Transition } from '@headlessui/react'
+import { Tab } from '@headlessui/react'
 import TopMenuBar from '../components/top-menu-bar'
 import Card from '../components/card'
+import ShopItemPreview from '../components/shop-item-preview'
+import DeckPreview from '../components/deck-preview'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faChevronUp } from '@fortawesome/free-solid-svg-icons'
-import goldCoin from '../public/assets/currency/coin-gold.svg'
-import silverCoin from '../public/assets/currency/coin-silver.svg'
-import cardLayer from '../public/assets/icons/card-layer.svg'
-import bookmarkCheck from '../public/assets/icons/bookmark-check.svg'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -105,145 +102,29 @@ export default function Shop() {
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-y-hidden">
           <div className="bg-translucent text-xl text-center select-none p-3 pt-4">STARTER DECK #{selectedItem}</div>
           {selectedTab === 0 &&
-            <>
-              <Transition
-                show={cardSelected}
-                enter="transition-all duration-500"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                className="flex justify-center h-full"
-              >
-                <div className="flex flex-col items-center gap-10 pt-12">
-                  <Card size="2xl">{selectedCard}</Card>
-                  <button onClick={() => setSelectedCard(null)} className="btn-primary h-11 w-36 pt-1">Back</button>
-                </div>
-              </Transition>
-              <Transition
-                show={!cardSelected}
-                enter="transition-all duration-500"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                className="grid grid-cols-4 grow gap-y-10 h-full p-7 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent"
-              >
-                {Array.from(Array(30).keys()).map(item =>
-                  <div key={item} className="flex flex-col items-center">
-                    <button className="flex flex-col hover:scale-105 active:scale-95 transition ease-in-out duration-150" onClick={() => setSelectedCard(item)}>
-                      {(item === 2 || item === 5) &&
-                        <div className="z-10 flex self-end text-black cursor-auto w-fit -mb-6 pr-2">
-                          <Image
-                            src={bookmarkCheck}
-                            height={24}
-                            width={24}
-                            alt=""
-                            title="Owned"
-                            draggable="false"
-                          />
-                        </div>
-                      }
-                      <Card
-                        key={item}
-                        size="sm"
-                        className="hover:bg-amber-100">
-                        {item}
-                      </Card>
-                    </button>
-                  </div>
-                )}
-              </Transition>
-              <Transition
-                show={!cardSelected}
-                enter="transition-all duration-500"
-                enterFrom="translate-y-full opacity-0"
-                enterTo="translate-y-0 opacity-100"
-                leave="transition-all duration-500"
-                leaveFrom="translate-y-0 opacity-100"
-                leaveTo="translate-y-full opacity-0"
-                className="bg-translucent"
-              >
-                <Disclosure defaultOpen>
-                  {({ open }) => (
-                    <>
-                      <div className="flex justify-between w-full">
-                        <div className="flex flex-col items-start gap-1 text-lg mx-7 my-4 pb-1">
-                          Starter Deck #{selectedItem}
-                          <div className="flex gap-4 text-sm">
-                            <div className="flex gap-1">
-                              <Image
-                                priority
-                                src={silverCoin}
-                                height={20}
-                                width={20}
-                                alt="Silver "
-                                draggable="false"
-                              />
-                              <span className="line-through text-white/70">13,600</span> 12,550
-                            </div>
-                            <div className="flex gap-1">
-                              <Image
-                                priority
-                                src={cardLayer}
-                                height={20}
-                                width={20}
-                                alt="Cards "
-                                className="scale-90"
-                                draggable="false"
-                              />
-                              7/30
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex">
-                          <div className="flex items-center gap-5">
-                            <button className="btn-primary h-11 w-44 pt-1">Buy Deck</button>
-                          </div>
-                          <Disclosure.Button className="flex p-5 px-8" aria-label="Toggle Description">
-                            <FontAwesomeIcon
-                              icon={faChevronUp}
-                              className={
-                                classNames(
-                                  "text-2xl transform duration-300",
-                                  open ? "scale-[-1]" : "scale-[1]",
-                                )}
-                              draggable="false"
-                            />
-                          </Disclosure.Button>
-                        </div>
-                      </div>
-                      <Transition
-                        enter="transition duration-300 ease-out"
-                        enterFrom="transform scale-95 opacity-0"
-                        enterTo="transform scale-100 opacity-100"
-                        leave="transition duration-200 ease-out"
-                        leaveFrom="transform scale-100 opacity-100"
-                        leaveTo="transform scale-95 opacity-0"
-                      >
-                        <Disclosure.Panel
-                          className="max-h-28 pr-7 mx-7 mb-5 -mt-1 scrollbar-thin
-                        scrollbar-thumb-translucent scrollbar-track-transparent">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-                          euismod aliquet nisi nisl euismod.
-                        </Disclosure.Panel>
-                      </Transition>
-                    </>
-                  )}
-                </Disclosure>
-              </Transition>
-            </>
+            <ShopItemPreview
+              show={!cardSelected}
+              title={selectedItem}
+              silver={{ oldPrice: "13,000", price: "12,500" }}
+              gold={{ price: "118" }}
+              cards={{ owned: 7, total: 30 }}
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+              euismod aliquet nisi nisl euismod."
+              button={"Buy Deck"}
+            >
+              <DeckPreview cardSelected={cardSelected} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
+            </ShopItemPreview>
           }
           {selectedTab === 1 &&
-            <>
-              <div className="grid grid-cols-4 grow px-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-                {/* TODO: sleeves selection */}
-              </div>
-            </>
+            <ShopItemPreview>
+
+            </ShopItemPreview>
           }
           {selectedTab === 2 &&
-            <>
-              <div className="grid grid-cols-4 grow px-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-                {/* TODO: coins selection */}
-              </div>
-            </>
+            <ShopItemPreview>
+
+            </ShopItemPreview>
           }
         </div>
       </main >

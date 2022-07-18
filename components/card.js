@@ -16,6 +16,7 @@ export default function Card(props) {
           props.size === "lg" && "w-[12rem] h-[18rem]",
           props.size === "xl" && "w-[14rem] h-[21rem]",
           props.size === "2xl" && "w-[16rem] h-[24rem]",
+          props.hover && "hover:bg-amber-100",
         )
       }>
       <div className="flex justify-center items-center text-center card-background 
