@@ -1,5 +1,6 @@
 // APIs
 import Image from 'next/image'
+import { useState, useRef, useEffect } from 'react'
 
 // Components
 import { Transition } from '@headlessui/react'
@@ -9,18 +10,31 @@ import Card from './card'
 import bookmarkCheck from '../public/assets/icons/bookmark-check.svg'
 
 export default function DeckPreview(props) {
+
+  const cardRef = useRef(null)
+
+  useEffect(() => {
+    cardRef.current = props.selectedCard
+  }, [props.selectedCard])
+
+  const [animating, setAnimating] = useState(false)
+
   return (
     <>
       <Transition
         show={props.cardSelected}
+        beforeEnter={() => setAnimating(true)}
+        afterEnter={() => setAnimating(false)}
         enter="transition-all duration-500"
         enterFrom="opacity-0"
         enterTo="opacity-100"
-        className="flex justify-center h-full"
+        className="flex justify-center h-full pt-10 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent"
       >
-        <div className="flex flex-col items-center gap-10 pt-12">
-          <Card size="2xl">{props.selectedCard}</Card>
-          <button onClick={() => props.setSelectedCard(null)} className="btn-primary h-11 w-36 pt-1">Back</button>
+        <div className={animating && "absolute"}>
+          <div className="flex items-center flex-col gap-20">
+            <Card size="2xl">{cardRef.current}</Card>
+            <button onClick={() => props.setSelectedCard(null)} className="btn-primary h-11 w-36 pt-1">Back</button>
+          </div>
         </div>
       </Transition>
       <Transition
