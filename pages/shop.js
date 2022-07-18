@@ -11,11 +11,11 @@ import Card from '../components/card'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faChevronUp, faCircleCheck }
-  from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
 import cardLayer from '../public/assets/icons/card-layer.svg'
+import bookmarkCheck from '../public/assets/icons/bookmark-check.svg'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -128,21 +128,29 @@ export default function Shop() {
                 {Array.from(Array(30).keys()).map(item =>
                   <div key={item} className="flex flex-col items-center">
                     <button className="flex flex-col hover:scale-105 active:scale-95 transition ease-in-out duration-150" onClick={() => setSelectedCard(item)}>
+                      {(item === 2 || item === 5) &&
+                        // TODO: change this to top right banner
+                        <div className="z-10 flex self-end text-black cursor-auto w-fit -mb-6 pr-2">
+                          <Image
+                            src={bookmarkCheck}
+                            height={24}
+                            width={24}
+                            alt="Owned"
+                            draggable="false"
+                          />
+                          {/* <FontAwesomeIcon
+                            icon={faCircleCheck}
+                            className="text-emerald-600"
+                            draggable="false"
+                          /> */}
+                        </div>
+                      }
                       <Card
                         key={item}
                         size="sm"
                         className="hover:bg-amber-100">
                         {item}
                       </Card>
-                      {true &&
-                        <div className="flex self-end text-black cursor-auto w-fit -mt-6 pb-2 pr-2">
-                          <FontAwesomeIcon
-                            icon={faCircleCheck}
-                            className="text-emerald-600"
-                            draggable="false"
-                          />
-                        </div>
-                      }
                     </button>
                   </div>
                 )}
