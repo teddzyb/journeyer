@@ -15,8 +15,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-export default function DeckPreview(props) {
-
+export default function ShopItemPreview(props) {
   return (
     <>
       {props.children}
