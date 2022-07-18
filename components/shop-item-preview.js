@@ -1,6 +1,5 @@
 // APIs
 import Image from 'next/image'
-import { useState } from 'react'
 
 // Components
 import { Disclosure, Transition } from '@headlessui/react'
