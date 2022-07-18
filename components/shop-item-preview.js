@@ -59,7 +59,7 @@ export default function ShopItemPreview(props) {
                           src={goldCoin}
                           height={20}
                           width={20}
-                          alt="Cards "
+                          alt="Gold "
                           className="scale-90"
                           draggable="false"
                         />

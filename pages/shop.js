@@ -23,7 +23,7 @@ export default function Shop() {
   const [selectedTab, setSelectedTab] = useState(0)
   const [selectedItem, setSelectedItem] = useState(0)
   const [selectedCard, setSelectedCard] = useState(null)
-  let cardSelected = (selectedCard != null ? true : false)
+  const cardSelected = (selectedCard != null ? true : false)
 
   let tabs = [
     { name: "Decks", disabled: false },
@@ -127,7 +127,7 @@ export default function Shop() {
             </ShopItemPreview>
           }
         </div>
-      </main >
-    </div >
+      </main>
+    </div>
   )
 }
