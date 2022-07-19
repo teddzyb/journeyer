@@ -32,11 +32,36 @@ export default function DeckPreview(props) {
         enter="transition-all duration-500"
         enterFrom="opacity-0"
         enterTo="opacity-100"
-        className="flex justify-center h-full pt-10 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent"
+        className="flex justify-center h-full scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent"
       >
         <div className={animating && "absolute"}>
-          <div className="flex items-center flex-col gap-20">
-            <Card size="2xl">{cardRef.current}</Card>
+          <div className="flex items-center flex-col mt-14 gap-20">
+            <div className="grid grid-cols-2 h-fit w-[44rem]">
+              <Card size="2xl">{cardRef.current}</Card>
+              <div className="h-[24rem] scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+                test<br />
+              </div>
+            </div>
             <button onClick={() => props.setSelectedCard(null)} className="btn-primary h-11 w-36 pt-1">Back</button>
           </div>
         </div>
