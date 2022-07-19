@@ -9,6 +9,10 @@ import Card from './card'
 // Assets
 import bookmarkCheck from '../public/assets/icons/bookmark-check.svg'
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ")
+}
+
 export default function DeckPreview(props) {
 
   const cardRef = useRef(null)
@@ -42,7 +46,10 @@ export default function DeckPreview(props) {
         enter="transition-all duration-500"
         enterFrom="opacity-0"
         enterTo="opacity-100"
-        className="grid grid-cols-4 grow gap-y-10 h-full p-7 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent"
+        className={classNames(
+          "grid grid-cols-4 grow gap-y-10 p-7 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent",
+          animating ? "hidden" : "h-0"
+        )}
       >
         {Array.from(Array(30).keys()).map(item =>
           <div key={item} className="flex flex-col items-center">
