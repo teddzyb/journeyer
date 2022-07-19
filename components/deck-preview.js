@@ -55,15 +55,23 @@ export default function DeckPreview(props) {
                   consectetur nisi, euismod aliquet nisi nisl euismod.
                 </div>
                 <div className="text-md font-bold text-teal-50 select-none border-b-2 border-translucent mb-3">SKILLS</div>
-                <div className="text-teal-50">
-                  Skill 1...
+                <div className="flex flex-col gap-4 mb-8">
+                  <div className="grid grid-flow-col auto-cols-auto gap-3 text-justify text-teal-50 leading-5 text-sm">
+                    <div className="w-11 h-11 bg-neutral-300 rounded-sm" />
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                  </div>
+                  <div className="grid grid-flow-col auto-cols-auto gap-3 text-justify text-teal-50 leading-5 text-sm">
+                    <div className="w-11 h-11 bg-neutral-300 rounded-sm" />
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                  </div>
                 </div>
-                <div className="text-teal-50">
-                  Skill 2...
-                </div>
-                <div className="flex gap-4 select-none border-t-2 border-translucent pt-2 mt-6">
-                  <div className="flex items-center">
-                    <div className="flex justify-center items-center pb-[2px] mr-[6px]">
+                <div className="flex gap-4 select-none border-t-2 border-translucent pt-2">
+                  <div className="flex items-center gap-2">
+                    <div className="flex justify-center items-center pb-[2px]">
                       <Image
                         priority
                         src={goldCoin}
@@ -75,21 +83,21 @@ export default function DeckPreview(props) {
                     </div>
                     Coin Deck
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center gap-2">
                     <FontAwesomeIcon
                       icon={faDiamond}
                       className={classNames(
-                        "pb-[2px] mr-[6px]",
+                        "pb-[2px]",
                         rarity.common.color
                       )}
                       draggable="false"
                     />
                     {rarity.common.name}
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center gap-2">
                     <FontAwesomeIcon
                       icon={faCheck}
-                      className="text-emerald-500 text-lg pb-[3px] mr-[6px]"
+                      className="text-emerald-500 text-lg pb-[3px]"
                       draggable="false"
                     />
                     Owned
