@@ -36,30 +36,22 @@ export default function DeckPreview(props) {
       >
         <div className={animating && "absolute"}>
           <div className="flex items-center flex-col mt-14 gap-20">
-            <div className="grid grid-cols-2 h-fit w-[44rem]">
-              <Card size="2xl">{cardRef.current}</Card>
-              <div className="h-[24rem] scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
-                test<br />
+            <div className="grid grid-cols-5 gap-24 h-fit w-[44rem]">
+              <Card size="2xl" className="col-span-2">{cardRef.current}</Card>
+              <div className="col-span-3 h-[24rem] scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+                <div className="text-md font-bold text-teal-50 border-b-2 border-translucent mb-3">LORE</div>
+                <div className="text-justify text-teal-50 leading-5 mb-6">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec euismod, nisl eget consectetur sagittis, nisl nunc
+                  consectetur nisi, euismod aliquet nisi nisl euismod.
+                </div>
+                <div className="text-md font-bold text-teal-50 border-b-2 border-translucent mb-3">SKILLS</div>
+                <div className="text-teal-50">
+                  Skill 1...
+                </div>
+                <div className="text-teal-50">
+                  Skill 2...
+                </div>
               </div>
             </div>
             <button onClick={() => props.setSelectedCard(null)} className="btn-primary h-11 w-36 pt-1">Back</button>
