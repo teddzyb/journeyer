@@ -11,6 +11,10 @@ import Card from '../components/card'
 import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ")
+}
+
 export default function Menu() {
 
   let menuItems = [
@@ -44,8 +48,11 @@ export default function Menu() {
             {menuItems.map((item, index) =>
               <Link key={index} href={item.href}>
                 <a
-                  className="text-2xl drop-shadow-lg select-none w-fit 
-                hover:text-teal-200 hover:scale-105 transition ease-in-out duration-150">
+                  className={classNames(
+                    "drop-shadow-lg select-none w-fit",
+                    "hover:text-teal-200 hover:scale-105 transition ease-in-out duration-150",
+                    index === 0 ? "text-[1.70rem]" : "text-2xl",
+                  )}>
                   {item.name.toUpperCase()}
                 </a>
               </Link>
