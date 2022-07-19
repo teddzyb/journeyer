@@ -60,7 +60,6 @@ export default function ShopItemPreview(props) {
                           height={20}
                           width={20}
                           alt="Gold "
-                          className="scale-90"
                           draggable="false"
                         />
                         {props.gold.oldPrice &&
