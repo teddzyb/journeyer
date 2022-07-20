@@ -48,7 +48,7 @@ export default function Shop() {
               <a className="flex flex-col justify-center items-center w-fit">
                 <FontAwesomeIcon
                   icon={faArrowLeft}
-                  className="absolute text-white text-2xl ml-9 px-6"
+                  className="absolute text-white text-2xl ml-9 px-6 hover:text-teal-200"
                   draggable="false"
                 />
               </a>
@@ -111,7 +111,7 @@ export default function Shop() {
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
               euismod aliquet nisi nisl euismod."
-              button={"Buy Deck"}
+              button="Buy Deck"
             >
               <DeckPreview cardSelected={cardSelected} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
             </ShopItemPreview>
