@@ -37,36 +37,34 @@ export default function Login() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="h-screen flex flex-col justify-center">
-        <div className="flex justify-center">
-          <form onSubmit={handleSubmit} className="flex flex-col rounded-2xl shadow-lg bg-translucent w-96 py-12 px-10">
-            <div className="flex flex-col justify-center mb-10">
-              <p className="text-4xl font-bold text-center drop-shadow-md select-none">JOURNEYER<br />
-                <span className="text-xl">OF THE REALMS</span>
+        <div className="flex flex-col items-center">
+          <form onSubmit={handleSubmit} className="grid auto-rows-auto grid-cols-1 gap-10 max-w-xs w-full">
+            <div className="flex flex-col justify-center">
+              <p className="text-5xl font-bold text-center drop-shadow-md select-none">JOURNEYER<br />
+                <span className="text-2xl">OF THE REALMS</span>
               </p>
             </div>
-            {user ? <span className="text-center mb-3">You are logged in as {user}</span> : <span className="text-center mb-3">Please log in</span>}
-            <div className="grid grid-rows-2 grid-cols-1">
-              <div>
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="block shadow-sm rounded-sm mt-1 
-                  bg-translucent border-transparent focus:border-transparent w-full focus:ring-white/[.15] invalid:border-orange-700" />
-              </div>
-              <div>
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  className="block shadow-sm rounded-sm mt-1 
-                  bg-translucent border-transparent focus:border-transparent w-full focus:ring-white/[.15]" />
-                <button className="text-sm underline text-teal-300 mt-3">Forgot Password?</button>
-              </div>
+            <div>
+              <label htmlFor="email" className="">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="block shadow-sm rounded-sm 
+                  bg-translucent/10 border-translucent focus:bg-translucent focus:border-transparent w-full focus:ring-white/[.15] invalid:border-orange-700" />
             </div>
-            <div className="text-center mt-8">
+            <div>
+              <label htmlFor="password" className="">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="block shadow-sm rounded-sm 
+                  bg-translucent/10 border-translucent focus:bg-translucent focus:border-transparent w-full focus:ring-white/[.15]" />
+              <button className="text-sm underline text-teal-300 mt-4">Forgot Password?</button>
+            </div>
+            <div className="flex flex-col text-center gap-3">
+              {/* {user ? <span>You are logged in as {user}</span> : <span>Please log in</span>} */}
               <button type="submit" className="btn-primary py-3 w-full">Sign In</button>
             </div>
           </form>
