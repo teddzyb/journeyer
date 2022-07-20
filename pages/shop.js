@@ -125,7 +125,7 @@ export default function Shop() {
                     onClick={() => {
                       setSelectedItem(item)
                     }}
-                    className="flex flex-col items-center py-6 pt-7 border border-translucent hover:bg-translucent/5">
+                    className="flex flex-col items-center border border-translucent py-6 hover:bg-translucent/5">
                     <div className="flex flex-col justify-center items-center gap-3">
                       <div className={classNames(
                         "flex justify-center items-center bg-translucent rounded-md w-40 h-40",
@@ -166,7 +166,6 @@ export default function Shop() {
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-y-hidden">
 
           {/* Deck preview */}
-
           {selectedTab === 0 &&
             <>
               <div className="bg-translucent text-xl text-center select-none p-3 pt-4">DECK #{selectedItem}</div>
@@ -177,8 +176,8 @@ export default function Shop() {
                 gold={{ price: "118" }}
                 cards={{ owned: 7, total: 30 }}
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-              euismod aliquet nisi nisl euismod."
+                Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+                euismod aliquet nisi nisl euismod."
                 button="Buy Deck"
               >
                 <DeckPreview cardSelected={cardSelected} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
@@ -196,8 +195,8 @@ export default function Shop() {
                 silver={{ price: "5,000" }}
                 gold={{ price: "20" }}
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-              euismod aliquet nisi nisl euismod."
+                Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+                euismod aliquet nisi nisl euismod."
                 button="Buy Sleeve"
               >
 
