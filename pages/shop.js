@@ -27,8 +27,8 @@ export default function Shop() {
 
   let tabs = [
     { name: "Decks", disabled: false },
-    { name: "Sleeves", disabled: true },
-    { name: "Coins", disabled: true },
+    { name: "Sleeves", disabled: false },
+    { name: "Coins", disabled: false },
   ]
 
   return (
@@ -55,7 +55,10 @@ export default function Shop() {
             </Link>
             <div className="grow pb-3 pt-4">SHOP</div>
           </div>
-          <Tab.Group onChange={index => { setSelectedTab(index) }}>
+          <Tab.Group onChange={index => {
+            setSelectedTab(index)
+            setSelectedItem(0)
+          }}>
             <Tab.List as="div" className="flex justify-center items-center bg-translucent/10 border-t border-b border-translucent p-2">
               {tabs.map((item, index) =>
                 <Tab
@@ -81,7 +84,7 @@ export default function Shop() {
                       setSelectedItem(item)
                       setSelectedCard(null)
                     }}
-                    className="flex flex-col items-center border border-translucent py-6 hover:bg-translucent/10">
+                    className="flex flex-col items-center border border-translucent py-6 hover:bg-translucent/5">
                     <Card key={item} size="md" className={item === selectedItem && "ring-4 ring-teal-500"} />
                     <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
                     border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
@@ -91,16 +94,35 @@ export default function Shop() {
                 )}
               </Tab.Panel>
               <Tab.Panel>
-                Content 2
+                Sleeves
               </Tab.Panel>
               <Tab.Panel>
-                Content 3
+                <div className="grid grid-cols-2">
+                  {Array.from(Array(8).keys()).map(item =>
+                    <button
+                      key={item}
+                      onClick={() => {
+                        setSelectedItem(item)
+                      }}
+                      className="flex flex-col items-center py-6 pt-7 border border-translucent hover:bg-translucent/5">
+                      <div className="flex flex-col justify-center items-center gap-3">
+                        <div className={classNames(
+                          "flex justify-center items-center bg-translucent rounded-md w-40 h-40",
+                          item === selectedItem && "ring-2 ring-teal-500"
+                        )}>
+                          {/* image */}
+                        </div>
+                        <div className="text-center select-none mx-4">COIN DESIGN #{item}</div>
+                      </div>
+                    </button>
+                  )}
+                </div>
               </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
         </div>
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-y-hidden">
-          <div className="bg-translucent text-xl text-center select-none p-3 pt-4">STARTER DECK #{selectedItem}</div>
+          <div className="bg-translucent text-xl text-center select-none p-3 pt-4">SHOP ITEM #{selectedItem}</div>
           {selectedTab === 0 &&
             <ShopItemPreview
               show={!cardSelected}
@@ -127,7 +149,7 @@ export default function Shop() {
             </ShopItemPreview>
           }
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   )
 }
