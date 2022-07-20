@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useUserContext } from '/context/user'
 
 export default function Login() {
@@ -45,23 +46,28 @@ export default function Login() {
               </p>
             </div>
             <div>
-              <label htmlFor="email" className="">Email</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                className="block shadow-sm rounded-sm 
-                  bg-translucent/10 border-translucent focus:bg-translucent focus:border-transparent w-full focus:ring-white/[.15] invalid:border-orange-700" />
+                className="block shadow-sm rounded-sm bg-translucent/10 border-translucent 
+                focus:bg-translucent focus:border-transparent w-full focus:ring-white/[.15] invalid:border-orange-700"
+              />
             </div>
             <div>
-              <label htmlFor="password" className="">Password</label>
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 id="password"
                 name="password"
-                className="block shadow-sm rounded-sm 
-                  bg-translucent/10 border-translucent focus:bg-translucent focus:border-transparent w-full focus:ring-white/[.15]" />
-              <button className="text-sm underline text-teal-300 mt-4">Forgot Password?</button>
+                required
+                className="block shadow-sm rounded-sm bg-translucent/10 border-translucent 
+                focus:bg-translucent focus:border-transparent w-full focus:ring-white/[.15] mb-4"
+              />
+              <Link href="">
+                <a className="text-sm underline text-teal-300">Forgot Password?</a>
+              </Link>
             </div>
             <div className="flex flex-col text-center gap-3">
               {/* {user ? <span>You are logged in as {user}</span> : <span>Please log in</span>} */}
