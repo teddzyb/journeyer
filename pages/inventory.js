@@ -61,7 +61,7 @@ export default function Shop() {
                     <div className="flex justify-center items-center bg-translucent rounded-md w-32 h-32">
                       {/* image */}
                     </div>
-                    <div className="text-center text-sm select-none mx-4">STARTER DECK #{item}</div>
+                    <div className="text-center text-sm select-none mx-4">ITEM #{item}</div>
                   </button>
                 </div>
               )}
