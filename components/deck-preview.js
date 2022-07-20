@@ -26,12 +26,6 @@ export default function DeckPreview(props) {
 
   const [animating, setAnimating] = useState(false)
 
-  const rarity = {
-    common: { name: "Common", color: "text-cyan-500" },
-    uncommon: { name: "Uncommon", color: "text-green-500" },
-    rare: { name: "Rare", color: "text-purple-500" },
-  }
-
   return (
     <>
       <Transition
@@ -48,13 +42,13 @@ export default function DeckPreview(props) {
             <div className="grid grid-cols-5 gap-20 h-fit w-[45rem]">
               <Card size="2xl" className="col-span-2">{cardRef.current}</Card>
               <div className="col-span-3 h-[24rem] pr-6 -mr-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-                <div className="text-md font-bold text-teal-50 select-none border-b-2 border-translucent mb-3">LORE</div>
+                <div className="text-md font-bold text-teal-300 select-none border-b-2 border-teal-500 mb-3">INFO</div>
                 <div className="text-justify text-teal-50 leading-5 mb-6">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Donec euismod, nisl eget consectetur sagittis, nisl nunc
                   consectetur nisi, euismod aliquet nisi nisl euismod.
                 </div>
-                <div className="text-md font-bold text-teal-50 select-none border-b-2 border-translucent mb-3">SKILLS</div>
+                <div className="text-md font-bold text-teal-300 select-none border-b-2 border-teal-500 mb-3">SKILLS</div>
                 <div className="flex flex-col gap-4 mb-8">
                   <div className="grid grid-flow-col auto-cols-auto gap-3 text-justify text-teal-50 leading-5 text-sm">
                     <div className="w-11 h-11 bg-neutral-300 rounded-sm" />
@@ -69,7 +63,7 @@ export default function DeckPreview(props) {
                     </div>
                   </div>
                 </div>
-                <div className="flex gap-4 select-none border-t-2 border-translucent pt-2">
+                <div className="flex gap-4 select-none border-t-2 border-teal-500 pt-2">
                   <div className="flex items-center gap-2">
                     <div className="flex justify-center items-center pb-[2px]">
                       <Image
@@ -82,17 +76,6 @@ export default function DeckPreview(props) {
                       />
                     </div>
                     Coin Deck
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FontAwesomeIcon
-                      icon={faDiamond}
-                      className={classNames(
-                        "pb-[2px]",
-                        rarity.common.color
-                      )}
-                      draggable="false"
-                    />
-                    {rarity.common.name}
                   </div>
                   <div className="flex items-center gap-2">
                     <FontAwesomeIcon
