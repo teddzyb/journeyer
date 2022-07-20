@@ -1,6 +1,7 @@
 // APIs
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 // Components
@@ -13,6 +14,8 @@ import DeckPreview from '../components/deck-preview'
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import goldCoin from '../public/assets/currency/coin-gold.svg'
+import silverCoin from '../public/assets/currency/coin-silver.svg'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -75,6 +78,8 @@ export default function Shop() {
                 </Tab>
               )}
             </Tab.List>
+
+            {/* Decks tab */}
             <Tab.Panels as="div" className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
               <Tab.Panel as="div" className="grid grid-cols-2">
                 {Array.from(Array(8).keys()).map(item =>
@@ -93,60 +98,121 @@ export default function Shop() {
                   </button>
                 )}
               </Tab.Panel>
-              <Tab.Panel>
-                Sleeves
+
+              {/* Sleeves tab */}
+              <Tab.Panel as="div" className="grid grid-cols-2">
+                {Array.from(Array(8).keys()).map(item =>
+                  <button
+                    key={item}
+                    onClick={() => {
+                      setSelectedItem(item)
+                    }}
+                    className="flex flex-col items-center border border-translucent py-6 hover:bg-translucent/5">
+                    <Card key={item} size="md" className={item === selectedItem && "ring-4 ring-teal-500"} />
+                    <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
+                    border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
+                      SLEEVE #{item}
+                    </div>
+                  </button>
+                )}
               </Tab.Panel>
-              <Tab.Panel>
-                <div className="grid grid-cols-2">
-                  {Array.from(Array(8).keys()).map(item =>
-                    <button
-                      key={item}
-                      onClick={() => {
-                        setSelectedItem(item)
-                      }}
-                      className="flex flex-col items-center py-6 pt-7 border border-translucent hover:bg-translucent/5">
-                      <div className="flex flex-col justify-center items-center gap-3">
-                        <div className={classNames(
-                          "flex justify-center items-center bg-translucent rounded-md w-40 h-40",
-                          item === selectedItem && "ring-2 ring-teal-500"
-                        )}>
-                          {/* image */}
+
+              {/* Coins tab */}
+              <Tab.Panel as="div" className="grid grid-cols-2">
+                {Array.from(Array(8).keys()).map(item =>
+                  <button
+                    key={item}
+                    onClick={() => {
+                      setSelectedItem(item)
+                    }}
+                    className="flex flex-col items-center py-6 pt-7 border border-translucent hover:bg-translucent/5">
+                    <div className="flex flex-col justify-center items-center gap-3">
+                      <div className={classNames(
+                        "flex justify-center items-center bg-translucent rounded-md w-40 h-40",
+                        item === selectedItem && "ring-2 ring-teal-500"
+                      )}>
+                        <div className="select-none">
+                          <div className="flex drop-shadow-md rounded-full w-[64px] -translate-x-3">
+                            <Image
+                              priority
+                              src={goldCoin}
+                              height={64}
+                              width={64}
+                              alt="Gold"
+                              draggable="false"
+                            />
+                          </div>
+                          <div className="flex drop-shadow-md rounded-full w-[64px] -mt-6 translate-x-3">
+                            <Image
+                              priority
+                              src={silverCoin}
+                              height={64}
+                              width={64}
+                              alt="Silver"
+                              draggable="false"
+                            />
+                          </div>
                         </div>
-                        <div className="text-center select-none mx-4">COIN DESIGN #{item}</div>
                       </div>
-                    </button>
-                  )}
-                </div>
+                      <div className="text-center select-none mx-4">COIN DESIGN #{item}</div>
+                    </div>
+                  </button>
+                )}
               </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
         </div>
+
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-y-hidden">
-          <div className="bg-translucent text-xl text-center select-none p-3 pt-4">SHOP ITEM #{selectedItem}</div>
+
+          {/* Deck preview */}
+
           {selectedTab === 0 &&
-            <ShopItemPreview
-              show={!cardSelected}
-              title={selectedItem}
-              silver={{ oldPrice: "13,000", price: "12,500" }}
-              gold={{ price: "118" }}
-              cards={{ owned: 7, total: 30 }}
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <>
+              <div className="bg-translucent text-xl text-center select-none p-3 pt-4">DECK #{selectedItem}</div>
+              <ShopItemPreview
+                show={!cardSelected}
+                title={"Deck #" + selectedItem}
+                silver={{ oldPrice: "13,000", price: "12,500" }}
+                gold={{ price: "118" }}
+                cards={{ owned: 7, total: 30 }}
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
               euismod aliquet nisi nisl euismod."
-              button="Buy Deck"
-            >
-              <DeckPreview cardSelected={cardSelected} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
-            </ShopItemPreview>
+                button="Buy Deck"
+              >
+                <DeckPreview cardSelected={cardSelected} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
+              </ShopItemPreview>
+            </>
           }
+
+          {/* Sleeve preview */}
           {selectedTab === 1 &&
-            <ShopItemPreview>
+            <>
+              <div className="bg-translucent text-xl text-center select-none p-3 pt-4">SLEEVE #{selectedItem}</div>
+              <ShopItemPreview
+                show={!cardSelected}
+                title={"Sleeve #" + selectedItem}
+                silver={{ price: "5,000" }}
+                gold={{ price: "20" }}
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+              euismod aliquet nisi nisl euismod."
+                button="Buy Sleeve"
+              >
 
-            </ShopItemPreview>
+              </ShopItemPreview>
+            </>
           }
-          {selectedTab === 2 &&
-            <ShopItemPreview>
 
-            </ShopItemPreview>
+          {/* Coin preview */}
+          {selectedTab === 2 &&
+            <>
+              <div className="bg-translucent text-xl text-center select-none p-3 pt-4">COIN #{selectedItem}</div>
+              <ShopItemPreview>
+
+              </ShopItemPreview>
+            </>
           }
         </div>
       </main >

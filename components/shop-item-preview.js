@@ -34,7 +34,7 @@ export default function ShopItemPreview(props) {
             <>
               <div className="flex justify-between w-full">
                 <div className="flex flex-col items-start gap-1 text-lg mx-7 my-4 pb-1">
-                  Starter Deck #{props.title}
+                  {props.title}
                   <div className="flex gap-4 text-sm">
                     {props.silver &&
                       <div className="flex gap-1">
