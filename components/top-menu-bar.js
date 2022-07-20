@@ -52,7 +52,7 @@ export default function TopMenuBar() {
   iconsR[2].src = volume ? faVolumeXmark : faVolumeHigh
 
   return (
-    <div className="grid grid-cols-2 bg-translucent h-20 p-2">
+    <div className="grid grid-cols-2 bg-translucent shadow-sm h-20 p-2">
       <div className="grid grid-flow-col auto-cols-max items-center gap-3">
         <div className="flex justify-center items-center rounded-md outline outline-2 outline-translucent shadow-sm h-14 w-14 mx-1">
           <Image
