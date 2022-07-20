@@ -49,21 +49,21 @@ export default function Shop() {
             <div className="grow pb-3 pt-4">INVENTORY</div>
           </div>
           <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-            <div className="grid grid-cols-2">
-              {Array.from(Array(8).keys()).map(item =>
-                <button
-                  key={item}
-                  onClick={() => {
-                    setSelectedItem(item)
-                    setSelectedCard(null)
-                  }}
-                  className="flex flex-col items-center border border-translucent py-6 hover:bg-translucent/10">
-                  <Card key={item} size="md" className={item === selectedItem && "ring-4 ring-teal-500"} />
-                  <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
-                    border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
-                    STARTER DECK #{item}
-                  </div>
-                </button>
+            <div className="grid grid-cols-3 px-4 py-2">
+              {Array.from(Array(12).keys()).map(item =>
+                <div key={item} className="flex flex-col items-center py-6">
+                  <button
+                    onClick={() => {
+                      setSelectedItem(item)
+                      setSelectedCard(null)
+                    }}
+                    className="flex flex-col justify-center items-center gap-3 hover:scale-105 transition ease-in-out duration-150">
+                    <div className="flex justify-center items-center bg-translucent rounded-md w-32 h-32">
+                      {/* image */}
+                    </div>
+                    <div className="text-center text-sm select-none mx-4">STARTER DECK #{item}</div>
+                  </button>
+                </div>
               )}
             </div>
           </div>
