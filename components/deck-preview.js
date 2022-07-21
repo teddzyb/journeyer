@@ -38,11 +38,11 @@ export default function DeckPreview(props) {
         className="flex justify-center h-full scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent"
       >
         <div className={animating && "absolute"}>
-          <div className="flex items-center flex-col mt-12 gap-20">
+          <div className="flex items-center flex-col mt-12 gap-16">
             <div className="grid grid-cols-5 gap-20 h-fit w-[45rem]">
               <Card size="2xl" className="col-span-2">{cardRef.current}</Card>
               <div className="col-span-3 h-[24rem] pr-6 -mr-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-                <div className="text-md font-bold text-teal-300 select-none border-b-2 border-teal-500 mb-3">INFO</div>
+                <div className="text-md font-bold text-teal-300 select-none border-b-2 border-teal-500 mb-3">DESCRIPTION</div>
                 <div className="text-justify text-teal-50 leading-5 mb-6">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Donec euismod, nisl eget consectetur sagittis, nisl nunc

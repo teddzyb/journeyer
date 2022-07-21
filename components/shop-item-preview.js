@@ -6,7 +6,7 @@ import { Disclosure, Transition } from '@headlessui/react'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp, faCheck } from '@fortawesome/free-solid-svg-icons'
 import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
 import cardLayer from '../public/assets/icons/card-layer.svg'
@@ -80,6 +80,16 @@ export default function ShopItemPreview(props) {
                           draggable="false"
                         />
                         {props.cards.owned}/{props.cards.total}
+                      </div>
+                    }
+                    {props.owned &&
+                      <div className="flex gap-1">
+                        <FontAwesomeIcon
+                          icon={faCheck}
+                          className="text-emerald-500 text-lg pb-[3px]"
+                          draggable="false"
+                        />
+                        Owned
                       </div>
                     }
                   </div>
