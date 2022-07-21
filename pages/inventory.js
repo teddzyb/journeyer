@@ -23,7 +23,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-export default function Shop() {
+export default function Inventory() {
 
   const tabPanels = useRef(null)
 
@@ -60,7 +60,7 @@ export default function Shop() {
                 />
               </a>
             </Link>
-            <div className="grow pb-3 pt-4">SHOP</div>
+            <div className="grow pb-3 pt-4">INVENTORY</div>
           </div>
           <Tab.Group onChange={index => {
             setSelectedTab(index)
@@ -88,7 +88,7 @@ export default function Shop() {
             {/* Decks tab */}
             <Tab.Panels as="div" ref={tabPanels} className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
               <Tab.Panel as="div" className="grid grid-cols-2">
-                {Array.from(Array(8).keys()).map(item =>
+                {Array.from(Array(6).keys()).map(item =>
                   <button
                     key={item}
                     onClick={() => {
@@ -107,7 +107,7 @@ export default function Shop() {
 
               {/* Sleeves tab */}
               <Tab.Panel as="div" className="grid grid-cols-2">
-                {Array.from(Array(8).keys()).map(item =>
+                {Array.from(Array(6).keys()).map(item =>
                   <button
                     key={item}
                     onClick={() => {
@@ -127,7 +127,7 @@ export default function Shop() {
 
               {/* Coins tab */}
               <Tab.Panel as="div" className="grid grid-cols-2">
-                {Array.from(Array(8).keys()).map(item =>
+                {Array.from(Array(6).keys()).map(item =>
                   <button
                     key={item}
                     onClick={() => {
@@ -180,13 +180,12 @@ export default function Shop() {
               <ShopItemPreview
                 show={!cardSelected}
                 title={"Deck #" + selectedItem}
-                silver={{ oldPrice: "13,000", price: "12,500" }}
-                gold={{ price: "118" }}
-                cards={{ owned: 7, total: 30 }}
+                cards={{ owned: 30, total: 30 }}
+                owned
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
                 euismod aliquet nisi nisl euismod."
-                button="Buy Deck"
+                button="Select Deck"
               >
                 <DeckPreview cardSelected={cardSelected} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
               </ShopItemPreview>
@@ -200,12 +199,11 @@ export default function Shop() {
               <ShopItemPreview
                 show
                 title={"Sleeve #" + selectedItem}
-                silver={{ price: "5,000" }}
-                gold={{ price: "20" }}
+                owned
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
                 euismod aliquet nisi nisl euismod."
-                button="Buy Sleeve"
+                button="Select Sleeve"
               >
                 <SleevePreview selectedItem={selectedItem} />
               </ShopItemPreview>
@@ -219,12 +217,11 @@ export default function Shop() {
               <ShopItemPreview
                 show
                 title={"Coin Design #" + selectedItem}
-                silver={{ price: "3,500" }}
-                gold={{ price: "15" }}
+                owned
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
                 euismod aliquet nisi nisl euismod."
-                button="Buy Coin"
+                button="Select Coin"
               >
                 <CoinPreview selectedItem={selectedItem} />
               </ShopItemPreview>

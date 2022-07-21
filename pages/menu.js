@@ -11,6 +11,10 @@ import Card from '../components/card'
 import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ")
+}
+
 export default function Menu() {
 
   let menuItems = [
@@ -23,9 +27,9 @@ export default function Menu() {
   ]
 
   let customizations = [
-    { name: "Deck", href: null },
-    { name: "Sleeve", href: null },
-    { name: "Coins", href: null },
+    { name: "Deck" },
+    { name: "Sleeve" },
+    { name: "Coins" },
   ]
 
   return (
@@ -44,8 +48,11 @@ export default function Menu() {
             {menuItems.map((item, index) =>
               <Link key={index} href={item.href}>
                 <a
-                  className="text-2xl drop-shadow-lg select-none w-fit 
-                hover:text-teal-200 hover:scale-105 transition ease-in-out duration-150">
+                  className={classNames(
+                    "drop-shadow-lg select-none w-fit",
+                    "hover:text-teal-200 hover:scale-105 transition ease-in-out duration-150",
+                    index === 0 ? "text-[1.70rem]" : "text-2xl",
+                  )}>
                   {item.name.toUpperCase()}
                 </a>
               </Link>
@@ -61,34 +68,38 @@ export default function Menu() {
                   <div className="flex justify-center items-center bg-translucent rounded-md w-36 h-44"></div>
                   {item.name === "Coins" ?
                     (
-                      <button className="absolute select-none hover:scale-105 transition ease-in-out duration-150">
-                        <div className="flex drop-shadow-md rounded-full w-[70px] -translate-x-3">
-                          <Image
-                            priority
-                            src={goldCoin}
-                            height={70}
-                            width={70}
-                            alt="Gold"
-                            draggable="false"
-                          />
-                        </div>
-                        <div className="flex drop-shadow-md rounded-full w-[70px] -mt-6 translate-x-3">
-                          <Image
-                            priority
-                            src={silverCoin}
-                            height={70}
-                            width={70}
-                            alt="Silver"
-                            draggable="false"
-                          />
-                        </div>
-                      </button>
+                      <Link href="/inventory">
+                        <a className="absolute select-none hover:scale-105 transition ease-in-out duration-150">
+                          <div className="flex drop-shadow-md rounded-full w-[70px] -translate-x-3">
+                            <Image
+                              priority
+                              src={goldCoin}
+                              height={70}
+                              width={70}
+                              alt="Gold"
+                              draggable="false"
+                            />
+                          </div>
+                          <div className="flex drop-shadow-md rounded-full w-[70px] -mt-6 translate-x-3">
+                            <Image
+                              priority
+                              src={silverCoin}
+                              height={70}
+                              width={70}
+                              alt="Silver"
+                              draggable="false"
+                            />
+                          </div>
+                        </a>
+                      </Link>
                     ) : (
-                      <button className="absolute hover:scale-105 transition ease-in-out duration-150">
-                        <Card size="sm">
-                          {item.name}
-                        </Card>
-                      </button>
+                      <Link href="/inventory">
+                        <a className="absolute hover:scale-105 transition ease-in-out duration-150">
+                          <Card size="sm">
+                            {item.name}
+                          </Card>
+                        </a>
+                      </Link>
                     )}
 
                 </div>
@@ -97,7 +108,7 @@ export default function Menu() {
             <div className="grid grid-flow-col justify-center gap-12 h-full overflow-y-auto mb-5">
               <div className="flex justify-center items-center text-black pl-32">
                 {Array.from(Array(12).keys()).map(item =>
-                  <Card key={item} size="md" className="-ml-32 hover:bg-amber-100 hover:mr-20 last:hover:mr-0" />
+                  <Card key={item} size="md" hover className="-ml-32 hover:mr-20 last:hover:mr-0" />
                 )}
               </div>
               <div className="flex flex-col justify-center items-center select-none w-fit">

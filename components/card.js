@@ -16,11 +16,12 @@ export default function Card(props) {
           props.size === "lg" && "w-[12rem] h-[18rem]",
           props.size === "xl" && "w-[14rem] h-[21rem]",
           props.size === "2xl" && "w-[16rem] h-[24rem]",
+          props.hover && "hover:bg-amber-100",
         )
       }>
       <div className="flex justify-center items-center text-center card-background 
         border-2 border-black/50 rounded-md text-black w-full h-full">
-        {props.children ? props.children :
+        {props.children ??
           <div className="select-none p-5">
             <Image
               src="/assets/card/soulless.png"
