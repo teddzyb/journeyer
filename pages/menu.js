@@ -18,7 +18,7 @@ function classNames(...classes) {
 export default function Menu() {
 
   let menuItems = [
-    { name: "Campaign", href: "" },
+    { name: "Campaign", href: "campaign" },
     { name: "Ranked", href: "" },
     { name: "Custom", href: "" },
     { name: "Practice", href: "" },
