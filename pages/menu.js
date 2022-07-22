@@ -44,12 +44,12 @@ export default function Menu() {
       </nav>
       <main className="h-screen flex flex-row justify-center pb-20">
         <div className="w-2/5 m-10 mr-5 overflow-y-auto">
-          <div className="grid gap-10 m-12 mt-14">
+          <div className="grid w-fit m-12 mt-10">
             {menuItems.map((item, index) =>
               <Link key={index} href={item.href}>
                 <a
                   className={classNames(
-                    "drop-shadow-lg select-none w-fit",
+                    "drop-shadow-lg select-none py-5",
                     "hover:text-teal-200 hover:scale-105 transition ease-in-out duration-150",
                     index === 0 ? "text-[1.70rem]" : "text-2xl",
                   )}>
