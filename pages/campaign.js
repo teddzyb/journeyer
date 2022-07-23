@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 // Components
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import TopMenuBar from '../components/top-menu-bar'
 
 // Assets
@@ -21,6 +23,26 @@ export default function Campaign() {
       <main className="h-screen flex flex-row justify-center pb-20">
         <div className="flex flex-col items-center w-[45%] m-10 mr-5">
           <div className="grow w-full">
+            <div className="flex justify-between text-2xl drop-shadow-md whitespace-nowrap mx-16">
+              <button
+                disabled
+                className="flex justify-start items-center hover:text-teal-300 w-full py-4 disabled:text-white/60">
+                <FontAwesomeIcon
+                  icon={faChevronLeft}
+                  draggable="false"
+                />
+              </button>
+              <div className="flex items-center select-none pt-1">REALM #1</div>
+              <button
+                // disabled
+                className="flex justify-end items-center hover:text-teal-300 w-full py-4 disabled:text-white/60">
+                <FontAwesomeIcon
+                  icon={faChevronLeft}
+                  className="rotate-180"
+                  draggable="false"
+                />
+              </button>
+            </div>
           </div>
           <div className="flex justify-center gap-8 w-full mb-8">
             <Link href="/menu">
