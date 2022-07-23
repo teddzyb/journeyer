@@ -88,7 +88,7 @@ export default function DeckPreview(props) {
                 </div>
               </div>
             </div>
-            <button onClick={() => props.setSelectedCard(null)} className="btn-primary h-11 w-36 pt-1">Back</button>
+            <button onClick={() => props.setSelectedCard(null)} className="btn-primary h-11 w-36">Back</button>
           </div>
         </div>
       </Transition>

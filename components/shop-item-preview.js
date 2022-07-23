@@ -96,7 +96,7 @@ export default function ShopItemPreview(props) {
                 </div>
                 <div className="flex">
                   <div className="flex items-center gap-5">
-                    <button className="btn-primary h-11 w-44 pt-1">{props.button}</button>
+                    <button className="btn-primary h-11 w-44">{props.button}</button>
                   </div>
                   <Disclosure.Button className="flex p-5 px-8" aria-label="Toggle Description">
                     <FontAwesomeIcon
