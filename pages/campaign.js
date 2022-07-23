@@ -1,5 +1,6 @@
 // APIs
 import Head from 'next/head'
+import Link from 'next/link'
 
 // Components
 import TopMenuBar from '../components/top-menu-bar'
@@ -19,10 +20,20 @@ export default function Campaign() {
       </nav>
       <main className="h-screen flex flex-row justify-center pb-20">
         <div className="flex flex-col items-center w-[45%] m-10 mr-5">
+          <div className="grow w-full">
+          </div>
+          <div className="flex justify-center gap-8 w-full mb-8">
+            <Link href="/menu">
+              <a>
+                <button className="btn-primary h-11 w-40">BACK</button>
+              </a>
+            </Link>
+            <button className="btn-primary h-11 w-40">START</button>
+          </div>
         </div>
         <div className="flex w-[55%] m-10 ml-5">
-          <div className="flex justify-center items-center grow bg-translucent text-teal-300 rounded-xl">
-            [Interactive Map]
+          <div className="flex justify-center items-center grow bg-translucent text-white/90 rounded-xl">
+            (Interactive Map)
           </div>
         </div>
       </main >
