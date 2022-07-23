@@ -53,7 +53,8 @@ export default function Home() {
       </Head>
       <main className="h-screen flex flex-col justify-center">
         <div className="flex justify-center mb-20">
-          <p className="text-7xl font-bold text-center drop-shadow-md select-none">JOURNEYER<br />
+          <p className="text-7xl font-bold text-center drop-shadow-md select-none">
+            JOURNEYER<br />
             <span className="text-4xl">OF THE REALMS</span>
           </p>
         </div>

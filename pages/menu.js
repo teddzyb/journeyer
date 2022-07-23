@@ -49,7 +49,7 @@ export default function Menu() {
               <Link key={index} href={item.href}>
                 <a
                   className={classNames(
-                    "drop-shadow-lg select-none py-5",
+                    "drop-shadow-md select-none py-5",
                     "hover:text-teal-200 hover:scale-105 transition ease-in-out duration-150",
                     index === 0 ? "text-[1.70rem]" : "text-2xl",
                   )}>
