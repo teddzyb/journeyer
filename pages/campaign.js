@@ -3,11 +3,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 // Components
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import TopMenuBar from '../components/top-menu-bar'
 
 // Assets
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default function Campaign() {
   return (
