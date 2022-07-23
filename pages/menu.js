@@ -49,8 +49,8 @@ export default function Menu() {
               <Link key={index} href={item.href}>
                 <a
                   className={classNames(
-                    "drop-shadow-md select-none py-5",
-                    "hover:text-teal-200 hover:scale-105 transition ease-in-out duration-150",
+                    "drop-shadow-md select-none py-5 pr-5",
+                    "hover:text-teal-300 hover:scale-105 transition ease-in-out duration-150",
                     index === 0 ? "text-[1.70rem]" : "text-2xl",
                   )}>
                   {item.name.toUpperCase()}

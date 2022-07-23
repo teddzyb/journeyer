@@ -55,7 +55,7 @@ export default function Shop() {
               <a className="flex flex-col justify-center items-center w-fit">
                 <FontAwesomeIcon
                   icon={faArrowLeft}
-                  className="absolute text-white text-2xl ml-9 px-6 hover:text-teal-200"
+                  className="absolute text-white text-2xl ml-9 px-6 py-4 hover:text-teal-300"
                   draggable="false"
                 />
               </a>
