@@ -18,17 +18,15 @@ export default function CampaignMenu(props) {
           <div className="text-lg">
             STAGE 1
           </div>
-          <div className="text-justify max-h-24 pr-4 -mr-2 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+          <div className="text-justify max-h-24 pr-6 -mr-2 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor
             do amet sint. Velit officia consequat duis enim velit mollit.
           </div>
         </div>
       </div>
-      <div className="flex items-start rounded-xl bg-translucent shadow-md p-6">
-        <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-          Amet minim mollit non deserunt ullamco est sit aliqua dolor
-          do amet sint. Velit officia consequat duis enim velit mollit.
-        </div>
+      <div className="flex items-start rounded-xl bg-translucent text-justify shadow-md py-6 px-8">
+        Amet minim mollit non deserunt ullamco est sit aliqua dolor
+        do amet sint. Velit officia consequat duis enim velit mollit.
       </div>
     </div>
   )
