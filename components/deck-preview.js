@@ -4,13 +4,13 @@ import { useState, useRef, useEffect } from 'react'
 
 // Components
 import { Transition } from '@headlessui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
-import goldCoin from '../public/assets/currency/coin-gold.svg'
 import Card from './card'
 
 // Assets
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import bookmarkCheck from '../public/assets/icons/bookmark-check.svg'
+import goldCoin from '../public/assets/currency/coin-gold.svg'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -88,7 +88,7 @@ export default function DeckPreview(props) {
                 </div>
               </div>
             </div>
-            <button onClick={() => props.setSelectedCard(null)} className="btn-primary h-11 w-36 pt-1">Back</button>
+            <button onClick={() => props.setSelectedCard(null)} className="btn-primary h-11 w-36">Back</button>
           </div>
         </div>
       </Transition>

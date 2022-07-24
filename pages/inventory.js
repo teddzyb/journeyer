@@ -49,13 +49,13 @@ export default function Inventory() {
         <TopMenuBar />
       </nav>
       <main className="h-screen flex flex-row justify-center pb-20">
-        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-2/5 m-10 mr-5 overflow-y-clip">
+        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-2/5 m-10 mr-5 overflow-hidden">
           <div className="flex flex-row bg-translucent text-xl text-center select-none">
             <Link href="/menu">
               <a className="flex flex-col justify-center items-center w-fit">
                 <FontAwesomeIcon
                   icon={faArrowLeft}
-                  className="absolute text-white text-2xl ml-9 px-6 hover:text-teal-200"
+                  className="absolute text-white text-2xl ml-9 px-6 py-4 hover:text-teal-300"
                   draggable="false"
                 />
               </a>
@@ -171,7 +171,7 @@ export default function Inventory() {
           </Tab.Group>
         </div>
 
-        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-y-hidden">
+        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-hidden">
 
           {/* Deck preview */}
           {selectedTab === 0 &&

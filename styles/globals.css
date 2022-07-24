@@ -16,14 +16,18 @@
         overflow-y: hidden;
     }
 
-    /* div, footer, header, main, nav, section, form, button {
+    /* div, footer, header, main, nav, section, form, button, a {
         border: 1px solid black;
+    } */
+
+    /* a, button {
+        background-color: rgba(255, 0, 0, 0.25) !important
     } */
 }
 
 @layer components {
     .btn-primary {
-        @apply bg-teal-500 text-black rounded-sm drop-shadow-md select-none;
+        @apply bg-teal-500 text-black rounded-sm drop-shadow-md select-none pt-1;
     }
 
     .btn-primary:hover {
