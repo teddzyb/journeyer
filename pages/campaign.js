@@ -1,6 +1,7 @@
 // APIs
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState } from 'react'
 
 // Components
 import TopMenuBar from '../components/top-menu-bar'
@@ -11,6 +12,52 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default function Campaign() {
+
+  const [currentRealm, setCurrentRealm] = useState(0)
+
+  let realms = [
+    {
+      name: "Realm #1",
+      stages: [
+        {
+          name: "Stage 1",
+          description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+          objectives: [
+            { name: "Clear the stage", rewards: [{ type: "Cards", amount: "2" }, { type: "Silver", amount: "1,000" }], completed: true },
+            { name: "Destroy 10 enemy cards", rewards: [{ type: "Gold", amount: "2" }], completed: false },
+          ]
+        },
+      ]
+    },
+    {
+      name: "Realm #2",
+      stages: [
+        {
+          name: "Stage 1",
+          description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+          objectives: [
+            { name: "Clear the stage", rewards: [{ type: "Cards", amount: "3" }, { type: "Silver", amount: "2,000" }], completed: true },
+            { name: "Destroy 15 enemy cards", rewards: [{ type: "Gold", amount: "3" }], completed: true },
+          ]
+        },
+      ]
+    },
+    {
+      name: "Realm #3",
+      stages: [
+        {
+          name: "Stage 1",
+          description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+          objectives: [
+            { name: "Clear the stage", rewards: [{ type: "Cards", amount: "4" }, { type: "Silver", amount: "2,500" }], completed: false },
+            { name: "Destroy 15 enemy cards", rewards: [{ type: "Gold", amount: "4" }], completed: false },
+            { name: "Have 5 or less of your cards destoryed", rewards: [{ type: "Cards", amount: "1" }], completed: false },
+          ]
+        },
+      ]
+    },
+  ]
+
   return (
     <div>
       <Head>
@@ -26,16 +73,18 @@ export default function Campaign() {
           <div className="flex flex-col h-full">
             <div className="flex justify-between text-2xl drop-shadow-md whitespace-nowrap mx-16">
               <button
-                disabled
+                disabled={currentRealm === 0 ? true : false}
+                onClick={() => setCurrentRealm(currentRealm - 1)}
                 className="flex justify-start items-center hover:text-teal-300 w-full py-5 disabled:text-white/60">
                 <FontAwesomeIcon
                   icon={faChevronLeft}
                   draggable="false"
                 />
               </button>
-              <div className="flex items-center select-none pt-1">REALM #1</div>
+              <div className="flex items-center select-none uppercase pt-1">{realms[currentRealm].name}</div>
               <button
-                // disabled
+                disabled={currentRealm === realms.length - 1 ? true : false}
+                onClick={() => setCurrentRealm(currentRealm + 1)}
                 className="flex justify-end items-center hover:text-teal-300 w-full py-5 disabled:text-white/60">
                 <FontAwesomeIcon
                   icon={faChevronLeft}
@@ -44,7 +93,9 @@ export default function Campaign() {
                 />
               </button>
             </div>
-            <CampaignMenu />
+            <CampaignMenu
+              stage={realms[currentRealm].stages[0]}
+            />
             <div className="flex justify-center gap-8 my-8">
               <Link href="/menu">
                 <a>
