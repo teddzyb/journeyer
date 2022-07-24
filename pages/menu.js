@@ -43,7 +43,7 @@ export default function Menu() {
         <TopMenuBar />
       </nav>
       <main className="h-screen flex flex-row justify-center pb-20">
-        <div className="w-2/5 m-10 mr-5 overflow-y-auto">
+        <div className="w-2/5 m-10 mr-5">
           <div className="grid w-fit m-12 mt-10">
             {menuItems.map((item, index) =>
               <Link key={index} href={item.href}>
@@ -59,10 +59,10 @@ export default function Menu() {
             )}
           </div>
         </div>
-        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-y-auto">
+        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-hidden">
           <div className="bg-translucent text-xl text-center select-none p-3 pt-4">CUSTOMIZE LOADOUT</div>
           <div className="flex flex-col grow">
-            <div className="grid grid-flow-col h-full overflow-y-auto px-10">
+            <div className="grid grid-flow-col h-full px-10">
               {customizations.map((item, index) =>
                 <div key={index} className="flex justify-center items-center">
                   <div className="flex justify-center items-center bg-translucent rounded-md w-36 h-44"></div>
@@ -105,7 +105,7 @@ export default function Menu() {
                 </div>
               )}
             </div>
-            <div className="grid grid-flow-col justify-center gap-12 h-full overflow-y-auto mb-5">
+            <div className="grid grid-flow-col justify-center gap-12 h-full mb-5">
               <div className="flex justify-center items-center text-black pl-32">
                 {Array.from(Array(12).keys()).map(item =>
                   <Card key={item} size="md" hover className="-ml-32 hover:mr-20 last:hover:mr-0" />
