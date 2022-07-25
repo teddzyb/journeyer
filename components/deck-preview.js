@@ -109,7 +109,7 @@ export default function DeckPreview(props) {
               value={item}
               onClick={() => props.setSelectedCard(item)}
             >
-              {(item === 2 || item === 5) &&
+              {[2, 5].includes(item) &&
                 <div className="z-10 flex self-end text-black cursor-auto w-fit -mb-7 pr-2">
                   <Image
                     src={bookmarkCheck}
