@@ -20,7 +20,7 @@ export default function ShopItemPreview(props) {
     <>
       {props.children}
       <Transition
-        show={props.show || false}
+        show={props.show}
         enter="transition-all duration-500"
         enterFrom="translate-y-full opacity-0"
         enterTo="translate-y-0 opacity-100"
