@@ -11,11 +11,13 @@ export default function Card(props) {
         classNames(
           "bg-yellow-50 rounded-md card-shadow p-1",
           props.className,
-          props.size === "sm" && "w-[8rem] h-[12rem]",
-          props.size === "md" && "w-[10rem] h-[15rem]",
-          props.size === "lg" && "w-[12rem] h-[18rem]",
-          props.size === "xl" && "w-[14rem] h-[21rem]",
-          props.size === "2xl" && "w-[16rem] h-[24rem]",
+          {
+            "sm": "w-[8rem] h-[12rem]",
+            "md": "w-[10rem] h-[15rem]",
+            "lg": "w-[12rem] h-[18rem]",
+            "xl": "w-[14rem] h-[21rem]",
+            "2xl": "w-[16rem] h-[24rem]",
+          }[props.size],
           props.hover && "hover:bg-amber-100",
         )
       }>
