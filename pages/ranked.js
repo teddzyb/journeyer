@@ -2,10 +2,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // Components
 import TopMenuBar from '../components/top-menu-bar'
+import RankRow from '../components/rank-row'
 import StreakBar from '../components/streak-bar'
 
 // Assets
@@ -30,14 +31,22 @@ export default function Campaign() {
       <main className="h-screen flex flex-row justify-center pb-20">
         <div className="flex flex-col items-center bg-translucent rounded-2xl shadow-md overflow-hidden w-2/5 m-10 mr-5">
           <div className="text-center text-xl select-none bg-translucent w-full pb-3 pt-4">LEADERBOARD</div>
-          <div className="grid grid-cols-3 text-center select-none bg-translucent/10 border-t border-b border-translucent w-full py-1 pt-2">
-            <div>RANK</div>
-            <div>PLAYER</div>
-            <div>ELO</div>
+          <div className="grid grid-cols-9 select-none text-center bg-translucent/10 border-t border-b border-translucent w-full py-1 pt-2 px-10">
+            <div className="col-span-2">RANK</div>
+            <div className="col-span-5">PLAYER</div>
+            <div className="col-span-2">ELO</div>
           </div>
-          <div className="grow"></div>
-          <div className="bg-translucent border-t border-b border-translucent w-full py-3"></div>
-          <div className="flex items-center justify-center gap-5 bg-translucent select-none w-full p-4">
+          <div className="grow w-full scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+            <div className="grid grid-flow-row">
+              {Array.from(Array(50).keys()).map(item =>
+                <RankRow key={item} rank={item} />
+              )}
+            </div>
+          </div>
+          <div className="bg-translucent/10 border-t border-b border-translucent w-full">
+            <RankRow rank={24} />
+          </div>
+          <div className="flex items-center justify-center gap-5 bg-translucent/10 select-none w-full p-4">
             <Image
               src={streakFire}
               width={40}
