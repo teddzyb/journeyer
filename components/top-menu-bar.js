@@ -7,11 +7,11 @@ import { Transition } from '@headlessui/react'
 import ExpBar from '../components/exp-bar'
 import Friends from '../components/friends'
 import Notification from '../components/notification'
-import BugReport from '../components/bug-report'
+import Feedback from './feedback'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faBug }
+import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faFeather }
   from '@fortawesome/free-solid-svg-icons'
 import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
@@ -22,31 +22,31 @@ export default function TopMenuBar() {
   const toggleFriends = () => {
     setFriends(!friends)
     setNotifications(false)
-    setBugReport(false)
+    setFeedback(false)
   }
 
   const [notifications, setNotifications] = useState(false)
   const toggleNotifications = () => {
     setFriends(false)
     setNotifications(!notifications)
-    setBugReport(false)
+    setFeedback(false)
   }
 
   const [volume, setVolume] = useState(false)
   const toggleVolume = () => setVolume(!volume)
 
-  const [bugReport, setBugReport] = useState(false)
-  const toggleBugReport = () => {
+  const [feedback, setFeedback] = useState(false)
+  const toggleFeedback = () => {
     setFriends(false)
     setNotifications(false)
-    setBugReport(!bugReport)
+    setFeedback(!feedback)
   }
 
   let iconsR = [
     { name: "Friends", src: faHandshakeAngle, state: toggleFriends },
     { name: "Notifications", src: faBell, state: toggleNotifications },
     { name: "Volume", src: faVolumeHigh, state: toggleVolume },
-    { name: "Bug Report", src: faBug, state: toggleBugReport },
+    { name: "Bug Report", src: faFeather, state: toggleFeedback },
   ]
 
   iconsR[2].src = volume ? faVolumeXmark : faVolumeHigh
@@ -121,7 +121,7 @@ export default function TopMenuBar() {
         className="fixed top-20 right-3 mt-2"
       >
         <div className="grid gap-2 w-96">
-          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-3">
+          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-2 pt-3">
             Friends
           </div>
           <Friends />
@@ -138,14 +138,14 @@ export default function TopMenuBar() {
         className="fixed top-20 right-3 mt-2"
       >
         <div className="grid gap-2 w-96">
-          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-3">
+          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-2 pt-3">
             Notifications
           </div>
           <Notification />
         </div>
       </Transition>
       <Transition
-        show={bugReport}
+        show={feedback}
         enter="transition-opacity duration-300"
         enterFrom="opacity-0"
         enterTo="opacity-100"
@@ -155,10 +155,10 @@ export default function TopMenuBar() {
         className="fixed top-20 right-3 mt-2"
       >
         <div className="grid gap-2 w-96">
-          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-3">
-            Report a Bug
+          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-2 pt-3">
+            Feedback
           </div>
-          <BugReport />
+          <Feedback />
         </div>
       </Transition>
     </div>
