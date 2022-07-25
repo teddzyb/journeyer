@@ -20,7 +20,7 @@ export default function RankRow(props) {
         }
       </div>
       <div className="col-span-5 flex items-center gap-4 pl-2">
-        <div className="flex select-none">
+        <div className="flex select-none rounded-md outline outline-2 outline-translucent shadow-sm">
           <Image
             src="/assets/avatar.jpg"
             height={50}
