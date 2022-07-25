@@ -98,7 +98,7 @@ export default function Shop() {
                     className="flex flex-col items-center border border-translucent py-6 hover:bg-translucent/5">
                     <Card key={item} size="md" className={item === selectedItem && "ring-4 ring-teal-500"} />
                     <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
-                    border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
+                      border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
                       STARTER DECK #{item}
                     </div>
                   </button>
@@ -118,7 +118,7 @@ export default function Shop() {
                       {item}
                     </Card>
                     <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
-                    border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
+                      border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
                       SLEEVE #{item}
                     </div>
                   </button>
@@ -184,8 +184,8 @@ export default function Shop() {
                     gold={{ price: "118" }}
                     cards={{ owned: 7, total: 30 }}
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-                euismod aliquet nisi nisl euismod."
+                      Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+                      euismod aliquet nisi nisl euismod."
                     button="Buy Deck"
                   >
                     <DeckPreview cardSelected={cardSelected} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
@@ -200,8 +200,8 @@ export default function Shop() {
                     silver={{ price: "5,000" }}
                     gold={{ price: "20" }}
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-                euismod aliquet nisi nisl euismod."
+                      Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+                      euismod aliquet nisi nisl euismod."
                     button="Buy Sleeve"
                   >
                     <SleevePreview selectedItem={selectedItem} />
@@ -216,8 +216,8 @@ export default function Shop() {
                     silver={{ price: "3,500" }}
                     gold={{ price: "15" }}
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-                euismod aliquet nisi nisl euismod."
+                      Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+                      euismod aliquet nisi nisl euismod."
                     button="Buy Coin"
                   >
                     <CoinPreview selectedItem={selectedItem} />

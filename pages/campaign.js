@@ -111,7 +111,7 @@ export default function Campaign() {
             (Interactive Map)
           </div>
         </div>
-      </main >
-    </div >
+      </main>
+    </div>
   )
 }

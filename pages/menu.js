@@ -136,7 +136,7 @@ export default function Menu() {
             </div>
           </div>
         </div>
-      </main >
-    </div >
+      </main>
+    </div>
   )
 }
