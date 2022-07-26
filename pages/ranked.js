@@ -2,20 +2,18 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 // Components
 import TopMenuBar from '../components/top-menu-bar'
 import RankRow from '../components/rank-row'
 import StreakBar from '../components/streak-bar'
+import LeagueRank from "../components/league-rank"
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import streakFire from '../public/assets/icons/streak-fire.svg'
-import rankFirst from '../public/assets/icons/rank-first.svg'
-import rankSecond from '../public/assets/icons/rank-second.svg'
-import rankThird from '../public/assets/icons/rank-third.svg'
 
 export default function Campaign() {
   return (
@@ -61,8 +59,44 @@ export default function Campaign() {
             </div>
           </div>
         </div>
-        <div className="flex bg-translucent rounded-2xl shadow-md w-3/5 m-10 ml-5">
-
+        <div className="flex flex-col items-center bg-translucent rounded-2xl shadow-md w-3/5 m-10 ml-5">
+          <div className="flex justify-between text-2xl drop-shadow-md whitespace-nowrap w-full px-36 my-6">
+            <button
+              // disabled={currentRealm === 0 ? true : false}
+              // onClick={() => setCurrentRealm(currentRealm - 1)}
+              className="flex justify-start items-center hover:text-teal-300 w-full py-5 disabled:text-white/60">
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                draggable="false"
+              />
+            </button>
+            <div className="flex items-center select-none uppercase pt-1">{/*realms[currentRealm].name*/}SILVER LEAGUE</div>
+            <button
+              // disabled={currentRealm === realms.length - 1 ? true : false}
+              // onClick={() => setCurrentRealm(currentRealm + 1)}
+              className="flex justify-end items-center hover:text-teal-300 w-full py-5 disabled:text-white/60">
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                className="rotate-180"
+                draggable="false"
+              />
+            </button>
+          </div>
+          <div className="grow w-full">
+            <div className="grid grid-flow-row h-full">
+              {Array.from(Array(4).keys()).map(item =>
+                <LeagueRank key={item} rank={item} />
+              )}
+            </div>
+          </div>
+          <div className="flex justify-center gap-8 my-10">
+            <Link href="/menu">
+              <a>
+                <button className="btn-primary h-11 w-40">BACK</button>
+              </a>
+            </Link>
+            <button className="btn-primary h-11 w-40">START</button>
+          </div>
         </div>
       </main>
     </div>
