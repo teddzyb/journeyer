@@ -9,20 +9,19 @@ import cardLayer2 from '../public/assets/icons/card-layer-2.svg'
 import cardLayer3 from '../public/assets/icons/card-layer-3.svg'
 import cardLayer4 from '../public/assets/icons/card-layer-4.svg'
 
+const cardType = {
+  1: cardLayer1,
+  2: cardLayer2,
+  3: cardLayer3,
+  4: cardLayer4,
+}
+
+const coinType = {
+  "Gold": goldCoin,
+  "Silver": silverCoin,
+}
+
 export default function CampaignMenu(props) {
-
-  const cardTypes = {
-    1: cardLayer1,
-    2: cardLayer2,
-    3: cardLayer3,
-    4: cardLayer4,
-  }
-
-  const coinTypes = {
-    "Gold": goldCoin,
-    "Silver": silverCoin,
-  }
-
   return (
     <div className="flex flex-col grow gap-5 px-5 mt-4 py-2 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
       <div className="flex items-start gap-6 rounded-xl bg-translucent shadow-md p-6">
@@ -61,7 +60,7 @@ export default function CampaignMenu(props) {
                       title={reward.amount + " random card/s"}
                       className="flex flex-col justify-center items-center gap-1 select-none bg-translucent rounded-full p-1">
                       <Image
-                        src={cardTypes[reward.amount]}
+                        src={cardType[reward.amount]}
                         width={54}
                         height={54}
                         alt=""
@@ -73,7 +72,7 @@ export default function CampaignMenu(props) {
                       key={index_1}
                       className="flex flex-col justify-center items-center gap-1 select-none -mb-1 px-1">
                       <Image
-                        src={coinTypes[reward.type]}
+                        src={coinType[reward.type]}
                         width={40}
                         height={40}
                         alt=""
