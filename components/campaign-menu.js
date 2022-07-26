@@ -17,8 +17,8 @@ const cardType = {
 }
 
 const coinType = {
-  "Gold": goldCoin,
-  "Silver": silverCoin,
+  Gold: goldCoin,
+  Silver: silverCoin,
 }
 
 export default function CampaignMenu(props) {
