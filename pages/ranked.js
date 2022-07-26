@@ -26,7 +26,7 @@ export default function Ranked() {
         { 1: { progress: 0, rewards: { silver: "1,500", gold: "2", cards: "2" } } },
         { 2: { progress: 0, rewards: { silver: "1,200", gold: "1", cards: "2" } } },
         { 3: { progress: 2, rewards: { silver: "1,000", gold: "1", cards: "1" } } },
-        { 4: { progress: 4, rewards: { silver: "800", gold: "0", cards: "1" } } },
+        { 4: { progress: 4, rewards: { silver: "800", cards: "1" } } },
       ],
     },
     {

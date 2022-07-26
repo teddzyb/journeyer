@@ -37,7 +37,7 @@ export default function LeagueRank(props) {
       </div>
       <div className="flex items-center gap-10">
         {
-          props.rank[rank].rewards.silver !== "0" &&
+          props.rank[rank].rewards.silver &&
           <div
             className="flex flex-row justify-center items-center gap-2">
             <Image
@@ -51,7 +51,7 @@ export default function LeagueRank(props) {
           </div>
         }
         {
-          props.rank[rank].rewards.gold !== "0" &&
+          props.rank[rank].rewards.gold &&
           <div
             className="flex flex-row justify-center items-center gap-2">
             <Image
@@ -65,7 +65,7 @@ export default function LeagueRank(props) {
           </div>
         }
         {
-          props.rank[rank].rewards.cards !== "0" &&
+          props.rank[rank].rewards.cards &&
           <div
             title={props.rank[rank].rewards.cards + " random card/s"}
             className="flex flex-col justify-center items-center gap-1 select-none bg-translucent rounded-full p-1">
