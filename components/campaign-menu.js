@@ -61,8 +61,8 @@ export default function CampaignMenu(props) {
                       className="flex flex-col justify-center items-center gap-1 select-none bg-translucent rounded-full p-1">
                       <Image
                         src={cardType[reward.amount]}
-                        width={54}
-                        height={54}
+                        width={48}
+                        height={48}
                         alt=""
                         draggable="false"
                       />
@@ -73,8 +73,8 @@ export default function CampaignMenu(props) {
                       className="flex flex-col justify-center items-center gap-1 select-none -mb-1 px-1">
                       <Image
                         src={coinType[reward.type]}
-                        width={40}
-                        height={40}
+                        width={28}
+                        height={28}
                         alt=""
                         draggable="false"
                       />

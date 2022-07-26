@@ -23,7 +23,7 @@ export default function Campaign() {
           name: "Stage 1",
           description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
           objectives: [
-            { name: "Clear the stage", rewards: [{ type: "Cards", amount: "2" }, { type: "Silver", amount: "1,000" }], completed: true },
+            { name: "Clear the stage", rewards: [{ type: "Silver", amount: "1,000" }, { type: "Cards", amount: "2" }], completed: true },
             { name: "Destroy 10 enemy cards", rewards: [{ type: "Gold", amount: "2" }], completed: false },
           ]
         },
@@ -36,7 +36,7 @@ export default function Campaign() {
           name: "Stage 1",
           description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
           objectives: [
-            { name: "Clear the stage", rewards: [{ type: "Cards", amount: "3" }, { type: "Silver", amount: "2,000" }], completed: true },
+            { name: "Clear the stage", rewards: [{ type: "Silver", amount: "2,000" }, { type: "Cards", amount: "3" }], completed: true },
             { name: "Destroy 15 enemy cards", rewards: [{ type: "Gold", amount: "3" }], completed: true },
           ]
         },
@@ -49,7 +49,7 @@ export default function Campaign() {
           name: "Stage 1",
           description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
           objectives: [
-            { name: "Clear the stage", rewards: [{ type: "Cards", amount: "4" }, { type: "Silver", amount: "2,500" }], completed: false },
+            { name: "Clear the stage", rewards: [{ type: "Silver", amount: "2,500" }, { type: "Cards", amount: "4" }], completed: false },
             { name: "Destroy 15 enemy cards", rewards: [{ type: "Gold", amount: "4" }], completed: false },
             { name: "Have 5 or less of your cards destoryed", rewards: [{ type: "Cards", amount: "1" }], completed: false },
           ]
