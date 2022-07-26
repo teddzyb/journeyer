@@ -16,11 +16,6 @@ const cardType = {
   4: cardLayer4,
 }
 
-const coinType = {
-  Gold: goldCoin,
-  Silver: silverCoin,
-}
-
 export default function CampaignMenu(props) {
   return (
     <div className="flex flex-col grow gap-5 px-5 mt-4 py-2 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
@@ -40,7 +35,7 @@ export default function CampaignMenu(props) {
         </div>
       </div>
       <div className="flex flex-col justify-start items-center gap-4 rounded-xl bg-translucent shadow-md py-6 px-8">
-        <div className="text-xl select-none">REWARDS</div>
+        <div className="text-xl select-none">OBJECTVES</div>
         <div className="flex flex-col gap-2 w-full">
           {props.stage.objectives.map((objective, index) =>
             <div key={index} className="flex justify-between rounded-xl bg-translucent py-4 px-6">
@@ -53,34 +48,48 @@ export default function CampaignMenu(props) {
                 <div className="pt-1">{objective.name}</div>
               </div>
               <div className="flex items-center gap-4">
-                {objective.rewards.map((reward, index_1) =>
-                  reward.type === "Cards" ?
-                    <div
-                      key={index_1}
-                      title={reward.amount + " random card/s"}
-                      className="flex flex-col justify-center items-center gap-1 select-none bg-translucent rounded-full p-1">
-                      <Image
-                        src={cardType[reward.amount]}
-                        width={48}
-                        height={48}
-                        alt=""
-                        draggable="false"
-                      />
-                    </div>
-                    :
-                    <div
-                      key={index_1}
-                      className="flex flex-col justify-center items-center gap-1 select-none -mb-1 px-1">
-                      <Image
-                        src={coinType[reward.type]}
-                        width={28}
-                        height={28}
-                        alt=""
-                        draggable="false"
-                      />
-                      {reward.amount}
-                    </div>
-                )}
+                {
+                  objective.rewards.silver &&
+                  <div
+                    className="flex flex-col justify-center items-center gap-1 select-none -mb-1 px-1">
+                    <Image
+                      src={silverCoin}
+                      width={28}
+                      height={28}
+                      alt=""
+                      draggable="false"
+                    />
+                    {objective.rewards.silver}
+                  </div>
+                }
+                {
+                  objective.rewards.gold &&
+                  <div
+                    className="flex flex-col justify-center items-center gap-1 select-none -mb-1 px-1">
+                    <Image
+                      src={goldCoin}
+                      width={28}
+                      height={28}
+                      alt=""
+                      draggable="false"
+                    />
+                    {objective.rewards.gold}
+                  </div>
+                }
+                {
+                  objective.rewards.cards &&
+                  <div
+                    title={objective.rewards.cards + " random card/s"}
+                    className="flex flex-col justify-center items-center gap-1 select-none bg-translucent rounded-full p-1">
+                    <Image
+                      src={cardType[objective.rewards.cards]}
+                      width={48}
+                      height={48}
+                      alt=""
+                      draggable="false"
+                    />
+                  </div>
+                }
               </div>
             </div>
           )}
