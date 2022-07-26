@@ -30,10 +30,40 @@ export default function LeagueRank(props) {
           <div className="border-2 border-teal-400 rounded-full w-3 h-3" />
         </div>
       </div>
-      <div className="flex gap-4">
-        <div>reward</div>
-        <div>reward</div>
-        <div>reward</div>
+      <div className="flex items-center gap-10">
+        <div
+          className="flex flex-row justify-center items-center gap-2">
+          <Image
+            src={silverCoin}
+            width={28}
+            height={28}
+            alt="Silver "
+            draggable="false"
+          />
+          1,200
+        </div>
+        <div
+          className="flex flex-row justify-center items-center gap-2">
+          <Image
+            src={goldCoin}
+            width={28}
+            height={28}
+            alt="Gold "
+            draggable="false"
+          />
+          4
+        </div>
+        <div
+          // title={reward.amount + " random card/s"}
+          className="flex flex-col justify-center items-center gap-1 select-none bg-translucent rounded-full p-1">
+          <Image
+            src={cardLayer2}
+            width={48}
+            height={48}
+            alt=""
+            draggable="false"
+          />
+        </div>
       </div>
     </div>
   )
