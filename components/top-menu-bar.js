@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 // Components
 import { Transition } from '@headlessui/react'
+import * as Tooltip from '@radix-ui/react-tooltip'
 import ExpBar from '../components/exp-bar'
 import Friends from '../components/friends'
 import Notification from '../components/notification'
@@ -46,7 +47,7 @@ export default function TopMenuBar() {
     { name: "Friends", src: faHandshakeAngle, state: toggleFriends },
     { name: "Notifications", src: faBell, state: toggleNotifications },
     { name: "Volume", src: faVolumeHigh, state: toggleVolume },
-    { name: "Bug Report", src: faFeather, state: toggleFeedback },
+    { name: "Feedback", src: faFeather, state: toggleFeedback },
   ]
 
   iconsR[2].src = volume ? faVolumeXmark : faVolumeHigh
@@ -97,17 +98,26 @@ export default function TopMenuBar() {
       </div>
       <div className="grid grid-flow-col col-start-3 auto-cols-max">
         {iconsR.map((icon, index) =>
-          <button
-            key={index}
-            className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
-            onClick={icon.state}
-            aria-label={icon.name}>
-            <FontAwesomeIcon
-              icon={icon.src}
-              style={{ fontSize: 24 }}
-              draggable="false"
-            />
-          </button>
+          <Tooltip.Provider key={index} delayDuration="25">
+            <Tooltip.Root>
+              <Tooltip.Trigger asChild>
+                <button
+                  className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
+                  onClick={icon.state}
+                  aria-label={icon.name}>
+                  <FontAwesomeIcon
+                    icon={icon.src}
+                    style={{ fontSize: 24 }}
+                    draggable="false"
+                  />
+                </button>
+              </Tooltip.Trigger>
+              <Tooltip.Content sideOffset="-0.5" className="text-sm bg-[#0c4441] rounded-md py-1 pt-[6px] px-3">
+                {icon.name}
+                <Tooltip.Arrow className="fill-[#0c4441]" />
+              </Tooltip.Content>
+            </Tooltip.Root>
+          </Tooltip.Provider>
         )}
       </div>
       <Transition
