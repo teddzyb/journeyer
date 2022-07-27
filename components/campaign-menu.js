@@ -93,7 +93,7 @@ export default function CampaignMenu(props) {
                           />
                         </div>
                       </Tooltip.Trigger>
-                      <Tooltip.Content side="right" className="text-sm bg-[#0a3a37] rounded-md py-1 pt-[6px] px-3">
+                      <Tooltip.Content side="right" className="bg-[#0a3a37] rounded-md py-1 pt-[6px] px-3">
                         {objective.rewards.cards + " random " + (objective.rewards.cards > 1 ? "cards" : "card")}
                         <Tooltip.Arrow className="fill-[#0a3a37] mb-1" />
                       </Tooltip.Content>

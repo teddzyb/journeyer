@@ -81,7 +81,7 @@ export default function LeagueRank(props) {
                   />
                 </div>
               </Tooltip.Trigger>
-              <Tooltip.Content side="right" className="text-sm bg-[#0c4441] rounded-md py-1 pt-[6px] px-3">
+              <Tooltip.Content side="bottom" className="bg-[#0c4441] rounded-md py-1 pt-[6px] px-3">
                 {props.rank[rank].rewards.cards + " random " + (props.rank[rank].rewards.cards > 1 ? "cards" : "card")}
                 <Tooltip.Arrow className="fill-[#0c4441] mb-1" />
               </Tooltip.Content>
