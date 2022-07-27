@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import * as Tooltip from '@radix-ui/react-tooltip'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSkull, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import { faCircle } from '@fortawesome/free-regular-svg-icons'
@@ -78,17 +79,26 @@ export default function CampaignMenu(props) {
                 }
                 {
                   objective.rewards.cards &&
-                  <div
-                    title={objective.rewards.cards + " random card/s"}
-                    className="flex flex-col justify-center items-center gap-1 select-none bg-translucent rounded-full p-1">
-                    <Image
-                      src={cardType[objective.rewards.cards]}
-                      width={48}
-                      height={48}
-                      alt=""
-                      draggable="false"
-                    />
-                  </div>
+                  <Tooltip.Provider delayDuration="25">
+                    <Tooltip.Root>
+                      <Tooltip.Trigger asChild>
+                        <div
+                          className="flex flex-col justify-center items-center gap-1 select-none bg-translucent rounded-full p-1">
+                          <Image
+                            src={cardType[objective.rewards.cards]}
+                            width={48}
+                            height={48}
+                            alt=""
+                            draggable="false"
+                          />
+                        </div>
+                      </Tooltip.Trigger>
+                      <Tooltip.Content side="right" className="text-sm bg-[#0a3a37] rounded-md py-1 pt-[6px] px-3">
+                        {objective.rewards.cards + " random " + (objective.rewards.cards > 1 ? "cards" : "card")}
+                        <Tooltip.Arrow className="fill-[#0a3a37] mb-1" />
+                      </Tooltip.Content>
+                    </Tooltip.Root>
+                  </Tooltip.Provider>
                 }
               </div>
             </div>
