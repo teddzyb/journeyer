@@ -26,12 +26,11 @@ export default function Card(props) {
         {props.children ??
           <div className="select-none p-5">
             <Image
-              src="/assets/card/soulless.png"
-              height={1080}
-              width={1080}
+              src="/assets/card/soullesscat.svg"
+              height={64}
+              width={64}
               quality={100}
-              layout="responsive"
-              alt="Card Art"
+              alt=""
               draggable="false"
             />
           </div>}
