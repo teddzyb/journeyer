@@ -85,7 +85,7 @@ export default function Ranked() {
               alt=""
               draggable="false"
             />
-            <StreakBar streak="2/3" />
+            <StreakBar streak={2} />
             <div className="flex items-center gap-3">
               <div className="text-xl pt-1">+1</div>
               <div className="bg-teal-400 rounded-full w-3 h-3" />
