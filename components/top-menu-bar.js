@@ -112,7 +112,7 @@ export default function TopMenuBar() {
                   />
                 </button>
               </Tooltip.Trigger>
-              <Tooltip.Content sideOffset="-0.5" className="text-sm bg-[#0c4441] rounded-md py-1 pt-[6px] px-3">
+              <Tooltip.Content sideOffset="-0.5" className="z-50 text-sm bg-[#0c4441] rounded-md py-1 pt-[6px] px-3">
                 {icon.name}
                 <Tooltip.Arrow className="fill-[#0c4441]" />
               </Tooltip.Content>
