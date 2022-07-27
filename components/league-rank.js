@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import * as Tooltip from '@radix-ui/react-tooltip'
 import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
 import cardLayer1 from '../public/assets/icons/card-layer-1.svg'
@@ -66,17 +67,27 @@ export default function LeagueRank(props) {
         }
         {
           props.rank[rank].rewards.cards &&
-          <div
-            title={props.rank[rank].rewards.cards + " random card/s"}
-            className="flex flex-col justify-center items-center gap-1 select-none bg-translucent rounded-full p-1">
-            <Image
-              src={cardType[props.rank[rank].rewards.cards]}
-              width={48}
-              height={48}
-              alt=""
-              draggable="false"
-            />
-          </div>
+          <Tooltip.Provider delayDuration="25">
+            <Tooltip.Root>
+              <Tooltip.Trigger asChild>
+                <div
+                  className="flex flex-col justify-center items-center gap-1 select-none bg-translucent rounded-full p-1">
+                  <Image
+                    src={cardType[props.rank[rank].rewards.cards]}
+                    width={48}
+                    height={48}
+                    alt=""
+                    draggable="false"
+                  />
+                </div>
+              </Tooltip.Trigger>
+              <Tooltip.Content side="right" className="text-sm bg-[#0c4441] rounded-md py-1 pt-[6px] px-3">
+                {props.rank[rank].rewards.cards + " random " + (props.rank[rank].rewards.cards > 1 ? "cards" : "card")}
+                <Tooltip.Arrow className="fill-[#0c4441] mb-1" />
+              </Tooltip.Content>
+            </Tooltip.Root>
+          </Tooltip.Provider>
+
         }
       </div>
     </div>
