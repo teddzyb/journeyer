@@ -94,21 +94,6 @@ export default function Card(props) {
                   }[props.size],
                 )}
                 draggable="false"
-              /><Image
-                src="/assets/card/ability-maul.svg"
-                layout="responsive"
-                alt=""
-                className={classNames(
-                  "outline outline-1 outline-offset-1 outline-black aspect-square rounded-[1px]",
-                  {
-                    "sm": "h-[20px]",
-                    "md": "h-[24px]",
-                    "lg": "h-[28px]",
-                    "xl": "h-[32px]",
-                    "2xl": "outline-2 h-[36px]",
-                  }[props.size],
-                )}
-                draggable="false"
               />
             </div>
             <div className={classNames(
