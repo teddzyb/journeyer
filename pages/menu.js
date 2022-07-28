@@ -21,7 +21,7 @@ export default function Menu() {
     { name: "Campaign", href: "campaign" },
     { name: "Ranked", href: "ranked" },
     { name: "Custom", href: "" },
-    { name: "Practice", href: "" },
+    { name: "Practice", href: "practice" },
     { name: "Shop", href: "shop" },
     { name: "Sign Out", href: "/" },
   ]
