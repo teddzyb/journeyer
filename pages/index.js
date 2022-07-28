@@ -5,11 +5,11 @@ import { useState } from 'react'
 
 // Components
 import Notification from '../components/notification'
-import BugReport from '../components/bug-report'
+import Feedback from '../components/feedback'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell, faVolumeHigh, faVolumeXmark, faBug } from '@fortawesome/free-solid-svg-icons'
+import { faBell, faVolumeHigh, faVolumeXmark, faFeather } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
 
@@ -19,15 +19,15 @@ export default function Home() {
   const [notifications, setNotifications] = useState(false)
   const toggleNotifications = () => {
     setNotifications(!notifications)
-    setBugReport(false)
+    setFeedback(false)
   }
 
   const [volume, setVolume] = useState(false)
   const toggleVolume = () => setVolume(!volume)
 
-  const [bugReport, setBugReport] = useState(false)
-  const toggleBugReport = () => {
-    setBugReport(!bugReport)
+  const [feedback, setFeedback] = useState(false)
+  const toggleFeedback = () => {
+    setFeedback(!feedback)
     setNotifications(false)
   }
 
@@ -39,7 +39,7 @@ export default function Home() {
   let iconsR = [
     { name: "Notifications", src: faBell, state: toggleNotifications },
     { name: "Volume", src: faVolumeHigh, state: toggleVolume },
-    { name: "Bug Report", src: faBug, state: toggleBugReport },
+    { name: "Bug Report", src: faFeather, state: toggleFeedback },
   ]
 
   iconsR[1].src = volume ? faVolumeXmark : faVolumeHigh
@@ -81,12 +81,12 @@ export default function Home() {
               <Notification />
             </div>
           }
-          {bugReport &&
+          {feedback &&
             <div className="grid gap-2 w-96 mx-4">
               <div className="rounded-lg bg-translucent border border-translucent shadow-md w-fit px-4 py-3">
-                Report a Bug
+                Feedback
               </div>
-              <BugReport />
+              <Feedback />
             </div>
           }
         </div>

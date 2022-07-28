@@ -85,7 +85,7 @@ export default function Inventory() {
               )}
             </Tab.List>
 
-            {/* Decks tab */}
+            {/* Decks Tab */}
             <Tab.Panels as="div" ref={tabPanels} className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
               <Tab.Panel as="div" className="grid grid-cols-2">
                 {Array.from(Array(6).keys()).map(item =>
@@ -98,14 +98,14 @@ export default function Inventory() {
                     className="flex flex-col items-center border border-translucent py-6 hover:bg-translucent/5">
                     <Card key={item} size="md" className={item === selectedItem && "ring-4 ring-teal-500"} />
                     <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
-                    border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
+                      border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
                       STARTER DECK #{item}
                     </div>
                   </button>
                 )}
               </Tab.Panel>
 
-              {/* Sleeves tab */}
+              {/* Sleeves Tab */}
               <Tab.Panel as="div" className="grid grid-cols-2">
                 {Array.from(Array(6).keys()).map(item =>
                   <button
@@ -118,14 +118,14 @@ export default function Inventory() {
                       {item}
                     </Card>
                     <div className="flex justify-center items-center z-10 bg-teal-800 rounded-sm shadow-sm 
-                    border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
+                      border border-translucent select-none -mt-9 h-10 w-[13.5rem] pt-1">
                       SLEEVE #{item}
                     </div>
                   </button>
                 )}
               </Tab.Panel>
 
-              {/* Coins tab */}
+              {/* Coins Tab */}
               <Tab.Panel as="div" className="grid grid-cols-2">
                 {Array.from(Array(6).keys()).map(item =>
                   <button
@@ -172,63 +172,58 @@ export default function Inventory() {
         </div>
 
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-hidden">
-
-          {/* Deck preview */}
-          {selectedTab === 0 &&
-            <>
-              <div className="bg-translucent text-xl text-center select-none p-3 pt-4">DECK #{selectedItem}</div>
-              <ShopItemPreview
-                show={!cardSelected}
-                title={"Deck #" + selectedItem}
-                cards={{ owned: 30, total: 30 }}
-                owned
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-                euismod aliquet nisi nisl euismod."
-                button="Select Deck"
-              >
-                <DeckPreview cardSelected={cardSelected} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
-              </ShopItemPreview>
-            </>
-          }
-
-          {/* Sleeve preview */}
-          {selectedTab === 1 &&
-            <>
-              <div className="bg-translucent text-xl text-center select-none p-3 pt-4">SLEEVE #{selectedItem}</div>
-              <ShopItemPreview
-                show
-                title={"Sleeve #" + selectedItem}
-                owned
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-                euismod aliquet nisi nisl euismod."
-                button="Select Sleeve"
-              >
-                <SleevePreview selectedItem={selectedItem} />
-              </ShopItemPreview>
-            </>
-          }
-
-          {/* Coin preview */}
-          {selectedTab === 2 &&
-            <>
-              <div className="bg-translucent text-xl text-center select-none p-3 pt-4">COIN #{selectedItem}</div>
-              <ShopItemPreview
-                show
-                title={"Coin Design #" + selectedItem}
-                owned
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
-                euismod aliquet nisi nisl euismod."
-                button="Select Coin"
-              >
-                <CoinPreview selectedItem={selectedItem} />
-              </ShopItemPreview>
-            </>
+          {
+            {
+              0: // Deck Preview
+                <>
+                  <div className="bg-translucent text-xl text-center select-none p-3 pt-4">DECK #{selectedItem}</div>
+                  <ShopItemPreview
+                    show={!cardSelected}
+                    title={"Deck #" + selectedItem}
+                    cards={{ owned: 30, total: 30 }}
+                    owned
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+                      euismod aliquet nisi nisl euismod."
+                    button="Select Deck"
+                  >
+                    <DeckPreview cardSelected={cardSelected} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
+                  </ShopItemPreview>
+                </>,
+              1: // Sleeve Preview
+                <>
+                  <div className="bg-translucent text-xl text-center select-none p-3 pt-4">SLEEVE #{selectedItem}</div>
+                  <ShopItemPreview
+                    show
+                    title={"Sleeve #" + selectedItem}
+                    owned
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+                      euismod aliquet nisi nisl euismod."
+                    button="Select Sleeve"
+                  >
+                    <SleevePreview selectedItem={selectedItem} />
+                  </ShopItemPreview>
+                </>,
+              2: // Coin Preview
+                <>
+                  <div className="bg-translucent text-xl text-center select-none p-3 pt-4">COIN #{selectedItem}</div>
+                  <ShopItemPreview
+                    show
+                    title={"Coin Design #" + selectedItem}
+                    owned
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Donec euismod, nisl eget consectetur sagittis, nisl nunc consectetur nisi,
+                      euismod aliquet nisi nisl euismod."
+                    button="Select Coin"
+                  >
+                    <CoinPreview selectedItem={selectedItem} />
+                  </ShopItemPreview>
+                </>,
+            }[selectedTab]
           }
         </div>
-      </main >
-    </div >
+      </main>
+    </div>
   )
 }

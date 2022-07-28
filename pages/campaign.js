@@ -23,8 +23,8 @@ export default function Campaign() {
           name: "Stage 1",
           description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
           objectives: [
-            { name: "Clear the stage", rewards: [{ type: "Cards", amount: "2" }, { type: "Silver", amount: "1,000" }], completed: true },
-            { name: "Destroy 10 enemy cards", rewards: [{ type: "Gold", amount: "2" }], completed: false },
+            { name: "Clear the stage", rewards: { silver: "1,000", cards: "2" }, completed: true },
+            { name: "Destroy 10 enemy cards", rewards: { gold: "2" }, completed: false },
           ]
         },
       ]
@@ -36,8 +36,8 @@ export default function Campaign() {
           name: "Stage 1",
           description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
           objectives: [
-            { name: "Clear the stage", rewards: [{ type: "Cards", amount: "3" }, { type: "Silver", amount: "2,000" }], completed: true },
-            { name: "Destroy 15 enemy cards", rewards: [{ type: "Gold", amount: "3" }], completed: true },
+            { name: "Clear the stage", rewards: { silver: "2,000", cards: "3" }, completed: true },
+            { name: "Destroy 15 enemy cards", rewards: { gold: "3" }, completed: true },
           ]
         },
       ]
@@ -49,9 +49,9 @@ export default function Campaign() {
           name: "Stage 1",
           description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
           objectives: [
-            { name: "Clear the stage", rewards: [{ type: "Cards", amount: "4" }, { type: "Silver", amount: "2,500" }], completed: false },
-            { name: "Destroy 15 enemy cards", rewards: [{ type: "Gold", amount: "4" }], completed: false },
-            { name: "Have 5 or less of your cards destoryed", rewards: [{ type: "Cards", amount: "1" }], completed: false },
+            { name: "Clear the stage", rewards: { silver: "2,500", cards: "4" }, completed: false },
+            { name: "Destroy 15 enemy cards", rewards: { gold: "4" }, completed: false },
+            { name: "Have 5 or less of your cards destoryed", rewards: { cards: "1" }, completed: false },
           ]
         },
       ]
@@ -107,11 +107,11 @@ export default function Campaign() {
           </div>
         </div>
         <div className="flex w-[55%] m-10 ml-5">
-          <div className="flex justify-center items-center grow bg-translucent shadow-md text-white/90 rounded-xl">
+          <div className="flex justify-center items-center grow bg-translucent shadow-md rounded-xl">
             (Interactive Map)
           </div>
         </div>
-      </main >
-    </div >
+      </main>
+    </div>
   )
 }
