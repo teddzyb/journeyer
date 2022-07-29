@@ -31,12 +31,12 @@ export default function Home() {
     setNotifications(false)
   }
 
-  let iconsL = [
+  const iconsL = [
     { name: "Twitter", src: "/assets/icons/twitter.svg", link: "https://twitter.com/" },
     { name: "Discord", src: "/assets/icons/discord.svg", link: "https://discord.gg/" },
     { name: "Fandom", src: "/assets/icons/fandom.svg", link: "https://fandom.com/" },
   ]
-  let iconsR = [
+  const iconsR = [
     { name: "Notifications", src: faBell, state: toggleNotifications },
     { name: "Volume", src: faVolumeHigh, state: toggleVolume },
     { name: "Bug Report", src: faFeather, state: toggleFeedback },

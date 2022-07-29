@@ -19,7 +19,7 @@ export default function Ranked() {
 
   const [currentLeague, setCurrentLeague] = useState(0)
 
-  let leagues = [
+  const leagues = [
     {
       name: "Bronze League",
       ranks: [

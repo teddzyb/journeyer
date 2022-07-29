@@ -17,7 +17,7 @@ function classNames(...classes) {
 
 export default function Menu() {
 
-  let menuItems = [
+  const menuItems = [
     { name: "Campaign", href: "campaign" },
     { name: "Ranked", href: "ranked" },
     { name: "Custom", href: "custom" },
@@ -26,7 +26,7 @@ export default function Menu() {
     { name: "Sign Out", href: "/" },
   ]
 
-  let customizations = [
+  const customizations = [
     { name: "Deck" },
     { name: "Sleeve" },
     { name: "Coins" },

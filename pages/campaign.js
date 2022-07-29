@@ -15,7 +15,7 @@ export default function Campaign() {
 
   const [currentRealm, setCurrentRealm] = useState(0)
 
-  let realms = [
+  const realms = [
     {
       name: "Realm #1",
       stages: [

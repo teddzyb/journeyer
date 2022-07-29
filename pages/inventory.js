@@ -32,7 +32,7 @@ export default function Inventory() {
   const [selectedCard, setSelectedCard] = useState(null)
   const cardSelected = (selectedCard != null ? true : false)
 
-  let tabs = [
+  const tabs = [
     { name: "Decks", disabled: false },
     { name: "Sleeves", disabled: false },
     { name: "Coins", disabled: false },
