@@ -20,7 +20,7 @@ export default function Menu() {
   let menuItems = [
     { name: "Campaign", href: "campaign" },
     { name: "Ranked", href: "ranked" },
-    { name: "Custom", href: "" },
+    { name: "Custom", href: "custom" },
     { name: "Practice", href: "practice" },
     { name: "Shop", href: "shop" },
     { name: "Sign Out", href: "/" },
@@ -103,7 +103,6 @@ export default function Menu() {
                         </a>
                       </Link>
                     )}
-
                 </div>
               )}
             </div>
