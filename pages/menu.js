@@ -52,7 +52,9 @@ export default function Menu() {
                     "drop-shadow-md select-none py-5 pr-5",
                     "hover:text-teal-300 hover:scale-105 transition ease-in-out duration-150",
                     index === 0 ? "text-[1.70rem]" : "text-2xl",
-                  )}>
+                  )}
+                  draggable="false"
+                >
                   {item.name.toUpperCase()}
                 </a>
               </Link>
@@ -69,7 +71,7 @@ export default function Menu() {
                   {item.name === "Coins" ?
                     (
                       <Link href="/inventory">
-                        <a className="absolute select-none hover:scale-105 transition ease-in-out duration-150">
+                        <a className="absolute select-none hover:scale-105 transition ease-in-out duration-150" draggable="false">
                           <div className="flex drop-shadow-md rounded-full w-[70px] -translate-x-3">
                             <Image
                               priority
@@ -94,7 +96,7 @@ export default function Menu() {
                       </Link>
                     ) : (
                       <Link href="/inventory">
-                        <a className="absolute hover:scale-105 transition ease-in-out duration-150">
+                        <a className="absolute hover:scale-105 transition ease-in-out duration-150" draggable="false">
                           <Card size="sm">
                             {item.name}
                           </Card>

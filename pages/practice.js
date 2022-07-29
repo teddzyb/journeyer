@@ -90,12 +90,12 @@ export default function Practice() {
                 draggable="false"
               />
             </div>
-            <div className="text-lg drop-shadow-md pb-5 -mt-2">RUSH</div>
+            <div className="text-lg drop-shadow-md pb-5 -mt-2">OFFLINE</div>
           </button>
         </div>
         <div>
           <Link href="/menu">
-            <a>
+            <a draggable="false">
               <button className="btn-primary h-11 w-40">BACK</button>
             </a>
           </Link>

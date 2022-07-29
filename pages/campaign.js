@@ -98,7 +98,7 @@ export default function Campaign() {
             />
             <div className="flex justify-center gap-8 my-8">
               <Link href="/menu">
-                <a>
+                <a draggable="false">
                   <button className="btn-primary h-11 w-40">BACK</button>
                 </a>
               </Link>
