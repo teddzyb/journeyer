@@ -76,7 +76,7 @@ export default function Shop() {
                   disabled={item.disabled}
                   className={({ selected }) =>
                     classNames(
-                      "outline-none align-middle rounded-lg select-none w-full mx-2 pb-1 pt-2",
+                      "outline-none align-middle rounded-md select-none w-full mx-2 pb-1 pt-2",
                       selected ? "bg-teal-600 shadow focus:outline-2 focus:outline-offset-0 focus:outline-teal-500" : "hover:bg-teal-500/10",
                     )
                   }>
