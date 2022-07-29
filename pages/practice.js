@@ -2,6 +2,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 // Components
 import TopMenuBar from '../components/top-menu-bar'
@@ -11,7 +12,14 @@ import classicMode from '../public/assets/icons/mode-classic.svg'
 import tutorialMode from '../public/assets/icons/mode-tutorial.svg'
 import rushMode from '../public/assets/icons/mode-rush.svg'
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ")
+}
+
 export default function Practice() {
+
+  const [currentMode, setCurrentMode] = useState(1)
+
   return (
     <div>
       <Head>
@@ -22,9 +30,16 @@ export default function Practice() {
       <nav className="sticky top-0 z-50">
         <TopMenuBar />
       </nav>
-      <main className="h-screen flex flex-col justify-center items-center gap-28 pb-20">
+      <main className="h-screen flex flex-col justify-center items-center gap-32 pb-20">
         <div className="flex gap-24">
-          <div className="flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80">
+          <button
+            onMouseEnter={() => setCurrentMode(0)}
+            className={classNames(
+              "flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80",
+              "transition ease-in-out duration-200",
+              currentMode === 0 && "ring-4 ring-teal-400 scale-110"
+            )}
+          >
             <div className="flex justify-center h-full">
               <Image
                 src={tutorialMode}
@@ -36,8 +51,15 @@ export default function Practice() {
               />
             </div>
             <div className="text-lg drop-shadow-md pb-5 -mt-2">TUTORIAL</div>
-          </div>
-          <div className="flex flex-col items-center shadow-md rounded-xl ring-4 ring-teal-400 bg-translucent w-60 h-80 scale-110">
+          </button>
+          <button
+            onMouseEnter={() => setCurrentMode(1)}
+            className={classNames(
+              "flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80",
+              "transition ease-in-out duration-200",
+              currentMode === 1 && "ring-4 ring-teal-400 scale-110"
+            )}
+          >
             <div className="flex justify-center h-full">
               <Image
                 src={classicMode}
@@ -49,8 +71,15 @@ export default function Practice() {
               />
             </div>
             <div className="text-lg drop-shadow-md pb-5 -mt-2">CLASSIC</div>
-          </div>
-          <div className="flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80">
+          </button>
+          <button
+            onMouseEnter={() => setCurrentMode(2)}
+            className={classNames(
+              "flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80",
+              "transition ease-in-out duration-200",
+              currentMode === 2 && "ring-4 ring-teal-400 scale-110"
+            )}
+          >
             <div className="flex justify-center h-full">
               <Image
                 src={rushMode}
@@ -62,7 +91,7 @@ export default function Practice() {
               />
             </div>
             <div className="text-lg drop-shadow-md pb-5 -mt-2">RUSH</div>
-          </div>
+          </button>
         </div>
         <div>
           <Link href="/menu">
