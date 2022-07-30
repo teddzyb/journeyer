@@ -82,7 +82,7 @@ export default function Ranked() {
           <div className="text-center select-none bg-translucent w-full pb-2 pt-3">ROOM 00001</div>
           <div className="flex flex-col gap-2 border-b border-translucent p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
             <div className="grid grid-cols-4 gap-y-2 items-center">
-              <label htmlFor="joinCode" className="text-sm whitespace-nowrap mr-3">JOIN</label>
+              <label htmlFor="joinCode" className="text-sm whitespace-nowrap mr-3 pt-1">JOIN</label>
               <div className="flex col-span-3">
                 <input
                   type="text"
@@ -100,7 +100,7 @@ export default function Ranked() {
                   />
                 </button>
               </div>
-              <label htmlFor="inviteUser" className="text-sm whitespace-nowrap mr-3">INVITE</label>
+              <label htmlFor="inviteUser" className="text-sm whitespace-nowrap mr-3 pt-1">INVITE</label>
               <div className="flex col-span-3">
                 <input
                   type="text"
@@ -117,6 +117,90 @@ export default function Ranked() {
                     draggable="false"
                   />
                 </button>
+              </div>
+            </div>
+          </div>
+          <div className="p-4">
+            <div className="text-sm pb-1">PLAYERS (2/2)</div>
+            <div className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+              <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                <Image
+                  src="/assets/avatar.jpg"
+                  height={48}
+                  width={48}
+                  className="rounded-md"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+              <div className="flex flex-col pt-[2px] gap-[2px]">
+                <div>PLAYER-0001</div>
+                <div className="text-sm">LEVEL 28</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+              <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                <Image
+                  src="/assets/avatar.jpg"
+                  height={48}
+                  width={48}
+                  className="rounded-md"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+              <div className="flex flex-col pt-[2px] gap-[2px]">
+                <div>PLAYER-0001</div>
+                <div className="text-sm">LEVEL 28</div>
+              </div>
+            </div>
+            <div className="text-sm pb-1 pt-4">SPECTATORS (3)</div>
+            <div className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+              <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                <Image
+                  src="/assets/avatar.jpg"
+                  height={48}
+                  width={48}
+                  className="rounded-md"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+              <div className="flex flex-col pt-[2px] gap-[2px]">
+                <div>PLAYER-0001</div>
+                <div className="text-sm">LEVEL 28</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+              <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                <Image
+                  src="/assets/avatar.jpg"
+                  height={48}
+                  width={48}
+                  className="rounded-md"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+              <div className="flex flex-col pt-[2px] gap-[2px]">
+                <div>PLAYER-0001</div>
+                <div className="text-sm">LEVEL 28</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+              <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                <Image
+                  src="/assets/avatar.jpg"
+                  height={48}
+                  width={48}
+                  className="rounded-md"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+              <div className="flex flex-col pt-[2px] gap-[2px]">
+                <div>PLAYER-0001</div>
+                <div className="text-sm">LEVEL 28</div>
               </div>
             </div>
           </div>
