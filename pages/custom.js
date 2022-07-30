@@ -2,9 +2,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 // Components
+import { motion } from 'framer-motion'
 import TopMenuBar from '../components/top-menu-bar'
 import Card from '../components/card'
 
@@ -17,16 +18,25 @@ function classNames(...classes) {
 }
 
 let lobby = [
-  { username: "PLAYER-0001", level: 25, avatar: "/assets/avatar.jpg", role: "player" },
-  { username: "PLAYER-0002", level: 23, avatar: "/assets/avatar.jpg", role: "player" },
-  { username: "PLAYER-0003", level: 15, avatar: "/assets/avatar.jpg", role: "spectator" },
-  { username: "PLAYER-0004", level: 16, avatar: "/assets/avatar.jpg", role: "spectator" },
-  { username: "PLAYER-0005", level: 20, avatar: "/assets/avatar.jpg", role: "spectator" },
+  { key: 0, username: "PLAYER-0001", level: 25, avatar: "/assets/avatar.jpg", role: "player" },
+  { key: 1, username: "PLAYER-0002", level: 23, avatar: "/assets/avatar.jpg", role: "player" },
+  { key: 2, username: "PLAYER-0003", level: 15, avatar: "/assets/avatar.jpg", role: "spectator" },
+  { key: 3, username: "PLAYER-0004", level: 16, avatar: "/assets/avatar.jpg", role: "spectator" },
+  { key: 4, username: "PLAYER-0005", level: 20, avatar: "/assets/avatar.jpg", role: "spectator" },
 ]
 
 export default function Ranked() {
 
+  const playerListRef = useRef()
+  const spectatorListRef = useRef()
+
   const [currentMode, setCurrentMode] = useState(0)
+
+  function overlap(_event, info, ref) {
+    let rect = ref.current.getBoundingClientRect()
+    if (!(info.point.y < rect.top || info.point.y > rect.bottom))
+      return true
+  }
 
   return (
     <div>
@@ -130,45 +140,69 @@ export default function Ranked() {
           </div>
           <div className="p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
             <div className="text-sm pb-1">PLAYERS (2/2)</div>
-            {
-              lobby.filter(player => player.role === "player").map((player, index) =>
-                <div key={index} className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
-                  <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                    <Image
-                      src={player.avatar}
-                      height={48}
-                      width={48}
-                      className="rounded-md"
-                      alt=""
-                      draggable="false"
-                    />
-                  </div>
-                  <div className="flex flex-col pt-[2px] gap-[2px]">
-                    <div>{player.username}</div>
-                    <div className="text-sm">LEVEL 28</div>
-                  </div>
-                </div>
-              )}
-            <div className="text-sm pb-1 pt-4">SPECTATORS (3)</div>
-            {
-              lobby.filter(player => player.role === "spectator").map((player, index) =>
-                <div key={index} className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
-                  <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                    <Image
-                      src={player.avatar}
-                      height={48}
-                      width={48}
-                      className="rounded-md"
-                      alt=""
-                      draggable="false"
-                    />
-                  </div>
-                  <div className="flex flex-col pt-[2px] gap-[2px]">
-                    <div>{player.username}</div>
-                    <div className="text-sm">LEVEL 28</div>
-                  </div>
-                </div>
-              )}
+            <div ref={playerListRef}>
+              {
+                lobby.filter(player => player.role === "player").map(player =>
+                  <motion.div
+                    key={player.key}
+                    drag="y"
+                    dragSnapToOrigin
+                    dragElastic={1}
+                    whileDrag={{ scale: 1.02 }}
+                    onDragEnd={(event, info) => {
+                      lobby[player.key].role = overlap(event, info, spectatorListRef) ? "spectator" : "player"
+                      console.log(lobby[player.key])
+                    }}
+                    className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+                    <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                      <Image
+                        src={player.avatar}
+                        height={48}
+                        width={48}
+                        className="rounded-md"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                    <div className="flex flex-col pt-[2px] gap-[2px]">
+                      <div>{player.username}</div>
+                      <div className="text-sm">LEVEL 28</div>
+                    </div>
+                  </motion.div>
+                )}
+            </div>
+            <div ref={spectatorListRef}>
+              <div className="text-sm pb-1 pt-4">SPECTATORS (3)</div>
+              {
+                lobby.filter(player => player.role === "spectator").map(player =>
+                  <motion.div
+                    key={player.key}
+                    drag="y"
+                    dragSnapToOrigin
+                    dragElastic={1}
+                    whileDrag={{ scale: 1.02 }}
+                    onDragEnd={(event, info) => {
+                      lobby[player.key].role = overlap(event, info, playerListRef) ? "player" : "spectator"
+                      console.log(lobby[player.key])
+                    }}
+                    className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+                    <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                      <Image
+                        src={player.avatar}
+                        height={48}
+                        width={48}
+                        className="rounded-md"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                    <div className="flex flex-col pt-[2px] gap-[2px]">
+                      <div>{player.username}</div>
+                      <div className="text-sm">LEVEL 28</div>
+                    </div>
+                  </motion.div>
+                )}
+            </div>
           </div>
           {/* TODO: Chat feature */}
           {/* <div className="text-sm border-t border-translucent drop-shadow-md max-h-80 h-60 p-4">
