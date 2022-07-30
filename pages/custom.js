@@ -16,6 +16,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
+let lobby = [
+  { username: "PLAYER-0001", level: 25, avatar: "/assets/avatar.jpg", role: "player" },
+  { username: "PLAYER-0002", level: 23, avatar: "/assets/avatar.jpg", role: "player" },
+  { username: "PLAYER-0003", level: 15, avatar: "/assets/avatar.jpg", role: "spectator" },
+  { username: "PLAYER-0004", level: 16, avatar: "/assets/avatar.jpg", role: "spectator" },
+  { username: "PLAYER-0005", level: 20, avatar: "/assets/avatar.jpg", role: "spectator" },
+]
+
 export default function Ranked() {
 
   const [currentMode, setCurrentMode] = useState(0)
@@ -122,87 +130,45 @@ export default function Ranked() {
           </div>
           <div className="p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
             <div className="text-sm pb-1">PLAYERS (2/2)</div>
-            <div className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
-              <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                <Image
-                  src="/assets/avatar.jpg"
-                  height={48}
-                  width={48}
-                  className="rounded-md"
-                  alt=""
-                  draggable="false"
-                />
-              </div>
-              <div className="flex flex-col pt-[2px] gap-[2px]">
-                <div>PLAYER-0001</div>
-                <div className="text-sm">LEVEL 28</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
-              <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                <Image
-                  src="/assets/avatar.jpg"
-                  height={48}
-                  width={48}
-                  className="rounded-md"
-                  alt=""
-                  draggable="false"
-                />
-              </div>
-              <div className="flex flex-col pt-[2px] gap-[2px]">
-                <div>PLAYER-0001</div>
-                <div className="text-sm">LEVEL 28</div>
-              </div>
-            </div>
+            {
+              lobby.filter(player => player.role === "player").map((player, index) =>
+                <div key={index} className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+                  <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                    <Image
+                      src={player.avatar}
+                      height={48}
+                      width={48}
+                      className="rounded-md"
+                      alt=""
+                      draggable="false"
+                    />
+                  </div>
+                  <div className="flex flex-col pt-[2px] gap-[2px]">
+                    <div>{player.username}</div>
+                    <div className="text-sm">LEVEL 28</div>
+                  </div>
+                </div>
+              )}
             <div className="text-sm pb-1 pt-4">SPECTATORS (3)</div>
-            <div className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
-              <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                <Image
-                  src="/assets/avatar.jpg"
-                  height={48}
-                  width={48}
-                  className="rounded-md"
-                  alt=""
-                  draggable="false"
-                />
-              </div>
-              <div className="flex flex-col pt-[2px] gap-[2px]">
-                <div>PLAYER-0001</div>
-                <div className="text-sm">LEVEL 28</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
-              <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                <Image
-                  src="/assets/avatar.jpg"
-                  height={48}
-                  width={48}
-                  className="rounded-md"
-                  alt=""
-                  draggable="false"
-                />
-              </div>
-              <div className="flex flex-col pt-[2px] gap-[2px]">
-                <div>PLAYER-0001</div>
-                <div className="text-sm">LEVEL 28</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
-              <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                <Image
-                  src="/assets/avatar.jpg"
-                  height={48}
-                  width={48}
-                  className="rounded-md"
-                  alt=""
-                  draggable="false"
-                />
-              </div>
-              <div className="flex flex-col pt-[2px] gap-[2px]">
-                <div>PLAYER-0001</div>
-                <div className="text-sm">LEVEL 28</div>
-              </div>
-            </div>
+            {
+              lobby.filter(player => player.role === "spectator").map((player, index) =>
+                <div key={index} className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+                  <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                    <Image
+                      src={player.avatar}
+                      height={48}
+                      width={48}
+                      className="rounded-md"
+                      alt=""
+                      draggable="false"
+                    />
+                  </div>
+                  <div className="flex flex-col pt-[2px] gap-[2px]">
+                    <div>{player.username}</div>
+                    <div className="text-sm">LEVEL 28</div>
+                  </div>
+                </div>
+              )}
           </div>
           {/* TODO: Chat feature */}
           {/* <div className="text-sm border-t border-translucent drop-shadow-md max-h-80 h-60 p-4">
