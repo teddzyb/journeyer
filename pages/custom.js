@@ -51,7 +51,7 @@ export default function Ranked() {
                   currentMode === 1 ? "text-black bg-teal-500" : "text-teal-50 bg-translucent"
                 )}
               >
-                RUSH
+                BLITZ
               </button>
               <button
                 onClick={() => setCurrentMode(2)}

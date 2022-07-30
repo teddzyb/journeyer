@@ -10,7 +10,7 @@ import TopMenuBar from '../components/top-menu-bar'
 // Assets
 import classicMode from '../public/assets/icons/mode-classic.svg'
 import tutorialMode from '../public/assets/icons/mode-tutorial.svg'
-import rushMode from '../public/assets/icons/mode-rush.svg'
+import blitzMode from '../public/assets/icons/mode-blitz.svg'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -82,7 +82,7 @@ export default function Practice() {
           >
             <div className="flex justify-center h-full">
               <Image
-                src={rushMode}
+                src={blitzMode}
                 width={72}
                 height={72}
                 alt=""
@@ -90,7 +90,7 @@ export default function Practice() {
                 draggable="false"
               />
             </div>
-            <div className="text-lg drop-shadow-md pb-5 -mt-2">RUSH</div>
+            <div className="text-lg drop-shadow-md pb-5 -mt-2">BLITZ</div>
           </button>
         </div>
         <div>
