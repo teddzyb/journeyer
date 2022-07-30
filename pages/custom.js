@@ -81,41 +81,43 @@ export default function Ranked() {
         <div className="rounded-xl shadow-md bg-translucent overflow-hidden w-72 m-10 ml-0">
           <div className="text-center select-none bg-translucent w-full pb-2 pt-3">ROOM 00001</div>
           <div className="flex flex-col gap-2 border-b border-translucent p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-            <div className="flex items-center">
+            <div className="grid grid-cols-4 gap-y-2 items-center">
               <label htmlFor="joinCode" className="text-sm whitespace-nowrap mr-3">JOIN</label>
-              <input
-                type="text"
-                id="joinCode"
-                name="joinCode"
-                placeholder="Enter room code"
-                className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-8 pb-[6px]
+              <div className="flex col-span-3">
+                <input
+                  type="text"
+                  id="joinCode"
+                  name="joinCode"
+                  placeholder="Enter room code"
+                  className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-8 pb-[6px]
                   focus:border-transparent focus:ring-white/[.15]"
-              />
-              <button className="flex justify-center items-center rounded-r-sm bg-teal-500 h-8 aspect-square">
-                <FontAwesomeIcon
-                  icon={faRightToBracket}
-                  style={{ color: "rgb(0,0,0,.6)" }}
-                  draggable="false"
                 />
-              </button>
-            </div>
-            <div className="flex items-center">
+                <button className="flex justify-center items-center rounded-r-sm bg-teal-500 h-8 aspect-square">
+                  <FontAwesomeIcon
+                    icon={faRightToBracket}
+                    style={{ color: "rgb(0,0,0,.6)" }}
+                    draggable="false"
+                  />
+                </button>
+              </div>
               <label htmlFor="inviteUser" className="text-sm whitespace-nowrap mr-3">INVITE</label>
-              <input
-                type="text"
-                id="inviteUser"
-                name="inviteUser"
-                placeholder="Enter username"
-                className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-8 pb-[6px]
+              <div className="flex col-span-3">
+                <input
+                  type="text"
+                  id="inviteUser"
+                  name="inviteUser"
+                  placeholder="Enter username"
+                  className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-8 pb-[6px]
                   focus:border-transparent focus:ring-white/[.15]"
-              />
-              <button className="flex justify-center items-center rounded-r-sm bg-teal-500 h-8 aspect-square">
-                <FontAwesomeIcon
-                  icon={faPaperPlane}
-                  style={{ color: "rgb(0,0,0,.6)" }}
-                  draggable="false"
                 />
-              </button>
+                <button className="flex justify-center items-center rounded-r-sm bg-teal-500 h-8 aspect-square">
+                  <FontAwesomeIcon
+                    icon={faPaperPlane}
+                    style={{ color: "rgb(0,0,0,.6)" }}
+                    draggable="false"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>
