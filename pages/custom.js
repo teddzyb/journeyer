@@ -10,7 +10,7 @@ import Card from '../components/card'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faRightToBracket, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -33,8 +33,8 @@ export default function Ranked() {
       <main className="h-screen flex flex-row justify-center pb-20">
         <div className="rounded-xl shadow-md bg-translucent overflow-hidden w-72 m-10 mr-0">
           <div className="text-center select-none bg-translucent w-full pb-2 pt-3">GAME OPTIONS</div>
-          <div className="p-4 pt-3 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-            <div className="grid grid-cols-2 gap-2 border-b border-translucent pb-4">
+          <div className="border-b border-translucent p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+            <div className="grid grid-cols-2 gap-2">
               <button
                 onClick={() => setCurrentMode(0)}
                 className={classNames(
@@ -80,8 +80,43 @@ export default function Ranked() {
         </div>
         <div className="rounded-xl shadow-md bg-translucent overflow-hidden w-72 m-10 ml-0">
           <div className="text-center select-none bg-translucent w-full pb-2 pt-3">ROOM 00001</div>
-          <div className="p-4 pt-3 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-
+          <div className="flex flex-col gap-2 border-b border-translucent p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+            <div className="flex items-center">
+              <label htmlFor="joinCode" className="text-sm whitespace-nowrap mr-3">JOIN</label>
+              <input
+                type="text"
+                id="joinCode"
+                name="joinCode"
+                placeholder="Enter room code"
+                className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-8 pb-[6px]
+                  focus:border-transparent focus:ring-white/[.15]"
+              />
+              <button className="flex justify-center items-center rounded-r-sm bg-teal-500 h-8 aspect-square">
+                <FontAwesomeIcon
+                  icon={faRightToBracket}
+                  style={{ color: "rgb(0,0,0,.6)" }}
+                  draggable="false"
+                />
+              </button>
+            </div>
+            <div className="flex items-center">
+              <label htmlFor="inviteUser" className="text-sm whitespace-nowrap mr-3">INVITE</label>
+              <input
+                type="text"
+                id="inviteUser"
+                name="inviteUser"
+                placeholder="Enter username"
+                className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-8 pb-[6px]
+                  focus:border-transparent focus:ring-white/[.15]"
+              />
+              <button className="flex justify-center items-center rounded-r-sm bg-teal-500 h-8 aspect-square">
+                <FontAwesomeIcon
+                  icon={faPaperPlane}
+                  style={{ color: "rgb(0,0,0,.6)" }}
+                  draggable="false"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </main>
