@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useRef } from 'react'
+import { useListState } from '@mantine/hooks';
 
 // Components
 import { motion } from 'framer-motion'
@@ -17,20 +18,20 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-let lobby = [
-  { key: 0, username: "PLAYER-0001", level: 25, avatar: "/assets/avatar.jpg", role: "player" },
-  { key: 1, username: "PLAYER-0002", level: 23, avatar: "/assets/avatar.jpg", role: "player" },
-  { key: 2, username: "PLAYER-0003", level: 15, avatar: "/assets/avatar.jpg", role: "spectator" },
-  { key: 3, username: "PLAYER-0004", level: 16, avatar: "/assets/avatar.jpg", role: "spectator" },
-  { key: 4, username: "PLAYER-0005", level: 20, avatar: "/assets/avatar.jpg", role: "spectator" },
-]
-
 export default function Ranked() {
 
   const playerListRef = useRef()
   const spectatorListRef = useRef()
 
   const [currentMode, setCurrentMode] = useState(0)
+
+  const [lobby, handleLobby] = useListState([
+    { key: 0, username: "PLAYER-0001", level: 25, avatar: "/assets/avatar.jpg", role: "player" },
+    { key: 1, username: "PLAYER-0002", level: 23, avatar: "/assets/avatar.jpg", role: "player" },
+    { key: 2, username: "PLAYER-0003", level: 15, avatar: "/assets/avatar.jpg", role: "spectator" },
+    { key: 3, username: "PLAYER-0004", level: 16, avatar: "/assets/avatar.jpg", role: "spectator" },
+    { key: 4, username: "PLAYER-0005", level: 20, avatar: "/assets/avatar.jpg", role: "spectator" },
+  ])
 
   function overlap(_event, info, ref) {
     let rect = ref.current.getBoundingClientRect()
@@ -150,8 +151,7 @@ export default function Ranked() {
                     dragElastic={1}
                     whileDrag={{ scale: 1.02 }}
                     onDragEnd={(event, info) => {
-                      lobby[player.key].role = overlap(event, info, spectatorListRef) ? "spectator" : "player"
-                      console.log(lobby[player.key])
+                      overlap(event, info, spectatorListRef) && handleLobby.setItemProp(player.key, "role", "spectator")
                     }}
                     className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
                     <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
@@ -182,8 +182,7 @@ export default function Ranked() {
                     dragElastic={1}
                     whileDrag={{ scale: 1.02 }}
                     onDragEnd={(event, info) => {
-                      lobby[player.key].role = overlap(event, info, playerListRef) ? "player" : "spectator"
-                      console.log(lobby[player.key])
+                      overlap(event, info, playerListRef) && handleLobby.setItemProp(player.key, "role", "player")
                     }}
                     className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
                     <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
