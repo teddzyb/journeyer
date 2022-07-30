@@ -39,7 +39,7 @@ export default function Ranked() {
                 onClick={() => setCurrentMode(0)}
                 className={classNames(
                   "text-sm rounded-lg p-2 pt-3",
-                  currentMode === 0 ? "text-black bg-teal-500" : "text-teal-50 bg-translucent"
+                  currentMode === 0 ? "text-black font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
                 )}
               >
                 CLASSIC
@@ -48,7 +48,7 @@ export default function Ranked() {
                 onClick={() => setCurrentMode(1)}
                 className={classNames(
                   "text-sm rounded-lg p-2 pt-3",
-                  currentMode === 1 ? "text-black bg-teal-500" : "text-teal-50 bg-translucent"
+                  currentMode === 1 ? "text-black font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
                 )}
               >
                 BLITZ
@@ -57,7 +57,7 @@ export default function Ranked() {
                 onClick={() => setCurrentMode(2)}
                 className={classNames(
                   "text-sm rounded-lg p-2 pt-3 col-span-2",
-                  currentMode === 2 ? "text-black bg-teal-500" : "text-teal-50 bg-translucent"
+                  currentMode === 2 ? "text-black font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
                 )}
               >
                 CUSTOM
