@@ -88,9 +88,47 @@ export default function Ranked() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col grow my-10">
-          <div className="grow">
-
+        <div className="flex flex-col grow m-10">
+          <div className="grid grid-cols-3 items-center grow">
+            <div className="flex flex-col items-end">
+              <Card size="xl">Player&apos;s Deck</Card>
+              <div className="flex gap-4 pt-6">
+                <div className="flex flex-col items-end pt-[2px] gap-[2px]">
+                  <div>PLAYER-0001</div>
+                  <div className="text-sm">LEVEL 25</div>
+                </div>
+                <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                  <Image
+                    src="/assets/avatar.jpg"
+                    height={48}
+                    width={48}
+                    className="rounded-md"
+                    alt=""
+                    draggable="false"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center text-6xl font-light select-none mb-10">VS</div>
+            <div className="flex flex-col items-start">
+              <Card size="xl">Player&apos;s Deck</Card>
+              <div className="flex flex-row-reverse gap-4 pt-6">
+                <div className="flex flex-col pt-[2px] gap-[2px]">
+                  <div>PLAYER-0001</div>
+                  <div className="text-sm">LEVEL 25</div>
+                </div>
+                <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                  <Image
+                    src="/assets/avatar.jpg"
+                    height={48}
+                    width={48}
+                    className="rounded-md"
+                    alt=""
+                    draggable="false"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div className="flex justify-center gap-8 w-full my-10">
             <Link href="/menu">
