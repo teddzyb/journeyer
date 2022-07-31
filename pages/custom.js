@@ -22,9 +22,9 @@ function classNames(...classes) {
 const lobbyUsers = [
   { key: 0, username: "PLAYER-0001", level: 25, avatar: "/assets/avatar.jpg", role: "player" },
   { key: 1, username: "PLAYER-0002", level: 23, avatar: "/assets/avatar.jpg", role: "spectator" },
-  { key: 2, username: "PLAYER-0003", level: 15, avatar: "/assets/avatar.jpg", role: "spectator" },
-  { key: 3, username: "PLAYER-0004", level: 16, avatar: "/assets/avatar.jpg", role: "spectator" },
-  { key: 4, username: "PLAYER-0005", level: 20, avatar: "/assets/avatar.jpg", role: "spectator" },
+  // { key: 2, username: "PLAYER-0003", level: 15, avatar: "/assets/avatar.jpg", role: "spectator" },
+  // { key: 3, username: "PLAYER-0004", level: 16, avatar: "/assets/avatar.jpg", role: "spectator" },
+  // { key: 4, username: "PLAYER-0005", level: 20, avatar: "/assets/avatar.jpg", role: "spectator" },
 ]
 
 export default function Ranked() {
@@ -113,7 +113,7 @@ export default function Ranked() {
                   name="joinCode"
                   placeholder="Enter room code"
                   className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-8 pb-[6px]
-                  focus:border-transparent focus:ring-white/[.15]"
+                  focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
                 />
                 <button className="flex justify-center items-center rounded-r-sm bg-teal-500 h-8 aspect-square">
                   <FontAwesomeIcon
@@ -131,7 +131,7 @@ export default function Ranked() {
                   name="inviteUser"
                   placeholder="Enter username"
                   className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-8 pb-[6px]
-                  focus:border-transparent focus:ring-white/[.15]"
+                  focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
                 />
                 <button className="flex justify-center items-center rounded-r-sm bg-teal-500 h-8 aspect-square">
                   <FontAwesomeIcon
@@ -143,7 +143,7 @@ export default function Ranked() {
               </div>
             </div>
           </div>
-          <div className="p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+          <div className="h-full p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
             <div className="text-sm select-none pb-1">PLAYERS ({lobby.filter(player => player.role === "player").length}/2)</div>
             <div ref={playerListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
               {
@@ -243,10 +243,27 @@ export default function Ranked() {
               }
             </div>
           </div>
-          {/* TODO: Chat feature */}
-          {/* <div className="text-sm border-t border-translucent drop-shadow-md max-h-80 h-60 p-4">
-            CHAT
-          </div> */}
+          <div className="flex flex-col text-sm border-t border-translucent max-h-[260px] pb-4">
+            <div className="flex flex-col gap-1 px-4 pt-4 pb-0 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+              <div className="text-blue-300">PLAYER-0001 created Room#00001</div>
+              <div><span className="text-teal-300">Sender:</span> Message</div>
+              <div className="text-green-300">PLAYER-0001 joined the room</div>
+              <div className="text-red-300">PLAYER-0001 left the room</div>
+            </div>
+            <div className="flex col-span-3 px-4 pt-4">
+              <input
+                type="text"
+                id="inviteUser"
+                name="inviteUser"
+                placeholder="Send a message"
+                className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-9 pb-[6px]
+                  focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
+              />
+              <button className="flex justify-center items-center text-sm text-[#0c4441] font-semibold rounded-r-sm bg-teal-500 pt-[2px] px-2">
+                Send
+              </button>
+            </div>
+          </div>
         </div>
       </main>
     </div>
