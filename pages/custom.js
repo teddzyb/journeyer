@@ -12,7 +12,8 @@ import Card from '../components/card'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faRightToBracket, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faRightToBracket, faPaperPlane, faUser }
+  from '@fortawesome/free-solid-svg-icons'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -20,7 +21,7 @@ function classNames(...classes) {
 
 const lobbyUsers = [
   { key: 0, username: "PLAYER-0001", level: 25, avatar: "/assets/avatar.jpg", role: "player" },
-  { key: 1, username: "PLAYER-0002", level: 23, avatar: "/assets/avatar.jpg", role: "player" },
+  { key: 1, username: "PLAYER-0002", level: 23, avatar: "/assets/avatar.jpg", role: "spectator" },
   { key: 2, username: "PLAYER-0003", level: 15, avatar: "/assets/avatar.jpg", role: "spectator" },
   { key: 3, username: "PLAYER-0004", level: 16, avatar: "/assets/avatar.jpg", role: "spectator" },
   { key: 4, username: "PLAYER-0005", level: 20, avatar: "/assets/avatar.jpg", role: "spectator" },
@@ -174,6 +175,22 @@ export default function Ranked() {
                     </div>
                   </motion.div>
                 )}
+              {Array.from(Array(2 - lobby.filter(player => player.role === "player").length).keys()).map(index =>
+                <div key={index} className="flex items-center gap-4 rounded-md select-none p-2">
+                  <div className="flex rounded-md outline-dashed outline-2 outline-translucent/25 overflow-hidden w-fit">
+                    <div className="flex justify-center items-center text-xl w-[48px] aspect-square bg-translucent/5">
+                      <FontAwesomeIcon
+                        icon={faUser}
+                        style={{ color: "#0a3c39" }}
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-col text-sm text-teal-50/80 pt-[2px] gap-[2px]">
+                    <div>ADD A PLAYER</div>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="text-sm select-none pb-1 pt-4">SPECTATORS ({lobby.filter(player => player.role === "spectator").length})</div>
             <div ref={spectatorListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
