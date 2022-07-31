@@ -143,7 +143,7 @@ export default function Ranked() {
             </div>
           </div>
           <div className="p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-            <div className="text-sm pb-1">PLAYERS ({lobby.filter(player => player.role === "player").length}/2)</div>
+            <div className="text-sm select-none pb-1">PLAYERS ({lobby.filter(player => player.role === "player").length}/2)</div>
             <div ref={playerListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
               {
                 lobby.filter(player => player.role === "player").map(player =>
@@ -175,7 +175,7 @@ export default function Ranked() {
                   </motion.div>
                 )}
             </div>
-            <div className="text-sm pb-1 pt-4">SPECTATORS ({lobby.filter(player => player.role === "spectator").length})</div>
+            <div className="text-sm select-none pb-1 pt-4">SPECTATORS ({lobby.filter(player => player.role === "spectator").length})</div>
             <div ref={spectatorListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
               {
                 lobby.filter(player => player.role === "spectator").map(player =>
@@ -187,6 +187,8 @@ export default function Ranked() {
                     onDragStart={() => setDragging(true)}
                     onDragEnd={(event, info) => {
                       setDragging(false)
+                      if (lobby.filter(x => x.role === "player").length >= 2)
+                        return
                       overlap(event, info, playerListRef) && handleLobby.setItemProp(player.key, "role", "player")
                     }}
                     className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10 hover:shadow-md">
