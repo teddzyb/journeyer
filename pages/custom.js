@@ -1,7 +1,7 @@
 // APIs
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import { useState, useRef } from 'react'
 import { useListState } from '@mantine/hooks';
 
@@ -32,6 +32,7 @@ export default function Ranked() {
   const spectatorListRef = useRef()
 
   const [currentMode, setCurrentMode] = useState(0)
+  const [dragging, setDragging] = useState(false)
 
   const [lobby, handleLobby] = useListState(lobbyUsers)
 
@@ -143,7 +144,7 @@ export default function Ranked() {
           </div>
           <div className="p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
             <div className="text-sm pb-1">PLAYERS ({lobby.filter(player => player.role === "player").length}/2)</div>
-            <div ref={playerListRef}>
+            <div ref={playerListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
               {
                 lobby.filter(player => player.role === "player").map(player =>
                   <motion.div
@@ -151,11 +152,12 @@ export default function Ranked() {
                     drag="y"
                     dragSnapToOrigin
                     dragElastic={1}
-                    whileDrag={{ scale: 1.02 }}
+                    onDragStart={() => setDragging(true)}
                     onDragEnd={(event, info) => {
+                      setDragging(false)
                       overlap(event, info, spectatorListRef) && handleLobby.setItemProp(player.key, "role", "spectator")
                     }}
-                    className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+                    className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10 hover:shadow-md">
                     <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
                       <Image
                         src={player.avatar}
@@ -168,13 +170,13 @@ export default function Ranked() {
                     </div>
                     <div className="flex flex-col pt-[2px] gap-[2px]">
                       <div>{player.username}</div>
-                      <div className="text-sm">LEVEL 28</div>
+                      <div className="text-sm">LEVEL {player.level}</div>
                     </div>
                   </motion.div>
                 )}
             </div>
-            <div ref={spectatorListRef}>
-              <div className="text-sm pb-1 pt-4">SPECTATORS ({lobby.filter(player => player.role === "spectator").length})</div>
+            <div className="text-sm pb-1 pt-4">SPECTATORS ({lobby.filter(player => player.role === "spectator").length})</div>
+            <div ref={spectatorListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
               {
                 lobby.filter(player => player.role === "spectator").map(player =>
                   <motion.div
@@ -182,11 +184,12 @@ export default function Ranked() {
                     drag="y"
                     dragSnapToOrigin
                     dragElastic={1}
-                    whileDrag={{ scale: 1.02 }}
+                    onDragStart={() => setDragging(true)}
                     onDragEnd={(event, info) => {
+                      setDragging(false)
                       overlap(event, info, playerListRef) && handleLobby.setItemProp(player.key, "role", "player")
                     }}
-                    className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+                    className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10 hover:shadow-md">
                     <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
                       <Image
                         src={player.avatar}
@@ -199,7 +202,7 @@ export default function Ranked() {
                     </div>
                     <div className="flex flex-col pt-[2px] gap-[2px]">
                       <div>{player.username}</div>
-                      <div className="text-sm">LEVEL 28</div>
+                      <div className="text-sm">LEVEL {player.level}</div>
                     </div>
                   </motion.div>
                 )}
