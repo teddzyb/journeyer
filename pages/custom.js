@@ -225,6 +225,22 @@ export default function Ranked() {
                     </div>
                   </motion.div>
                 )}
+              {lobby.filter(player => player.role === "spectator").length === 0 &&
+                <div className="flex items-center gap-4 rounded-md select-none p-2">
+                  <div className="flex rounded-md outline-dashed outline-2 outline-translucent/25 overflow-hidden w-fit">
+                    <div className="flex justify-center items-center text-xl w-[48px] aspect-square bg-translucent/5">
+                      <FontAwesomeIcon
+                        icon={faUser}
+                        style={{ color: "#0a3c39" }}
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-col text-sm text-teal-50/80 pt-[2px] gap-[2px]">
+                    <div>ADD A SPECTATOR</div>
+                  </div>
+                </div>
+              }
             </div>
           </div>
           {/* TODO: Chat feature */}
