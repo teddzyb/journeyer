@@ -6,13 +6,13 @@ import { useState, useRef } from 'react'
 import { useListState } from '@mantine/hooks';
 
 // Components
-import { motion } from 'framer-motion'
 import TopMenuBar from '../components/top-menu-bar'
 import Card from '../components/card'
+import LobbyPlayer from '../components/lobby-player'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faRightToBracket, faPaperPlane, faUser }
+import { faRightToBracket, faPaperPlane, faUser }
   from '@fortawesome/free-solid-svg-icons'
 
 function classNames(...classes) {
@@ -201,34 +201,18 @@ export default function Ranked() {
             <div className="text-sm select-none pb-1">PLAYERS ({lobby.filter(player => player.role === "player").length}/2)</div>
             <div ref={playerListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
               {
-                lobby.filter(player => player.role === "player").map(player =>
-                  <motion.div
-                    key={player.key}
-                    drag="y"
-                    dragSnapToOrigin
-                    dragElastic={1}
-                    onDragStart={() => setDragging(true)}
-                    onDragEnd={(event, info) => {
-                      setDragging(false)
-                      overlap(event, info, spectatorListRef) && handleLobby.setItemProp(player.key, "role", "spectator")
-                    }}
-                    className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10 hover:shadow-md">
-                    <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                      <Image
-                        src={player.avatar}
-                        height={48}
-                        width={48}
-                        className="rounded-md"
-                        alt=""
-                        draggable="false"
-                      />
-                    </div>
-                    <div className="flex flex-col pt-[2px] gap-[2px]">
-                      <div>{player.username}</div>
-                      <div className="text-sm">LEVEL {player.level}</div>
-                    </div>
-                  </motion.div>
-                )}
+                lobby.filter(player => player.role === "player").map((player, index) =>
+                  <LobbyPlayer
+                    key={index}
+                    type="player"
+                    player={player}
+                    setDragging={setDragging}
+                    listRef={spectatorListRef}
+                    overlap={overlap}
+                    handleLobby={handleLobby}
+                  />
+                )
+              }
               {Array.from(Array(2 - lobby.filter(player => player.role === "player").length).keys()).map(index =>
                 <div key={index} className="flex items-center gap-4 rounded-md select-none p-2">
                   <div className="flex rounded-md outline-dashed outline-2 outline-translucent/25 overflow-hidden w-fit">
@@ -249,36 +233,19 @@ export default function Ranked() {
             <div className="text-sm select-none pb-1 pt-4">SPECTATORS ({lobby.filter(player => player.role === "spectator").length})</div>
             <div ref={spectatorListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
               {
-                lobby.filter(player => player.role === "spectator").map(player =>
-                  <motion.div
-                    key={player.key}
-                    drag="y"
-                    dragSnapToOrigin
-                    dragElastic={1}
-                    onDragStart={() => setDragging(true)}
-                    onDragEnd={(event, info) => {
-                      setDragging(false)
-                      if (lobby.filter(x => x.role === "player").length >= 2)
-                        return
-                      overlap(event, info, playerListRef) && handleLobby.setItemProp(player.key, "role", "player")
-                    }}
-                    className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10 hover:shadow-md">
-                    <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                      <Image
-                        src={player.avatar}
-                        height={48}
-                        width={48}
-                        className="rounded-md"
-                        alt=""
-                        draggable="false"
-                      />
-                    </div>
-                    <div className="flex flex-col pt-[2px] gap-[2px]">
-                      <div>{player.username}</div>
-                      <div className="text-sm">LEVEL {player.level}</div>
-                    </div>
-                  </motion.div>
-                )}
+                lobby.filter(player => player.role === "spectator").map((player, index) =>
+                  <LobbyPlayer
+                    key={index}
+                    type="spectator"
+                    playerCount={lobby.filter(x => x.role === "player").length}
+                    player={player}
+                    setDragging={setDragging}
+                    listRef={playerListRef}
+                    overlap={overlap}
+                    handleLobby={handleLobby}
+                  />
+                )
+              }
               {lobby.filter(player => player.role === "spectator").length === 0 &&
                 <div className="flex items-center gap-4 rounded-md select-none p-2">
                   <div className="flex rounded-md outline-dashed outline-2 outline-translucent/25 overflow-hidden w-fit">
