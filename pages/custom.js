@@ -122,7 +122,7 @@ export default function Ranked() {
             {
               Array.from(Array(2 - lobby.filter(player => player.role === "player").length).keys()).map(index =>
                 <div key={index} className="flex flex-col items-end last:items-start last:order-3">
-                  <Card size="xl" className="bg-transparent shadow-none border-2 border-black/50 border-dashed"> </Card>
+                  <Card size="xl" className="bg-translucent/[.05] shadow-none outline-2 outline-black/50 outline-dashed"> </Card>
                   <div className={classNames(
                     "flex gap-4 pt-6",
                     (lobby.filter(player => player.role === "player").length === 1 || index) && "flex-row-reverse"
