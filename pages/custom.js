@@ -81,7 +81,7 @@ export default function Ranked() {
             {
               lobby.filter(player => player.role === "player").map((player, index) =>
                 <div key={player.key} className="flex flex-col items-end select-none last:items-start last:order-3">
-                  <Card size="xl">Player&apos;s Deck</Card>
+                  <Card size="xl">{player.username}&apos;s Deck</Card>
                   <div className={classNames(
                     "flex gap-4 pt-6",
                     index && "flex-row-reverse"
@@ -232,6 +232,7 @@ export default function Ranked() {
           </div>
           <div className="flex flex-col text-sm border-t border-translucent max-h-[260px] pb-4">
             <div className="flex flex-col gap-1 px-4 pt-4 pb-0 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+              {/* TODO: Create message component */}
               <div className="text-blue-300">PLAYER-0001 created Room#00001</div>
               <div><span className="text-teal-300">Sender:</span> Message</div>
               <div className="text-green-300">PLAYER-0001 joined the room</div>
