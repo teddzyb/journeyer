@@ -19,6 +19,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
+const modes = ["classic", "blitz", "custom"]
+
 const lobbyUsers = [
   { key: 0, username: "PLAYER-0001", level: 25, avatar: "/assets/avatar.jpg", role: "player" },
   { key: 1, username: "PLAYER-0002", level: 23, avatar: "/assets/avatar.jpg", role: "spectator" },
@@ -58,33 +60,18 @@ export default function Ranked() {
           <div className="text-center select-none bg-translucent w-full pb-2 pt-3">GAME OPTIONS</div>
           <div className="border-b border-translucent p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
             <div className="grid grid-cols-2 gap-2">
-              <button
-                onClick={() => setCurrentMode(0)}
-                className={classNames(
-                  "text-sm rounded-lg p-2 pt-3",
-                  currentMode === 0 ? "text-[#0c4441] font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
-                )}
-              >
-                CLASSIC
-              </button>
-              <button
-                onClick={() => setCurrentMode(1)}
-                className={classNames(
-                  "text-sm rounded-lg p-2 pt-3",
-                  currentMode === 1 ? "text-[#0c4441] font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
-                )}
-              >
-                BLITZ
-              </button>
-              <button
-                onClick={() => setCurrentMode(2)}
-                className={classNames(
-                  "text-sm rounded-lg p-2 pt-3 col-span-2",
-                  currentMode === 2 ? "text-[#0c4441] font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
-                )}
-              >
-                CUSTOM
-              </button>
+              {modes.map((mode, index) =>
+                <button
+                  key={index}
+                  onClick={() => setCurrentMode(index)}
+                  className={classNames(
+                    "uppercase text-sm rounded-lg p-2 pt-3 last:col-span-2",
+                    currentMode === index ? "text-[#0c4441] font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
+                  )}
+                >
+                  {mode}
+                </button>
+              )}
             </div>
           </div>
         </div>
