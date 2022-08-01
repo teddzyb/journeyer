@@ -213,22 +213,11 @@ export default function Ranked() {
                   />
                 )
               }
-              {Array.from(Array(2 - lobby.filter(player => player.role === "player").length).keys()).map(index =>
-                <div key={index} className="flex items-center gap-4 rounded-md select-none p-2">
-                  <div className="flex rounded-md outline-dashed outline-2 outline-translucent/25 overflow-hidden w-fit">
-                    <div className="flex justify-center items-center text-xl w-[48px] aspect-square bg-translucent/5">
-                      <FontAwesomeIcon
-                        icon={faUser}
-                        style={{ color: "#0a3c39" }}
-                        draggable="false"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex flex-col text-sm text-teal-50/80 pt-[2px] gap-[2px]">
-                    <div>ADD A PLAYER</div>
-                  </div>
-                </div>
-              )}
+              {
+                Array.from(Array(2 - lobby.filter(player => player.role === "player").length).keys()).map(index =>
+                  <LobbyPlayer key={index} type="placeholder">ADD A PLAYER</LobbyPlayer>
+                )
+              }
             </div>
             <div className="text-sm select-none pb-1 pt-4">SPECTATORS ({lobby.filter(player => player.role === "spectator").length})</div>
             <div ref={spectatorListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
@@ -246,21 +235,9 @@ export default function Ranked() {
                   />
                 )
               }
-              {lobby.filter(player => player.role === "spectator").length === 0 &&
-                <div className="flex items-center gap-4 rounded-md select-none p-2">
-                  <div className="flex rounded-md outline-dashed outline-2 outline-translucent/25 overflow-hidden w-fit">
-                    <div className="flex justify-center items-center text-xl w-[48px] aspect-square bg-translucent/5">
-                      <FontAwesomeIcon
-                        icon={faUser}
-                        style={{ color: "#0a3c39" }}
-                        draggable="false"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex flex-col text-sm text-teal-50/80 pt-[2px] gap-[2px]">
-                    <div>ADD A SPECTATOR</div>
-                  </div>
-                </div>
+              {
+                lobby.filter(player => player.role === "spectator").length === 0 &&
+                <LobbyPlayer type="placeholder">ADD A SPECTATOR</LobbyPlayer>
               }
             </div>
           </div>
