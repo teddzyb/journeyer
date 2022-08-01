@@ -90,45 +90,61 @@ export default function Ranked() {
         </div>
         <div className="flex flex-col grow m-10">
           <div className="grid grid-cols-3 items-center grow">
-            <div className="flex flex-col items-end">
-              <Card size="xl">Player&apos;s Deck</Card>
-              <div className="flex gap-4 pt-6">
-                <div className="flex flex-col items-end pt-[2px] gap-[2px]">
-                  <div>PLAYER-0001</div>
-                  <div className="text-sm">LEVEL 25</div>
+            <div className="flex justify-center text-6xl font-light select-none mb-10 order-2">VS</div>
+            {
+              lobby.filter(player => player.role === "player").map((player, index) =>
+                <div key={player.key} className="flex flex-col items-end last:items-start last:order-3">
+                  <Card size="xl">Player&apos;s Deck</Card>
+                  <div className={classNames(
+                    "flex gap-4 pt-6",
+                    index && "flex-row-reverse"
+                  )}>
+                    <div className={classNames(
+                      "flex flex-col justify-center pt-[2px] gap-[2px]",
+                      index ? "items-start" : "items-end"
+                    )}>
+                      <div>{player.username}</div>
+                      <div className="text-sm">LEVEL {player.level}</div>
+                    </div>
+                    <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                      <Image
+                        src={player.avatar}
+                        height={48}
+                        width={48}
+                        className="rounded-md"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                  <Image
-                    src="/assets/avatar.jpg"
-                    height={48}
-                    width={48}
-                    className="rounded-md"
-                    alt=""
-                    draggable="false"
-                  />
+              )}
+            {
+              Array.from(Array(2 - lobby.filter(player => player.role === "player").length).keys()).map(index =>
+                <div key={index} className="flex flex-col items-end last:items-start last:order-3">
+                  <Card size="xl" className="bg-transparent shadow-none border-2 border-black/50 border-dashed"> </Card>
+                  <div className={classNames(
+                    "flex gap-4 pt-6",
+                    (lobby.filter(player => player.role === "player").length === 1 || index) && "flex-row-reverse"
+                  )}>
+                    <div className={classNames(
+                      "flex flex-col justify-center pt-[2px] gap-[2px]",
+                      (lobby.filter(player => player.role === "player").length === 1 || index) ? "items-start" : "items-end"
+                    )}>
+                      <div>ADD A PLAYER</div>
+                    </div>
+                    <div className="flex rounded-md outline-dashed outline-2 outline-translucent/25 overflow-hidden w-fit">
+                      <div className="flex justify-center items-center text-xl w-[48px] aspect-square bg-translucent/5">
+                        <FontAwesomeIcon
+                          icon={faUser}
+                          style={{ color: "#0a3c39" }}
+                          draggable="false"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="flex justify-center text-6xl font-light select-none mb-10">VS</div>
-            <div className="flex flex-col items-start">
-              <Card size="xl">Player&apos;s Deck</Card>
-              <div className="flex flex-row-reverse gap-4 pt-6">
-                <div className="flex flex-col pt-[2px] gap-[2px]">
-                  <div>PLAYER-0001</div>
-                  <div className="text-sm">LEVEL 25</div>
-                </div>
-                <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                  <Image
-                    src="/assets/avatar.jpg"
-                    height={48}
-                    width={48}
-                    className="rounded-md"
-                    alt=""
-                    draggable="false"
-                  />
-                </div>
-              </div>
-            </div>
+              )}
           </div>
           <div className="flex justify-center gap-8 w-full my-10">
             <Link href="/menu">
