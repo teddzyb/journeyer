@@ -93,7 +93,7 @@ export default function Ranked() {
             <div className="flex justify-center text-6xl font-light select-none mb-10 order-2">VS</div>
             {
               lobby.filter(player => player.role === "player").map((player, index) =>
-                <div key={player.key} className="flex flex-col items-end last:items-start last:order-3">
+                <div key={player.key} className="flex flex-col items-end select-none last:items-start last:order-3">
                   <Card size="xl">Player&apos;s Deck</Card>
                   <div className={classNames(
                     "flex gap-4 pt-6",
@@ -118,10 +118,11 @@ export default function Ranked() {
                     </div>
                   </div>
                 </div>
-              )}
+              )
+            }
             {
               Array.from(Array(2 - lobby.filter(player => player.role === "player").length).keys()).map(index =>
-                <div key={index} className="flex flex-col items-end last:items-start last:order-3">
+                <div key={index} className="flex flex-col items-end select-none last:items-start last:order-3">
                   <Card size="xl" className="bg-translucent/[.05] shadow-none outline-2 outline-black/50 outline-dashed"> </Card>
                   <div className={classNames(
                     "flex gap-4 pt-6",
@@ -144,7 +145,8 @@ export default function Ranked() {
                     </div>
                   </div>
                 </div>
-              )}
+              )
+            }
           </div>
           <div className="flex justify-center gap-8 w-full my-10">
             <Link href="/menu">
