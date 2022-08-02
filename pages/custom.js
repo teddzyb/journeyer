@@ -9,6 +9,7 @@ import { useSetState, useListState } from '@mantine/hooks'
 import { Switch } from '@headlessui/react'
 import TopMenuBar from '../components/top-menu-bar'
 import Card from '../components/card'
+import GameOption from '../components/game-option'
 import LobbyPlayer from '../components/lobby-player'
 import Message from '../components/message'
 
@@ -111,33 +112,12 @@ export default function Ranked() {
             {
               Object.keys(currentMode).map((option, index) =>
                 option !== "name" &&
-                <div key={index} className="flex items-center w-full">
-                  <div className="mr-auto">{option}</div>
-                  {
-                    {
-                      "number":
-                        <input
-                          type="number"
-                          value={currentMode[option]}
-                          className="text-center border-none shadow-sm rounded-sm bg-translucent placeholder-white/50 w-16 h-7 pb-[6px]
-                            focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
-                        />,
-                      "boolean":
-                        <Switch
-                          checked={currentMode["Enable White Cards"]}
-                          onChange={() => setCurrentMode({ "Enable White Cards": !currentMode["Enable White Cards"] })}
-                          className={classNames(
-                            "relative inline-flex h-7 w-14 mx-1 items-center rounded-full transition-colors",
-                            currentMode["Enable White Cards"] ? "bg-teal-500" : "bg-translucent"
-                          )}
-                        >
-                          <span className={`${currentMode["Enable White Cards"] ? 'translate-x-8' : 'translate-x-1'
-                            } inline-block h-5 w-5 transform rounded-full bg-white transition-transform`}
-                          />
-                        </Switch>,
-                    }[typeof currentMode[option]]
-                  }
-                </div>
+                <GameOption
+                  key={index}
+                  option={option}
+                  currentMode={currentMode}
+                  setCurrentMode={setCurrentMode}
+                />
               )
             }
           </div>
