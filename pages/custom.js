@@ -3,9 +3,10 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/future/image'
 import { useState, useRef } from 'react'
-import { useListState } from '@mantine/hooks';
+import { useSetState, useListState } from '@mantine/hooks'
 
 // Components
+import { Switch } from '@headlessui/react'
 import TopMenuBar from '../components/top-menu-bar'
 import Card from '../components/card'
 import LobbyPlayer from '../components/lobby-player'
@@ -20,23 +21,23 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-const modes = [
-  {
-    classic: {
-
-    }
+const modes = {
+  classic: {
+    name: "classic",
+    "Time Limit Per Turn": 3,
+    "Overall Time Limit": null,
   },
-  {
-    blitz: {
-
-    }
+  blitz: {
+    name: "blitz",
+    "Time Limit Per Turn": 1,
+    "Overall Time Limit": null,
   },
-  {
-    custom: {
-
-    }
+  custom: {
+    name: "custom",
+    "Time Limit Per Turn": null,
+    "Overall Time Limit": null,
   },
-]
+}
 
 const lobbyUsers = [
   { key: 0, username: "PLAYER-0001", level: 25, avatar: "/assets/avatar.jpg", role: "player" },
@@ -51,7 +52,7 @@ export default function Ranked() {
   const playerListRef = useRef()
   const spectatorListRef = useRef()
 
-  const [currentMode, setCurrentMode] = useState(0)
+  const [currentMode, setCurrentMode] = useSetState(modes["classic"])
   const [dragging, setDragging] = useState(false)
 
   const [lobby, handleLobby] = useListState(lobbyUsers)
@@ -75,21 +76,45 @@ export default function Ranked() {
       <main className="h-screen flex flex-row justify-center pb-20">
         <div className="rounded-xl shadow-md bg-translucent overflow-hidden w-72 m-10 mr-0">
           <div className="text-center select-none bg-translucent w-full pb-2 pt-3">GAME OPTIONS</div>
-          <div className="border-b border-translucent p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+          <div className="border-b border-translucent p-4">
             <div className="grid grid-cols-2 gap-2">
-              {modes.map((mode, index) =>
+              {Object.keys(modes).map((mode, index) =>
                 <button
                   key={index}
-                  onClick={() => setCurrentMode(index)}
+                  onClick={() => setCurrentMode(modes[mode])}
                   className={classNames(
                     "uppercase text-sm rounded-lg p-2 pt-3 last:col-span-2",
-                    currentMode === index ? "text-[#0c4441] font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
+                    currentMode.name === modes[mode].name ? "text-[#0c4441] font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
                   )}
                 >
-                  {Object.keys(mode)}
+                  {mode}
                 </button>
               )}
             </div>
+          </div>
+          <div className="p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+            {/* <Switch.Group>
+              <div className="flex items-center">
+                <Switch.Label className="mr-auto">Enable notifications</Switch.Label>
+                <Switch
+                  checked={currentMode.Test}
+                  onChange={() => setCurrentMode({ Test: !currentMode.Test })}
+                  className={`${currentMode.Test ? 'bg-blue-600' : 'bg-gray-200'
+                    } relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}
+                >
+                  <span
+                    className={`${currentMode.Test ? 'translate-x-6' : 'translate-x-1'
+                      } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
+                  />
+                </Switch>
+              </div>
+            </Switch.Group> */}
+            {
+              Object.keys(currentMode).map((mode, index) =>
+                mode !== "name" &&
+                <div key={index}>{mode}</div>
+              )
+            }
           </div>
         </div>
         <div className="flex flex-col grow m-10">
@@ -269,7 +294,7 @@ export default function Ranked() {
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   )
 }
