@@ -9,6 +9,7 @@ import { useListState } from '@mantine/hooks';
 import TopMenuBar from '../components/top-menu-bar'
 import Card from '../components/card'
 import LobbyPlayer from '../components/lobby-player'
+import Message from '../components/message'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -110,7 +111,7 @@ export default function Ranked() {
             {
               Array.from(Array(2 - lobby.filter(player => player.role === "player").length).keys()).map(index =>
                 <div key={index} className="flex flex-col items-end select-none last:items-start last:order-3">
-                  <Card size="xl" className="bg-translucent/[.05] shadow-none outline-2 outline-black/50 outline-dashed"> </Card>
+                  <Card size="xl" className="bg-black/[.05] shadow-none outline-2 outline-black/50 outline-dashed"> </Card>
                   <div className={classNames(
                     "flex gap-4 pt-6",
                     (lobby.filter(player => player.role === "player").length === 1 || index) && "flex-row-reverse"
@@ -232,11 +233,10 @@ export default function Ranked() {
           </div>
           <div className="flex flex-col text-sm border-t border-translucent max-h-[260px] pb-4">
             <div className="flex flex-col gap-1 px-4 pt-4 pb-0 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-              {/* TODO: Create message component */}
-              <div className="text-blue-300">PLAYER-0001 created Room#00001</div>
-              <div><span className="text-teal-300">Sender:</span> Message</div>
-              <div className="text-green-300">PLAYER-0001 joined the room</div>
-              <div className="text-red-300">PLAYER-0001 left the room</div>
+              <Message sender="system" type="create">PLAYER-0001 created Room#00001</Message>
+              <Message sender="PLAYER-0001">Hello!</Message>
+              <Message sender="system" type="join">PLAYER-0001 joined the room</Message>
+              <Message sender="system" type="leave">PLAYER-0001 left the room</Message>
             </div>
             <div className="flex col-span-3 px-4 pt-4">
               <input
