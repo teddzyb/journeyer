@@ -9,7 +9,10 @@ export default function Card(props) {
     <div
       className={
         classNames(
-          "bg-yellow-50 rounded-md card-shadow select-none",
+          "rounded-md select-none",
+          props.placeholder ?
+            "bg-black/[.05] outline-2 outline-black/50 outline-dashed" :
+            "bg-yellow-50 card-shadow",
           props.className,
           {
             "sm": "w-[8rem] h-[12rem] p-[3px]",

@@ -20,7 +20,23 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-const modes = ["classic", "blitz", "custom"]
+const modes = [
+  {
+    classic: {
+
+    }
+  },
+  {
+    blitz: {
+
+    }
+  },
+  {
+    custom: {
+
+    }
+  },
+]
 
 const lobbyUsers = [
   { key: 0, username: "PLAYER-0001", level: 25, avatar: "/assets/avatar.jpg", role: "player" },
@@ -70,7 +86,7 @@ export default function Ranked() {
                     currentMode === index ? "text-[#0c4441] font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
                   )}
                 >
-                  {mode}
+                  {Object.keys(mode)}
                 </button>
               )}
             </div>
@@ -111,7 +127,7 @@ export default function Ranked() {
             {
               Array.from(Array(2 - lobby.filter(player => player.role === "player").length).keys()).map(index =>
                 <div key={index} className="flex flex-col items-end select-none last:items-start last:order-3">
-                  <Card size="xl" className="bg-black/[.05] shadow-none outline-2 outline-black/50 outline-dashed"> </Card>
+                  <Card size="xl" placeholder> </Card>
                   <div className={classNames(
                     "flex gap-4 pt-6",
                     (lobby.filter(player => player.role === "player").length === 1 || index) && "flex-row-reverse"
