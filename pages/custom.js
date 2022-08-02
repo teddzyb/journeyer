@@ -159,7 +159,7 @@ export default function Ranked() {
                   className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-8 pb-[6px]
                   focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
                 />
-                <button className="flex justify-center items-center rounded-r-sm bg-teal-500 h-8 aspect-square">
+                <button className="flex justify-center items-center text-sm rounded-r-sm bg-teal-500 h-8 aspect-square">
                   <FontAwesomeIcon
                     icon={faRightToBracket}
                     style={{ color: "#0c4441" }}
@@ -177,7 +177,7 @@ export default function Ranked() {
                   className="text-sm border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-8 pb-[6px]
                   focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
                 />
-                <button className="flex justify-center items-center rounded-r-sm bg-teal-500 h-8 aspect-square">
+                <button className="flex justify-center items-center text-sm rounded-r-sm bg-teal-500 h-8 aspect-square">
                   <FontAwesomeIcon
                     icon={faPaperPlane}
                     style={{ color: "#0c4441" }}
