@@ -1,4 +1,3 @@
-import * as Tooltip from '@radix-ui/react-tooltip'
 import { Switch } from '@headlessui/react'
 
 function classNames(...classes) {
@@ -14,26 +13,26 @@ export default function GameOption(props) {
           "number":
             <input
               type="number"
-              value={props.currentMode[props.option]}
+              value={props.currentMode[props.option].value}
               className="text-center border-none shadow-sm rounded-sm bg-translucent placeholder-white/50 w-16 h-7 pb-[6px]
                             focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
             />,
           "boolean":
             <Switch
-              checked={props.currentMode["Enable White Cards"]}
-              onChange={() => props.setCurrentMode({ "Enable White Cards": !props.currentMode["Enable White Cards"] })}
+              checked={props.currentMode[props.option].value}
+              onChange={() => props.setCurrentMode({ [props.option]: { value: !props.currentMode[props.option].value } })}
               className={classNames(
                 "relative inline-flex h-7 w-14 mx-1 items-center rounded-full transition-colors",
-                props.currentMode["Enable White Cards"] ? "bg-teal-500" : "bg-translucent"
+                props.currentMode[props.option].value ? "bg-teal-500" : "bg-translucent"
               )}
             >
               <span className={classNames(
                 "inline-block h-5 w-5 transform rounded-full bg-white transition-transform",
-                props.currentMode["Enable White Cards"] ? "translate-x-8" : "translate-x-1"
+                props.currentMode[props.option].value ? "translate-x-8" : "translate-x-1"
               )}
               />
             </Switch>,
-        }[typeof props.currentMode[props.option]]
+        }[typeof props.currentMode[props.option].value]
       }
     </div>
   )
