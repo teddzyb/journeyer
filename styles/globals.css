@@ -16,6 +16,16 @@
         overflow-y: hidden;
     }
 
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
     /* div, footer, header, main, nav, section, form, button, a {
         border: 1px solid black;
     } */

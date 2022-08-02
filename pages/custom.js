@@ -25,17 +25,32 @@ const modes = {
   classic: {
     name: "classic",
     "Time Limit Per Turn": 3,
-    "Overall Time Limit": null,
+    "Overall Time Limit": 0,
+    "Starting Cards": 5,
+    "Starting Coins": 0,
+    "Choices Per Turn": 2,
+    "Value of Gold Coin": 5,
+    "Enable White Cards": true,
   },
   blitz: {
     name: "blitz",
     "Time Limit Per Turn": 1,
-    "Overall Time Limit": null,
+    "Overall Time Limit": 0,
+    "Starting Cards": 0,
+    "Starting Coins": 0,
+    "Choices Per Turn": 2,
+    "Value of Gold Coin": 0,
+    "Enable White Cards": false,
   },
   custom: {
     name: "custom",
-    "Time Limit Per Turn": null,
-    "Overall Time Limit": null,
+    "Time Limit Per Turn": 0,
+    "Overall Time Limit": 0,
+    "Starting Cards": 0,
+    "Starting Coins": 0,
+    "Choices Per Turn": 0,
+    "Value of Gold Coin": 0,
+    "Enable White Cards": false,
   },
 }
 
@@ -92,27 +107,37 @@ export default function Ranked() {
               )}
             </div>
           </div>
-          <div className="p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-            {/* <Switch.Group>
-              <div className="flex items-center">
-                <Switch.Label className="mr-auto">Enable notifications</Switch.Label>
-                <Switch
-                  checked={currentMode.Test}
-                  onChange={() => setCurrentMode({ Test: !currentMode.Test })}
-                  className={`${currentMode.Test ? 'bg-blue-600' : 'bg-gray-200'
-                    } relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}
-                >
-                  <span
-                    className={`${currentMode.Test ? 'translate-x-6' : 'translate-x-1'
-                      } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
-                  />
-                </Switch>
-              </div>
-            </Switch.Group> */}
+          <div className="flex flex-col gap-3 select-none p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
             {
-              Object.keys(currentMode).map((mode, index) =>
-                mode !== "name" &&
-                <div key={index}>{mode}</div>
+              Object.keys(currentMode).map((option, index) =>
+                option !== "name" &&
+                <div key={index} className="flex items-center w-full">
+                  <div className="mr-auto">{option}</div>
+                  {
+                    {
+                      "number":
+                        <input
+                          type="number"
+                          value={currentMode[option]}
+                          className="text-center border-none shadow-sm rounded-sm bg-translucent placeholder-white/50 w-16 h-7 pb-[6px]
+                            focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
+                        />,
+                      "boolean":
+                        <Switch
+                          checked={currentMode["Enable White Cards"]}
+                          onChange={() => setCurrentMode({ "Enable White Cards": !currentMode["Enable White Cards"] })}
+                          className={classNames(
+                            "relative inline-flex h-7 w-14 mx-1 items-center rounded-full transition-colors",
+                            currentMode["Enable White Cards"] ? "bg-teal-500" : "bg-translucent"
+                          )}
+                        >
+                          <span className={`${currentMode["Enable White Cards"] ? 'translate-x-8' : 'translate-x-1'
+                            } inline-block h-5 w-5 transform rounded-full bg-white transition-transform`}
+                          />
+                        </Switch>,
+                    }[typeof currentMode[option]]
+                  }
+                </div>
               )
             }
           </div>
