@@ -25,6 +25,7 @@ export default function GameOption(props) {
                           description: props.currentMode[props.option].description
                         }
                       })
+                      props.setCurrentMode({ name: "custom" })
                     }}
                     className="text-center border-none shadow-sm rounded-sm bg-translucent placeholder-white/50 w-16 h-7 pb-[6px]
                       focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
@@ -32,12 +33,16 @@ export default function GameOption(props) {
                 "boolean":
                   <Switch
                     checked={props.currentMode[props.option].value}
-                    onChange={() => props.setCurrentMode({
-                      [props.option]: {
-                        value: !props.currentMode[props.option].value,
-                        description: props.currentMode[props.option].description
-                      }
-                    })}
+                    onChange={() => {
+                      props.setCurrentMode({
+                        [props.option]: {
+                          value: !props.currentMode[props.option].value,
+                          description: props.currentMode[props.option].description
+                        }
+                      })
+                      props.setCurrentMode({ name: "custom" })
+                    }
+                    }
                     className={classNames(
                       "inline-flex items-center shadow-sm rounded-full h-7 w-14 mx-1 transition-colors",
                       props.currentMode[props.option].value ? "bg-teal-500" : "bg-translucent"
