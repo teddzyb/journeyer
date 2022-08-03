@@ -98,7 +98,7 @@ export default function Custom() {
                   key={index}
                   onClick={() => setCurrentMode(modes[mode])}
                   className={classNames(
-                    "uppercase text-sm rounded-lg p-2 pt-3 last:col-span-2",
+                    "uppercase text-sm rounded-lg p-2 pt-3 last:col-span-2 transition-colors",
                     currentMode.name === modes[mode].name ? "text-[#0c4441] font-semibold bg-teal-500" : "text-teal-50 bg-translucent"
                   )}
                 >
