@@ -15,17 +15,29 @@ export default function GameOption(props) {
             {
               {
                 "number":
-                  // FIXME: Input not working
                   <input
                     type="number"
                     value={props.currentMode[props.option].value}
+                    onChange={e => {
+                      props.setCurrentMode({
+                        [props.option]: {
+                          value: parseInt(e.currentTarget.value),
+                          description: props.currentMode[props.option].description
+                        }
+                      })
+                    }}
                     className="text-center border-none shadow-sm rounded-sm bg-translucent placeholder-white/50 w-16 h-7 pb-[6px]
                             focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
                   />,
                 "boolean":
                   <Switch
                     checked={props.currentMode[props.option].value}
-                    onChange={() => props.setCurrentMode({ [props.option]: { value: !props.currentMode[props.option].value } })}
+                    onChange={() => props.setCurrentMode({
+                      [props.option]: {
+                        value: !props.currentMode[props.option].value,
+                        description: props.currentMode[props.option].description
+                      }
+                    })}
                     className={classNames(
                       "relative inline-flex h-7 w-14 mx-1 items-center rounded-full transition-colors",
                       props.currentMode[props.option].value ? "bg-teal-500" : "bg-translucent"
