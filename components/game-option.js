@@ -27,7 +27,7 @@ export default function GameOption(props) {
                       })
                     }}
                     className="text-center border-none shadow-sm rounded-sm bg-translucent placeholder-white/50 w-16 h-7 pb-[6px]
-                            focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
+                      focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
                   />,
                 "boolean":
                   <Switch
@@ -39,12 +39,12 @@ export default function GameOption(props) {
                       }
                     })}
                     className={classNames(
-                      "relative inline-flex h-7 w-14 mx-1 items-center rounded-full transition-colors",
+                      "inline-flex items-center shadow-sm rounded-full h-7 w-14 mx-1 transition-colors",
                       props.currentMode[props.option].value ? "bg-teal-500" : "bg-translucent"
                     )}
                   >
                     <span className={classNames(
-                      "inline-block h-5 w-5 transform rounded-full bg-white transition-transform",
+                      "shadow-sm rounded-full bg-white h-5 w-5 transform transition-transform",
                       props.currentMode[props.option].value ? "translate-x-8" : "translate-x-1"
                     )}
                     />
