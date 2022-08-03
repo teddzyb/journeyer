@@ -59,7 +59,7 @@ export default function GameOption(props) {
           </div>
         </Tooltip.Trigger>
         <Tooltip.Portal>
-          <Tooltip.Content side="right" className="text-md bg-[#0c4441] rounded-md max-w-xs py-1 pt-[6px] px-3">
+          <Tooltip.Content side="right" className="bg-[#0c4441] rounded-md max-w-xs py-1 pt-[6px] px-3">
             {props.currentMode[props.option].description}
             <Tooltip.Arrow className="fill-[#0c4441] mb-2" />
           </Tooltip.Content>
