@@ -6,7 +6,6 @@ import { useState, useRef } from 'react'
 import { useSetState, useListState } from '@mantine/hooks'
 
 // Components
-import { Switch } from '@headlessui/react'
 import TopMenuBar from '../components/top-menu-bar'
 import Card from '../components/card'
 import GameOption from '../components/game-option'
@@ -63,7 +62,7 @@ const lobbyUsers = [
   // { key: 4, username: "PLAYER-0005", level: 20, avatar: "/assets/avatar.jpg", role: "spectator" },
 ]
 
-export default function Ranked() {
+export default function Custom() {
 
   const playerListRef = useRef()
   const spectatorListRef = useRef()
@@ -235,7 +234,7 @@ export default function Ranked() {
           </div>
           <div className="h-full p-4 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
             <div className="text-sm select-none pb-1">PLAYERS ({lobby.filter(player => player.role === "player").length}/2)</div>
-            <div ref={playerListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
+            <div ref={playerListRef} className={dragging ? "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100" : undefined}>
               {
                 lobby.filter(player => player.role === "player").map((player, index) =>
                   <LobbyPlayer
@@ -256,7 +255,7 @@ export default function Ranked() {
               }
             </div>
             <div className="text-sm select-none pb-1 pt-4">SPECTATORS ({lobby.filter(player => player.role === "spectator").length})</div>
-            <div ref={spectatorListRef} className={dragging && "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100"}>
+            <div ref={spectatorListRef} className={dragging ? "rounded-md ring-2 ring-teal-500 transition ease-in-out duration-100" : undefined}>
               {
                 lobby.filter(player => player.role === "spectator").map((player, index) =>
                   <LobbyPlayer
