@@ -66,7 +66,7 @@ export default function Login() {
                 focus:bg-translucent focus:border-transparent w-full focus:ring-white/[.15] mb-4"
               />
               <Link href="">
-                <a className="text-sm underline text-teal-300">Forgot Password?</a>
+                <a className="text-sm underline text-teal-300" draggable="false">Forgot Password?</a>
               </Link>
             </div>
             <div className="flex flex-col text-center gap-3">

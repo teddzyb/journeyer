@@ -43,7 +43,7 @@ export default function TopMenuBar() {
     setFeedback(!feedback)
   }
 
-  let iconsR = [
+  const iconsR = [
     { name: "Friends", src: faHandshakeAngle, state: toggleFriends },
     { name: "Notifications", src: faBell, state: toggleNotifications },
     { name: "Volume", src: faVolumeHigh, state: toggleVolume },

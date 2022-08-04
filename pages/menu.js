@@ -17,16 +17,16 @@ function classNames(...classes) {
 
 export default function Menu() {
 
-  let menuItems = [
+  const menuItems = [
     { name: "Campaign", href: "campaign" },
     { name: "Ranked", href: "ranked" },
-    { name: "Custom", href: "" },
-    { name: "Practice", href: "" },
+    { name: "Custom", href: "custom" },
+    { name: "Practice", href: "practice" },
     { name: "Shop", href: "shop" },
     { name: "Sign Out", href: "/" },
   ]
 
-  let customizations = [
+  const customizations = [
     { name: "Deck" },
     { name: "Sleeve" },
     { name: "Coins" },
@@ -52,7 +52,9 @@ export default function Menu() {
                     "drop-shadow-md select-none py-5 pr-5",
                     "hover:text-teal-300 hover:scale-105 transition ease-in-out duration-150",
                     index === 0 ? "text-[1.70rem]" : "text-2xl",
-                  )}>
+                  )}
+                  draggable="false"
+                >
                   {item.name.toUpperCase()}
                 </a>
               </Link>
@@ -69,7 +71,7 @@ export default function Menu() {
                   {item.name === "Coins" ?
                     (
                       <Link href="/inventory">
-                        <a className="absolute select-none hover:scale-105 transition ease-in-out duration-150">
+                        <a className="absolute select-none hover:scale-105 transition ease-in-out duration-150" draggable="false">
                           <div className="flex drop-shadow-md rounded-full w-[70px] -translate-x-3">
                             <Image
                               priority
@@ -94,14 +96,13 @@ export default function Menu() {
                       </Link>
                     ) : (
                       <Link href="/inventory">
-                        <a className="absolute hover:scale-105 transition ease-in-out duration-150">
+                        <a className="absolute hover:scale-105 transition ease-in-out duration-150" draggable="false">
                           <Card size="sm">
                             {item.name}
                           </Card>
                         </a>
                       </Link>
                     )}
-
                 </div>
               )}
             </div>

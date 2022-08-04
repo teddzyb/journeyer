@@ -32,7 +32,7 @@ export default function Shop() {
   const [selectedCard, setSelectedCard] = useState(null)
   const cardSelected = (selectedCard != null ? true : false)
 
-  let tabs = [
+  const tabs = [
     { name: "Decks", disabled: false },
     { name: "Sleeves", disabled: false },
     { name: "Coins", disabled: false },
@@ -52,7 +52,7 @@ export default function Shop() {
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-2/5 m-10 mr-5 overflow-hidden">
           <div className="flex flex-row bg-translucent text-xl text-center select-none">
             <Link href="/menu">
-              <a className="flex flex-col justify-center items-center w-fit">
+              <a className="flex flex-col justify-center items-center w-fit" draggable="false">
                 <FontAwesomeIcon
                   icon={faArrowLeft}
                   className="absolute text-white text-2xl ml-9 px-6 py-4 hover:text-teal-300"
@@ -76,7 +76,7 @@ export default function Shop() {
                   disabled={item.disabled}
                   className={({ selected }) =>
                     classNames(
-                      "outline-none align-middle rounded-lg select-none w-full mx-2 pb-1 pt-2",
+                      "outline-none align-middle rounded-md select-none w-full mx-2 pb-1 pt-2",
                       selected ? "bg-teal-600 shadow focus:outline-2 focus:outline-offset-0 focus:outline-teal-500" : "hover:bg-teal-500/10",
                     )
                   }>

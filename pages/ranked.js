@@ -19,7 +19,7 @@ export default function Ranked() {
 
   const [currentLeague, setCurrentLeague] = useState(0)
 
-  let leagues = [
+  const leagues = [
     {
       name: "Bronze League",
       ranks: [
@@ -124,7 +124,7 @@ export default function Ranked() {
           </div>
           <div className="flex justify-center gap-8 my-10">
             <Link href="/menu">
-              <a>
+              <a draggable="false">
                 <button className="btn-primary h-11 w-40">BACK</button>
               </a>
             </Link>
