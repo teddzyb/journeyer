@@ -1,4 +1,9 @@
 import Image from 'next/future/image'
+import cost from '../public/assets/card/cost-coin-1.svg'
+import cardArt from '../public/assets/card/wolf.svg'
+import ability from '../public/assets/card/ability-maul.svg'
+import atk from '../public/assets/card/atk.svg'
+import def from '../public/assets/card/def.svg'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -39,7 +44,7 @@ export default function Card(props) {
               }[props.size],
             )}>
               <Image
-                src="/assets/card/cost-coin-1.svg"
+                src={cost}
                 layout="responsive"
                 alt=""
                 className={classNames(
@@ -50,6 +55,7 @@ export default function Card(props) {
                     "xl": "h-[14px]",
                     "2xl": "h-[16px]",
                   }[props.size],
+                  "w-fit"
                 )}
                 draggable="false"
               />
@@ -57,7 +63,7 @@ export default function Card(props) {
             </div>
             <div className="flex justify-center items-center grow">
               <Image
-                src="/assets/card/wolf.svg"
+                src={cardArt}
                 layout="responsive"
                 alt=""
                 className={classNames(
@@ -83,11 +89,11 @@ export default function Card(props) {
               }[props.size],
             )}>
               <Image
-                src="/assets/card/ability-maul.svg"
+                src={ability}
                 layout="responsive"
                 alt=""
                 className={classNames(
-                  "outline outline-1 outline-offset-1 outline-black aspect-square rounded-[1px]",
+                  "outline outline-1 outline-offset-1 outline-black aspect-square rounded-[1px] w-fit",
                   {
                     "sm": "h-[20px]",
                     "md": "h-[24px]",
@@ -110,7 +116,7 @@ export default function Card(props) {
               }[props.size],
             )}>
               <Image
-                src="/assets/card/atk.svg"
+                src={atk}
                 layout="responsive"
                 alt=""
                 className={classNames(
@@ -121,11 +127,12 @@ export default function Card(props) {
                     "xl": "h-[36px]",
                     "2xl": "h-[40px]",
                   }[props.size],
+                  "w-fit"
                 )}
                 draggable="false"
               />
               <Image
-                src="/assets/card/def.svg"
+                src={def}
                 layout="responsive"
                 alt=""
                 className={classNames(
@@ -136,6 +143,7 @@ export default function Card(props) {
                     "xl": "h-[36px]",
                     "2xl": "h-[40px]",
                   }[props.size],
+                  "w-fit"
                 )}
                 draggable="false"
               />
