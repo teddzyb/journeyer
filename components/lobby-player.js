@@ -2,7 +2,7 @@ import Image from 'next/future/image'
 import { motion } from 'framer-motion'
 import * as ContextMenu from '@radix-ui/react-context-menu'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faUserPlus, faCircleMinus } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faUserPlus, faCircleMinus, faCopy } from '@fortawesome/free-solid-svg-icons'
 
 export default function LobbyPlayer(props) {
   return props.type !== "placeholder" ?
@@ -49,7 +49,17 @@ export default function LobbyPlayer(props) {
                   draggable="false"
                   className="aspect-square pb-[2px]"
                 />
-                <div>Add to Friends</div>
+                <div>Add Friend</div>
+              </button>
+            </ContextMenu.Item>
+            <ContextMenu.Item className="hover:outline-none hover:text-teal-300 px-1">
+              <button className="flex items-center gap-2 text-start w-full">
+                <FontAwesomeIcon
+                  icon={faCopy}
+                  draggable="false"
+                  className="aspect-square pb-[2px]"
+                />
+                <div>Copy Username</div>
               </button>
             </ContextMenu.Item>
             <ContextMenu.Separator className="h-px bg-translucent" />
