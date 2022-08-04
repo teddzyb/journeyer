@@ -36,7 +36,7 @@ export default function CampaignMenu(props) {
         </div>
       </div>
       <div className="flex flex-col justify-start items-center gap-4 rounded-xl bg-translucent shadow-md py-6 px-8">
-        <div className="text-xl select-none">OBJECTVES</div>
+        <div className="text-xl select-none">OBJECTIVES</div>
         <div className="flex flex-col gap-2 w-full">
           {props.stage.objectives.map((objective, index) =>
             <div key={index} className="flex justify-between rounded-xl bg-translucent py-4 px-6">
