@@ -106,9 +106,8 @@ export default function Campaign() {
             </div>
           </div>
         </div>
-        <div className="flex w-[55%] m-10 ml-5">
-          <div className="flex justify-center items-center grow bg-translucent shadow-md rounded-xl">
-            (Interactive Map)
+        <div className="aspect-square flex w-fit m-10 ml-5">
+          <div className="grow shadow-md rounded-xl overflow-hidden bg-cover bg-[url(../public/assets/campaign/map-1.png)]">
           </div>
         </div>
       </main>
