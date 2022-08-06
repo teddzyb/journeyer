@@ -131,9 +131,9 @@ export default function TopMenuBar() {
         className="fixed top-20 right-3 mt-2"
       >
         <div className="grid gap-2 w-96">
-          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-2 pt-3">
+          {/* <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-2 pt-3">
             Friends
-          </div>
+          </div> */}
           <Friends />
         </div>
       </Transition>
