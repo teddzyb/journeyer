@@ -10,7 +10,6 @@ export default function LobbyPlayer(props) {
       <ContextMenu.Root>
         <ContextMenu.Trigger>
           <motion.div
-            key={props.player.key}
             drag="y"
             dragSnapToOrigin
             dragElastic={1}
