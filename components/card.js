@@ -131,6 +131,24 @@ export default function Card(props) {
                 )}
                 draggable="false"
               />
+              <div className={classNames(
+                {
+                  "sm": "text-sm w-4 h-4 pt-[3px] -ml-[88px]",
+                  "md": "text-md w-5 h-5 pt-[4px] -ml-[112px]",
+                  "lg": "text-lg w-6 h-6 pt-[5px] -ml-[134px]",
+                  "xl": "text-xl w-7 h-7 pt-[6px] -ml-[157px]",
+                  "2xl": "text-2xl w-8 h-8 pt-[7px] -ml-[178px]",
+                }[props.size],
+              )}>2</div>
+              <div className={classNames(
+                {
+                  "sm": "text-sm w-4 h-4 pt-[2.5px] -mr-[88px]",
+                  "md": "text-md w-5 h-5 pt-[3px] -mr-[112px]",
+                  "lg": "text-lg w-6 h-6 pt-[3.5px] -mr-[134px]",
+                  "xl": "text-xl w-7 h-7 pt-[4px] -mr-[157px]",
+                  "2xl": "text-2xl w-8 h-8 pt-[4.5px] -mr-[178px]",
+                }[props.size],
+              )}>3</div>
               <Image
                 src={def}
                 layout="responsive"
