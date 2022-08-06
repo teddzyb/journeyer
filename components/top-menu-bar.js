@@ -5,6 +5,7 @@ import { useState } from 'react'
 // Components
 import { Transition } from '@headlessui/react'
 import * as Tooltip from '@radix-ui/react-tooltip'
+import * as Popover from '@radix-ui/react-popover'
 import ExpBar from '../components/exp-bar'
 import Friends from '../components/friends'
 import Notification from './notifications'
@@ -98,30 +99,42 @@ export default function TopMenuBar() {
       </div>
       <div className="grid grid-flow-col col-start-3 auto-cols-max">
         {iconsR.map((icon, index) =>
-          <Tooltip.Provider key={index} delayDuration="25">
-            <Tooltip.Root>
-              <Tooltip.Trigger asChild>
-                <button
-                  className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
-                  onClick={icon.state}
-                  aria-label={icon.name}>
-                  <FontAwesomeIcon
-                    icon={icon.src}
-                    style={{ fontSize: 24 }}
-                    draggable="false"
-                  />
-                </button>
-              </Tooltip.Trigger>
-              <Tooltip.Content sideOffset="-0.5" className="z-50 bg-[#0c4441] rounded-md py-1 pt-[6px] px-3">
-                {icon.name}
-                <Tooltip.Arrow className="fill-[#0c4441]" />
-              </Tooltip.Content>
-            </Tooltip.Root>
-          </Tooltip.Provider>
+          <Popover.Root key={index}>
+            <Tooltip.Provider delayDuration="25">
+              <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                  <Popover.Trigger>
+                    <button
+                      className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
+                      onClick={icon.state}
+                      aria-label={icon.name}>
+                      <FontAwesomeIcon
+                        icon={icon.src}
+                        style={{ fontSize: 24 }}
+                        draggable="false"
+                      />
+                    </button>
+                  </Popover.Trigger>
+                </Tooltip.Trigger>
+                <Tooltip.Content sideOffset="-0.5" className="z-50 bg-[#0c4441] rounded-md py-1 pt-[6px] px-3">
+                  {icon.name}
+                  <Tooltip.Arrow className="fill-[#0c4441]" />
+                </Tooltip.Content>
+              </Tooltip.Root>
+            </Tooltip.Provider>
+            <Popover.Portal>
+              <Popover.Content sideOffset="1">
+                <div className="grid gap-2 w-96">
+                  <Friends setFriends={setFriends} />
+                </div>
+                <Popover.Close />
+              </Popover.Content>
+            </Popover.Portal>
+          </Popover.Root>
         )}
       </div>
       <Transition
-        show={friends}
+        show={false}
         enter="transition-opacity duration-300"
         enterFrom="opacity-0"
         enterTo="opacity-100"
