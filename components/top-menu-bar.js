@@ -7,7 +7,7 @@ import { Transition } from '@headlessui/react'
 import * as Tooltip from '@radix-ui/react-tooltip'
 import ExpBar from '../components/exp-bar'
 import Friends from '../components/friends'
-import Notification from '../components/notification'
+import Notification from './notifications'
 import Feedback from './feedback'
 
 // Assets

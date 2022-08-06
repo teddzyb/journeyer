@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 // Components
-import Notification from '../components/notification'
+import Notification from '../components/notifications'
 import Feedback from '../components/feedback'
 
 // Assets
