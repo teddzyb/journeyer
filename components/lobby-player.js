@@ -52,7 +52,7 @@ export default function LobbyPlayer(props) {
                 <div>Add Friend</div>
               </button>
             </ContextMenu.Item>
-            <ContextMenu.Item className="hover:outline-none hover:text-teal-300 px-1">
+            {/* <ContextMenu.Item className="hover:outline-none hover:text-teal-300 px-1">
               <button className="flex items-center gap-2 text-start w-full">
                 <FontAwesomeIcon
                   icon={faCopy}
@@ -61,7 +61,7 @@ export default function LobbyPlayer(props) {
                 />
                 <div>Copy Username</div>
               </button>
-            </ContextMenu.Item>
+            </ContextMenu.Item> */}
             <ContextMenu.Separator className="h-px bg-translucent" />
             <ContextMenu.Item className="text-red-300 hover:outline-none hover:text-red-400 px-1">
               <button className="flex items-center gap-2 text-start w-full">
