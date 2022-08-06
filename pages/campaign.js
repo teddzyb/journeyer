@@ -107,7 +107,9 @@ export default function Campaign() {
           </div>
         </div>
         <div className="aspect-square flex w-fit m-10 ml-5">
-          <div className="grow shadow-md rounded-xl overflow-hidden bg-cover bg-[url(../public/assets/campaign/map-1.png)]">
+          <div className="grow shadow-md rounded-lg outline outline-4 outline-translucent overflow-hidden 
+            bg-cover bg-[url(../public/assets/campaign/map-1.png)]"
+          >
           </div>
         </div>
       </main>
