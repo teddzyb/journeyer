@@ -32,6 +32,16 @@ export default function TopMenuBar() {
 
   iconsR[2].src = volume ? faVolumeXmark : faVolumeHigh
 
+  const popoverClose = (
+    <Popover.Close className="flex">
+      <FontAwesomeIcon
+        icon={faXmark}
+        className="text-sm bg-translucent/10 aspect-square rounded-full p-[6px] drop-shadow-md"
+        draggable="false"
+      />
+    </Popover.Close>
+  )
+
   return (
     <div className="grid grid-cols-2 bg-translucent shadow-sm h-20 p-2">
       <div className="grid grid-flow-col auto-cols-max items-center gap-3">
@@ -106,36 +116,9 @@ export default function TopMenuBar() {
                 <div className="grid gap-2 w-96">
                   {
                     {
-                      "Friends":
-                        <Friends>
-                          <Popover.Close className="flex">
-                            <FontAwesomeIcon
-                              icon={faXmark}
-                              className="text-sm bg-translucent/10 aspect-square rounded-full p-[6px] drop-shadow-md"
-                              draggable="false"
-                            />
-                          </Popover.Close>
-                        </Friends>,
-                      "Notifications":
-                        <Notifications>
-                          <Popover.Close className="flex">
-                            <FontAwesomeIcon
-                              icon={faXmark}
-                              className="text-sm bg-translucent/10 aspect-square rounded-full p-[6px] drop-shadow-md"
-                              draggable="false"
-                            />
-                          </Popover.Close>
-                        </Notifications>,
-                      "Feedback":
-                        <Feedback>
-                          <Popover.Close className="flex">
-                            <FontAwesomeIcon
-                              icon={faXmark}
-                              className="text-sm bg-translucent/10 aspect-square rounded-full p-[6px] drop-shadow-md"
-                              draggable="false"
-                            />
-                          </Popover.Close>
-                        </Feedback>,
+                      "Friends": <Friends>{popoverClose}</Friends>,
+                      "Notifications": <Notifications>{popoverClose}</Notifications>,
+                      "Feedback": <Feedback>{popoverClose}</Feedback>,
                     }[icon.name]
                   }
                 </div>
