@@ -804,6 +804,21 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-compose-refs" "1.0.0"
 
+"@radix-ui/react-tabs@^1.0.0":
+  "integrity" "sha512-oKUwEDsySVC0uuSEH7SHCVt1+ijmiDFAI9p+fHCtuZdqrRDKIFs09zp5nrmu4ggP6xqSx9lj1VSblnDH+n3IBA=="
+  "resolved" "https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/primitive" "1.0.0"
+    "@radix-ui/react-context" "1.0.0"
+    "@radix-ui/react-direction" "1.0.0"
+    "@radix-ui/react-id" "1.0.0"
+    "@radix-ui/react-presence" "1.0.0"
+    "@radix-ui/react-primitive" "1.0.0"
+    "@radix-ui/react-roving-focus" "1.0.0"
+    "@radix-ui/react-use-controllable-state" "1.0.0"
+
 "@radix-ui/react-tooltip@^1.0.0":
   "integrity" "sha512-RB06pov+O4Npy10ei1C6fsyB9QoOjz7Ubo8Sl3qdKtLgkL9iI96925DYtH0bxx6MH6YB2FuzLU6B75qn3AQQQw=="
   "resolved" "https://registry.npmjs.org/@radix-ui/react-tooltip/-/react-tooltip-1.0.0.tgz"
