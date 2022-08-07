@@ -1,8 +1,10 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane, faUserMinus } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 
 export default function Friends(props) {
   return (
-    <div className="rounded-lg select-none bg-teal-900 border border-translucent shadow-md overflow-hidden">
+    <div className="rounded-lg select-none bg-teal-900 border border-translucent shadow-md overflow-hidden w-96">
       <div className="sticky top-0 flex justify-between items-center border-b border-translucent px-4 py-3">
         <div className="flex gap-4 text-lg pt-1 pl-1">
           <button className="text-teal-300 opacity-100">FRIENDS</button>
@@ -18,7 +20,7 @@ export default function Friends(props) {
         <div className="p-4">
           <div className="pl-1 mb-1">ONLINE</div>
           {Array.from(Array(2).keys()).map(item =>
-            <div key={item} className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+            <div key={item} className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
               <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
                 <Image
                   src="/assets/avatar.jpg"
@@ -33,13 +35,29 @@ export default function Friends(props) {
                 <div>PLAYER-0001</div>
                 <div className="text-sm">LEVEL 25</div>
               </div>
+              <div className="ml-auto flex gap-2 invisible group-hover:visible mx-2">
+                <button className="flex">
+                  <FontAwesomeIcon
+                    icon={faPaperPlane}
+                    className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
+                    draggable="false"
+                  />
+                </button>
+                <button className="flex">
+                  <FontAwesomeIcon
+                    icon={faUserMinus}
+                    className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
+                    draggable="false"
+                  />
+                </button>
+              </div>
             </div>
           )}
         </div>
         <div className="p-4 pt-2">
           <div className="pl-1 mb-1">OFFLINE</div>
           {Array.from(Array(4).keys()).map(item =>
-            <div key={item} className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+            <div key={item} className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
               <div className="flex rounded-md outline outline-2 opacity-60 outline-translucent shadow-sm w-fit">
                 <Image
                   src="/assets/avatar.jpg"
@@ -53,6 +71,15 @@ export default function Friends(props) {
               <div className="flex flex-col opacity-60 pt-[2px] gap-[2px]">
                 <div>PLAYER-0001</div>
                 <div className="text-sm">LEVEL 25</div>
+              </div>
+              <div className="ml-auto flex gap-2 invisible group-hover:visible mx-2">
+                <button className="flex">
+                  <FontAwesomeIcon
+                    icon={faUserMinus}
+                    className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
+                    draggable="false"
+                  />
+                </button>
               </div>
             </div>
           )}
