@@ -103,7 +103,7 @@ export default function TopMenuBar() {
             <Tooltip.Provider delayDuration="25">
               <Tooltip.Root>
                 <Tooltip.Trigger asChild>
-                  <Popover.Trigger>
+                  <Popover.Trigger asChild>
                     <button
                       className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
                       onClick={icon.state}
@@ -127,7 +127,7 @@ export default function TopMenuBar() {
                 <div className="grid gap-2 w-96">
                   <Friends setFriends={setFriends} />
                 </div>
-                <Popover.Close />
+                {/* <Popover.Close /> */}
               </Popover.Content>
             </Popover.Portal>
           </Popover.Root>

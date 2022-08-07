@@ -5,7 +5,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons'
 export default function Friends(props) {
   return (
     <div className="rounded-lg bg-teal-900 border border-translucent shadow-md overflow-hidden">
-      <div className="sticky top-0 flex justify-between items-center border-b border-translucent backdrop-blur-md px-4 py-3">
+      <div className="sticky top-0 flex justify-between items-center border-b border-translucent px-4 py-3">
         <div className="flex gap-4 text-lg pt-1 pl-1">
           <div className="text-teal-300 opacity-100">FRIENDS</div>
           <div className="opacity-60">ADD</div>
