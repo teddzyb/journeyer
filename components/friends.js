@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import * as Tabs from '@radix-ui/react-tabs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane, faUserMinus } from '@fortawesome/free-solid-svg-icons'
+import { faPaperPlane, faUserMinus, faCheck, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -19,8 +19,8 @@ export default function Friends(props) {
             <Tabs.Trigger value="add" className="text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
               ADD
             </Tabs.Trigger>
-            <Tabs.Trigger value="requests" className="text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
-              REQUESTS
+            <Tabs.Trigger value="requests" className="flex text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
+              REQUESTS <div className="rounded-full bg-amber-400 p-1 ml-1 mt-1" />
             </Tabs.Trigger>
           </Tabs.List>
           {props.children}
@@ -117,8 +117,45 @@ export default function Friends(props) {
 
         {/* Friend Requests Tab */}
         <Tabs.Content value="requests">
-          <div className="flex justify-center items-center h-24">
+          {/* <div className="flex justify-center items-center h-24">
             No requests yet...
+          </div> */}
+          <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent max-h-96 p-4">
+            <div className="pl-1 mb-1">TODAY</div>
+            {Array.from(Array(2).keys()).map(item =>
+              <div key={item} className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+                <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                  <Image
+                    src="/assets/avatar.jpg"
+                    height={48}
+                    width={48}
+                    className="rounded-md"
+                    alt=""
+                    draggable="false"
+                  />
+                </div>
+                <div className="flex flex-col pt-[2px] gap-[2px]">
+                  <div>PLAYER-0001</div>
+                  <div className="text-sm">LEVEL 25</div>
+                </div>
+                <div className="ml-auto flex gap-2 invisible group-hover:visible mx-2">
+                  <button className="flex">
+                    <FontAwesomeIcon
+                      icon={faCheck}
+                      className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
+                      draggable="false"
+                    />
+                  </button>
+                  <button className="flex">
+                    <FontAwesomeIcon
+                      icon={faXmark}
+                      className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
+                      draggable="false"
+                    />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </Tabs.Content>
       </Tabs.Root >
