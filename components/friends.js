@@ -13,22 +13,13 @@ export default function Friends(props) {
       <Tabs.Root>
         <div className="sticky top-0 flex justify-between items-center border-b border-translucent px-4 py-3">
           <Tabs.List className="flex gap-4 text-lg pt-1 pl-1">
-            <Tabs.Trigger
-              value="friends"
-              className="text-white/60 [&[data-state='active']]:text-teal-300"
-            >
+            <Tabs.Trigger value="friends" className="text-white/60 [&[data-state='active']]:text-teal-300">
               FRIENDS
             </Tabs.Trigger>
-            <Tabs.Trigger
-              value="add"
-              className="text-white/60 [&[data-state='active']]:text-teal-300"
-            >
+            <Tabs.Trigger value="add" className="text-white/60 [&[data-state='active']]:text-teal-300">
               ADD
             </Tabs.Trigger>
-            <Tabs.Trigger
-              value="requests"
-              className="text-white/60 [&[data-state='active']]:text-teal-300"
-            >
+            <Tabs.Trigger value="requests" className="text-white/60 [&[data-state='active']]:text-teal-300">
               REQUESTS
             </Tabs.Trigger>
           </Tabs.List>
