@@ -36,7 +36,7 @@ export default function TopMenuBar() {
     <Popover.Close className="flex">
       <FontAwesomeIcon
         icon={faXmark}
-        className="text-sm bg-translucent/10 aspect-square rounded-full p-[6px] drop-shadow-md"
+        className="text-sm bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-[6px] drop-shadow-md"
         draggable="false"
       />
     </Popover.Close>
@@ -113,15 +113,13 @@ export default function TopMenuBar() {
             </Tooltip.Provider>
             <Popover.Portal>
               <Popover.Content sideOffset="1">
-                <div className="grid gap-2 w-96">
+                {
                   {
-                    {
-                      "Friends": <Friends>{popoverClose}</Friends>,
-                      "Notifications": <Notifications>{popoverClose}</Notifications>,
-                      "Feedback": <Feedback>{popoverClose}</Feedback>,
-                    }[icon.name]
-                  }
-                </div>
+                    "Friends": <Friends>{popoverClose}</Friends>,
+                    "Notifications": <Notifications>{popoverClose}</Notifications>,
+                    "Feedback": <Feedback>{popoverClose}</Feedback>,
+                  }[icon.name]
+                }
               </Popover.Content>
             </Popover.Portal>
           </Popover.Root>
