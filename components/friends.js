@@ -100,12 +100,26 @@ export default function Friends(props) {
 
         {/* Add Friend Tab */}
         <Tabs.Content value="add">
-
+          <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent max-h-96 p-6">
+            <div className="flex flex-col justify-center items-center gap-6">
+              <input
+                type="text"
+                id="inviteUser"
+                name="inviteUser"
+                placeholder="Enter username"
+                className="text-md text-center border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-10 pb-[6px]
+                  focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
+              />
+              <button className="btn-primary w-36 h-10 pt-[3px]">ADD</button>
+            </div>
+          </div>
         </Tabs.Content>
 
         {/* Friend Requests Tab */}
         <Tabs.Content value="requests">
-
+          <div className="flex justify-center items-center h-24">
+            No requests yet...
+          </div>
         </Tabs.Content>
       </Tabs.Root >
     </div >
