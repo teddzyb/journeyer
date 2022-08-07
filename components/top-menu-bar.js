@@ -8,47 +8,26 @@ import * as Tooltip from '@radix-ui/react-tooltip'
 import * as Popover from '@radix-ui/react-popover'
 import ExpBar from '../components/exp-bar'
 import Friends from '../components/friends'
-import Notification from './notifications'
+import Notifications from './notifications'
 import Feedback from './feedback'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faFeather }
+import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faFeather, faXmark }
   from '@fortawesome/free-solid-svg-icons'
 import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
 
 export default function TopMenuBar() {
 
-  const [friends, setFriends] = useState(false)
-  const toggleFriends = () => {
-    setFriends(!friends)
-    setNotifications(false)
-    setFeedback(false)
-  }
-
-  const [notifications, setNotifications] = useState(false)
-  const toggleNotifications = () => {
-    setFriends(false)
-    setNotifications(!notifications)
-    setFeedback(false)
-  }
-
   const [volume, setVolume] = useState(false)
   const toggleVolume = () => setVolume(!volume)
 
-  const [feedback, setFeedback] = useState(false)
-  const toggleFeedback = () => {
-    setFriends(false)
-    setNotifications(false)
-    setFeedback(!feedback)
-  }
-
   const iconsR = [
-    { name: "Friends", src: faHandshakeAngle, state: toggleFriends },
-    { name: "Notifications", src: faBell, state: toggleNotifications },
-    { name: "Volume", src: faVolumeHigh, state: toggleVolume },
-    { name: "Feedback", src: faFeather, state: toggleFeedback },
+    { name: "Friends", src: faHandshakeAngle },
+    { name: "Notifications", src: faBell },
+    { name: "Volume", src: faVolumeHigh, toggle: toggleVolume },
+    { name: "Feedback", src: faFeather },
   ]
 
   iconsR[2].src = volume ? faVolumeXmark : faVolumeHigh
@@ -106,7 +85,7 @@ export default function TopMenuBar() {
                   <Popover.Trigger asChild>
                     <button
                       className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
-                      onClick={icon.state}
+                      onClick={icon.toggle}
                       aria-label={icon.name}>
                       <FontAwesomeIcon
                         icon={icon.src}
@@ -125,62 +104,46 @@ export default function TopMenuBar() {
             <Popover.Portal>
               <Popover.Content sideOffset="1">
                 <div className="grid gap-2 w-96">
-                  <Friends setFriends={setFriends} />
+                  {
+                    {
+                      "Friends":
+                        <Friends>
+                          <Popover.Close className="flex">
+                            <FontAwesomeIcon
+                              icon={faXmark}
+                              className="text-sm bg-translucent/10 aspect-square rounded-full p-[6px] drop-shadow-md"
+                              draggable="false"
+                            />
+                          </Popover.Close>
+                        </Friends>,
+                      "Notifications":
+                        <Notifications>
+                          <Popover.Close className="flex">
+                            <FontAwesomeIcon
+                              icon={faXmark}
+                              className="text-sm bg-translucent/10 aspect-square rounded-full p-[6px] drop-shadow-md"
+                              draggable="false"
+                            />
+                          </Popover.Close>
+                        </Notifications>,
+                      "Feedback":
+                        <Feedback>
+                          <Popover.Close className="flex">
+                            <FontAwesomeIcon
+                              icon={faXmark}
+                              className="text-sm bg-translucent/10 aspect-square rounded-full p-[6px] drop-shadow-md"
+                              draggable="false"
+                            />
+                          </Popover.Close>
+                        </Feedback>,
+                    }[icon.name]
+                  }
                 </div>
-                {/* <Popover.Close /> */}
               </Popover.Content>
             </Popover.Portal>
           </Popover.Root>
         )}
       </div>
-      <Transition
-        show={false}
-        enter="transition-opacity duration-300"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-300"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-        className="fixed top-20 right-3 mt-2"
-      >
-        <div className="grid gap-2 w-96">
-          <Friends setFriends={setFriends} />
-        </div>
-      </Transition>
-      <Transition
-        show={notifications}
-        enter="transition-opacity duration-300"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-300"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-        className="fixed top-20 right-3 mt-2"
-      >
-        <div className="grid gap-2 w-96">
-          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-2 pt-3">
-            Notifications
-          </div>
-          <Notification />
-        </div>
-      </Transition>
-      <Transition
-        show={feedback}
-        enter="transition-opacity duration-300"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-300"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-        className="fixed top-20 right-3 mt-2"
-      >
-        <div className="grid gap-2 w-96">
-          <div className="rounded-lg bg-teal-900 border border-translucent shadow-md w-fit px-4 py-2 pt-3">
-            Feedback
-          </div>
-          <Feedback />
-        </div>
-      </Transition>
     </div>
   )
 }
