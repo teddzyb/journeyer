@@ -13,7 +13,7 @@ import Feedback from './feedback'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faFeather, faXmark }
+import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faQuestionCircle, faXmark }
   from '@fortawesome/free-solid-svg-icons'
 import goldCoin from '../public/assets/currency/coin-gold.svg'
 import silverCoin from '../public/assets/currency/coin-silver.svg'
@@ -27,7 +27,7 @@ export default function TopMenuBar() {
     { name: "Friends", src: faHandshakeAngle },
     { name: "Notifications", src: faBell },
     { name: "Volume", src: faVolumeHigh, toggle: toggleVolume },
-    { name: "Feedback", src: faFeather },
+    { name: "Feedback", src: faQuestionCircle },
   ]
 
   iconsR[2].src = volume ? faVolumeXmark : faVolumeHigh

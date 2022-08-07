@@ -9,7 +9,7 @@ import Feedback from '../components/feedback'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell, faVolumeHigh, faVolumeXmark, faFeather } from '@fortawesome/free-solid-svg-icons'
+import { faBell, faVolumeHigh, faVolumeXmark, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
 
@@ -39,7 +39,7 @@ export default function Home() {
   const iconsR = [
     { name: "Notifications", src: faBell, state: toggleNotifications },
     { name: "Volume", src: faVolumeHigh, state: toggleVolume },
-    { name: "Bug Report", src: faFeather, state: toggleFeedback },
+    { name: "Bug Report", src: faQuestionCircle, state: toggleFeedback },
   ]
 
   iconsR[1].src = volume ? faVolumeXmark : faVolumeHigh
