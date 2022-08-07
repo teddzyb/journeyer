@@ -28,19 +28,36 @@ export default function Notifications(props) {
               Nothing here yet...
             </div> */}
             <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent max-h-96 p-4">
-              <div className="group flex flex-col gap-1 text-start rounded-lg bg-translucent cursor-pointer p-3">
-                <div className="flex justify-between w-full">
-                  <div className="text-sm text-teal-300">10:31 PM</div>
-                  <button className="flex invisible group-hover:visible h-fit">
-                    <FontAwesomeIcon
-                      icon={faXmark}
-                      className="text-sm aspect-square"
-                      draggable="false"
-                    />
-                  </button>
+              <div className="flex flex-col gap-3">
+                <div className="group flex flex-col gap-1 text-start rounded-lg bg-translucent cursor-pointer p-3">
+                  <div className="flex justify-between w-full">
+                    <div className="text-sm text-teal-300">10:31 PM</div>
+                    <button className="flex invisible group-hover:visible h-fit">
+                      <FontAwesomeIcon
+                        icon={faXmark}
+                        className="text-sm aspect-square"
+                        draggable="false"
+                      />
+                    </button>
+                  </div>
+                  <div>
+                    PLAYER-0001 sent you a friend request!
+                  </div>
                 </div>
-                <div>
-                  PLAYER-0001 sent you a friend request!
+                <div className="group flex flex-col gap-1 text-start rounded-lg bg-translucent cursor-pointer p-3">
+                  <div className="flex justify-between w-full">
+                    <div className="text-sm text-teal-300">12:21 AM</div>
+                    <button className="flex invisible group-hover:visible h-fit">
+                      <FontAwesomeIcon
+                        icon={faXmark}
+                        className="text-sm aspect-square"
+                        draggable="false"
+                      />
+                    </button>
+                  </div>
+                  <div>
+                    You have unclaimed rewards! Click here to claim them.
+                  </div>
                 </div>
               </div>
             </div>
