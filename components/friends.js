@@ -17,7 +17,7 @@ export default function Friends(props) {
               ADD
             </Tabs.Trigger>
             <Tabs.Trigger value="requests" className="flex text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
-              REQUESTS <div className="rounded-full bg-amber-400 p-1 ml-1 mt-1" />
+              REQUESTS <div className="rounded-full bg-amber-400 p-1 ml-1.5 mt-1" />
             </Tabs.Trigger>
           </Tabs.List>
           {props.children}
