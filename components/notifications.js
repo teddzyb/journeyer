@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import * as Tabs from '@radix-ui/react-tabs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane, faUserMinus } from '@fortawesome/free-solid-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function Notifications(props) {
   return (
@@ -24,8 +24,25 @@ export default function Notifications(props) {
         {/* Notifications Tab */}
         <Tabs.Content value="notifications">
           <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent max-h-96">
-            <div className="flex justify-center items-center h-24">
+            {/* <div className="flex justify-center items-center h-24">
               Nothing here yet...
+            </div> */}
+            <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent max-h-96 p-4">
+              <div className="group flex flex-col gap-1 text-start rounded-lg bg-translucent cursor-pointer p-3">
+                <div className="flex justify-between w-full">
+                  <div className="text-sm text-teal-300">10:31 PM</div>
+                  <button className="flex invisible group-hover:visible h-fit">
+                    <FontAwesomeIcon
+                      icon={faXmark}
+                      className="text-sm aspect-square"
+                      draggable="false"
+                    />
+                  </button>
+                </div>
+                <div>
+                  PLAYER-0001 sent you a friend request!
+                </div>
+              </div>
             </div>
           </div>
         </Tabs.Content>
