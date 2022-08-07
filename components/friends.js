@@ -7,7 +7,7 @@ export default function Friends(props) {
     <div className="rounded-lg select-none bg-teal-900 border border-translucent shadow-md overflow-hidden w-96">
       <div className="sticky top-0 flex justify-between items-center border-b border-translucent px-4 py-3">
         <div className="flex gap-4 text-lg pt-1 pl-1">
-          <button className="text-teal-300 opacity-100">FRIENDS</button>
+          <button className="text-teal-300">FRIENDS</button>
           <button className="text-white/60">ADD</button>
           <button className="text-white/60">REQUESTS</button>
         </div>
