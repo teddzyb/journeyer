@@ -87,7 +87,6 @@ export default function LeagueRank(props) {
               </Tooltip.Content>
             </Tooltip.Root>
           </Tooltip.Provider>
-
         }
       </div>
     </div>
