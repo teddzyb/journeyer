@@ -1,7 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane, faUserMinus } from '@fortawesome/free-solid-svg-icons'
-import Image from 'next/image'
-
 export default function Feedback(props) {
   return (
     <div className="rounded-lg select-none bg-teal-900 border border-translucent shadow-md overflow-hidden w-96">

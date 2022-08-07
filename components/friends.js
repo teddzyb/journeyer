@@ -4,10 +4,6 @@ import * as Tooltip from '@radix-ui/react-tooltip'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane, faUserMinus, faCheck, faXmark } from '@fortawesome/free-solid-svg-icons'
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ")
-}
-
 export default function Friends(props) {
   return (
     <div className="rounded-lg select-none bg-teal-900 border border-translucent shadow-md overflow-hidden w-96">
@@ -209,7 +205,7 @@ export default function Friends(props) {
             )}
           </div>
         </Tabs.Content>
-      </Tabs.Root >
-    </div >
+      </Tabs.Root>
+    </div>
   )
 }
