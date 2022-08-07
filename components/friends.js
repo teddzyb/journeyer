@@ -2,12 +2,12 @@ import Image from 'next/image'
 
 export default function Friends(props) {
   return (
-    <div className="rounded-lg bg-teal-900 border border-translucent shadow-md overflow-hidden">
+    <div className="rounded-lg select-none bg-teal-900 border border-translucent shadow-md overflow-hidden">
       <div className="sticky top-0 flex justify-between items-center border-b border-translucent px-4 py-3">
         <div className="flex gap-4 text-lg pt-1 pl-1">
           <button className="text-teal-300 opacity-100">FRIENDS</button>
-          <button className="opacity-60">ADD</button>
-          <button className="opacity-60">REQUESTS</button>
+          <button className="text-white/60">ADD</button>
+          <button className="text-white/60">REQUESTS</button>
         </div>
         {props.children}
       </div>
@@ -18,7 +18,7 @@ export default function Friends(props) {
         <div className="p-4">
           <div className="pl-1 mb-1">ONLINE</div>
           {Array.from(Array(2).keys()).map(item =>
-            <div key={item} className="flex items-center gap-4 rounded-md select-none p-2 hover:bg-translucent/10">
+            <div key={item} className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
               <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
                 <Image
                   src="/assets/avatar.jpg"
@@ -39,7 +39,7 @@ export default function Friends(props) {
         <div className="p-4 pt-2">
           <div className="pl-1 mb-1">OFFLINE</div>
           {Array.from(Array(4).keys()).map(item =>
-            <div key={item} className="flex items-center gap-4 rounded-md select-none p-2 hover:bg-translucent/10">
+            <div key={item} className="flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
               <div className="flex rounded-md outline outline-2 opacity-60 outline-translucent shadow-sm w-fit">
                 <Image
                   src="/assets/avatar.jpg"
