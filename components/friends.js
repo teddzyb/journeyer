@@ -28,77 +28,73 @@ export default function Friends(props) {
 
         {/* Friends Tab */}
         <Tabs.Content value="friends">
-          <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent max-h-96">
+          <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent max-h-96 p-4">
             {/* <div className="flex justify-center items-center h-24">
               You have no friends... Go make some!
             </div> */}
-            <div className="p-4">
-              <div className="pl-1 mb-1">ONLINE</div>
-              {Array.from(Array(2).keys()).map(item =>
-                <div key={item} className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
-                  <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
-                    <Image
-                      src="/assets/avatar.jpg"
-                      height={48}
-                      width={48}
-                      className="rounded-md"
-                      alt=""
+            <div className="pl-1 mb-1">ONLINE</div>
+            {Array.from(Array(2).keys()).map(item =>
+              <div key={item} className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+                <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
+                  <Image
+                    src="/assets/avatar.jpg"
+                    height={48}
+                    width={48}
+                    className="rounded-md"
+                    alt=""
+                    draggable="false"
+                  />
+                </div>
+                <div className="flex flex-col pt-[2px] gap-[2px]">
+                  <div>PLAYER-0001</div>
+                  <div className="text-sm">LEVEL 25</div>
+                </div>
+                <div className="ml-auto flex gap-2 invisible group-hover:visible mx-2">
+                  <button className="flex">
+                    <FontAwesomeIcon
+                      icon={faPaperPlane}
+                      className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
                       draggable="false"
                     />
-                  </div>
-                  <div className="flex flex-col pt-[2px] gap-[2px]">
-                    <div>PLAYER-0001</div>
-                    <div className="text-sm">LEVEL 25</div>
-                  </div>
-                  <div className="ml-auto flex gap-2 invisible group-hover:visible mx-2">
-                    <button className="flex">
-                      <FontAwesomeIcon
-                        icon={faPaperPlane}
-                        className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
-                        draggable="false"
-                      />
-                    </button>
-                    <button className="flex">
-                      <FontAwesomeIcon
-                        icon={faUserMinus}
-                        className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
-                        draggable="false"
-                      />
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-            <div className="p-4 pt-2">
-              <div className="pl-1 mb-1">OFFLINE</div>
-              {Array.from(Array(4).keys()).map(item =>
-                <div key={item} className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
-                  <div className="flex rounded-md outline outline-2 opacity-60 outline-translucent shadow-sm w-fit">
-                    <Image
-                      src="/assets/avatar.jpg"
-                      height={48}
-                      width={48}
-                      className="rounded-md"
-                      alt=""
+                  </button>
+                  <button className="flex">
+                    <FontAwesomeIcon
+                      icon={faUserMinus}
+                      className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
                       draggable="false"
                     />
-                  </div>
-                  <div className="flex flex-col opacity-60 pt-[2px] gap-[2px]">
-                    <div>PLAYER-0001</div>
-                    <div className="text-sm">LEVEL 25</div>
-                  </div>
-                  <div className="ml-auto flex gap-2 invisible group-hover:visible mx-2">
-                    <button className="flex">
-                      <FontAwesomeIcon
-                        icon={faUserMinus}
-                        className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
-                        draggable="false"
-                      />
-                    </button>
-                  </div>
+                  </button>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
+            <div className="pl-1 mb-1 mt-4">OFFLINE</div>
+            {Array.from(Array(4).keys()).map(item =>
+              <div key={item} className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+                <div className="flex rounded-md outline outline-2 opacity-60 outline-translucent shadow-sm w-fit">
+                  <Image
+                    src="/assets/avatar.jpg"
+                    height={48}
+                    width={48}
+                    className="rounded-md"
+                    alt=""
+                    draggable="false"
+                  />
+                </div>
+                <div className="flex flex-col opacity-60 pt-[2px] gap-[2px]">
+                  <div>PLAYER-0001</div>
+                  <div className="text-sm">LEVEL 25</div>
+                </div>
+                <div className="ml-auto flex gap-2 invisible group-hover:visible mx-2">
+                  <button className="flex">
+                    <FontAwesomeIcon
+                      icon={faUserMinus}
+                      className="text-md bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
+                      draggable="false"
+                    />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </Tabs.Content>
 
