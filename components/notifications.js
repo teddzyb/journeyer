@@ -10,11 +10,11 @@ export default function Notifications(props) {
         <div className="sticky top-0 flex justify-between items-center border-b border-translucent px-4 py-3">
           <div className="flex gap-4 text-lg pt-1 pl-1">
             <Tabs.List className="flex gap-4 text-lg pt-1 pl-1">
-              <Tabs.Trigger value="notifications" className="text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
-                NOTIFICATIONS
+              <Tabs.Trigger value="notifications" className="flex text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
+                NOTIFICATIONS <div className="rounded-full bg-amber-400 p-1 ml-1.5 mt-1" />
               </Tabs.Trigger>
-              <Tabs.Trigger value="news" className="text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
-                NEWS
+              <Tabs.Trigger value="news" className="flex text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
+                NEWS <div className="rounded-full bg-amber-400 p-1 ml-1.5 mt-1" />
               </Tabs.Trigger>
             </Tabs.List>
           </div>

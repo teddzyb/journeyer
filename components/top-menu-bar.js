@@ -94,7 +94,7 @@ export default function TopMenuBar() {
                 <Tooltip.Trigger asChild>
                   <Popover.Trigger asChild>
                     <button
-                      className="flex flex-col justify-center text-teal-500 px-7 hover:text-teal-400"
+                      className="relative flex items-center text-teal-500 px-7 hover:text-teal-400"
                       onClick={icon.toggle}
                       aria-label={icon.name}>
                       <FontAwesomeIcon
@@ -102,6 +102,10 @@ export default function TopMenuBar() {
                         style={{ fontSize: 24 }}
                         draggable="false"
                       />
+                      {
+                        (icon.name === "Notifications" || icon.name === "Friends") &&
+                        <div className="absolute right-5 top-5 rounded-full bg-amber-400 p-1" />
+                      }
                     </button>
                   </Popover.Trigger>
                 </Tooltip.Trigger>
