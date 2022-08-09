@@ -134,7 +134,7 @@ export default function Friends(props) {
                 id="inviteUser"
                 name="inviteUser"
                 placeholder="Enter username"
-                className="text-md text-center border-none shadow-sm rounded-l-sm bg-translucent placeholder-white/50 w-full h-10 pb-[6px]
+                className="text-md text-center shadow-sm rounded-l-sm bg-translucent border-translucent placeholder-white/50 w-full
                   focus:border-transparent focus:ring-white/[.15] focus:ring-inset"
               />
               <button className="btn-primary w-36 h-10 pt-[3px]">ADD</button>
