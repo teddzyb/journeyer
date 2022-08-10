@@ -7,7 +7,7 @@ import Card from '../../components/card'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGear, faFlag, faVolumeHigh, faVolumeXmark, faQuestionCircle, faUserPlus, faCommentDots }
+import { faAnglesLeft, faGear, faFlag, faVolumeHigh, faVolumeXmark, faQuestionCircle, faUserPlus, faCommentDots }
   from '@fortawesome/free-solid-svg-icons'
 
 function classNames(...classes) {
@@ -37,7 +37,7 @@ export default function Match() {
               draggable="false"
             />
           </button>
-          <button className="flex">
+          {/* <button className="flex">
             <FontAwesomeIcon
               icon={currentVolume}
               onClick={toggleVolume}
@@ -51,11 +51,23 @@ export default function Match() {
               className="text-2xl bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2 shadow-sm"
               draggable="false"
             />
-          </button>
+          </button> */}
           <button className="flex">
             <FontAwesomeIcon
               icon={faFlag}
               className="text-xl -rotate-12 bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
+              draggable="false"
+            />
+          </button>
+        </div>
+        <div className="flex flex-col place-self-center absolute left-0 bg-translucent rounded-r-md shadow-md overflow-hidden w-16 max-h-[530px]">
+          <div className="flex flex-col items-center scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+            {/* Activity Log */}
+          </div>
+          <button className="flex w-full">
+            <FontAwesomeIcon
+              icon={faAnglesLeft}
+              className="text-xl bg-translucent/10 hover:bg-translucent w-full py-3"
               draggable="false"
             />
           </button>
