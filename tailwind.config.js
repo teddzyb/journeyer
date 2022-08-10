@@ -8,6 +8,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'card1': ["Volkhov"],
+      'card2': ["Cutive"],
+    },
     extend: {
       colors: {
         translucent: {

@@ -36,11 +36,11 @@ export default function Card(props) {
           <div className="flex flex-col w-full h-full">
             <div className={classNames(
               {
-                "sm": "text-xs pt-[6px] px-[6px]",
-                "md": "text-sm pt-[8px] px-[8px]",
-                "lg": "text-md pt-[10px] px-[10px]",
-                "xl": "text-lg pt-[12px] px-[12px]",
-                "2xl": "text-xl pt-[14px] px-[14px]",
+                "sm": "text-sm pt-[6px] px-[6px]",
+                "md": "text-md pt-[8px] px-[8px]",
+                "lg": "text-lg pt-[10px] px-[10px]",
+                "xl": "text-xl pt-[12px] px-[12px]",
+                "2xl": "text-2xl pt-[14px] px-[14px]",
               }[props.size],
             )}>
               <Image
@@ -93,12 +93,12 @@ export default function Card(props) {
                 layout="responsive"
                 alt=""
                 className={classNames(
-                  "outline outline-1 outline-offset-1 outline-black aspect-square rounded-[1px] w-fit",
+                  "outline outline-offset-1 outline-black aspect-square rounded-[1px] w-fit",
                   {
-                    "sm": "h-[20px]",
-                    "md": "h-[24px]",
-                    "lg": "h-[28px]",
-                    "xl": "h-[32px]",
+                    "sm": "outline-1 h-[20px]",
+                    "md": "outline-1 h-[24px]",
+                    "lg": "outline-1 h-[28px]",
+                    "xl": "outline-2 h-[32px]",
                     "2xl": "outline-2 h-[36px]",
                   }[props.size],
                 )}
@@ -132,23 +132,29 @@ export default function Card(props) {
                 draggable="false"
               />
               <div className={classNames(
+                "font-card2",
                 {
-                  "sm": "text-sm w-4 h-4 pt-[3px] -ml-[88px]",
-                  "md": "text-md w-5 h-5 pt-[4px] -ml-[112px]",
-                  "lg": "text-lg w-6 h-6 pt-[5px] -ml-[134px]",
+                  "sm": "text-sm w-4 h-4 pt-[3.5px] -ml-[89px]",
+                  "md": "text-md w-5 h-5 pt-[5px] -ml-[111px]",
+                  "lg": "text-lg w-6 h-6 pt-[4.5px] -ml-[134px]",
                   "xl": "text-xl w-7 h-7 pt-[6px] -ml-[157px]",
                   "2xl": "text-2xl w-8 h-8 pt-[7px] -ml-[178px]",
                 }[props.size],
-              )}>2</div>
+              )}>
+                2
+              </div>
               <div className={classNames(
+                "font-card2",
                 {
-                  "sm": "text-sm w-4 h-4 pt-[2.5px] -mr-[88px]",
-                  "md": "text-md w-5 h-5 pt-[3px] -mr-[112px]",
-                  "lg": "text-lg w-6 h-6 pt-[3.5px] -mr-[134px]",
+                  "sm": "text-sm w-4 h-4 pt-[2.5px] -mr-[89px]",
+                  "md": "text-md w-5 h-5 pt-[3px] -mr-[111px]",
+                  "lg": "text-lg w-6 h-6 pt-[2px] -mr-[134px]",
                   "xl": "text-xl w-7 h-7 pt-[4px] -mr-[157px]",
                   "2xl": "text-2xl w-8 h-8 pt-[4.5px] -mr-[178px]",
                 }[props.size],
-              )}>3</div>
+              )}>
+                3
+              </div>
               <Image
                 src={def}
                 layout="responsive"
