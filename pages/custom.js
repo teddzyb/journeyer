@@ -31,6 +31,7 @@ const modes = {
     "Choices Per Turn": { value: 2, description: "Number of choices each player has per turn. Must be at least 1." },
     "Value of Gold Coin": { value: 5, description: "Default: 5. If 0, gold coins will be disabled." },
     "Enable White Cards": { value: true, description: "If disabled, the game begins with no white cards." },
+    "Show Enemy Coins": { value: true, description: "If disabled, the enemy's coins are hidden." },
   },
   blitz: {
     name: "blitz",
@@ -41,6 +42,7 @@ const modes = {
     "Choices Per Turn": { value: 2, description: "Number of choices each player has per turn. Must be at least 1." },
     "Value of Gold Coin": { value: 0, description: "Default: 5. If 0, gold coins will be disabled." },
     "Enable White Cards": { value: false, description: "If disabled, the game begins with no white cards." },
+    "Show Enemy's Coins": { value: true, description: "If disabled, the enemy's coins are hidden." },
   },
   custom: {
     name: "custom",
@@ -51,6 +53,7 @@ const modes = {
     "Choices Per Turn": { value: 0, description: "Number of choices each player has per turn. Must be at least 1." },
     "Value of Gold Coin": { value: 0, description: "Default: 5. If 0, gold coins will be disabled." },
     "Enable White Cards": { value: false, description: "If disabled, the game begins with no white cards." },
+    "Show Enemy Coins": { value: false, description: "If disabled, the enemy's coins are hidden." },
   },
 }
 
