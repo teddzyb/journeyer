@@ -72,12 +72,12 @@ export default function Match() {
           leave="transition-translate duration-200"
           leaveFrom="translate-x-0"
           leaveTo="-translate-x-full"
-          className="flex flex-col place-self-center absolute left-0 rounded-r-md shadow-md overflow-hidden w-8"
+          className="flex flex-col place-self-center absolute left-0 rounded-r-lg shadow-md overflow-hidden w-8"
         >
           <button onClick={toggleActivityLog} className="flex">
             <FontAwesomeIcon
               icon={faAngleRight}
-              className="text-xl bg-translucent hover:bg-translucent w-full py-10 hover:scale-110 transition"
+              className="text-2xl bg-translucent hover:bg-translucent/20 w-full py-10 transition"
               draggable="false"
             />
           </button>
@@ -92,8 +92,19 @@ export default function Match() {
           leaveTo="-translate-x-full"
           className="flex flex-col place-self-center absolute left-0 bg-translucent rounded-r-md shadow-md overflow-hidden w-16 max-h-[530px]"
         >
-          <div className="flex flex-col items-center scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-
+          <div className="flex flex-col items-center gap-4 p-3 scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent">
+            <div className="bg-translucent/10 rounded-sm outline outline-2 outline-blue-300 w-full">
+              <div className="aspect-square" />
+            </div>
+            <div className="bg-translucent/10 rounded-sm outline outline-2 outline-red-300 w-full">
+              <div className="aspect-square" />
+            </div>
+            <div className="bg-translucent/10 rounded-sm outline outline-2 outline-blue-300 w-full">
+              <div className="aspect-square" />
+            </div>
+            <div className="bg-translucent/10 rounded-sm outline outline-2 outline-red-300 w-full">
+              <div className="aspect-square" />
+            </div>
           </div>
           <button onClick={toggleActivityLog} className="flex w-full">
             <FontAwesomeIcon
