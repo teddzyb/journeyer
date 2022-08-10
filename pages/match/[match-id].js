@@ -3,11 +3,12 @@ import Head from 'next/head'
 import { useState } from 'react'
 
 // Components
+import { Transition } from '@headlessui/react'
 import Card from '../../components/card'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAnglesLeft, faGear, faFlag, faVolumeHigh, faVolumeXmark, faQuestionCircle, faUserPlus, faCommentDots }
+import { faAnglesLeft, faAngleRight, faGear, faFlag, faVolumeHigh, faVolumeXmark, faQuestionCircle, faUserPlus, faCommentDots }
   from '@fortawesome/free-solid-svg-icons'
 
 function classNames(...classes) {
@@ -15,6 +16,9 @@ function classNames(...classes) {
 }
 
 export default function Match() {
+
+  const [activityLog, setActivityLog] = useState(false)
+  const toggleActivityLog = () => setActivityLog(!activityLog)
 
   const [volume, setVolume] = useState(false)
   const toggleVolume = () => setVolume(!volume)
@@ -60,18 +64,45 @@ export default function Match() {
             />
           </button>
         </div>
-        <div className="flex flex-col place-self-center absolute left-0 bg-translucent rounded-r-md shadow-md overflow-hidden w-16 max-h-[530px]">
+        <Transition
+          show={!activityLog}
+          enter="transition-translate duration-200"
+          enterFrom="-translate-x-full"
+          enterTo="translate-x-0"
+          leave="transition-translate duration-200"
+          leaveFrom="translate-x-0"
+          leaveTo="-translate-x-full"
+          className="flex flex-col place-self-center absolute left-0 rounded-r-md shadow-md overflow-hidden w-8"
+        >
+          <button onClick={toggleActivityLog} className="flex">
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              className="text-xl bg-translucent hover:bg-translucent w-full py-10 hover:scale-110 transition"
+              draggable="false"
+            />
+          </button>
+        </Transition>
+        <Transition
+          show={activityLog}
+          enter="transition-translate duration-200"
+          enterFrom="-translate-x-full"
+          enterTo="translate-x-0"
+          leave="transition-translate duration-200"
+          leaveFrom="translate-x-0"
+          leaveTo="-translate-x-full"
+          className="flex flex-col place-self-center absolute left-0 bg-translucent rounded-r-md shadow-md overflow-hidden w-16 max-h-[530px]"
+        >
           <div className="flex flex-col items-center scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
-            {/* Activity Log */}
+
           </div>
-          <button className="flex w-full">
+          <button onClick={toggleActivityLog} className="flex w-full">
             <FontAwesomeIcon
               icon={faAnglesLeft}
               className="text-xl bg-translucent/10 hover:bg-translucent w-full py-3"
               draggable="false"
             />
           </button>
-        </div>
+        </Transition>
         <div className="bg-translucent rounded-2xl shadow-md h-full w-full">
 
         </div>
