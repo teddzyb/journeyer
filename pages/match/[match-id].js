@@ -132,6 +132,15 @@ export default function Match() {
                 <div>PLAYER-0001</div>
                 <div className="text-sm">LEVEL 25</div>
               </div>
+              <div className="ml-auto">
+                <button className="flex text-teal-900 p-5">
+                  <FontAwesomeIcon
+                    icon={faUserPlus}
+                    className="text-xl"
+                    draggable="false"
+                  />
+                </button>
+              </div>
             </div>
             <div className="bg-translucent rounded-b-md p-2">
               test
@@ -155,6 +164,15 @@ export default function Match() {
               <div className="flex flex-col text-end pt-[2px] gap-[2px]">
                 <div>PLAYER-0001</div>
                 <div className="text-sm">LEVEL 25</div>
+              </div>
+              <div className="mr-auto">
+                <button className="flex text-teal-900 p-5">
+                  <FontAwesomeIcon
+                    icon={faCommentDots}
+                    className="text-2xl"
+                    draggable="false"
+                  />
+                </button>
               </div>
             </div>
           </div>
