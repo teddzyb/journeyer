@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 // Components
 import { Transition } from '@headlessui/react'
+import * as Popover from '@radix-ui/react-popover'
 import Card from '../../components/card'
 import ArenaPlayer from '../../components/arena-player'
 
@@ -12,10 +13,17 @@ import ArenaPlayer from '../../components/arena-player'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesLeft, faAngleRight, faGear, faFlag, faVolumeHigh, faVolumeXmark, faQuestionCircle, faUserPlus, faCommentDots }
   from '@fortawesome/free-solid-svg-icons'
+import cool from '../../public/assets/emoji/cool.svg'
+import laughing from '../../public/assets/emoji/laughing.svg'
+import crying from '../../public/assets/emoji/crying.svg'
+import shocked from '../../public/assets/emoji/shocked.svg'
+import angry from '../../public/assets/emoji/angry.svg'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
+
+const reactions = [cool, laughing, crying, shocked, angry]
 
 export default function Match() {
 
@@ -127,13 +135,33 @@ export default function Match() {
             </button>
           </ArenaPlayer>
           <ArenaPlayer>
-            <button className="flex text-teal-900 p-5">
-              <FontAwesomeIcon
-                icon={faCommentDots}
-                className="text-2xl"
-                draggable="false"
-              />
-            </button>
+            <Popover.Root>
+              <Popover.Trigger className="flex text-teal-900 p-5">
+                <FontAwesomeIcon
+                  icon={faCommentDots}
+                  className="text-2xl"
+                  draggable="false"
+                />
+              </Popover.Trigger>
+              <Popover.Portal>
+                <Popover.Content side="left" className="flex flex-col gap-2 rounded-md bg-[#0c4441] p-3 mb-5">
+                  {
+                    reactions.map((reaction, index) =>
+                      <button key={index} className="flex">
+                        <Image
+                          src={reaction}
+                          width={40}
+                          height={40}
+                          alt=""
+                          draggable="false"
+                        />
+                      </button>
+                    )
+                  }
+                  <Popover.Arrow className="fill-[#0c4441]" />
+                </Popover.Content>
+              </Popover.Portal>
+            </Popover.Root>
           </ArenaPlayer>
         </div>
       </main>
