@@ -6,6 +6,7 @@ import { useState } from 'react'
 // Components
 import { Transition } from '@headlessui/react'
 import Card from '../../components/card'
+import ArenaPlayer from '../../components/arena-player'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -116,66 +117,24 @@ export default function Match() {
           </button>
         </Transition>
         <div className="relative bg-translucent rounded-2xl shadow-md h-full w-full">
-
-          <div className="absolute top-0 left-0">
-            <div className="flex items-center gap-3 text-black bg-red-300 rounded-t-md overflow-hidden w-80">
-              <div className="flex w-fit">
-                <Image
-                  src="/assets/avatar.jpg"
-                  height={64}
-                  width={64}
-                  alt=""
-                  draggable="false"
-                />
-              </div>
-              <div className="flex flex-col pt-[2px] gap-[2px]">
-                <div>PLAYER-0001</div>
-                <div className="text-sm">LEVEL 25</div>
-              </div>
-              <div className="ml-auto">
-                <button className="flex text-teal-900 p-5">
-                  <FontAwesomeIcon
-                    icon={faUserPlus}
-                    className="text-xl"
-                    draggable="false"
-                  />
-                </button>
-              </div>
-            </div>
-            <div className="bg-translucent rounded-b-md p-2">
-              test
-            </div>
-          </div>
-
-          <div className="absolute bottom-0 right-0">
-            <div className="text-end bg-translucent rounded-t-md p-2">
-              test
-            </div>
-            <div className="flex flex-row-reverse items-center gap-3 text-black bg-blue-300 rounded-b-md overflow-hidden w-80">
-              <div className="flex w-fit">
-                <Image
-                  src="/assets/avatar.jpg"
-                  height={64}
-                  width={64}
-                  alt=""
-                  draggable="false"
-                />
-              </div>
-              <div className="flex flex-col text-end pt-[2px] gap-[2px]">
-                <div>PLAYER-0001</div>
-                <div className="text-sm">LEVEL 25</div>
-              </div>
-              <div className="mr-auto">
-                <button className="flex text-teal-900 p-5">
-                  <FontAwesomeIcon
-                    icon={faCommentDots}
-                    className="text-2xl"
-                    draggable="false"
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
+          <ArenaPlayer opponent>
+            <button className="flex text-teal-900 p-5">
+              <FontAwesomeIcon
+                icon={faUserPlus}
+                className="text-xl"
+                draggable="false"
+              />
+            </button>
+          </ArenaPlayer>
+          <ArenaPlayer>
+            <button className="flex text-teal-900 p-5">
+              <FontAwesomeIcon
+                icon={faCommentDots}
+                className="text-2xl"
+                draggable="false"
+              />
+            </button>
+          </ArenaPlayer>
         </div>
       </main>
     </div>
