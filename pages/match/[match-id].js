@@ -126,7 +126,7 @@ export default function Match() {
         </Transition>
         <div className="relative bg-translucent rounded-2xl shadow-md h-full w-full">
           <ArenaPlayer opponent>
-            <button className="flex text-teal-900 p-5">
+            <button className="flex text-teal-900 hover:text-teal-800 p-5">
               <FontAwesomeIcon
                 icon={faUserPlus}
                 className="text-xl"
@@ -136,7 +136,7 @@ export default function Match() {
           </ArenaPlayer>
           <ArenaPlayer>
             <Popover.Root>
-              <Popover.Trigger className="flex text-teal-900 p-5">
+              <Popover.Trigger className="flex text-teal-900 hover:text-teal-800 p-5">
                 <FontAwesomeIcon
                   icon={faCommentDots}
                   className="text-2xl"
@@ -144,10 +144,10 @@ export default function Match() {
                 />
               </Popover.Trigger>
               <Popover.Portal>
-                <Popover.Content side="left" className="flex flex-col gap-2 rounded-md bg-[#0c4441] p-3 mb-5">
+                <Popover.Content side="left" className="flex flex-col gap-2 rounded-md bg-[#0c4441] shadow-md select-none p-3 mb-5">
                   {
                     reactions.map((reaction, index) =>
-                      <button key={index} className="flex">
+                      <button key={index} className="flex hover:scale-110 transition-transform ease-in-out">
                         <Image
                           src={reaction}
                           width={40}

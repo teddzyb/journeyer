@@ -8,7 +8,7 @@ export default function ArenaPlayer(props) {
   return (
     <div className={classNames(
       props.opponent ? "flex-col top-0 left-0" : "flex-col-reverse bottom-0 right-0",
-      "absolute flex",
+      "absolute flex select-none",
     )}>
       <div className={classNames(
         props.opponent ? "items-center bg-red-300 rounded-t-md shadow-sm" :
