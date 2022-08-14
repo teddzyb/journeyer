@@ -40,7 +40,7 @@ export default function ArenaPlayer(props) {
       </div>
       <div className={classNames(
         props.opponent ? "rounded-b-lg" : "rounded-t-lg",
-        "bg-translucent p-2",
+        "bg-translucent p-[10px]",
       )}>
         <Currencies opponent={props.opponent} gold="2" silver="3" />
       </div>

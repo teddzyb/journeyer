@@ -11,15 +11,15 @@ export default function Currencies(props) {
   return (
     <div className={classNames(
       !props.opponent && "flex-row-reverse",
-      "flex items-center h-[24px] pl-2",
+      "flex items-center pl-2",
     )}>
       {
         props.gold && Array.from(Array(parseInt(props.gold)).keys()).map(item =>
           <div key={item} className="flex drop-shadow-md rounded-full -ml-2">
             <Image
               src={goldCoin}
-              height={24}
-              width={24}
+              height={26}
+              width={26}
               alt=""
               draggable="false"
             />
@@ -31,8 +31,8 @@ export default function Currencies(props) {
           <div key={item} className="flex drop-shadow-md rounded-full -ml-2">
             <Image
               src={silverCoin}
-              height={24}
-              width={24}
+              height={26}
+              width={26}
               alt=""
               draggable="false"
             />
