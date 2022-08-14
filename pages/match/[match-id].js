@@ -35,6 +35,12 @@ export default function Match() {
 
   let currentVolume = volume ? faVolumeXmark : faVolumeHigh
 
+  const CardSlot = (
+    <div className="outline outline-teal-500 rounded-md">
+      <Card placeholder size="md" className="invisible"> </Card>
+    </div>
+  )
+
   return (
     <div>
       <Head>
@@ -124,7 +130,8 @@ export default function Match() {
             />
           </button>
         </Transition>
-        <div className="relative bg-translucent rounded-2xl shadow-md h-full w-full">
+
+        <div className="relative flex justify-center items-center bg-translucent rounded-2xl shadow-md h-full w-full">
           <ArenaPlayer opponent>
             <button className="flex text-teal-900 hover:scale-110 transition-transform ease-in-out p-5">
               <FontAwesomeIcon
@@ -163,6 +170,27 @@ export default function Match() {
               </Popover.Portal>
             </Popover.Root>
           </ArenaPlayer>
+
+          <div className="grid grid-flow-col columns-6 w-full h-full mx-20 py-28">
+            <div className="grid grid-flow-row justify-start items-end -mb-10">
+              {CardSlot} {CardSlot}
+            </div>
+            <div className="grid grid-flow-row justify-center items-center">
+              {CardSlot} {CardSlot}
+            </div>
+            <div className="grid grid-flow-row justify-center items-center">
+              {CardSlot} {CardSlot}
+            </div>
+            <div className="grid grid-flow-row justify-center items-center">
+              {CardSlot} {CardSlot}
+            </div>
+            <div className="grid grid-flow-row justify-center items-center">
+              {CardSlot} {CardSlot}
+            </div>
+            <div className="grid grid-flow-row justify-end items-start -mt-10">
+              {CardSlot} {CardSlot}
+            </div>
+          </div>
         </div>
       </main>
     </div>
