@@ -74,7 +74,6 @@ export default function Menu() {
                         <a className="absolute select-none hover:scale-105 transition ease-in-out duration-150" draggable="false">
                           <div className="flex drop-shadow-md rounded-full w-[70px] -translate-x-3">
                             <Image
-                              priority
                               src={goldCoin}
                               height={70}
                               width={70}
@@ -84,7 +83,6 @@ export default function Menu() {
                           </div>
                           <div className="flex drop-shadow-md rounded-full w-[70px] -mt-6 translate-x-3">
                             <Image
-                              priority
                               src={silverCoin}
                               height={70}
                               width={70}
@@ -115,7 +113,6 @@ export default function Menu() {
               <div className="flex flex-col justify-center items-center select-none w-fit">
                 <div className="flex drop-shadow-md rounded-full w-[70px]">
                   <Image
-                    priority
                     src={goldCoin}
                     height={70}
                     width={70}
@@ -125,7 +122,6 @@ export default function Menu() {
                 </div>
                 <div className="flex drop-shadow-md rounded-full w-[70px] -mt-5">
                   <Image
-                    priority
                     src={silverCoin}
                     height={70}
                     width={70}

@@ -47,7 +47,6 @@ export default function TopMenuBar() {
       <div className="grid grid-flow-col auto-cols-max items-center gap-3">
         <div className="flex justify-center items-center rounded-md outline outline-2 outline-translucent shadow-sm h-14 w-14 mx-1">
           <Image
-            priority
             src="/assets/avatar.jpg"
             height={56}
             width={56}
@@ -64,7 +63,6 @@ export default function TopMenuBar() {
         <div className="flex flex-col justify-center gap-2 ml-10">
           <div className="flex items-center text-sm gap-2">
             <Image
-              priority
               src={goldCoin}
               height={20}
               width={20}
@@ -75,7 +73,6 @@ export default function TopMenuBar() {
           </div>
           <div className="flex items-center text-sm gap-2">
             <Image
-              priority
               src={silverCoin}
               height={20}
               width={20}
