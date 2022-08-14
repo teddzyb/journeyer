@@ -1,4 +1,5 @@
 import Image from 'next/future/image'
+import Currencies from '../components/currencies'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -11,8 +12,8 @@ export default function ArenaPlayer(props) {
       "absolute flex select-none",
     )}>
       <div className={classNames(
-        props.opponent ? "items-center bg-red-300 rounded-t-md shadow-sm" :
-          "flex-row-reverse items-center bg-blue-300 rounded-b-md",
+        props.opponent ? "items-center bg-red-300 rounded-t-lg shadow-sm" :
+          "flex-row-reverse items-center bg-blue-300 rounded-b-lg",
         "flex gap-3 text-black overflow-hidden w-80",
       )}>
         <div className="flex w-fit">
@@ -38,10 +39,10 @@ export default function ArenaPlayer(props) {
         </div>
       </div>
       <div className={classNames(
-        props.opponent ? "rounded-b-md" : "rounded-t-md",
+        props.opponent ? "rounded-b-lg" : "rounded-t-lg",
         "bg-translucent p-2",
       )}>
-        test
+        <Currencies opponent={props.opponent} gold="2" silver="3" />
       </div>
     </div>
   )
