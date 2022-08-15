@@ -172,7 +172,7 @@ export default function Match() {
           </ArenaPlayer>
 
           <div className="grid grid-flow-col columns-6 w-full h-full mx-20 py-28">
-            <div className="grid grid-flow-row justify-start items-end -mb-10">
+            <div className="grid grid-flow-row justify-start items-end pt-10 -mb-10">
               {CardSlot} {CardSlot}
             </div>
             <div className="grid grid-flow-row justify-center items-center">
@@ -187,7 +187,7 @@ export default function Match() {
             <div className="grid grid-flow-row justify-center items-center">
               {CardSlot} {CardSlot}
             </div>
-            <div className="grid grid-flow-row justify-end items-start -mt-10">
+            <div className="grid grid-flow-row justify-end items-start pb-10 -mt-10">
               {CardSlot} {CardSlot}
             </div>
           </div>
