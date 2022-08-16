@@ -196,6 +196,13 @@ export default function Match() {
             </div>
           </div>
         </div>
+
+        <div className="absolute flex bottom-0 ml-32 -mb-10">
+          {Array.from(Array(8).keys()).map(item =>
+            <Card key={item} size="md" hover className="-ml-32 hover:mr-28 hover:-mt-10 last:hover:mr-0" />
+          )}
+        </div>
+
       </main>
     </div>
   )
