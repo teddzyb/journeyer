@@ -171,6 +171,10 @@ export default function Match() {
             </Popover.Root>
           </ArenaPlayer>
 
+          <div className="absolute top-8 text-xl text-center bg-translucent shadow rounded-full w-32 py-1.5 pt-2.5">
+            1:30
+          </div>
+
           <div className="grid grid-flow-col columns-6 w-full h-full mx-20 py-28">
             <div className="grid grid-flow-row justify-start items-end pt-10 -mb-10">
               {CardSlot} {CardSlot}
