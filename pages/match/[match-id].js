@@ -35,6 +35,8 @@ export default function Match() {
 
   let currentVolume = volume ? faVolumeXmark : faVolumeHigh
 
+  const [handLayout, setHandLayout] = useState(1)
+
   const CardSlot = (
     <div className="outline outline-teal-500 rounded-md">
       <Card placeholder size="md" className="invisible"> </Card>
@@ -198,20 +200,39 @@ export default function Match() {
         </div>
 
         <div className="absolute bottom-0 flex items-center">
-          <div className="flex ml-32 -mb-10">
+          <div className={classNames(
+            "flex ml-32",
+            {
+              0: "-mb-24",
+              1: "-mb-10",
+              2: "mb-5",
+            }[handLayout]
+          )}>
             {Array.from(Array(8).keys()).map(item =>
-              <Card key={item} size="md" hover className="-ml-32 hover:mr-28 hover:-mt-10 last:hover:mr-0" />
+              <Card key={item} size="md" hover className={classNames(
+                {
+                  0: "-ml-32 hover:mr-28 hover:-mt-24 last:hover:mr-0",
+                  1: "-ml-32 hover:mr-28 hover:-mt-10 last:hover:mr-0",
+                  2: "-ml-20 hover:mr-20 hover:scale-110 last:hover:mr-0",
+                }[handLayout]
+              )} />
             )}
           </div>
           <div className="absolute -right-14 flex flex-col gap-1">
-            <button className="flex bg-translucent rounded-full shadow p-2">
+            <button
+              onClick={() => setHandLayout(handLayout + 1)}
+              className="flex bg-translucent rounded-full shadow p-2"
+            >
               <FontAwesomeIcon
                 icon={faAngleRight}
                 className="-rotate-90 aspect-square"
                 draggable="false"
               />
             </button>
-            <button className="flex bg-translucent rounded-full shadow p-2">
+            <button
+              onClick={() => setHandLayout(handLayout - 1)}
+              className="flex bg-translucent rounded-full shadow p-2"
+            >
               <FontAwesomeIcon
                 icon={faAngleRight}
                 className="rotate-90 aspect-square"
