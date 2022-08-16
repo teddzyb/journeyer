@@ -53,7 +53,7 @@ export default function Match() {
           <button className="flex">
             <FontAwesomeIcon
               icon={faGear}
-              className="text-2xl bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2 shadow-sm"
+              className="text-2xl bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2 shadow"
               draggable="false"
             />
           </button>
@@ -61,21 +61,21 @@ export default function Match() {
             <FontAwesomeIcon
               icon={currentVolume}
               onClick={toggleVolume}
-              className="text-2xl bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2 shadow-sm"
+              className="text-2xl bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2 shadow"
               draggable="false"
             />
           </button>
           <button className="flex">
             <FontAwesomeIcon
               icon={faQuestionCircle}
-              className="text-2xl bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2 shadow-sm"
+              className="text-2xl bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2 shadow"
               draggable="false"
             />
           </button> */}
           <button className="flex">
             <FontAwesomeIcon
               icon={faFlag}
-              className="text-xl -rotate-12 bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow-sm"
+              className="text-xl -rotate-12 bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2.5 shadow"
               draggable="false"
             />
           </button>
@@ -203,9 +203,21 @@ export default function Match() {
               <Card key={item} size="md" hover className="-ml-32 hover:mr-28 hover:-mt-10 last:hover:mr-0" />
             )}
           </div>
-          <div className="absolute -right-14 flex flex-col">
-            <button>Up</button>
-            <button>Down</button>
+          <div className="absolute -right-14 flex flex-col gap-1">
+            <button className="flex bg-translucent rounded-full shadow p-2">
+              <FontAwesomeIcon
+                icon={faAngleRight}
+                className="-rotate-90 aspect-square"
+                draggable="false"
+              />
+            </button>
+            <button className="flex bg-translucent rounded-full shadow p-2">
+              <FontAwesomeIcon
+                icon={faAngleRight}
+                className="rotate-90 aspect-square"
+                draggable="false"
+              />
+            </button>
           </div>
         </div>
 
