@@ -201,7 +201,7 @@ export default function Match() {
 
         <div className="absolute bottom-0 flex items-center">
           <div className={classNames(
-            "flex ml-32",
+            "flex ml-32 transition-all ease-linear",
             {
               0: "-mb-24",
               1: "-mb-10",
@@ -210,6 +210,7 @@ export default function Match() {
           )}>
             {Array.from(Array(8).keys()).map(item =>
               <Card key={item} size="md" hover className={classNames(
+                "transition-all ease-in-out",
                 {
                   0: "-ml-32 hover:mr-28 hover:-mt-24 last:hover:mr-0",
                   1: "-ml-32 hover:mr-28 hover:-mt-10 last:hover:mr-0",
@@ -220,7 +221,7 @@ export default function Match() {
           </div>
           <div className="absolute -right-14 flex flex-col gap-1">
             <button
-              onClick={() => setHandLayout(handLayout + 1)}
+              onClick={handLayout < 2 ? () => setHandLayout(handLayout + 1) : null}
               className="flex bg-translucent rounded-full shadow p-2"
             >
               <FontAwesomeIcon
@@ -230,7 +231,7 @@ export default function Match() {
               />
             </button>
             <button
-              onClick={() => setHandLayout(handLayout - 1)}
+              onClick={handLayout > 0 ? () => setHandLayout(handLayout - 1) : null}
               className="flex bg-translucent rounded-full shadow p-2"
             >
               <FontAwesomeIcon
