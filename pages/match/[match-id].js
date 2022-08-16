@@ -171,7 +171,7 @@ export default function Match() {
             </Popover.Root>
           </ArenaPlayer>
 
-          <div className="absolute top-8 text-lg text-center bg-translucent shadow rounded-full w-32 py-1.5 pt-2.5">
+          <div className="absolute top-8 text-lg text-center bg-translucent shadow rounded-full w-32 py-1 pt-2">
             1:30
           </div>
 
