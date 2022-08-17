@@ -243,6 +243,8 @@ export default function Match() {
           </div>
         </div>
 
+        {/* A commit a day keeps the anxiety away */}
+
       </main>
     </div>
   )
