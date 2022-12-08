@@ -7,9 +7,9 @@ import { Disclosure, Transition } from '@headlessui/react'
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp, faCheck } from '@fortawesome/free-solid-svg-icons'
-import goldCoin from '../public/assets/currency/coin-gold.svg'
-import silverCoin from '../public/assets/currency/coin-silver.svg'
-import cardLayer from '../public/assets/icons/card-layer.svg'
+import goldCoin from '../../public/assets/currency/coin-gold.svg'
+import silverCoin from '../../public/assets/currency/coin-silver.svg'
+import cardLayer from '../../public/assets/icons/card-layer.svg'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")

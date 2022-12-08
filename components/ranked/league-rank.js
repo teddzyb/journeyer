@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import * as Tooltip from '@radix-ui/react-tooltip'
-import goldCoin from '../public/assets/currency/coin-gold.svg'
-import silverCoin from '../public/assets/currency/coin-silver.svg'
-import cardLayer1 from '../public/assets/icons/card-layer-1.svg'
-import cardLayer2 from '../public/assets/icons/card-layer-2.svg'
-import cardLayer3 from '../public/assets/icons/card-layer-3.svg'
-import cardLayer4 from '../public/assets/icons/card-layer-4.svg'
+import goldCoin from '../../public/assets/currency/coin-gold.svg'
+import silverCoin from '../../public/assets/currency/coin-silver.svg'
+import cardLayer1 from '../../public/assets/icons/card-layer-1.svg'
+import cardLayer2 from '../../public/assets/icons/card-layer-2.svg'
+import cardLayer3 from '../../public/assets/icons/card-layer-3.svg'
+import cardLayer4 from '../../public/assets/icons/card-layer-4.svg'
 
 const cardType = {
   1: cardLayer1,

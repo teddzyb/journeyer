@@ -1,4 +1,4 @@
-import Card from './card'
+import Card from '../card/card'
 
 export default function SleevePreview(props) {
   return (

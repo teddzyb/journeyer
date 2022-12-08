@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import rankFirst from '../public/assets/icons/rank-first.svg'
-import rankSecond from '../public/assets/icons/rank-second.svg'
-import rankThird from '../public/assets/icons/rank-third.svg'
+import rankFirst from '../../public/assets/icons/rank-first.svg'
+import rankSecond from '../../public/assets/icons/rank-second.svg'
+import rankThird from '../../public/assets/icons/rank-third.svg'
 
 export default function RankRow(props) {
   return (

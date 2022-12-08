@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import goldCoin from '../public/assets/currency/coin-gold.svg'
-import silverCoin from '../public/assets/currency/coin-silver.svg'
+import goldCoin from '../../public/assets/currency/coin-gold.svg'
+import silverCoin from '../../public/assets/currency/coin-silver.svg'
 
 export default function CoinPreview() {
 

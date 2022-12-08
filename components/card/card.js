@@ -1,9 +1,9 @@
 import Image from 'next/future/image'
-import cost from '../public/assets/card/cost-coin-1.svg'
-import cardArt from '../public/assets/card/wolf.svg'
-import ability from '../public/assets/card/ability-maul.svg'
-import atk from '../public/assets/card/atk-v2.svg'
-import def from '../public/assets/card/def-v2.svg'
+import cost from '../../public/assets/card/cost-coin-1.svg'
+import cardArt from '../../public/assets/card/wolf.svg'
+import ability from '../../public/assets/card/ability-maul.svg'
+import atk from '../../public/assets/card/atk-v2.svg'
+import def from '../../public/assets/card/def-v2.svg'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")

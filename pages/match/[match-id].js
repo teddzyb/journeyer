@@ -6,8 +6,8 @@ import { useState } from 'react'
 // Components
 import { Transition } from '@headlessui/react'
 import * as Popover from '@radix-ui/react-popover'
-import Card from '../../components/card'
-import ArenaPlayer from '../../components/arena-player'
+import Card from '../../components/card/card'
+import ArenaPlayer from '../../components/arena/arena-player'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

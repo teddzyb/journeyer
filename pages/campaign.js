@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 // Components
-import TopMenuBar from '../components/top-menu-bar'
-import CampaignMenu from "../components/campaign-menu"
+import TopMenuBar from '../components/menubar/top-menu-bar'
+import CampaignMenu from "../components/campaign/campaign-menu"
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

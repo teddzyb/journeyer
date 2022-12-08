@@ -4,8 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // Components
-import TopMenuBar from '../components/top-menu-bar'
-import Card from '../components/card'
+import TopMenuBar from '../components/menubar/top-menu-bar'
+import Card from '../components/card/card'
 
 // Assets
 import goldCoin from '../public/assets/currency/coin-gold.svg'

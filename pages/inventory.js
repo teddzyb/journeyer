@@ -6,12 +6,12 @@ import { useState, useRef } from 'react'
 
 // Components
 import { Tab } from '@headlessui/react'
-import TopMenuBar from '../components/top-menu-bar'
-import Card from '../components/card'
-import ShopItemPreview from '../components/shop-item-preview'
-import DeckPreview from '../components/deck-preview'
-import SleevePreview from '../components/sleeve-preview'
-import CoinPreview from '../components/coin-preview'
+import TopMenuBar from '../components/menubar/top-menu-bar'
+import Card from '../components/card/card'
+import ShopItemPreview from '../components/shop/shop-item-preview'
+import DeckPreview from '../components/shop/deck-preview'
+import SleevePreview from '../components/shop/sleeve-preview'
+import CoinPreview from '../components/shop/coin-preview'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

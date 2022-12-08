@@ -6,11 +6,11 @@ import { useState, useRef } from 'react'
 import { useSetState, useListState } from '@mantine/hooks'
 
 // Components
-import TopMenuBar from '../components/top-menu-bar'
-import Card from '../components/card'
-import GameOption from '../components/game-option'
-import LobbyPlayer from '../components/lobby-player'
-import Message from '../components/message'
+import TopMenuBar from '../components/menubar/top-menu-bar'
+import Card from '../components/card/card'
+import GameOption from '../components/custom/game-option'
+import LobbyPlayer from '../components/custom/lobby-player'
+import Message from '../components/custom/message'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

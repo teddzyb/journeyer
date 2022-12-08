@@ -5,10 +5,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 // Components
-import TopMenuBar from '../components/top-menu-bar'
-import RankRow from '../components/rank-row'
-import StreakBar from '../components/streak-bar'
-import LeagueRank from "../components/league-rank"
+import TopMenuBar from '../components/menubar/top-menu-bar'
+import RankRow from '../components/ranked/rank-row'
+import StreakBar from '../components/ranked/streak-bar'
+import LeagueRank from "../components/ranked/league-rank"
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

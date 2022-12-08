@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 // Components
-import TopMenuBar from '../components/top-menu-bar'
+import TopMenuBar from '../components/menubar/top-menu-bar'
 
 // Assets
 import classicMode from '../public/assets/icons/mode-classic.svg'

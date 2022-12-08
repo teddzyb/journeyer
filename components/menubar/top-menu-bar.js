@@ -3,11 +3,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 // Components
-import { Transition } from '@headlessui/react'
 import * as Tooltip from '@radix-ui/react-tooltip'
 import * as Popover from '@radix-ui/react-popover'
-import ExpBar from '../components/exp-bar'
-import Friends from '../components/friends'
+import ExpBar from './exp-bar'
+import Friends from './friends'
 import Notifications from './notifications'
 import Feedback from './feedback'
 
@@ -15,8 +14,8 @@ import Feedback from './feedback'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandshakeAngle, faBell, faVolumeHigh, faVolumeXmark, faQuestionCircle, faXmark }
   from '@fortawesome/free-solid-svg-icons'
-import goldCoin from '../public/assets/currency/coin-gold.svg'
-import silverCoin from '../public/assets/currency/coin-silver.svg'
+import goldCoin from '../../public/assets/currency/coin-gold.svg'
+import silverCoin from '../../public/assets/currency/coin-silver.svg'
 
 export default function TopMenuBar() {
 

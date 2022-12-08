@@ -1,5 +1,5 @@
 import Image from 'next/future/image'
-import Currencies from '../components/currencies'
+import Currencies from './currencies'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")

@@ -4,8 +4,8 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 // Components
-import Notification from '../components/notifications'
-import Feedback from '../components/feedback'
+import Notification from '../components/menubar/notifications'
+import Feedback from '../components/menubar/feedback'
 
 // Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
