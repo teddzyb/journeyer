@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import * as Tabs from '@radix-ui/react-tabs'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import Image from "next/image";
+import * as Tabs from "@radix-ui/react-tabs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Notifications(props) {
   return (
@@ -10,10 +10,16 @@ export default function Notifications(props) {
         <div className="sticky top-0 flex justify-between items-center border-b border-translucent px-4 py-3">
           <div className="flex gap-4 text-lg pt-1 pl-1">
             <Tabs.List className="flex gap-4 text-lg pt-1 pl-1">
-              <Tabs.Trigger value="notifications" className="flex text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
+              <Tabs.Trigger
+                value="notifications"
+                className="flex text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white"
+              >
                 NOTIFICATIONS <div className="rounded-full bg-amber-400 p-1 ml-1.5 mt-1" />
               </Tabs.Trigger>
-              <Tabs.Trigger value="news" className="flex text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
+              <Tabs.Trigger
+                value="news"
+                className="flex text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white"
+              >
                 NEWS <div className="rounded-full bg-amber-400 p-1 ml-1.5 mt-1" />
               </Tabs.Trigger>
             </Tabs.List>
@@ -40,9 +46,7 @@ export default function Notifications(props) {
                       />
                     </button>
                   </div>
-                  <div>
-                    PLAYER-0001 sent you a friend request!
-                  </div>
+                  <div>PLAYER-0001 sent you a friend request!</div>
                 </div>
                 <div className="group flex flex-col gap-1 text-start rounded-lg bg-translucent cursor-pointer p-3">
                   <div className="flex justify-between w-full">
@@ -55,9 +59,7 @@ export default function Notifications(props) {
                       />
                     </button>
                   </div>
-                  <div>
-                    You have unclaimed rewards! Click here to claim them.
-                  </div>
+                  <div>You have unclaimed rewards! Click here to claim them.</div>
                 </div>
               </div>
             </div>
@@ -67,12 +69,10 @@ export default function Notifications(props) {
         {/* News Tab */}
         <Tabs.Content value="news">
           <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent max-h-96">
-            <div className="flex justify-center items-center h-24">
-              Nothing here yet...
-            </div>
+            <div className="flex justify-center items-center h-24">Nothing here yet...</div>
           </div>
         </Tabs.Content>
       </Tabs.Root>
     </div>
-  )
+  );
 }

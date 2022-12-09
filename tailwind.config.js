@@ -1,16 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 
-const plugin = require('tailwindcss/plugin')
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      'card1': ["Volkhov"],
-      'card2': ["Cutive"],
+      card1: ["Volkhov"],
+      card2: ["Cutive"],
     },
     extend: {
       colors: {
@@ -24,7 +21,7 @@ module.exports = {
     // plugin(function ({ addUtilities, addComponents, e, prefix, config }) {
     //   // Add your custom styles here
     // }),
-    require('@tailwindcss/forms'),
-    require('tailwind-scrollbar'),
-  ]
-}
+    require("@tailwindcss/forms"),
+    require("tailwind-scrollbar"),
+  ],
+};

@@ -1,4 +1,4 @@
-import Card from '../card/card'
+import Card from "../card/card";
 
 export default function SleevePreview(props) {
   return (
@@ -15,5 +15,5 @@ export default function SleevePreview(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

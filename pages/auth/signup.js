@@ -1,18 +1,23 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 export default function Signup() {
   return (
     <div>
       <Head>
         <title>Journeyer Auth</title>
-        <meta name="description" content="Journeyer of the Realms is a tabletop card-collecting strategy game developed by Paper Kiwi." />
+        <meta
+          name="description"
+          content="Journeyer of the Realms is a tabletop card-collecting strategy game developed by Paper Kiwi."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="h-screen flex flex-col justify-center">
         <div className="flex flex-col items-center">
           <form className="grid auto-rows-auto grid-cols-1 gap-8 max-w-xs w-full">
             <div className="flex flex-col justify-center">
-              <p className="text-5xl font-bold text-center drop-shadow-md select-none">JOURNEYER<br />
+              <p className="text-5xl font-bold text-center drop-shadow-md select-none">
+                JOURNEYER
+                <br />
                 <span className="text-2xl">OF THE REALMS</span>
               </p>
             </div>
@@ -60,11 +65,13 @@ export default function Signup() {
               />
             </div>
             <div className="flex flex-col text-center gap-3">
-              <button type="submit" className="btn-primary py-3 w-full">Sign Up</button>
+              <button type="submit" className="btn-primary py-3 w-full">
+                Sign Up
+              </button>
             </div>
           </form>
         </div>
       </main>
     </div>
-  )
+  );
 }

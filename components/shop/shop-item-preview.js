@@ -1,18 +1,18 @@
 // APIs
-import Image from 'next/image'
+import Image from "next/image";
 
 // Components
-import { Disclosure, Transition } from '@headlessui/react'
+import { Disclosure, Transition } from "@headlessui/react";
 
 // Assets
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronUp, faCheck } from '@fortawesome/free-solid-svg-icons'
-import goldCoin from '../../public/assets/currency/coin-gold.svg'
-import silverCoin from '../../public/assets/currency/coin-silver.svg'
-import cardLayer from '../../public/assets/icons/card-layer.svg'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faCheck } from "@fortawesome/free-solid-svg-icons";
+import goldCoin from "../../public/assets/currency/coin-gold.svg";
+import silverCoin from "../../public/assets/currency/coin-silver.svg";
+import cardLayer from "../../public/assets/icons/card-layer.svg";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ")
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function ShopItemPreview(props) {
@@ -36,7 +36,7 @@ export default function ShopItemPreview(props) {
                 <div className="flex flex-col items-start gap-1 text-lg mx-7 my-4 pb-1">
                   {props.title}
                   <div className="flex gap-4 text-sm">
-                    {props.silver &&
+                    {props.silver && (
                       <div className="flex gap-1">
                         <Image
                           priority
@@ -46,13 +46,15 @@ export default function ShopItemPreview(props) {
                           alt="Silver "
                           draggable="false"
                         />
-                        {props.silver.oldPrice &&
+                        {props.silver.oldPrice && (
                           <span className="line-through text-white/70">
                             {props.silver.oldPrice}
-                          </span>} {props.silver.price}
+                          </span>
+                        )}{" "}
+                        {props.silver.price}
                       </div>
-                    }
-                    {props.gold &&
+                    )}
+                    {props.gold && (
                       <div className="flex gap-1">
                         <Image
                           priority
@@ -62,13 +64,13 @@ export default function ShopItemPreview(props) {
                           alt="Gold "
                           draggable="false"
                         />
-                        {props.gold.oldPrice &&
-                          <span className="line-through text-white/70">
-                            {props.gold.oldPrice}
-                          </span>} {props.gold.price}
+                        {props.gold.oldPrice && (
+                          <span className="line-through text-white/70">{props.gold.oldPrice}</span>
+                        )}{" "}
+                        {props.gold.price}
                       </div>
-                    }
-                    {props.cards &&
+                    )}
+                    {props.cards && (
                       <div className="flex gap-1">
                         <Image
                           priority
@@ -81,8 +83,8 @@ export default function ShopItemPreview(props) {
                         />
                         {props.cards.owned}/{props.cards.total}
                       </div>
-                    }
-                    {props.owned &&
+                    )}
+                    {props.owned && (
                       <div className="flex gap-1">
                         <FontAwesomeIcon
                           icon={faCheck}
@@ -91,7 +93,7 @@ export default function ShopItemPreview(props) {
                         />
                         Owned
                       </div>
-                    }
+                    )}
                   </div>
                 </div>
                 <div className="flex">
@@ -101,11 +103,10 @@ export default function ShopItemPreview(props) {
                   <Disclosure.Button className="flex p-5 px-8" aria-label="Toggle Description">
                     <FontAwesomeIcon
                       icon={faChevronUp}
-                      className={
-                        classNames(
-                          "text-2xl transform duration-300",
-                          open ? "scale-[-1]" : "scale-[1]",
-                        )}
+                      className={classNames(
+                        "text-2xl transform duration-300",
+                        open ? "scale-[-1]" : "scale-[1]",
+                      )}
                       draggable="false"
                     />
                   </Disclosure.Button>
@@ -119,8 +120,7 @@ export default function ShopItemPreview(props) {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Disclosure.Panel
-                  className="max-h-28 pr-7 mx-7 mb-5 -mt-1 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
+                <Disclosure.Panel className="max-h-28 pr-7 mx-7 mb-5 -mt-1 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
                   {props.description}
                 </Disclosure.Panel>
               </Transition>
@@ -129,5 +129,5 @@ export default function ShopItemPreview(props) {
         </Disclosure>
       </Transition>
     </>
-  )
+  );
 }

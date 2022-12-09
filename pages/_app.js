@@ -1,10 +1,10 @@
-import '../styles/globals.css'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import { config } from '@fortawesome/fontawesome-svg-core'
-import { MantineProvider } from '@mantine/core'
-config.autoAddCss = false
+import "../styles/globals.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import { MantineProvider } from "@mantine/core";
+config.autoAddCss = false;
 
-import { AuthUser } from '../context/user'
+import { AuthUser } from "../context/user";
 
 function Journeyer({ Component, pageProps }) {
   return (
@@ -13,7 +13,7 @@ function Journeyer({ Component, pageProps }) {
         <Component {...pageProps} />
       </MantineProvider>
     </AuthUser>
-  )
+  );
 }
 
-export default Journeyer
+export default Journeyer;

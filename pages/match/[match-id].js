@@ -1,53 +1,66 @@
 // APIs
-import Head from 'next/head'
-import Image from 'next/image'
-import { useState } from 'react'
+import Head from "next/head";
+import Image from "next/image";
+import { useState } from "react";
 
 // Components
-import { Transition } from '@headlessui/react'
-import * as Popover from '@radix-ui/react-popover'
-import Card from '../../components/card/card'
-import ArenaPlayer from '../../components/arena/arena-player'
+import { Transition } from "@headlessui/react";
+import * as Popover from "@radix-ui/react-popover";
+import Card from "../../components/card/card";
+import ArenaPlayer from "../../components/arena/arena-player";
 
 // Assets
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAnglesLeft, faAngleRight, faGear, faFlag, faVolumeHigh, faVolumeXmark, faQuestionCircle, faUserPlus, faCommentDots }
-  from '@fortawesome/free-solid-svg-icons'
-import cool from '../../public/assets/emoji/cool.svg'
-import laughing from '../../public/assets/emoji/laughing.svg'
-import crying from '../../public/assets/emoji/crying.svg'
-import shocked from '../../public/assets/emoji/shocked.svg'
-import angry from '../../public/assets/emoji/angry.svg'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAnglesLeft,
+  faAngleRight,
+  faGear,
+  faFlag,
+  faVolumeHigh,
+  faVolumeXmark,
+  faQuestionCircle,
+  faUserPlus,
+  faCommentDots,
+} from "@fortawesome/free-solid-svg-icons";
+import cool from "../../public/assets/emoji/cool.svg";
+import laughing from "../../public/assets/emoji/laughing.svg";
+import crying from "../../public/assets/emoji/crying.svg";
+import shocked from "../../public/assets/emoji/shocked.svg";
+import angry from "../../public/assets/emoji/angry.svg";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ")
+  return classes.filter(Boolean).join(" ");
 }
 
-const reactions = [cool, laughing, crying, shocked, angry]
+const reactions = [cool, laughing, crying, shocked, angry];
 
 export default function Match() {
+  const [activityLog, setActivityLog] = useState(false);
+  const toggleActivityLog = () => setActivityLog(!activityLog);
 
-  const [activityLog, setActivityLog] = useState(false)
-  const toggleActivityLog = () => setActivityLog(!activityLog)
+  const [volume, setVolume] = useState(false);
+  const toggleVolume = () => setVolume(!volume);
 
-  const [volume, setVolume] = useState(false)
-  const toggleVolume = () => setVolume(!volume)
+  let currentVolume = volume ? faVolumeXmark : faVolumeHigh;
 
-  let currentVolume = volume ? faVolumeXmark : faVolumeHigh
-
-  const [handLayout, setHandLayout] = useState(1)
+  const [handLayout, setHandLayout] = useState(1);
 
   const CardSlot = (
     <div className="outline outline-teal-500 rounded-md">
-      <Card placeholder size="md" className="invisible"> </Card>
+      <Card placeholder size="md" className="invisible">
+        {" "}
+      </Card>
     </div>
-  )
+  );
 
   return (
     <div>
       <Head>
         <title>Journeyer</title>
-        <meta name="description" content="Journeyer of the Realms is a tabletop card-collecting strategy game developed by Paper Kiwi." />
+        <meta
+          name="description"
+          content="Journeyer of the Realms is a tabletop card-collecting strategy game developed by Paper Kiwi."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="h-screen flex flex-row justify-center px-20 py-12">
@@ -136,37 +149,27 @@ export default function Match() {
         <div className="relative flex justify-center items-center bg-translucent rounded-2xl shadow-md h-full w-full">
           <ArenaPlayer opponent>
             <button className="flex text-teal-900 hover:scale-110 transition-transform ease-in-out p-5">
-              <FontAwesomeIcon
-                icon={faUserPlus}
-                className="text-xl"
-                draggable="false"
-              />
+              <FontAwesomeIcon icon={faUserPlus} className="text-xl" draggable="false" />
             </button>
           </ArenaPlayer>
           <ArenaPlayer>
             <Popover.Root>
               <Popover.Trigger className="flex text-teal-900 hover:scale-110 transition-transform ease-in-out p-5">
-                <FontAwesomeIcon
-                  icon={faCommentDots}
-                  className="text-2xl"
-                  draggable="false"
-                />
+                <FontAwesomeIcon icon={faCommentDots} className="text-2xl" draggable="false" />
               </Popover.Trigger>
               <Popover.Portal>
-                <Popover.Content side="left" className="flex flex-col gap-2 rounded-lg bg-[#0c4441] shadow-md select-none p-3 mb-5">
-                  {
-                    reactions.map((reaction, index) =>
-                      <button key={index} className="flex hover:scale-110 transition-transform ease-in-out">
-                        <Image
-                          src={reaction}
-                          width={40}
-                          height={40}
-                          alt=""
-                          draggable="false"
-                        />
-                      </button>
-                    )
-                  }
+                <Popover.Content
+                  side="left"
+                  className="flex flex-col gap-2 rounded-lg bg-[#0c4441] shadow-md select-none p-3 mb-5"
+                >
+                  {reactions.map((reaction, index) => (
+                    <button
+                      key={index}
+                      className="flex hover:scale-110 transition-transform ease-in-out"
+                    >
+                      <Image src={reaction} width={40} height={40} alt="" draggable="false" />
+                    </button>
+                  ))}
                   <Popover.Arrow className="fill-[#0c4441]" />
                 </Popover.Content>
               </Popover.Portal>
@@ -200,24 +203,31 @@ export default function Match() {
         </div>
 
         <div className="absolute bottom-0 flex items-center">
-          <div className={classNames(
-            "flex ml-32 transition-all ease-linear",
-            {
-              0: "-mb-24",
-              1: "-mb-10",
-              2: "mb-5",
-            }[handLayout]
-          )}>
-            {Array.from(Array(8).keys()).map(item =>
-              <Card key={item} size="md" hover className={classNames(
-                "transition-all ease-in-out",
-                {
-                  0: "-ml-32 hover:mr-28 hover:-mt-24 last:hover:mr-0",
-                  1: "-ml-32 hover:mr-28 hover:-mt-10 last:hover:mr-0",
-                  2: "-ml-20 hover:mr-20 hover:scale-110 last:hover:mr-0",
-                }[handLayout]
-              )} />
+          <div
+            className={classNames(
+              "flex ml-32 transition-all ease-linear",
+              {
+                0: "-mb-24",
+                1: "-mb-10",
+                2: "mb-5",
+              }[handLayout],
             )}
+          >
+            {Array.from(Array(8).keys()).map((item) => (
+              <Card
+                key={item}
+                size="md"
+                hover
+                className={classNames(
+                  "transition-all ease-in-out",
+                  {
+                    0: "-ml-32 hover:mr-28 hover:-mt-24 last:hover:mr-0",
+                    1: "-ml-32 hover:mr-28 hover:-mt-10 last:hover:mr-0",
+                    2: "-ml-20 hover:mr-20 hover:scale-110 last:hover:mr-0",
+                  }[handLayout],
+                )}
+              />
+            ))}
           </div>
           <div className="absolute -right-14 flex flex-col gap-1">
             <button
@@ -244,8 +254,7 @@ export default function Match() {
         </div>
 
         {/* A commit a day keeps the anxiety away */}
-
       </main>
     </div>
-  )
+  );
 }

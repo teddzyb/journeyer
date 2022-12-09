@@ -1,8 +1,8 @@
-import Image from 'next/image'
-import * as Tabs from '@radix-ui/react-tabs'
-import * as Tooltip from '@radix-ui/react-tooltip'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane, faUserMinus, faCheck, faXmark } from '@fortawesome/free-solid-svg-icons'
+import Image from "next/image";
+import * as Tabs from "@radix-ui/react-tabs";
+import * as Tooltip from "@radix-ui/react-tooltip";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane, faUserMinus, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Friends(props) {
   return (
@@ -10,13 +10,22 @@ export default function Friends(props) {
       <Tabs.Root>
         <div className="sticky top-0 flex justify-between items-center border-b border-translucent px-4 py-3">
           <Tabs.List className="flex gap-4 text-lg pt-1 pl-1">
-            <Tabs.Trigger value="friends" className="text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
+            <Tabs.Trigger
+              value="friends"
+              className="text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white"
+            >
               FRIENDS
             </Tabs.Trigger>
-            <Tabs.Trigger value="add" className="text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
+            <Tabs.Trigger
+              value="add"
+              className="text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white"
+            >
               ADD
             </Tabs.Trigger>
-            <Tabs.Trigger value="requests" className="flex text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white">
+            <Tabs.Trigger
+              value="requests"
+              className="flex text-white/60 [&[data-state='active']]:text-teal-300 hover:text-white"
+            >
               REQUESTS <div className="rounded-full bg-amber-400 p-1 ml-1.5 mt-1" />
             </Tabs.Trigger>
           </Tabs.List>
@@ -30,8 +39,11 @@ export default function Friends(props) {
               You have no friends... Go make some!
             </div> */}
             <div className="pl-1 mb-1">ONLINE</div>
-            {Array.from(Array(2).keys()).map(item =>
-              <div key={item} className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+            {Array.from(Array(2).keys()).map((item) => (
+              <div
+                key={item}
+                className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10"
+              >
                 <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
                   <Image
                     src="/assets/avatar.jpg"
@@ -58,7 +70,10 @@ export default function Friends(props) {
                           />
                         </button>
                       </Tooltip.Trigger>
-                      <Tooltip.Content side="bottom" className="bg-[#0e3c38] rounded-md py-1 pt-[6px] px-3">
+                      <Tooltip.Content
+                        side="bottom"
+                        className="bg-[#0e3c38] rounded-md py-1 pt-[6px] px-3"
+                      >
                         Invite
                         <Tooltip.Arrow className="fill-[#0e3c38] mb-1" />
                       </Tooltip.Content>
@@ -75,7 +90,10 @@ export default function Friends(props) {
                           />
                         </button>
                       </Tooltip.Trigger>
-                      <Tooltip.Content side="bottom" className="bg-[#0e3c38] rounded-md py-1 pt-[6px] px-3">
+                      <Tooltip.Content
+                        side="bottom"
+                        className="bg-[#0e3c38] rounded-md py-1 pt-[6px] px-3"
+                      >
                         Remove Friend
                         <Tooltip.Arrow className="fill-[#0e3c38] mb-1" />
                       </Tooltip.Content>
@@ -83,10 +101,13 @@ export default function Friends(props) {
                   </Tooltip.Provider>
                 </div>
               </div>
-            )}
+            ))}
             <div className="pl-1 mb-1 mt-4">OFFLINE</div>
-            {Array.from(Array(4).keys()).map(item =>
-              <div key={item} className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+            {Array.from(Array(4).keys()).map((item) => (
+              <div
+                key={item}
+                className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10"
+              >
                 <div className="flex rounded-md outline outline-2 opacity-60 outline-translucent shadow-sm w-fit">
                   <Image
                     src="/assets/avatar.jpg"
@@ -113,7 +134,10 @@ export default function Friends(props) {
                           />
                         </button>
                       </Tooltip.Trigger>
-                      <Tooltip.Content side="bottom" className="bg-[#0e3c38] rounded-md py-1 pt-[6px] px-3">
+                      <Tooltip.Content
+                        side="bottom"
+                        className="bg-[#0e3c38] rounded-md py-1 pt-[6px] px-3"
+                      >
                         Remove Friend
                         <Tooltip.Arrow className="fill-[#0e3c38] mb-1" />
                       </Tooltip.Content>
@@ -121,7 +145,7 @@ export default function Friends(props) {
                   </Tooltip.Provider>
                 </div>
               </div>
-            )}
+            ))}
           </div>
         </Tabs.Content>
 
@@ -149,8 +173,11 @@ export default function Friends(props) {
           </div> */}
           <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent max-h-96 p-4">
             <div className="pl-1 mb-1">TODAY</div>
-            {Array.from(Array(2).keys()).map(item =>
-              <div key={item} className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10">
+            {Array.from(Array(2).keys()).map((item) => (
+              <div
+                key={item}
+                className="group flex items-center gap-4 rounded-md p-2 hover:bg-translucent/10"
+              >
                 <div className="flex rounded-md outline outline-2 outline-translucent shadow-sm w-fit">
                   <Image
                     src="/assets/avatar.jpg"
@@ -177,7 +204,10 @@ export default function Friends(props) {
                           />
                         </button>
                       </Tooltip.Trigger>
-                      <Tooltip.Content side="bottom" className="bg-[#0e3c38] rounded-md py-1 pt-[6px] px-3">
+                      <Tooltip.Content
+                        side="bottom"
+                        className="bg-[#0e3c38] rounded-md py-1 pt-[6px] px-3"
+                      >
                         Accept
                         <Tooltip.Arrow className="fill-[#0e3c38] mb-1" />
                       </Tooltip.Content>
@@ -194,7 +224,10 @@ export default function Friends(props) {
                           />
                         </button>
                       </Tooltip.Trigger>
-                      <Tooltip.Content side="bottom" className="bg-[#0e3c38] rounded-md py-1 pt-[6px] px-3">
+                      <Tooltip.Content
+                        side="bottom"
+                        className="bg-[#0e3c38] rounded-md py-1 pt-[6px] px-3"
+                      >
                         Decline
                         <Tooltip.Arrow className="fill-[#0e3c38] mb-1" />
                       </Tooltip.Content>
@@ -202,10 +235,10 @@ export default function Friends(props) {
                   </Tooltip.Provider>
                 </div>
               </div>
-            )}
+            ))}
           </div>
         </Tabs.Content>
       </Tabs.Root>
     </div>
-  )
+  );
 }

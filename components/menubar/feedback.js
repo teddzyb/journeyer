@@ -15,7 +15,8 @@ export default function Feedback(props) {
           <div className="scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent max-h-96 p-4">
             <div className="flex flex-col gap-3">
               <div className="group flex flex-col text-sm text-justify rounded-lg bg-translucent p-3 pb-2.5">
-                Found any bugs or have any suggestions? Your feedback is extremely valuable to us, so please drop them here!
+                Found any bugs or have any suggestions? Your feedback is extremely valuable to us,
+                so please drop them here!
               </div>
               <form className="flex flex-col items-center gap-5 w-full mt-2">
                 <div className="w-full">
@@ -47,5 +48,5 @@ export default function Feedback(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
