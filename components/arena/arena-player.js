@@ -5,7 +5,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function ArenaPlayer(props) {
+const ArenaPlayer = (props) => {
   return (
     <div
       className={classNames(
@@ -42,4 +42,6 @@ export default function ArenaPlayer(props) {
       </div>
     </div>
   );
-}
+};
+
+export default ArenaPlayer;

@@ -4,7 +4,7 @@ import * as ContextMenu from "@radix-ui/react-context-menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faUserPlus, faCircleMinus, faCopy } from "@fortawesome/free-solid-svg-icons";
 
-export default function LobbyPlayer(props) {
+const LobbyPlayer = (props) => {
   return props.type !== "placeholder" ? (
     <ContextMenu.Root>
       <ContextMenu.Trigger>
@@ -90,4 +90,6 @@ export default function LobbyPlayer(props) {
       </div>
     </div>
   );
-}
+};
+
+export default LobbyPlayer;

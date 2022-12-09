@@ -11,7 +11,7 @@ import CampaignMenu from "../components/campaign/campaign-menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-export default function Campaign() {
+const Campaign = () => {
   const [currentRealm, setCurrentRealm] = useState(0);
 
   const realms = [
@@ -119,4 +119,6 @@ export default function Campaign() {
       </main>
     </div>
   );
-}
+};
+
+export default Campaign;

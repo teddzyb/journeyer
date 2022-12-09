@@ -2,7 +2,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Message(props) {
+const Message = (props) => {
   return (
     <div
       className={classNames(
@@ -17,4 +17,6 @@ export default function Message(props) {
       {props.children}
     </div>
   );
-}
+};
+
+export default Message;

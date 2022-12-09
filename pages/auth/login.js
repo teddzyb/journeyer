@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useUserContext } from "/context/user";
 
-export default function Login() {
+const Login = () => {
   const [user, setUser] = useUserContext();
 
   const handleSubmit = async (event) => {
@@ -90,4 +90,6 @@ export default function Login() {
       </main>
     </div>
   );
-}
+};
+
+export default Login;

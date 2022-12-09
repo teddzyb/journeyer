@@ -23,7 +23,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Inventory() {
+const Inventory = () => {
   const tabPanels = useRef(null);
 
   const [selectedTab, setSelectedTab] = useState(0);
@@ -273,4 +273,6 @@ export default function Inventory() {
       </main>
     </div>
   );
-}
+};
+
+export default Inventory;

@@ -1,4 +1,4 @@
-export default function Feedback(props) {
+const Feedback = (props) => {
   return (
     <div className="rounded-lg select-none bg-teal-900 border border-translucent shadow-md overflow-hidden w-96">
       <div className="sticky top-0 flex justify-between items-center border-b border-translucent px-4 py-3">
@@ -49,4 +49,6 @@ export default function Feedback(props) {
       </div>
     </div>
   );
-}
+};
+
+export default Feedback;

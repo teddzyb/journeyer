@@ -1,4 +1,4 @@
-export default function StreakBar(props) {
+const StreakBar = (props) => {
   return (
     <div className="flex rounded-sm bg-translucent outline outline-1 outline-translucent overflow-hidden w-64 h-5">
       {
@@ -32,4 +32,6 @@ export default function StreakBar(props) {
       }
     </div>
   );
-}
+};
+
+export default StreakBar;

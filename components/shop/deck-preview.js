@@ -16,7 +16,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function DeckPreview(props) {
+const DeckPreview = (props) => {
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -133,4 +133,6 @@ export default function DeckPreview(props) {
       </Transition>
     </>
   );
-}
+};
+
+export default DeckPreview;

@@ -23,7 +23,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Shop() {
+const Shop = () => {
   const tabPanels = useRef(null);
 
   const [selectedTab, setSelectedTab] = useState(0);
@@ -276,4 +276,6 @@ export default function Shop() {
       </main>
     </div>
   );
-}
+};
+
+export default Shop;

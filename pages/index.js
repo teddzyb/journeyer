@@ -16,7 +16,7 @@ import {
   faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Home() {
+const Home = () => {
   // TODO: handle login
   // TODO: handle sign up
 
@@ -149,4 +149,6 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default Home;

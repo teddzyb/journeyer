@@ -16,7 +16,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Practice() {
+const Practice = () => {
   const [currentMode, setCurrentMode] = useState(1);
 
   return (
@@ -105,4 +105,6 @@ export default function Practice() {
       </main>
     </div>
   );
-}
+};
+
+export default Practice;

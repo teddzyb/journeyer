@@ -5,7 +5,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function GameOption(props) {
+const GameOption = (props) => {
   return (
     <Tooltip.Provider delayDuration="500">
       <Tooltip.Root>
@@ -72,4 +72,6 @@ export default function GameOption(props) {
       </Tooltip.Root>
     </Tooltip.Provider>
   );
-}
+};
+
+export default GameOption;

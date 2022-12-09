@@ -15,7 +15,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Menu() {
+const Menu = () => {
   const menuItems = [
     { name: "Campaign", href: "campaign" },
     { name: "Ranked", href: "ranked" },
@@ -132,4 +132,6 @@ export default function Menu() {
       </main>
     </div>
   );
-}
+};
+
+export default Menu;

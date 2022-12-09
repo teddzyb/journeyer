@@ -2,7 +2,7 @@ import Image from "next/image";
 import goldCoin from "../../public/assets/currency/coin-gold.svg";
 import silverCoin from "../../public/assets/currency/coin-silver.svg";
 
-export default function CoinPreview() {
+const CoinPreview = () => {
   return (
     <div className="grow scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
       <div className="flex justify-center items-center h-full">
@@ -26,4 +26,6 @@ export default function CoinPreview() {
       </div>
     </div>
   );
-}
+};
+
+export default CoinPreview;

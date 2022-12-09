@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import streakFire from "../public/assets/icons/streak-fire.svg";
 
-export default function Ranked() {
+const Ranked = () => {
   const [currentLeague, setCurrentLeague] = useState(0);
 
   const leagues = [
@@ -129,4 +129,6 @@ export default function Ranked() {
       </main>
     </div>
   );
-}
+};
+
+export default Ranked;

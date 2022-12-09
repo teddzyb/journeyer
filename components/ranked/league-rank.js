@@ -19,7 +19,7 @@ const coinType = {
   Silver: silverCoin,
 };
 
-export default function LeagueRank(props) {
+const LeagueRank = (props) => {
   const rank = Object.keys(props.rank);
 
   return (
@@ -74,4 +74,6 @@ export default function LeagueRank(props) {
       </div>
     </div>
   );
-}
+};
+
+export default LeagueRank;

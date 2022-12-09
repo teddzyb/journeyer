@@ -17,7 +17,7 @@ const cardType = {
   4: cardLayer4,
 };
 
-export default function CampaignMenu(props) {
+const CampaignMenu = (props) => {
   return (
     <div className="flex flex-col grow gap-5 px-5 mt-4 py-2 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
       <div className="flex items-start gap-6 rounded-xl bg-translucent shadow-md p-6">
@@ -88,4 +88,6 @@ export default function CampaignMenu(props) {
       </div>
     </div>
   );
-}
+};
+
+export default CampaignMenu;

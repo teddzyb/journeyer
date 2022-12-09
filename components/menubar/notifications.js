@@ -3,7 +3,7 @@ import * as Tabs from "@radix-ui/react-tabs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export default function Notifications(props) {
+const Notifications = (props) => {
   return (
     <div className="rounded-lg select-none bg-teal-900 border border-translucent shadow-md overflow-hidden w-96">
       <Tabs.Root>
@@ -75,4 +75,6 @@ export default function Notifications(props) {
       </Tabs.Root>
     </div>
   );
-}
+};
+
+export default Notifications;

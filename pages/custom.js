@@ -112,7 +112,7 @@ const lobbyUsers = [
   // { key: 4, username: "PLAYER-0005", level: 20, avatar: "/assets/avatar.jpg", role: "spectator" },
 ];
 
-export default function Custom() {
+const Custom = () => {
   const playerListRef = useRef();
   const spectatorListRef = useRef();
 
@@ -121,10 +121,10 @@ export default function Custom() {
 
   const [lobby, handleLobby] = useListState(lobbyUsers);
 
-  function overlap(_event, info, ref) {
+  const overlap = (_event, info, ref) => {
     let rect = ref.current.getBoundingClientRect();
     if (!(info.point.y < rect.top || info.point.y > rect.bottom)) return true;
-  }
+  };
 
   return (
     <div>
@@ -401,4 +401,6 @@ export default function Custom() {
       </main>
     </div>
   );
-}
+};
+
+export default Custom;

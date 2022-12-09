@@ -6,7 +6,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Currencies(props) {
+const Currencies = (props) => {
   return (
     <div className={classNames(!props.opponent && "flex-row-reverse", "flex items-center pl-2")}>
       {props.gold &&
@@ -23,4 +23,6 @@ export default function Currencies(props) {
         ))}
     </div>
   );
-}
+};
+
+export default Currencies;

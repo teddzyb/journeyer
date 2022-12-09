@@ -23,7 +23,7 @@ import {
 import goldCoin from "../../public/assets/currency/coin-gold.svg";
 import silverCoin from "../../public/assets/currency/coin-silver.svg";
 
-export default function TopMenuBar() {
+const TopMenuBar = () => {
   const [volume, setVolume] = useState(false);
   const toggleVolume = () => setVolume(!volume);
 
@@ -119,4 +119,6 @@ export default function TopMenuBar() {
       </div>
     </div>
   );
-}
+};
+
+export default TopMenuBar;

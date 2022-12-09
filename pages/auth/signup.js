@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Signup() {
+const Signup = () => {
   return (
     <div>
       <Head>
@@ -74,4 +74,6 @@ export default function Signup() {
       </main>
     </div>
   );
-}
+};
+
+export default Signup;

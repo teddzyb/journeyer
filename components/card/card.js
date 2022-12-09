@@ -9,7 +9,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Card(props) {
+const Card = (props) => {
   return (
     <div
       className={classNames(
@@ -187,4 +187,6 @@ export default function Card(props) {
       </div>
     </div>
   );
-}
+};
+
+export default Card;

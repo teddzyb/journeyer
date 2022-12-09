@@ -34,7 +34,7 @@ function classNames(...classes) {
 
 const reactions = [cool, laughing, crying, shocked, angry];
 
-export default function Match() {
+const Match = () => {
   const [activityLog, setActivityLog] = useState(false);
   const toggleActivityLog = () => setActivityLog(!activityLog);
 
@@ -257,4 +257,6 @@ export default function Match() {
       </main>
     </div>
   );
-}
+};
+
+export default Match;

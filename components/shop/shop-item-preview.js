@@ -15,7 +15,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function ShopItemPreview(props) {
+const ShopItemPreview = (props) => {
   return (
     <>
       {props.children}
@@ -130,4 +130,6 @@ export default function ShopItemPreview(props) {
       </Transition>
     </>
   );
-}
+};
+
+export default ShopItemPreview;

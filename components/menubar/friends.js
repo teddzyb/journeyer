@@ -4,7 +4,7 @@ import * as Tooltip from "@radix-ui/react-tooltip";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane, faUserMinus, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export default function Friends(props) {
+const Friends = (props) => {
   return (
     <div className="rounded-lg select-none bg-teal-900 border border-translucent shadow-md overflow-hidden w-96">
       <Tabs.Root>
@@ -241,4 +241,6 @@ export default function Friends(props) {
       </Tabs.Root>
     </div>
   );
-}
+};
+
+export default Friends;

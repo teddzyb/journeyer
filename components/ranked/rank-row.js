@@ -3,7 +3,7 @@ import rankFirst from "../../public/assets/icons/rank-first.svg";
 import rankSecond from "../../public/assets/icons/rank-second.svg";
 import rankThird from "../../public/assets/icons/rank-third.svg";
 
-export default function RankRow(props) {
+const RankRow = (props) => {
   return (
     <div className="grid grid-cols-9 border-b last:border-none border-translucent h-20 px-10">
       <div className="col-span-2 flex justify-center items-center select-none text-2xl">
@@ -38,4 +38,6 @@ export default function RankRow(props) {
       <div className="col-span-2 flex justify-center items-center">10,000</div>
     </div>
   );
-}
+};
+
+export default RankRow;
