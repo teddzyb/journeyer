@@ -12,10 +12,6 @@ import classicMode from "../public/assets/icons/mode-classic.svg";
 import tutorialMode from "../public/assets/icons/mode-tutorial.svg";
 import blitzMode from "../public/assets/icons/mode-blitz.svg";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const Practice = () => {
   const [currentMode, setCurrentMode] = useState(1);
 
@@ -36,11 +32,9 @@ const Practice = () => {
         <div className="flex gap-24">
           <button
             onMouseEnter={() => setCurrentMode(0)}
-            className={classNames(
-              "flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80",
-              "transition ease-in-out duration-200",
-              currentMode === 0 && "ring-4 ring-teal-400 scale-110",
-            )}
+            className={`flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80 transition ease-in-out duration-200 ${
+              currentMode === 0 && "ring-4 ring-teal-400 scale-110"
+            }`}
           >
             <div className="flex justify-center h-full">
               <Image
@@ -56,11 +50,9 @@ const Practice = () => {
           </button>
           <button
             onMouseEnter={() => setCurrentMode(1)}
-            className={classNames(
-              "flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80",
-              "transition ease-in-out duration-200",
-              currentMode === 1 && "ring-4 ring-teal-400 scale-110",
-            )}
+            className={`flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80 transition ease-in-out duration-200 ${
+              currentMode === 1 && "ring-4 ring-teal-400 scale-110"
+            }`}
           >
             <div className="flex justify-center h-full">
               <Image
@@ -76,11 +68,9 @@ const Practice = () => {
           </button>
           <button
             onMouseEnter={() => setCurrentMode(2)}
-            className={classNames(
-              "flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80",
-              "transition ease-in-out duration-200",
-              currentMode === 2 && "ring-4 ring-teal-400 scale-110",
-            )}
+            className={`flex flex-col items-center shadow-md rounded-xl bg-translucent w-60 h-80 transition ease-in-out duration-200 ${
+              currentMode === 2 && "ring-4 ring-teal-400 scale-110"
+            }`}
           >
             <div className="flex justify-center h-full">
               <Image

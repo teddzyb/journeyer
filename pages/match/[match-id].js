@@ -28,10 +28,6 @@ import crying from "../../public/assets/emoji/crying.svg";
 import shocked from "../../public/assets/emoji/shocked.svg";
 import angry from "../../public/assets/emoji/angry.svg";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const reactions = [cool, laughing, crying, shocked, angry];
 
 const Match = () => {
@@ -204,28 +200,28 @@ const Match = () => {
 
         <div className="absolute bottom-0 flex items-center">
           <div
-            className={classNames(
-              "flex ml-32 transition-all ease-linear",
-              {
-                0: "-mb-24",
-                1: "-mb-10",
-                2: "mb-5",
-              }[handLayout],
-            )}
+            className={`flex ml-32 transition-all ease-linear 
+              ${
+                {
+                  0: "-mb-24",
+                  1: "-mb-10",
+                  2: "mb-5",
+                }[handLayout]
+              }`}
           >
             {Array.from(Array(8).keys()).map((item) => (
               <Card
                 key={item}
                 size="md"
                 hover
-                className={classNames(
-                  "transition-all ease-in-out",
-                  {
-                    0: "-ml-32 hover:mr-28 hover:-mt-24 last:hover:mr-0",
-                    1: "-ml-32 hover:mr-28 hover:-mt-10 last:hover:mr-0",
-                    2: "-ml-20 hover:mr-20 hover:scale-110 last:hover:mr-0",
-                  }[handLayout],
-                )}
+                className={`transition-all ease-in-out 
+                  ${
+                    {
+                      0: "-ml-32 hover:mr-28 hover:-mt-24 last:hover:mr-0",
+                      1: "-ml-32 hover:mr-28 hover:-mt-10 last:hover:mr-0",
+                      2: "-ml-20 hover:mr-20 hover:scale-110 last:hover:mr-0",
+                    }[handLayout]
+                  }`}
               />
             ))}
           </div>

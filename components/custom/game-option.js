@@ -1,10 +1,6 @@
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { Switch } from "@headlessui/react";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const GameOption = (props) => {
   return (
     <Tooltip.Provider delayDuration="500">
@@ -43,16 +39,14 @@ const GameOption = (props) => {
                       });
                       props.setCurrentMode({ name: "custom" });
                     }}
-                    className={classNames(
-                      "inline-flex items-center shadow-sm rounded-full h-7 w-14 mx-1 transition-colors",
-                      props.currentMode[props.option].value ? "bg-teal-500" : "bg-translucent",
-                    )}
+                    className={`inline-flex items-center shadow-sm rounded-full h-7 w-14 mx-1 transition-colors ${
+                      props.currentMode[props.option].value ? "bg-teal-500" : "bg-translucent"
+                    }`}
                   >
                     <span
-                      className={classNames(
-                        "shadow-sm rounded-full bg-white h-5 w-5 transform transition-transform",
-                        props.currentMode[props.option].value ? "translate-x-8" : "translate-x-1",
-                      )}
+                      className={`shadow-sm rounded-full bg-white h-5 w-5 transform transition-transform ${
+                        props.currentMode[props.option].value ? "translate-x-8" : "translate-x-1"
+                      }`}
                     />
                   </Switch>
                 ),

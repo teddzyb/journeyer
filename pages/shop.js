@@ -19,10 +19,6 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import goldCoin from "../public/assets/currency/coin-gold.svg";
 import silverCoin from "../public/assets/currency/coin-silver.svg";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const Shop = () => {
   const tabPanels = useRef(null);
 
@@ -82,12 +78,11 @@ const Shop = () => {
                   key={index}
                   disabled={item.disabled}
                   className={({ selected }) =>
-                    classNames(
-                      "outline-none align-middle rounded-md select-none w-full mx-2 pb-1 pt-2",
+                    `outline-none align-middle rounded-md select-none w-full mx-2 pb-1 pt-2 ${
                       selected
                         ? "bg-teal-600 shadow focus:outline-2 focus:outline-offset-0 focus:outline-teal-500"
-                        : "hover:bg-teal-500/10",
-                    )
+                        : "hover:bg-teal-500/10"
+                    }`
                   }
                 >
                   {item.name.toUpperCase()}
@@ -165,10 +160,9 @@ const Shop = () => {
                   >
                     <div className="flex flex-col justify-center items-center gap-3">
                       <div
-                        className={classNames(
-                          "flex justify-center items-center bg-translucent rounded-md w-40 h-40",
-                          item === selectedItem && "ring-2 ring-teal-500",
-                        )}
+                        className={`flex justify-center items-center bg-translucent rounded-md w-40 h-40 ${
+                          item === selectedItem && "ring-2 ring-teal-500"
+                        }`}
                       >
                         <div className="select-none">
                           <div className="flex drop-shadow-md rounded-full w-[64px] -translate-x-3">

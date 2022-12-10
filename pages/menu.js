@@ -11,10 +11,6 @@ import Card from "../components/card/card";
 import goldCoin from "../public/assets/currency/coin-gold.svg";
 import silverCoin from "../public/assets/currency/coin-silver.svg";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const Menu = () => {
   const menuItems = [
     { name: "Campaign", href: "campaign" },
@@ -46,11 +42,9 @@ const Menu = () => {
             {menuItems.map((item, index) => (
               <Link key={index} href={item.href}>
                 <a
-                  className={classNames(
-                    "drop-shadow-md select-none py-5 pr-5",
-                    "hover:text-teal-300 hover:scale-105 transition ease-in-out duration-150",
-                    index === 0 ? "text-[1.70rem]" : "text-2xl",
-                  )}
+                  className={`drop-shadow-md select-none py-5 pr-5 hover:text-teal-300 hover:scale-105 transition ease-in-out duration-150 ${
+                    index === 0 ? "text-[1.70rem]" : "text-2xl"
+                  }`}
                   draggable="false"
                 >
                   {item.name.toUpperCase()}

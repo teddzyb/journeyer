@@ -12,10 +12,6 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import bookmarkCheck from "../../public/assets/icons/bookmark-check.svg";
 import goldCoin from "../../public/assets/currency/coin-gold.svg";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const DeckPreview = (props) => {
   const cardRef = useRef(null);
 
@@ -100,10 +96,9 @@ const DeckPreview = (props) => {
         enter="transition-all duration-500"
         enterFrom="opacity-0"
         enterTo="opacity-100"
-        className={classNames(
-          "grid grid-cols-4 grow gap-y-10 p-7 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent",
-          animating ? "hidden" : "h-0",
-        )}
+        className={`grid grid-cols-4 grow gap-y-10 p-7 scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent ${
+          animating ? "hidden" : "h-0"
+        }`}
       >
         {Array.from(Array(30).keys()).map((item) => (
           <div key={item} className="flex flex-col items-center">

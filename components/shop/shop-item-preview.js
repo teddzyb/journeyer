@@ -11,10 +11,6 @@ import goldCoin from "../../public/assets/currency/coin-gold.svg";
 import silverCoin from "../../public/assets/currency/coin-silver.svg";
 import cardLayer from "../../public/assets/icons/card-layer.svg";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const ShopItemPreview = (props) => {
   return (
     <>
@@ -103,10 +99,9 @@ const ShopItemPreview = (props) => {
                   <Disclosure.Button className="flex p-5 px-8" aria-label="Toggle Description">
                     <FontAwesomeIcon
                       icon={faChevronUp}
-                      className={classNames(
-                        "text-2xl transform duration-300",
-                        open ? "scale-[-1]" : "scale-[1]",
-                      )}
+                      className={`text-2xl transform duration-300 ${
+                        open ? "-scale-100" : "scale-100"
+                      }`}
                       draggable="false"
                     />
                   </Disclosure.Button>

@@ -16,10 +16,6 @@ import Message from "../components/custom/message";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket, faPaperPlane, faUser } from "@fortawesome/free-solid-svg-icons";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const modes = {
   classic: {
     name: "classic",
@@ -150,12 +146,12 @@ const Custom = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentMode(modes[mode])}
-                  className={classNames(
-                    "uppercase text-sm rounded-lg p-2 pt-3 last:col-span-2 transition-colors",
-                    currentMode.name === modes[mode].name
-                      ? "text-[#0c4441] font-semibold bg-teal-500"
-                      : "text-teal-50 bg-translucent",
-                  )}
+                  className={`uppercase text-sm rounded-lg p-2 pt-3 last:col-span-2 transition-colors 
+                    ${
+                      currentMode.name === modes[mode].name
+                        ? "text-[#0c4441] font-semibold bg-teal-500"
+                        : "text-teal-50 bg-translucent"
+                    }`}
                 >
                   {mode}
                 </button>
@@ -189,12 +185,11 @@ const Custom = () => {
                   className="flex flex-col items-end select-none last:items-start last:order-3"
                 >
                   <Card size="xl">{player.username}&apos;s Deck</Card>
-                  <div className={classNames("flex gap-4 pt-6", index && "flex-row-reverse")}>
+                  <div className={`flex gap-4 pt-6 ${index && "flex-row-reverse"}`}>
                     <div
-                      className={classNames(
-                        "flex flex-col justify-center pt-[2px] gap-[2px]",
-                        index ? "items-start" : "items-end",
-                      )}
+                      className={`flex flex-col justify-center pt-[2px] gap-[2px] ${
+                        index ? "items-start" : "items-end"
+                      }`}
                     >
                       <div>{player.username}</div>
                       <div className="text-sm">LEVEL {player.level}</div>
@@ -223,19 +218,19 @@ const Custom = () => {
                   {" "}
                 </Card>
                 <div
-                  className={classNames(
-                    "flex gap-4 pt-6",
-                    (lobby.filter((player) => player.role === "player").length === 1 || index) &&
-                      "flex-row-reverse",
-                  )}
+                  className={`flex gap-4 pt-6 
+                    ${
+                      (lobby.filter((player) => player.role === "player").length === 1 || index) &&
+                      "flex-row-reverse"
+                    }`}
                 >
                   <div
-                    className={classNames(
-                      "flex flex-col justify-center pt-[2px] gap-[2px]",
-                      lobby.filter((player) => player.role === "player").length === 1 || index
-                        ? "items-start"
-                        : "items-end",
-                    )}
+                    className={`flex flex-col justify-center pt-[2px] gap-[2px] 
+                      ${
+                        lobby.filter((player) => player.role === "player").length === 1 || index
+                          ? "items-start"
+                          : "items-end"
+                      }`}
                   >
                     <div>ADD A PLAYER</div>
                   </div>
