@@ -1,6 +1,6 @@
-import Card from './card'
+import Card from "../card/card";
 
-export default function SleevePreview(props) {
+const SleevePreview = (props) => {
   return (
     <div className="grow scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
       <div className="flex justify-center items-center h-full">
@@ -15,5 +15,7 @@ export default function SleevePreview(props) {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default SleevePreview;

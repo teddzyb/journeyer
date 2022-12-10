@@ -1,9 +1,8 @@
-import Image from 'next/image'
-import goldCoin from '../public/assets/currency/coin-gold.svg'
-import silverCoin from '../public/assets/currency/coin-silver.svg'
+import Image from "next/image";
+import goldCoin from "../../public/assets/currency/coin-gold.svg";
+import silverCoin from "../../public/assets/currency/coin-silver.svg";
 
-export default function CoinPreview() {
-
+const CoinPreview = () => {
   return (
     <div className="grow scrollbar-thin scrollbar-thumb-translucent scrollbar-track-transparent">
       <div className="flex justify-center items-center h-full">
@@ -20,18 +19,13 @@ export default function CoinPreview() {
             SILVER COIN
           </div>
           <div className="flex flex-col items-center text-center gap-4 drop-shadow-md rounded-full w-[124px]">
-            <Image
-              priority
-              src={goldCoin}
-              height={124}
-              width={124}
-              alt="Gold"
-              draggable="false"
-            />
+            <Image priority src={goldCoin} height={124} width={124} alt="Gold" draggable="false" />
             GOLD COIN
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default CoinPreview;

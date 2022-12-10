@@ -1,58 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    html, body {
-        @apply bg-teal-800 text-white;
-        font-family: 'Josefin Sans', sans-serif;
-        width: 100vw;
-        height: 100%;
-        min-height: 100%;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
+  html,
+  body {
+    @apply bg-teal-800 text-white;
+    font-family: "Josefin Sans", sans-serif;
+    width: 100vw;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
 
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-    input[type=number] {
-        -moz-appearance: textfield;
-    }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 
-    /* div, footer, header, main, nav, section, form, button, a {
+  /* div, footer, header, main, nav, section, form, button, a {
         border: 1px solid black;
     } */
 
-    /* a, button {
+  /* a, button {
         background-color: rgba(255, 0, 0, 0.25) !important
     } */
 }
 
 @layer components {
-    .btn-primary {
-        @apply bg-teal-500 text-black rounded-sm drop-shadow-md select-none pt-1;
-    }
+  .btn-primary {
+    @apply bg-teal-500 text-black rounded-sm drop-shadow-md select-none pt-1;
+  }
 
-    .btn-primary:hover {
-        @apply bg-teal-500/90;
-    }
+  .btn-primary:hover {
+    @apply bg-teal-500/90;
+  }
 
-    .btn-primary:focus {
-        @apply outline outline-2 outline-teal-400;
-    }
+  .btn-primary:focus {
+    @apply outline outline-2 outline-teal-400;
+  }
 
-    .card-shadow {
-        box-shadow: -3px 2px 5px rgba(0, 0, 0, 0.15);
-    }
+  .card-shadow {
+    box-shadow: -3px 2px 5px rgba(0, 0, 0, 0.15);
+  }
 
-    .card-background {
-        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23064e3b' fill-opacity='0.02' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-    }
+  .card-background {
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23064e3b' fill-opacity='0.02' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  }
 }
