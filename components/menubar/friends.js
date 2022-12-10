@@ -7,7 +7,7 @@ import { faPaperPlane, faUserMinus, faCheck, faXmark } from "@fortawesome/free-s
 const Friends = (props) => {
   return (
     <div className="rounded-lg select-none bg-teal-900 border border-translucent shadow-md overflow-hidden w-96">
-      <Tabs.Root>
+      <Tabs.Root defaultValue="friends">
         <div className="sticky top-0 flex justify-between items-center border-b border-translucent px-4 py-3">
           <Tabs.List className="flex gap-4 text-lg pt-1 pl-1">
             <Tabs.Trigger
