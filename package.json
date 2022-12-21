@@ -30,7 +30,10 @@
     "next": "12.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwind-scrollbar": "^2.0.1"
+    "react-particles": "^2.6.0",
+    "tailwind-scrollbar": "^2.0.1",
+    "tsparticles-engine": "^2.6.0",
+    "tsparticles-preset-fire": "^2.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
