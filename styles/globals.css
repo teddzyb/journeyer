@@ -44,7 +44,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-fogra-500 text-metal rounded-sm drop-shadow-md select-none pt-1;
+    @apply bg-fogra-500 text-metal rounded-sm drop-shadow-md select-none;
   }
 
   .btn-primary:hover {

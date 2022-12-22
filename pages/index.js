@@ -1,28 +1,30 @@
 // APIs
 import Head from "next/head";
-import Particles from "react-particles";
-import { loadFirePreset } from "tsparticles-preset-fire";
+import Image from "next/image";
+import Link from "next/link";
+
+// Components
+import TopMenuBar from "../components/menubar/top-menu-bar";
+import Card from "../components/card/card";
 
 // Assets
-import warp from "../public/assets/warp.json";
-import { Icon } from "@iconify/react";
-import playFilled from "@iconify/icons-line-md/play-filled";
-import googleIcon from "@iconify/icons-simple-icons/google";
-import twitterIcon from "@iconify/icons-simple-icons/twitter";
-import discordIcon from "@iconify/icons-simple-icons/discord";
+import goldCoin from "../public/assets/currency/coin-gold.svg";
+import silverCoin from "../public/assets/currency/coin-silver.svg";
 
-// Styles
-const { loginButton } = {
-  loginButton: "flex justify-center items-center rounded-full border border-metal w-14 h-14",
-};
+const Menu = () => {
+  const menuItems = [
+    { name: "Campaign", href: "campaign" },
+    { name: "Ranked", href: "ranked" },
+    { name: "Custom", href: "custom" },
+    { name: "Practice", href: "practice" },
+    { name: "Shop", href: "shop" },
+    { name: "Sign Out", href: "/" },
+  ];
 
-const Home = () => {
-  const customInit = async (engine) => {
-    await loadFirePreset(engine);
-  };
+  const customizations = [{ name: "Deck" }, { name: "Sleeve" }, { name: "Coins" }];
 
   return (
-    <>
+    <div>
       <Head>
         <title>Journeyer</title>
         <meta
@@ -31,32 +33,99 @@ const Home = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Particles options={warp} init={customInit} />
-      <main className="title-screen gap-28 h-screen flex flex-col justify-center items-center">
-        <div className="flex flex-col justify-center gap-5 tracking-widest font-bold text-center drop-shadow-md select-none">
-          <span className="text-7xl">JOURNEYER</span>
-          <span className="text-4xl">OF THE REALMS</span>
+      <nav className="sticky top-0 z-50">
+        <TopMenuBar />
+      </nav>
+      <main className="h-screen flex flex-row justify-center pb-20">
+        <div className="w-2/5 m-10 mr-5">
+          <div className="grid w-fit m-12 mt-10">
+            {menuItems.map((item, index) => (
+              <Link key={index} href={item.href}>
+                <a
+                  className={`drop-shadow-md select-none py-5 pr-5 hover:text-teal-300 hover:scale-105 transition ease-in-out duration-150 ${
+                    index === 0 ? "text-[1.70rem]" : "text-2xl"
+                  }`}
+                  draggable="false"
+                >
+                  {item.name.toUpperCase()}
+                </a>
+              </Link>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col items-center justify-between h-[9.5rem] text-metal">
-          {/* TODO: Add ripple effect to buttons */}
-          <button className="peer flex justify-center items-center rounded-full border border-metal w-16 h-16 transition-opacity ease-in-out duration-700 focus:opacity-50 outline-none">
-            <Icon icon={playFilled} className="w-7 h-7" />
-          </button>
-          <div className="flex gap-7 opacity-0 invisible transition-all ease-in-out duration-700 peer-focus:opacity-100 focus-within:opacity-100 peer-focus:visible focus-within:visible">
-            <button className={`${loginButton} -mt-10`}>
-              <Icon icon={googleIcon} />
-            </button>
-            <button className={`${loginButton}`}>
-              <Icon icon={twitterIcon} />
-            </button>
-            <button className={`${loginButton} -mt-10`}>
-              <Icon icon={discordIcon} />
-            </button>
+        <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-hidden">
+          <div className="bg-translucent text-xl text-center select-none p-3 pt-4">
+            CUSTOMIZE LOADOUT
+          </div>
+          <div className="flex flex-col grow">
+            <div className="grid grid-flow-col h-full px-10">
+              {customizations.map((item, index) => (
+                <div key={index} className="flex justify-center items-center">
+                  <div className="flex justify-center items-center bg-translucent rounded-md w-36 h-44"></div>
+                  {item.name === "Coins" ? (
+                    <Link href="/inventory">
+                      <a
+                        className="absolute select-none hover:scale-105 transition ease-in-out duration-150"
+                        draggable="false"
+                      >
+                        <div className="flex drop-shadow-md rounded-full w-[70px] -translate-x-3">
+                          <Image
+                            src={goldCoin}
+                            height={70}
+                            width={70}
+                            alt="Gold"
+                            draggable="false"
+                          />
+                        </div>
+                        <div className="flex drop-shadow-md rounded-full w-[70px] -mt-6 translate-x-3">
+                          <Image
+                            src={silverCoin}
+                            height={70}
+                            width={70}
+                            alt="Silver"
+                            draggable="false"
+                          />
+                        </div>
+                      </a>
+                    </Link>
+                  ) : (
+                    <Link href="/inventory">
+                      <a
+                        className="absolute hover:scale-105 transition ease-in-out duration-150"
+                        draggable="false"
+                      >
+                        <Card size="sm">{item.name}</Card>
+                      </a>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-flow-col justify-center gap-12 h-full mb-5">
+              <div className="flex justify-center items-center text-black pl-32">
+                {Array.from(Array(12).keys()).map((item) => (
+                  <Card
+                    key={item}
+                    size="md"
+                    hover
+                    className="-ml-32 hover:mr-20 last:hover:mr-0 transition-all ease-in-out"
+                  />
+                ))}
+              </div>
+              <div className="flex flex-col justify-center items-center select-none w-fit">
+                <div className="flex drop-shadow-md rounded-full w-[70px]">
+                  <Image src={goldCoin} height={70} width={70} alt="Gold" draggable="false" />
+                </div>
+                <div className="flex drop-shadow-md rounded-full w-[70px] -mt-5">
+                  <Image src={silverCoin} height={70} width={70} alt="Silver" draggable="false" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 };
 
-export default Home;
+export default Menu;

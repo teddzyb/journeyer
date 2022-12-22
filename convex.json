@@ -3,5 +3,10 @@
   "team": "teddzyb",
   "prodUrl": "https://quixotic-alpaca-643.convex.cloud",
   "functions": "convex/",
-  "authInfo": []
+  "authInfo": [
+    {
+      "domain": "https://dev-i4xt1d3rvljno87l.us.auth0.com/",
+      "applicationID": "QzNrfNpJJslMhXi7b4xv7MfPN8kSSnJy"
+    }
+  ]
 }
