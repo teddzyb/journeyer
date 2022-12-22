@@ -2,17 +2,19 @@ import "../styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { MantineProvider } from "@mantine/core";
-config.autoAddCss = false;
+import { ConvexProvider, ConvexReactClient } from "convex/react";
+import clientConfig from "../convex/_generated/clientConfig";
 
-import { AuthUser } from "../context/auth";
+const convex = new ConvexReactClient(clientConfig);
+config.autoAddCss = false;
 
 function Journeyer({ Component, pageProps }) {
   return (
-    <AuthUser>
+    <ConvexProvider client={convex}>
       <MantineProvider>
         <Component {...pageProps} />
       </MantineProvider>
-    </AuthUser>
+    </ConvexProvider>
   );
 }
 

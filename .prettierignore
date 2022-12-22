@@ -2,12 +2,14 @@
 
 /node_modules
 /.pnp
-.pnp.js
-package-lock.json
 /coverage
 /.next/
 /out/
 /build
+/public/*
+/convex/_generated/*
+.pnp.js
+package-lock.json
 .DS_Store
 *.pem
 npm-debug.log*
@@ -18,4 +20,3 @@ yarn-error.log*
 .vercel
 .idea
 .vscode
-public/*
