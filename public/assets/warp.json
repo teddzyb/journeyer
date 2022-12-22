@@ -1,4 +1,11 @@
 {
+  "background": {
+    "color": "",
+    "image": "",
+    "position": "50% 50%",
+    "repeat": "no-repeat",
+    "size": "cover"
+  },
   "fpsLimit": 120,
   "particles": {
     "number": {
@@ -94,12 +101,5 @@
       }
     }
   },
-  "retina_detect": true,
-  "background": {
-    "color": "#01161E",
-    "image": "",
-    "position": "50% 50%",
-    "repeat": "no-repeat",
-    "size": "cover"
-  }
+  "retina_detect": true
 }
