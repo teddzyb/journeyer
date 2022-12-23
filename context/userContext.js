@@ -1,0 +1,26 @@
+import { createContext, useContext, useState, useEffect, useMemo } from "react";
+import { useMutation } from "../convex/_generated/react";
+
+const Context = createContext();
+
+export const UserContext = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const storeUser = useMutation("user/storeUser");
+
+  useEffect(() => {
+    async function createUser() {
+      const id = await storeUser();
+      setUser(id);
+    }
+    createUser().catch(console.error);
+    return () => setUser(null);
+  }, [storeUser]);
+
+  const userId = useMemo(() => user?.id, [user]);
+
+  return <Context.Provider value={userId}>{children}</Context.Provider>;
+};
+
+export const useUserContext = () => {
+  return useContext(Context);
+};

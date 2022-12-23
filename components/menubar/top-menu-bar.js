@@ -1,6 +1,7 @@
 // APIs
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useUserContext } from "../../context/userContext.js";
 
 // Components
 import * as Tooltip from "@radix-ui/react-tooltip";
@@ -26,6 +27,8 @@ import silverCoin from "../../public/assets/currency/coin-silver.svg";
 const TopMenuBar = () => {
   const [volume, setVolume] = useState(false);
   const toggleVolume = () => setVolume(!volume);
+
+  const user = useUserContext();
 
   const iconsR = [
     { name: "Friends", src: faHandshakeAngle },
@@ -61,7 +64,7 @@ const TopMenuBar = () => {
           />
         </div>
         <div className="flex flex-col justify-center gap-1 text-lg">
-          PLAYER-0001
+          {user || "..."}
           <ExpBar />
         </div>
         <div className="flex flex-col justify-center gap-2 ml-10">

@@ -7,6 +7,7 @@ import convexConfig from "../convex.json";
 import clientConfig from "../convex/_generated/clientConfig";
 
 // Components
+import { UserContext } from "../context/userContext.js";
 import Loading from "../components/auth/loading.js";
 import Login from "../components/auth/login.js";
 
@@ -27,9 +28,11 @@ const Journeyer = ({ Component, pageProps }) => {
       loading={<Loading />}
       loggedOut={<Login />}
     >
-      <MantineProvider>
-        <Component {...pageProps} />
-      </MantineProvider>
+      <UserContext>
+        <MantineProvider>
+          <Component {...pageProps} />
+        </MantineProvider>
+      </UserContext>
     </ConvexProviderWithAuth0>
   );
 };
