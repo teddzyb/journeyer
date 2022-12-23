@@ -3,11 +3,13 @@ import Head from "next/head";
 import Particles from "react-particles";
 import { loadFirePreset } from "tsparticles-preset-fire";
 import { useAuth0 } from "@auth0/auth0-react";
+import { isDesktop } from "react-device-detect";
 
 // Assets
 import warp from "../../public/assets/warp.json";
 import { Icon } from "@iconify/react";
 import playFilled from "@iconify/icons-line-md/play-filled";
+import alertCircle from "@iconify/icons-line-md/alert-circle";
 
 const Login = () => {
   const { loginWithRedirect } = useAuth0();
@@ -27,18 +29,25 @@ const Login = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Particles options={warp} init={customInit} />
-      <main className="title-screen gap-28 h-screen flex flex-col justify-center items-center">
+      <main className="title-screen gap-24 md:gap-28 h-screen flex flex-col justify-center items-center">
         <div className="flex flex-col justify-center gap-5 tracking-widest font-bold text-center drop-shadow-md select-none">
-          <span className="text-7xl">JOURNEYER</span>
-          <span className="text-4xl">OF THE REALMS</span>
+          <span className="text-5xl md:text-7xl">JOURNEYER</span>
+          <span className="text-2xl md:text-4xl">OF THE REALMS</span>
         </div>
         <div className="flex flex-col items-center justify-between text-metal">
-          <button
-            onClick={loginWithRedirect}
-            className="flex justify-center items-center rounded-full border border-metal w-16 h-16"
-          >
-            <Icon icon={playFilled} className="w-7 h-7" />
-          </button>
+          {isDesktop ? (
+            <button
+              onClick={loginWithRedirect}
+              className="flex justify-center items-center rounded-full border border-metal w-16 h-16"
+            >
+              <Icon icon={playFilled} className="w-7 h-7" />
+            </button>
+          ) : (
+            <div className="flex flex-col items-center text-center w-52 gap-2">
+              <Icon icon={alertCircle} className="w-6 h-6" />
+              This game is only available on desktop.
+            </div>
+          )}
         </div>
       </main>
     </>
