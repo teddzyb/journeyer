@@ -40,6 +40,7 @@ const Login = () => {
               onClick={loginWithRedirect}
               className="flex justify-center items-center rounded-full border border-metal w-16 h-16"
             >
+              {/* TODO: Add loader */}
               <Icon icon={playFilled} className="w-7 h-7" />
             </button>
           ) : (

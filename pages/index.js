@@ -18,10 +18,12 @@ const Menu = () => {
     { name: "Custom", href: "custom" },
     { name: "Practice", href: "practice" },
     { name: "Shop", href: "shop" },
-    { name: "Sign Out", href: "/" },
+    { name: "Sign Out", href: "/" }, // TODO: Add sign out functionality
   ];
 
   const customizations = [{ name: "Deck" }, { name: "Sleeve" }, { name: "Coins" }];
+
+  // TODO: Add introduction for new users
 
   return (
     <div>
