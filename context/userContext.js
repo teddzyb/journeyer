@@ -8,10 +8,10 @@ export const UserContext = ({ children }) => {
   const storeUser = useMutation("user/storeUser");
 
   useEffect(() => {
-    async function createUser() {
+    const createUser = async () => {
       const id = await storeUser();
       setUser(id);
-    }
+    };
     createUser().catch(console.error);
     return () => setUser(null);
   }, [storeUser]);

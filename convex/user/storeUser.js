@@ -12,16 +12,9 @@ export default mutation(async ({ db, auth }) => {
     .filter((q) => q.eq(q.field("tokenIdentifier"), identity.tokenIdentifier))
     .first();
 
-  if (user !== null) {
-    if (user.name !== identity.name) {
-      await db.patch(user._id, { name: identity.name });
-    }
-    return user._id;
-  }
+  if (user) return user._id;
 
   return db.insert("users", {
-    name: identity.name,
-    newUser: true,
     tokenIdentifier: identity.tokenIdentifier,
   });
 });
