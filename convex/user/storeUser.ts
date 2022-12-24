@@ -2,10 +2,7 @@ import { mutation } from "../_generated/server";
 
 export default mutation(async ({ db, auth }) => {
   const identity = await auth.getUserIdentity();
-
-  if (!identity) {
-    throw new Error("Called storeUser without authentication present");
-  }
+  if (!identity) throw new Error("Unauthenticated");
 
   const user = await db
     .query("users")
@@ -15,6 +12,12 @@ export default mutation(async ({ db, auth }) => {
   if (user) return user._id;
 
   return db.insert("users", {
+    // username: "",
+    // inventory: { gold: 0, silver: 0, items: [] },
+    // status: { level: 1, xp: 0, xpToNextLevel: 100 },
+    // campaign: { campaignId: "", campaignProgress: 0 },
+    // introduction: { completed: false },
+    // tutorial: { completed: false },
     tokenIdentifier: identity.tokenIdentifier,
   });
 });

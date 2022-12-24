@@ -1,5 +1,9 @@
+// APIs
 import { createContext, useContext, useState, useEffect, useMemo } from "react";
 import { useMutation } from "../convex/_generated/react";
+
+// Components
+import Loading from "../components/auth/loading.js";
 
 const Context = createContext();
 
@@ -17,6 +21,8 @@ export const UserContext = ({ children }) => {
   }, [storeUser]);
 
   const userId = useMemo(() => user?.id, [user]);
+
+  if (!userId) return <Loading />;
 
   return <Context.Provider value={userId}>{children}</Context.Provider>;
 };

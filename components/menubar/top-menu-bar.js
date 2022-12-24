@@ -1,6 +1,6 @@
 // APIs
 import Image from "next/image";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useUserContext } from "../../context/userContext.js";
 
 // Components
@@ -28,7 +28,7 @@ const TopMenuBar = () => {
   const [volume, setVolume] = useState(false);
   const toggleVolume = () => setVolume(!volume);
 
-  const user = useUserContext();
+  const userId = useUserContext();
 
   const iconsR = [
     { name: "Friends", src: faHandshakeAngle },
@@ -64,7 +64,7 @@ const TopMenuBar = () => {
           />
         </div>
         <div className="flex flex-col justify-center gap-1 text-lg">
-          {user || "..."}
+          {userId}
           <ExpBar />
         </div>
         <div className="flex flex-col justify-center gap-2 ml-10">

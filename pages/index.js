@@ -2,6 +2,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useQuery } from "../convex/_generated/react";
+import { useUserContext } from "../context/userContext";
 
 // Components
 import TopMenuBar from "../components/menubar/top-menu-bar";
@@ -23,7 +25,10 @@ const Menu = () => {
 
   const customizations = [{ name: "Deck" }, { name: "Sleeve" }, { name: "Coins" }];
 
-  // TODO: Add introduction for new users
+  const userId = useUserContext();
+  const introCompleted = useQuery("user/getIntro", userId);
+
+  if (!introCompleted) return <div>Introduction</div>;
 
   return (
     <div>
