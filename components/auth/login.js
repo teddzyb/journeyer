@@ -1,5 +1,6 @@
 // APIs
 import Head from "next/head";
+import { useState } from "react";
 import Particles from "react-particles";
 import { loadFirePreset } from "tsparticles-preset-fire";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -10,8 +11,10 @@ import warp from "../../public/assets/warp.json";
 import { Icon } from "@iconify/react";
 import playFilled from "@iconify/icons-line-md/play-filled";
 import alertCircle from "@iconify/icons-line-md/alert-circle";
+import loadingLoop from "@iconify/icons-line-md/loading-loop";
 
 const Login = () => {
+  const [isLoading, setIsloading] = useState(false);
   const { loginWithRedirect } = useAuth0();
 
   const customInit = async (engine) => {
@@ -37,11 +40,24 @@ const Login = () => {
         <div className="flex flex-col items-center justify-between text-metal">
           {isDesktop ? (
             <button
-              onClick={loginWithRedirect}
+              onClick={() => {
+                setIsloading(true);
+                loginWithRedirect();
+              }}
               className="flex justify-center items-center rounded-full border border-metal w-16 h-16"
             >
-              {/* TODO: Add loader */}
-              <Icon icon={playFilled} className="w-7 h-7" />
+              <Icon
+                icon={playFilled}
+                className={`absolute w-7 h-7 opacity-0 transition-opacity duration-200 ease-in-out ${
+                  !isLoading && "opacity-100"
+                }`}
+              />
+              <Icon
+                icon={loadingLoop}
+                className={`absolute w-6 h-6 opacity-0 transition-opacity duration-500 ease-in-out ${
+                  isLoading && "opacity-100"
+                }`}
+              />
             </button>
           ) : (
             <div className="flex flex-col items-center text-center w-52 gap-2">
