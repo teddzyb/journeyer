@@ -3,7 +3,7 @@ import { createContext, useContext, useState, useEffect, useMemo } from "react";
 import { useMutation } from "../convex/_generated/react";
 
 // Components
-import Loading from "../components/auth/loading.js";
+import Loading from "../components/index/loading.js";
 
 const Context = createContext();
 

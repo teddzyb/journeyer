@@ -54,7 +54,7 @@ const Login = () => {
               />
               <Icon
                 icon={loadingLoop}
-                className={`absolute w-6 h-6 opacity-0 transition-opacity duration-500 ease-in-out ${
+                className={`absolute w-6 h-6 opacity-0 transition-opacity duration-500 ease-in-out animate-spin ${
                   isLoading && "opacity-100"
                 }`}
               />

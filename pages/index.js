@@ -2,12 +2,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useQuery } from "../convex/_generated/react";
+import Router from "next/router";
 import { useUserContext } from "../context/userContext";
+import { useQuery } from "../convex/_generated/react";
 
 // Components
+import Introduction from "../components/index/introduction";
 import TopMenuBar from "../components/menubar/top-menu-bar";
 import Card from "../components/card/card";
+import Loading from "../components/index/loading";
 
 // Assets
 import goldCoin from "../public/assets/currency/coin-gold.svg";
@@ -26,9 +29,15 @@ const Menu = () => {
   const customizations = [{ name: "Deck" }, { name: "Sleeve" }, { name: "Coins" }];
 
   const userId = useUserContext();
-  const introCompleted = useQuery("user/getIntro", userId);
+  const { introCompleted, usernameSet } = useQuery("user/getIntro", userId) || {};
 
-  if (!introCompleted) return <div>Introduction</div>;
+  if (!introCompleted) {
+    if (usernameSet) {
+      Router.push("/match/tutorial");
+      return <Loading />;
+    }
+    return <Introduction />;
+  }
 
   return (
     <div>

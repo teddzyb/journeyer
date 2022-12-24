@@ -8,8 +8,8 @@ import clientConfig from "../convex/_generated/clientConfig";
 
 // Components
 import { UserContext } from "../context/userContext.js";
-import Loading from "../components/auth/loading.js";
-import Login from "../components/auth/login.js";
+import Loading from "../components/index/loading.js";
+import Login from "../components/index/login.js";
 
 // Styles
 import "../styles/globals.css";
