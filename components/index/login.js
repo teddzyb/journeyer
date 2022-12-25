@@ -7,7 +7,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { isDesktop } from "react-device-detect";
 
 // Assets
-import warp from "../../public/assets/warp.json";
+import warp from "../../public/assets/configs/warp.json";
 import { Icon } from "@iconify/react";
 import playFilled from "@iconify/icons-line-md/play-filled";
 import alertCircle from "@iconify/icons-line-md/alert-circle";

@@ -86,7 +86,7 @@ const Practice = () => {
           </button>
         </div>
         <div>
-          <Link href="/menu">
+          <Link href="/">
             <a draggable="false">
               <button className="btn-primary h-11 w-40">BACK</button>
             </a>

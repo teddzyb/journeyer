@@ -118,7 +118,7 @@ const Ranked = () => {
             </div>
           </div>
           <div className="flex justify-center gap-8 my-10">
-            <Link href="/menu">
+            <Link href="/">
               <a draggable="false">
                 <button className="btn-primary h-11 w-40">BACK</button>
               </a>
