@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 
 const Introduction = () => {
   const [classNames, setClassNames] = useState({});
+  const [timers, setTimers] = useState([]);
   const [final, setFinal] = useState(false);
 
   const transcript = useMemo(
@@ -33,8 +34,8 @@ const Introduction = () => {
       {
         id: 5,
         text: "What is your name, journeyer?",
-        inTime: 32500,
-        outTime: 3000,
+        inTime: 31500,
+        outTime: 0,
       },
     ],
     [],
@@ -42,34 +43,56 @@ const Introduction = () => {
 
   useEffect(() => {
     transcript.forEach(({ id, inTime, outTime }) => {
-      setTimeout(() => {
-        setClassNames((classNames) => ({
-          ...classNames,
-          [id]: "opacity-100",
-        }));
+      const timeoutId = setTimeout(() => {
+        if (id !== transcript[transcript.length - 1].id) {
+          setClassNames((classNames) => ({
+            ...classNames,
+            [id]: "opacity-100",
+          }));
 
-        if (id !== transcript[transcript.length - 1].id)
           setTimeout(() => {
             setClassNames((classNames) => ({
               ...classNames,
               [id]: "",
             }));
           }, outTime);
-
-        if (id === transcript[transcript.length - 1].id)
-          setTimeout(() => {
-            setFinal(true);
-          }, outTime);
+        } else {
+          setFinal(true);
+        }
       }, inTime);
+
+      setTimers((timers) => [...timers, timeoutId]);
     });
-  }, [transcript]);
+  }, [final, transcript]);
+
+  useEffect(() => {
+    if (final) {
+      timers.forEach((timer) => clearTimeout(timer));
+      setClassNames({});
+
+      setTimeout(() => {
+        setClassNames((classNames) => ({
+          ...classNames,
+          [transcript.length]: "opacity-100",
+        }));
+      }, 1000);
+
+      setTimeout(() => {
+        setClassNames((classNames) => ({
+          ...classNames,
+          [transcript.length]: "opacity-100 -translate-y-10",
+          [transcript.length + 1]: "opacity-100 translate-y-10",
+        }));
+      }, 3000);
+    }
+  }, [final, transcript, timers]);
 
   return (
     <main className="title-screen flex flex-col items-center justify-center h-screen select-none">
       {transcript.map(({ id, text }) => (
         <div
           key={id}
-          className={`absolute w-7/12 text-center text-2xl transition-opacity duration-1000 ease-in-out ${
+          className={`absolute w-7/12 text-center text-2xl transition-all duration-1000 ease-in-out ${
             classNames[id] ? classNames[id] : "opacity-0"
           }`}
         >
@@ -77,14 +100,15 @@ const Introduction = () => {
         </div>
       ))}
       <input
-        className={`translate-y-8 text-xl outline-none bg-transparent border-b border-metal text-center ${
-          final ? "opacity-100" : "opacity-0"
+        className={`pb-1 text-xl outline-none bg-transparent border-b border-metal text-center transition-all duration-1000 ease-in-out ${
+          classNames[transcript.length + 1] ? classNames[transcript.length + 1] : "opacity-0"
         }`}
       />
       {final ? (
         <button
-          onClick={() => setFinal(false)}
-          className="absolute right-16 bottom-16 text-lg px-4 py-1.5 border border-metal rounded-md"
+          onClick={() => {}}
+          disabled
+          className="absolute right-16 bottom-16 text-lg px-4 py-1.5 border border-metal rounded-md disabled:opacity-50"
         >
           Proceed
         </button>
