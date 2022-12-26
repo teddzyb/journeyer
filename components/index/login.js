@@ -48,14 +48,14 @@ const Login = () => {
             >
               <Icon
                 icon={playFilled}
-                className={`absolute w-7 h-7 opacity-0 transition-opacity duration-200 ease-in-out ${
-                  !isLoading && "opacity-100"
+                className={`absolute w-7 h-7 transition-opacity duration-200 ease-in-out ${
+                  isLoading ? "opacity-0" : "opacity-100"
                 }`}
               />
               <Icon
                 icon={loadingLoop}
-                className={`absolute w-6 h-6 opacity-0 transition-opacity duration-500 ease-in-out animate-spin ${
-                  isLoading && "opacity-100"
+                className={`absolute w-6 h-6 transition-opacity duration-500 ease-in-out animate-spin ${
+                  isLoading ? "opacity-100" : "opacity-0"
                 }`}
               />
             </button>
