@@ -108,14 +108,14 @@ const Introduction = () => {
         <button
           onClick={() => {}}
           disabled
-          className="absolute right-16 bottom-16 text-lg px-4 py-1.5 border border-metal rounded-md disabled:opacity-50"
+          className="absolute right-16 bottom-16 px-5 py-2 border border-metal rounded-md disabled:opacity-60 enabled:opacity-100 transition-opacity ease-in-out"
         >
           Proceed
         </button>
       ) : (
         <button
           onClick={() => setFinal(true)}
-          className="absolute right-16 bottom-16 text-lg px-4 py-1.5 border border-metal rounded-md"
+          className="absolute right-16 bottom-16 px-5 py-2 border border-metal rounded-md opacity-60 hover:opacity-100 transition-opacity ease-in-out"
         >
           Skip
         </button>
