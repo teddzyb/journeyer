@@ -28,7 +28,7 @@ const TopMenuBar = () => {
   const [volume, setVolume] = useState(false);
   const toggleVolume = () => setVolume(!volume);
 
-  const userId = useUserContext();
+  const user = useUserContext();
 
   const iconsR = [
     { name: "Friends", src: faHandshakeAngle },
@@ -64,7 +64,7 @@ const TopMenuBar = () => {
           />
         </div>
         <div className="flex flex-col justify-center gap-1 text-lg">
-          {userId}
+          {user.id}
           <ExpBar />
         </div>
         <div className="flex flex-col justify-center gap-2 ml-10">

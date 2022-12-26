@@ -1,6 +1,7 @@
 // APIs
-import { useState, useEffect, useMemo, useRef } from "react";
 import Router from "next/router";
+import { useState, useEffect, useMemo, useRef } from "react";
+import { useUserContext } from "../../context/userContext";
 import { useMutation } from "../../convex/_generated/react";
 
 // Assets
@@ -16,6 +17,7 @@ const Introduction = () => {
 
   const inputRef = useRef(null);
 
+  const user = useUserContext();
   const storeUsername = useMutation("user/storeUsername");
 
   const transcript = useMemo(
@@ -128,9 +130,7 @@ const Introduction = () => {
           onClick={() => {
             if (inputRef.current?.value) {
               setIsLoading(true);
-              storeUsername(inputRef.current.value).then(() => {
-                Router.push("/match/tutorial");
-              });
+              storeUsername(user, inputRef.current.value);
             }
           }}
           disabled={!proceed}

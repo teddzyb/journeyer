@@ -11,8 +11,8 @@ import Introduction from "../components/index/introduction";
 import Loading from "../components/index/loading";
 
 const Index = () => {
-  const userId = useUserContext();
-  const { introCompleted, usernameSet } = useQuery("user/getIntro", userId) || {};
+  const user = useUserContext();
+  const { introCompleted, usernameSet } = useQuery("user/getIntro", user) || {};
 
   useEffect(() => {
     if (!introCompleted && usernameSet) {
@@ -31,6 +31,7 @@ const Index = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {introCompleted ? <Menu /> : <>{!usernameSet && <Introduction />}</>}
+      <Menu />
     </>
   );
 };

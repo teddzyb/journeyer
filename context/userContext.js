@@ -20,11 +20,9 @@ export const UserContext = ({ children }) => {
     return () => setUser(null);
   }, [storeUser]);
 
-  const userId = useMemo(() => user?.id, [user]);
+  if (!user) return <Loading />;
 
-  if (!userId) return <Loading />;
-
-  return <Context.Provider value={userId}>{children}</Context.Provider>;
+  return <Context.Provider value={user}>{children}</Context.Provider>;
 };
 
 export const useUserContext = () => {
