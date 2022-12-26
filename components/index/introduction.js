@@ -1,9 +1,22 @@
-import { useState, useEffect, useMemo } from "react";
+// APIs
+import { useState, useEffect, useMemo, useRef } from "react";
+import Router from "next/router";
+import { useMutation } from "../../convex/_generated/react";
+
+// Assets
+import { Icon } from "@iconify/react";
+import loadingLoop from "@iconify/icons-line-md/loading-loop";
 
 const Introduction = () => {
   const [classNames, setClassNames] = useState({});
   const [timers, setTimers] = useState([]);
   const [final, setFinal] = useState(false);
+  const [proceed, setProceed] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const inputRef = useRef(null);
+
+  const storeUsername = useMutation("user/storeUsername");
 
   const transcript = useMemo(
     () => [
@@ -100,17 +113,42 @@ const Introduction = () => {
         </div>
       ))}
       <input
+        ref={inputRef}
+        onChange={() => {
+          if (inputRef.current) setProceed(inputRef.current.value.length > 0);
+        }}
+        disabled={!final}
+        maxLength={20}
         className={`pb-1 text-xl outline-none bg-transparent border-b border-metal text-center transition-all duration-1000 ease-in-out ${
           classNames[transcript.length + 1] ? classNames[transcript.length + 1] : "opacity-0"
         }`}
       />
       {final ? (
         <button
-          onClick={() => {}}
-          disabled
-          className="absolute right-16 bottom-16 px-5 py-2 border border-metal rounded-md disabled:opacity-60 enabled:opacity-100 transition-opacity ease-in-out"
+          onClick={() => {
+            if (inputRef.current?.value) {
+              setIsLoading(true);
+              storeUsername(inputRef.current.value).then(() => {
+                Router.push("/match/tutorial");
+              });
+            }
+          }}
+          disabled={!proceed}
+          className="flex justify-center items-center absolute right-16 bottom-16 px-5 py-2 border border-metal rounded-md disabled:opacity-60 enabled:opacity-100 transition-opacity ease-in-out"
         >
-          Proceed
+          <span
+            className={`transition-opacity duration-500 ease-in-out ${
+              isLoading ? "opacity-0" : "opacity-100"
+            }`}
+          >
+            Proceed
+          </span>
+          <Icon
+            icon={loadingLoop}
+            className={`absolute w-6 h-6 transition-opacity duration-500 ease-in-out animate-spin ${
+              isLoading ? "opacity-100" : "opacity-0"
+            }`}
+          />
         </button>
       ) : (
         <button

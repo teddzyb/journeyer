@@ -9,6 +9,8 @@ export default query(async ({ db, auth }, userId: string) => {
     .filter((q) => q.eq(q.field("_id"), userId))
     .first();
 
+  console.log(user);
+
   return {
     introCompleted: user?.introduction?.completed ?? false,
     usernameSet: user?.username ? true : false,
