@@ -18,9 +18,7 @@ import silverCoin from "../public/assets/currency/coin-silver.svg";
 
 const Menu = () => {
   const user = useUserContext();
-  const { introCompleted, usernameSet } = useQuery("user/getIntro", user) || {};
-
-  if (introCompleted === undefined) return <Loading />;
+  const { introCompleted, usernameSet } = useQuery("user/getIntro", user);
 
   if (!introCompleted) {
     if (usernameSet) {

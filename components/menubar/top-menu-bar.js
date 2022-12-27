@@ -30,14 +30,14 @@ const TopMenuBar = () => {
 
   const user = useUserContext();
 
-  const iconsR = [
+  const icons = [
     { name: "Friends", src: faHandshakeAngle },
     { name: "Notifications", src: faBell },
     { name: "Volume", src: faVolumeHigh, toggle: toggleVolume },
     { name: "Feedback", src: faQuestionCircle },
   ];
 
-  iconsR[2].src = volume ? faVolumeXmark : faVolumeHigh;
+  icons[2].src = volume ? faVolumeXmark : faVolumeHigh;
 
   const popoverClose = (
     <Popover.Close className="flex">
@@ -79,7 +79,7 @@ const TopMenuBar = () => {
         </div>
       </div>
       <div className="grid grid-flow-col col-start-3 auto-cols-max">
-        {iconsR.map((icon, index) => (
+        {icons.map((icon, index) => (
           <Popover.Root key={index}>
             <Tooltip.Provider delayDuration="25">
               <Tooltip.Root>

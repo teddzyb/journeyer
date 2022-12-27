@@ -1,6 +1,6 @@
 // APIs
-import { createContext, useContext, useState, useEffect, useMemo } from "react";
-import { useMutation } from "../convex/_generated/react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { useMutation, useQuery } from "../convex/_generated/react";
 
 // Components
 import Loading from "../components/index/loading.js";
@@ -10,6 +10,7 @@ const Context = createContext();
 export const UserContext = ({ children }) => {
   const [user, setUser] = useState(null);
   const storeUser = useMutation("user/storeUser");
+  const getIntro = useQuery("user/getIntro", user);
 
   useEffect(() => {
     const createUser = async () => {
@@ -21,6 +22,7 @@ export const UserContext = ({ children }) => {
   }, [storeUser]);
 
   if (!user) return <Loading />;
+  if (getIntro === undefined) return <Loading />;
 
   return <Context.Provider value={user}>{children}</Context.Provider>;
 };

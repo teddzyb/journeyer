@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       colors: {
         translucent: {
-          DEFAULT: "rgba(0, 0, 0, 0.15)",
+          DEFAULT: "rgba(217, 217, 217, 0.15)",
         },
         lime: {
           DEFAULT: "#38B000",
