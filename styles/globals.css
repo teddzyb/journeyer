@@ -13,7 +13,7 @@
 @layer base {
   html,
   body {
-    @apply bg-fogra text-metal;
+    @apply bg-fogra text-metal select-none;
     font-family: "Rubik", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
     width: 100vw;
     height: 100%;
@@ -34,12 +34,12 @@
   }
 
   /* div, footer, header, main, nav, section, form, button, a {
-        border: 1px solid black; !important
-    } */
+    @apply border border-metal/50;
+  }
 
-  /* a, button {
-        background-color: rgba(255, 0, 0, 0.25) !important
-    } */
+  a, button {
+    background-color: rgba(255, 0, 0, 0.25) !important;
+  } */
 }
 
 @layer components {

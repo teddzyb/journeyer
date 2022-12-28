@@ -58,9 +58,8 @@ const Menu = () => {
             {menuItems.map((item, index) => (
               <Link key={index} href={item.href}>
                 <a
-                  className={`drop-shadow-md select-none py-5 pr-5 hover:text-teal-300 hover:scale-105 transition ease-in-out duration-150 ${
-                    index === 0 ? "text-[1.70rem]" : "text-2xl"
-                  }`}
+                  className={`drop-shadow-md py-5 pr-5 hover:text-malachite transition ease-in-out duration-150 first:text-3xl text-[1.6rem]
+                    }`}
                   draggable="false"
                 >
                   {item.name.toUpperCase()}
@@ -70,9 +69,7 @@ const Menu = () => {
           </div>
         </div>
         <div className="flex flex-col rounded-2xl bg-translucent shadow-md w-3/5 m-10 ml-5 overflow-hidden">
-          <div className="bg-translucent text-xl text-center select-none p-3 pt-4">
-            CUSTOMIZE LOADOUT
-          </div>
+          <div className="bg-translucent text-xl text-center p-3 pt-4">CUSTOMIZE LOADOUT</div>
           <div className="flex flex-col grow">
             <div className="grid grid-flow-col h-full px-10">
               {customizations.map((item, index) => (
@@ -81,7 +78,7 @@ const Menu = () => {
                   {item.name === "Coins" ? (
                     <Link href="/inventory">
                       <a
-                        className="absolute select-none hover:scale-105 transition ease-in-out duration-150"
+                        className="absolute hover:scale-105 transition ease-in-out duration-150"
                         draggable="false"
                       >
                         <div className="flex drop-shadow-md rounded-full w-[70px] -translate-x-3">
@@ -128,7 +125,7 @@ const Menu = () => {
                   />
                 ))}
               </div>
-              <div className="flex flex-col justify-center items-center select-none w-fit">
+              <div className="flex flex-col justify-center items-center w-fit">
                 <div className="flex drop-shadow-md rounded-full w-[70px]">
                   <Image src={goldCoin} height={70} width={70} alt="Gold" draggable="false" />
                 </div>

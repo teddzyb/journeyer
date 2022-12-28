@@ -11,6 +11,7 @@ export const UserContext = ({ children }) => {
   const [user, setUser] = useState(null);
   const storeUser = useMutation("user/storeUser");
   const getIntro = useQuery("user/getIntro", user);
+  useQuery("user/getUser", user);
 
   useEffect(() => {
     const createUser = async () => {

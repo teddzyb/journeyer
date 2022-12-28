@@ -11,6 +11,7 @@
 
 import type { ApiFromModules } from "convex/api";
 import type * as user_getIntro from "../user/getIntro";
+import type * as user_getUser from "../user/getUser";
 import type * as user_storeUser from "../user/storeUser";
 import type * as user_storeUsername from "../user/storeUsername";
 
@@ -25,6 +26,7 @@ import type * as user_storeUsername from "../user/storeUsername";
  */
 export type API = ApiFromModules<{
   "user/getIntro": typeof user_getIntro;
+  "user/getUser": typeof user_getUser;
   "user/storeUser": typeof user_storeUser;
   "user/storeUsername": typeof user_storeUsername;
 }>;

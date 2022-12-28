@@ -8,10 +8,7 @@ export default query(async ({ db, auth }, userId: GenericId<string> | null) => {
   if (!userId) return;
 
   const user = await db.get(userId);
-  const { introduction, username } = user;
+  const { username, inventory, status } = user;
 
-  return {
-    introCompleted: introduction?.completed ?? false,
-    usernameSet: username ? true : false,
-  };
+  return { username, inventory, status };
 });

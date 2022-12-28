@@ -14,8 +14,8 @@ module.exports = {
         translucent: {
           DEFAULT: "rgba(217, 217, 217, 0.15)",
         },
-        lime: {
-          DEFAULT: "#38B000",
+        malachite: {
+          DEFAULT: "#09e85e",
         },
         fogra: {
           DEFAULT: "#01161E",
