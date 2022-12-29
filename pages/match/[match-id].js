@@ -16,9 +16,6 @@ import {
   faAngleRight,
   faGear,
   faFlag,
-  faVolumeHigh,
-  faVolumeXmark,
-  faQuestionCircle,
   faUserPlus,
   faCommentDots,
 } from "@fortawesome/free-solid-svg-icons";
@@ -33,12 +30,6 @@ const reactions = [cool, laughing, crying, shocked, angry];
 const Match = () => {
   const [activityLog, setActivityLog] = useState(false);
   const toggleActivityLog = () => setActivityLog(!activityLog);
-
-  const [volume, setVolume] = useState(false);
-  const toggleVolume = () => setVolume(!volume);
-
-  let currentVolume = volume ? faVolumeXmark : faVolumeHigh;
-
   const [handLayout, setHandLayout] = useState(1);
 
   const CardSlot = (
@@ -50,7 +41,7 @@ const Match = () => {
   );
 
   return (
-    <div>
+    <>
       <Head>
         <title>Journeyer</title>
         <meta
@@ -68,21 +59,6 @@ const Match = () => {
               draggable="false"
             />
           </button>
-          {/* <button className="flex">
-            <FontAwesomeIcon
-              icon={currentVolume}
-              onClick={toggleVolume}
-              className="text-2xl bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2 shadow"
-              draggable="false"
-            />
-          </button>
-          <button className="flex">
-            <FontAwesomeIcon
-              icon={faQuestionCircle}
-              className="text-2xl bg-translucent/10 hover:bg-translucent aspect-square rounded-full p-2 shadow"
-              draggable="false"
-            />
-          </button> */}
           <button className="flex">
             <FontAwesomeIcon
               icon={faFlag}
@@ -248,10 +224,8 @@ const Match = () => {
             </button>
           </div>
         </div>
-
-        {/* A commit a day keeps the anxiety away */}
       </main>
-    </div>
+    </>
   );
 };
 

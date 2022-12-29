@@ -20,13 +20,13 @@ const Menu = () => {
   const user = useUserContext();
   const { introCompleted, usernameSet } = useQuery("user/getIntro", user);
 
-  if (!introCompleted) {
-    if (usernameSet) {
-      Router.push("/match/tutorial");
-      return <Loading />;
-    }
-    return <Introduction />;
-  }
+  // if (!introCompleted) {
+  //   if (usernameSet) {
+  //     Router.push("/match/tutorial");
+  //     return <Loading />;
+  //   }
+  //   return <Introduction />;
+  // }
 
   const menuItems = [
     { name: "Campaign", href: "campaign" },
