@@ -54,7 +54,7 @@ const TopMenuBar = () => {
                 draggable="false"
               />
             </div>
-            <div className="flex flex-col gap-2 pr-2 w-full font-medium">
+            <div className="flex flex-col gap-2 pr-2 w-full font-medium whitespace-nowrap">
               {username ?? "Loading..."}
               <ExpBar status={status} />
             </div>

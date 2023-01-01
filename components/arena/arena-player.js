@@ -1,33 +1,52 @@
-import Image from "next/future/image";
-import Currencies from "./currencies";
+// APIs
+import Image from "next/image";
 
-const ArenaPlayer = (props) => {
+// Assets
+import goldCoin from "../../public/assets/currency/coin-gold.svg";
+import silverCoin from "../../public/assets/currency/coin-silver.svg";
+
+const ArenaPlayer = ({ children, opponent, username, level }) => {
   return (
     <div
       className={`${
-        props.opponent ? "flex-col top-0 left-0" : "flex-col-reverse bottom-0 right-0"
-      } absolute flex select-none`}
+        opponent ? "flex-col top-2.5 left-2.5" : "flex-col-reverse bottom-2.5 right-2.5"
+      } z-10 absolute flex`}
     >
       <div
-        className={`${
-          props.opponent
-            ? "items-center bg-red-300 rounded-t-lg shadow-sm"
-            : "flex-row-reverse items-center bg-blue-300 rounded-b-lg"
-        } flex gap-3 text-black overflow-hidden w-80`}
+        className={`drop-shadow-xl flex items-center overflow-clip p-2 h-20 w-[21rem] gap-3 rounded-md bg-fogra-900 outline outline-2 outline-fogra-800 ${
+          !opponent && "flex-row-reverse"
+        }`}
       >
-        <div className="flex w-fit">
-          <Image src="/assets/avatar.jpg" height={64} width={64} alt="" draggable="false" />
+        <div className="h-full aspect-square rounded-md">
+          <Image
+            src="/assets/avatar.jpg"
+            layout="responsive"
+            height={1080}
+            width={1080}
+            className="rounded-md"
+            alt=""
+            draggable="false"
+          />
         </div>
-        <div className={`${!props.opponent && "text-end"} flex flex-col pt-[2px] gap-[2px]`}>
-          <div>PLAYER-0001</div>
-          <div className="text-sm">LEVEL 25</div>
+        <div
+          className={`flex w-full gap-2 whitespace-nowrap flex-col ${
+            !opponent ? "items-end" : "items-start"
+          }`}
+        >
+          <div className="flex items-center gap-2 font-medium">
+            {username ?? "Loading..."}
+            <div className="px-1.5 h-fit text-xs text-fogra bg-malachite rounded-full">{level}</div>
+          </div>
+          <div className={`flex items-center gap-2 ${!opponent && "flex-row-reverse"}`}>
+            <div className={`flex items-center text-sm gap-2 ${!opponent && "flex-row-reverse"}`}>
+              <Image src={goldCoin} height={18} width={18} alt="Gold" draggable="false" />0
+            </div>
+            <div className={`flex items-center text-sm gap-2 ${!opponent && "flex-row-reverse"}`}>
+              <Image src={silverCoin} height={18} width={18} alt="Silver" draggable="false" />0
+            </div>
+          </div>
         </div>
-        <div className={`${props.opponent ? "ml-auto" : "mr-auto"}`}>{props.children}</div>
-      </div>
-      <div
-        className={`${props.opponent ? "rounded-b-lg" : "rounded-t-lg"} bg-translucent p-[10px]`}
-      >
-        <Currencies opponent={props.opponent} gold="2" silver="3" />
+        {children}
       </div>
     </div>
   );

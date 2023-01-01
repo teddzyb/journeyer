@@ -1,5 +1,7 @@
 // APIs
 import Head from "next/head";
+import { useUserContext } from "../../context/userContext.js";
+import { useQuery } from "../../convex/_generated/react.js";
 
 // Assets
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,10 +9,15 @@ import { faGear, faFlag } from "@fortawesome/free-solid-svg-icons";
 
 // Components
 import Card from "../../components/card/card";
+import ArenaPlayer from "../../components/arena/arena-player";
 
 const Tutorial = () => {
+  const user = useUserContext();
+  const { username, status } = useQuery("user/getUser", user) || {};
+  const { level } = status || {};
+
   const CardSlot = (
-    <div className="outline outline-fogra-500 rounded-md">
+    <div className="outline outline-2 outline-fogra-600 rounded-md">
       <Card placeholder size="md" className="invisible">
         {" "}
       </Card>
@@ -18,7 +25,7 @@ const Tutorial = () => {
   );
 
   const CardPile = (
-    <div className="outline outline-fogra-500 rounded-md">
+    <div className="outline outline-2 outline-fogra-600 rounded-md">
       <Card placeholder size="sm" className="invisible">
         {" "}
       </Card>
@@ -46,8 +53,14 @@ const Tutorial = () => {
           </button>
         </div>
 
+        {/* Opponent */}
+        <ArenaPlayer opponent username="Opponent" level="3" />
+
+        {/* Player */}
+        <ArenaPlayer username={username ?? "Loading..."} level={level || 0} />
+
         {/* Board */}
-        <div className="relative flex justify-center items-center bg-fogra-900 border border-fogra-800 rounded-lg shadow-md h-full w-full">
+        <div className="relative flex justify-center items-center bg-fogra-900 outline outline-2 outline-fogra-800 rounded-lg shadow-md h-full w-full">
           <div className="grid grid-flow-row grid-cols-6 grid-rows-2 w-full h-full px-16">
             <div className="opponent-slot pr-8 -mb-16">{CardPile}</div>
             <div className="opponent-slot">{CardSlot}</div>
